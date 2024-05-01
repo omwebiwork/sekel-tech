@@ -19,13 +19,15 @@ const Banner = ({
             <h1 className="text-[54px] font-normal leading-[75px] mb-4 tracking-tighter">
               {title}
             </h1>
-            <p
-              className={`text-base font-normal leading-[22px] mb-8 ${
-                desciptionSty ? "text-yellow-900 mb-0" : ""
-              }`}
-            >
-              {desciption}
-            </p>
+            {desciption && (
+              <p
+                className={`text-base font-normal leading-[22px] mb-8 ${
+                  desciptionSty ? "text-yellow-900 mb-0" : ""
+                }`}
+              >
+                {desciption}
+              </p>
+            )}
             {renderElement}
           </div>
         </div>
@@ -42,4 +44,3 @@ const Banner = ({
 };
 
 export default Banner;
-

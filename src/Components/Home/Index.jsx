@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import DownArrow from "@/assets/DownArrow";
 import CardSection from "../comman/Card/CardSection";
 import Button from "../comman/ButtonComponent/Index";
+import HyperlocalStrategyForm from "../comman/Form/hyperlocalStrategyForm";
 
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);
@@ -13,16 +14,25 @@ const HomeComponent = () => {
       title: "Get Discovered",
       description:
         "Making sure you dominate the search results organically across google search products which drives greater hyperlocal visibility and conversions.",
+      image: {
+        src: "/discoverd-img.gif",
+      },
     },
     {
       title: "Plug & Play Data",
       description:
         "Making sure all dealer, product, and lead data is captured, we seamlessly integrate it with your CRM, DMS, CDP, and LMS for effortless data flow and management. And get a single view. ",
+      image: {
+        src: "/play-data.gif",
+      },
     },
     {
       title: "Generate Demand",
       description:
         "Making sure your brand stands out, by utilising features like targeted Google and Meta campaigns to boost demand and generate more walkins ",
+      image: {
+        src: "/generate-demand-img.gif",
+      },
     },
   ]);
 
@@ -31,6 +41,43 @@ const HomeComponent = () => {
     desciption:
       " Making sure you dominate the search results organically across google search products",
   };
+  let chanllenges = [
+    {
+      title:
+        "We generate plenty of leads monthly, but lack visibility on their outcomes. How do we gain insights and optimise our efforts?",
+      desciption: `To gain insights and optimize your efforts with generated leads,
+    you need a solution that offers robust analytics and tracking
+    capabilities. This will allow you to monitor the outcomes of your
+    leads and adjust your strategies accordingly.`,
+      list: [
+        {
+          title: "Data Integration",
+        },
+        {
+          title: "Data Activation",
+        },
+        {
+          title: "Data Integration",
+        },
+      ],
+    },
+    {
+      title:
+        "Our traditional method of demand generation through leads is not working out due to high TAT and Junk Data",
+      desciption: `To address the challenges with high turnaround time (TAT) and junk data in your traditional demand generation methods, you need a solution that can streamline lead generation and data quality.`,
+    },
+    {
+      title:
+        " While the volume targets are getting achieved, we are facing issues with lead quality & CPl",
+      desciption: `To address the issues with lead quality and Cost Per Lead (CPL) while achieving volume targets, you need a solution that can improve lead targeting and qualification processes. By refining your targeting criteria and qualifying leads more effectively, you can improve lead quality and reduce CPL, ultimately enhancing the overall performance of your demand generation efforts.`,
+    },
+    {
+      title:
+        "The challenge is acquiring and maintaining accurate location data for effective marketing and lead generation. Seamless integration with marketing systems is crucial for targeted success.",
+      desciption: `To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.`,
+    },
+  ];
+
 
   const handleLearnMore = useCallback((index) => {
     if (learnMore[index]) {
@@ -40,7 +87,7 @@ const HomeComponent = () => {
     }
   });
 
-  const renderElement = () => {
+  const renderCard = () => {
     return (
       <div>
         <div className="grid grid-cols-3 gap-8">
@@ -59,6 +106,60 @@ const HomeComponent = () => {
             );
           })}
         </div>
+      </div>
+    );
+  };
+
+  let chanllengesCard = ({ title, desciption, gridColSize, list }) => {
+    return (
+      <div className={`${gridColSize}`}>
+        <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
+          <div className="flex gap-4 mb-10">
+            <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
+              <p className="text-xl font-medium text-black-33">?</p>
+            </div>
+            <div className="w-[calc(100%_-_50px)] ">
+              <p className=" text-base font-semibold text-black-33  tracking-tight">
+                {title}
+              </p>
+            </div>
+          </div>
+          <div>
+            <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
+              {desciption}
+            </p>
+            <ul className="list-['-_'] pl-4 text-base font-normal text-black-33 mb-4">
+              {list?.map((listItem, listIndex) => {
+                return <li key={listIndex}>{listItem.title}</li>;
+              })}
+            </ul>
+            <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">
+              Platform
+              <div className="h-6 w-6">
+                <Image
+                  src={"/blue-arrow.svg"}
+                  height={24}
+                  width={24}
+                  alt="img"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const challengesElement = () => {
+    return (
+      <div className="grid grid-cols-16 gap-5 mb-8">
+        {chanllenges?.map((item, index) =>
+          chanllengesCard({
+            ...item,
+            gridColSize:
+              index === 1 || index === 2 ? "col-span-7" : "col-span-9",
+          })
+        )}
       </div>
     );
   };
@@ -338,7 +439,7 @@ const HomeComponent = () => {
 
   return (
     <>
-      <CardSection {...discoveryObj} renderElement={renderElement} />
+      <CardSection {...discoveryObj} renderElement={renderCard} />
       <section className="pt-[100px] bg-gray-100">
         <div className="container">
           <div className="grid grid-cols-10 gap-6">
@@ -395,194 +496,14 @@ const HomeComponent = () => {
         desciption="Making sure you dominate the search results organically across google search products Making sure you dominate the search results organically across "
         renderElement={renderCompetition}
       />
-      <section className="py-[100px] bg-white">
-        <div className="container">
-          <div className="mb-[52px]">
-            <h3 className="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33">
-              Challenges Q/A
-            </h3>
-            <p className="text-base font-normal leading-[22px] text-black-33 ">
-              Making sure you dominate the search results organically across
-              google search products Making sure you dominate the s
-            </p>
-          </div>
-          <div className="grid grid-cols-16 gap-5 mb-8">
-            <div className="col-span-9">
-              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
-                <div className="flex gap-4 mb-10">
-                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
-                    <p className="text-xl font-medium text-black-33">?</p>
-                  </div>
-                  <div className="w-[calc(100%_-_50px)] ">
-                    <p className=" text-base font-semibold text-black-33  tracking-tight">
-                      We generate plenty of leads monthly, but lack visibility
-                      on their outcomes. How do we gain insights and optimise
-                      our efforts?
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
-                    To gain insights and optimize your efforts with generated
-                    leads, you need a solution that offers robust analytics and
-                    tracking capabilities. This will allow you to monitor the
-                    outcomes of your leads and adjust your strategies
-                    accordingly.
-                  </p>
-                  <ul className="list-['-_'] pl-4 text-base font-normal text-black-33 mb-4">
-                    <li> Data Integration</li>
-                    <li> Data Activation</li>
-                    <li> Security & Compliance</li>
-                  </ul>
-                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">
-                    Platform
-                    <div className="h-6 w-6">
-                      <Image
-                        src={"/blue-arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="img"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-7">
-              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
-                <div className="flex gap-4 mb-10">
-                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
-                    <p className="text-xl font-medium text-black-33">?</p>
-                  </div>
-                  <div className="w-[calc(100%_-_50px)] ">
-                    <p className=" text-base font-semibold text-black-33  tracking-tight ">
-                      Our traditional method of demand generation through leads
-                      is not working out due to high TAT and Junk Data
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
-                    To address the challenges with high turnaround time (TAT)
-                    and junk data in your traditional demand generation methods,
-                    you need a solution that can streamline lead generation and
-                    data quality.
-                  </p>
-                  {/* <ul className="text-base font-normal text-black-33 mb-4">
-                    <li>- Data Integration</li>
-                    <li>- Data Activation</li>
-                    <li>- Security & Compliance</li>
-                  </ul> */}
-                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">
-                    Platform
-                    <div className="h-6 w-6">
-                      <Image
-                        src={"/blue-arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="img"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-7">
-              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
-                <div className="flex gap-4 mb-10">
-                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
-                    <p className="text-xl font-medium text-black-33">?</p>
-                  </div>
-                  <div className="w-[calc(100%_-_50px)] ">
-                    <p className=" text-base font-semibold text-black-33  tracking-tight">
-                      While the volume targets are getting achieved, we are
-                      facing issues with lead quality & CPl
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
-                    To address the issues with lead quality and Cost Per Lead
-                    (CPL) while achieving volume targets, you need a solution
-                    that can improve lead targeting and qualification processes.
-                    By refining your targeting criteria and qualifying leads
-                    more effectively, you can improve lead quality and reduce
-                    CPL, ultimately enhancing the overall performance of your
-                    demand generation efforts.
-                  </p>
-                  {/* <ul className="text-base font-normal text-black-33 mb-4">
-                    <li>- Data Integration</li>
-                    <li>- Data Activation</li>
-                    <li>- Security & Compliance</li>
-                  </ul> */}
-                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">
-                    Platform
-                    <div className="h-6 w-6">
-                      <Image
-                        src={"/blue-arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="img"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-9">
-              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
-                <div className="flex gap-4 mb-10">
-                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
-                    <p className="text-xl font-medium text-black-33">?</p>
-                  </div>
-                  <div className="w-[calc(100%_-_50px)] ">
-                    <p className=" text-base font-semibold text-black-33  tracking-tight">
-                      The challenge is acquiring and maintaining accurate
-                      location data for effective marketing and lead generation.
-                      Seamless integration with marketing systems is crucial for
-                      targeted success.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
-                    To address the challenge of obtaining and maintaining
-                    accurate location data, consider implementing a robust
-                    location data management system. This system should
-                    streamline the integration of marketing systems with
-                    location data, ensuring that each store's information is
-                    accurate and up-to-date. Additionally, regular audits and
-                    updates to the location data can help maintain its accuracy
-                    over time.
-                  </p>
-                  {/* <ul className="text-base font-normal text-black-33 mb-4">
-                    <li>- Data Integration</li>
-                    <li>- Data Activation</li>
-                    <li>- Security & Compliance</li>
-                  </ul> */}
-                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">
-                    Platform
-                    <div className="h-6 w-6">
-                      <Image
-                        src={"/blue-arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="img"
-                      />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center justify-end gap-5">
-            <p className="text-base font-semibold text-black-33">
-              Need more info?
-            </p>
-            <Button filled data="view more" />
-          </div>
-        </div>
-      </section>
+     <CardSection
+        headingSty=""
+        descriptionSty=""
+        title="Challenges Q/A"
+        desciption=" Making sure you dominate the search results organically across
+              google search products Making sure you dominate the s"
+        renderElement={challengesElement}
+      />
       <section className="bg-blue-900 py-[54px]">
         <div className="container">
           <div className="grid grid-cols-10">
@@ -785,24 +706,7 @@ const HomeComponent = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-8 bg-yellow-100 py-[18px] px-10 rounded-[14px]">
-            <p className="text-[28px] text-blue-600 font-medium">
-              Supercharge Your Hyperlocal Strategy Today!
-            </p>
-            <div className="flex-1">
-              <div className="flex gap-4 ">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="text-black-33 placeholder:text-black-33 flex-grow leading-5 py-2 px-8 border border-1 border-gray-400  rounded-full bg-white focus:ring-0 focus:outline-none focus-visible:ring-0"
-                />
-                <Button
-                  data="Submit"
-                  clsStyle="py-3 px-10 bg-blue-900 border-blue-900"
-                />
-              </div>
-            </div>
-          </div>
+          <HyperlocalStrategyForm buttonTitle="Submit" placeholder="Email" />
         </div>
       </section>
     </>
