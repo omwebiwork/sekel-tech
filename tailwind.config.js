@@ -9,6 +9,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        '16': 'repeat(16, minmax(0, 1fr))',
+
+      }
+    },
     colors: {
       white:"#ffffff",
       whites:{
@@ -33,6 +40,7 @@ module.exports = {
         100:"#F9FAFD"
       }
     },
+    
   },
   plugins: [],
 };

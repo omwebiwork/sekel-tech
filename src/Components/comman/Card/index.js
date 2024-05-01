@@ -11,7 +11,7 @@ const Card = ({
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
-    <div className="p-10 h-full bg-gray-100 rounded-2xl border-[1px] border-gray-400">
+    <div className="p-10 h-full bg-gray-100 rounded-2xl">
       <div className="mb-6">
         {titleIcon && <div>{titleIcon}</div>}
         <h2 className="text-[28px] font-medium mb-4 leading-[30px] text-black-33">{cardData?.title}</h2>

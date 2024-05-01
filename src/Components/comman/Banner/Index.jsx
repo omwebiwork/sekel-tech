@@ -1,22 +1,45 @@
-import React from 'react'
-import Button from '../ButtonComponent/Index'
+import React from "react";
+import Button from "../ButtonComponent/Index";
+import Image from "next/image";
 
-const Banner = () => {
+const Banner = ({
+  title,
+  desciption,
+  desciptionSty = false,
+  renderElement = null,
+  image,
+  containerStyle,
+  headinWidth,
+}) => {
   return (
     <section className="bg-blue-900">
-    <div className="container">
-    <div className="w-[479px] py-[144px] text-white">
-      <h1 className="text-[54px] font-normal leading-[75px] mb-8">360º Retail Journey with Sekel Tech</h1>
-      <p className="text-base font-normal leading-[22px] mb-8">Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI ? </p>   
-      <div className="flex gap-4">
-        <input type="email" placeholder="enter your email" className="text-white placeholder:text-white leading-5 py-2 px-8 border border-1 border-white  rounded-full bg-whites-10 bg-opacity-10 focus:ring-0 focus:outline-none focus-visible:ring-0"/> 
-        <Button filled data="Get started" clsStyle="py-3"/>
+      <div className={`flex ${containerStyle} items-center`}>
+        <div className={` ${headinWidth} `}>
+          <div className={` text-white`}>
+            <h1 className="text-[54px] font-normal leading-[75px] mb-4 tracking-tighter">
+              {title}
+            </h1>
+            <p
+              className={`text-base font-normal leading-[22px] mb-8 ${
+                desciptionSty ? "text-yellow-900 mb-0" : ""
+              }`}
+            >
+              {desciption}
+            </p>
+            {renderElement}
+          </div>
+        </div>
+        <div className="">
+          {image && (
+            <div className="">
+              <Image className="w-full object-cover object-center" {...image} />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
+  );
+};
 
-    </div>
-  </section>
-  )
-}
+export default Banner;
 
-export default Banner

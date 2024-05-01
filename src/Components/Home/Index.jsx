@@ -3,6 +3,7 @@ import React from "react";
 import Card from "@/Components/comman/Card";
 import { useCallback, useState } from "react";
 import DownArrow from "@/assets/DownArrow";
+import CardSection from "../comman/Card/CardSection";
 import Button from "../comman/ButtonComponent/Index";
 
 const HomeComponent = () => {
@@ -25,6 +26,12 @@ const HomeComponent = () => {
     },
   ]);
 
+  let discoveryObj = {
+    title: "Data, Discovery and Demand Story",
+    desciption:
+      " Making sure you dominate the search results organically across google search products",
+  };
+
   const handleLearnMore = useCallback((index) => {
     if (learnMore[index]) {
       setLearnMore({ [index]: false });
@@ -32,58 +39,32 @@ const HomeComponent = () => {
       setLearnMore({ [index]: true });
     }
   });
+
+  const renderElement = () => {
+    return (
+      <div>
+        <div className="grid grid-cols-3 gap-8">
+          {cardData?.map((item, index) => {
+            return (
+              <div className="col-span-1">
+                <Card
+                  key={index}
+                  cardData={item}
+                  actionType="Learn more"
+                  action={() => handleLearnMore(index)}
+                  learnMore={learnMore[index]}
+                  buttonIcon={<DownArrow />}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
   return (
     <>
-      <section className="pt-[88px]">
-        <div className="w-[936px] mx-auto text-center mb-12">
-          <h2 className="text-[54px] mb-4 font-normal text-white tracking-tighter leading-[70px]">
-            Unlock Local Market Dominance with Geo-Fenced Marketing Magic
-          </h2>
-          <p className="text-base font-medium text-yellow-900">
-            Effortlessly Convert Searches into Local Sales
-          </p>
-        </div>
-        <div className="w-full">
-          <Image
-            className="w-full"
-            src={"/marketing-img.gif"}
-            height={500}
-            width={500}
-            alt="img"
-          />
-        </div>
-      </section>
-      <section className="py-[100px] bg-white">
-        <div className="container">
-          <div className="text-center mb-[52px]">
-            <h3 className="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33">
-              Data, Discovery and Demand Story
-            </h3>
-            <p className="text-base font-normal leading-[22px] w-[456px] mx-auto text-black-33">
-              Making sure you dominate the search results organically across
-              google search products{" "}
-            </p>
-          </div>
-          <div>
-            <div className="grid grid-cols-3 gap-8">
-              {cardData?.map((item, index) => {
-                return (
-                  <div className="col-span-1">
-                    <Card
-                      key={index}
-                      cardData={item}
-                      actionType="Learn more"
-                      action={() => handleLearnMore(index)}
-                      learnMore={learnMore[index]}
-                      buttonIcon={<DownArrow />}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CardSection {...discoveryObj} renderElement={renderElement} />
       <section className="pt-[100px] bg-white">
         <div className="container">
           <div className="grid grid-cols-10 gap-6">
@@ -136,13 +117,131 @@ const HomeComponent = () => {
       </section>
       <section className="py-[100px] bg-white">
         <div className="container">
-            <div className="mb-[52px]">
-              <h3 className="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33">Challenges Q/A</h3>
-              <p className="text-base font-normal leading-[22px] text-black-33 ">Making sure you dominate the search results organically across google search products Making sure you dominate the s</p>
+          <div className="mb-[52px]">
+            <h3 className="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33">
+              Challenges Q/A
+            </h3>
+            <p className="text-base font-normal leading-[22px] text-black-33 ">
+              Making sure you dominate the search results organically across
+              google search products Making sure you dominate the s
+            </p>
+          </div>
+          <div className="grid grid-cols-16 gap-5 mb-8">
+            <div className="col-span-9">
+              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
+                <div className="flex gap-4 mb-10">
+                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
+                    <p className="text-xl font-medium text-black-33">?</p>
+                  </div>
+                  <div className="w-[calc(100%_-_50px)] ">
+                    <p className=" text-base font-semibold text-black-33  tracking-tight">
+                      We generate plenty of leads monthly, but lack visibility
+                      on their outcomes. How do we gain insights and optimise
+                      our efforts?
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">To gain insights and optimize your efforts with generated leads, you need a solution that offers robust analytics and tracking capabilities. This will allow you to monitor the outcomes of your leads and adjust your strategies accordingly.</p>
+                  <ul className="list-['-_'] pl-4 text-base font-normal text-black-33 mb-4">
+                    <li> Data Integration</li>
+                    <li> Data Activation</li>
+                    <li> Security & Compliance</li>
+                  </ul>
+                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">Platform
+                  <div className="h-6 w-6">
+                    <Image src={'/blue-arrow.svg'} height={24} width={24} alt="img"/>
+                    </div>
+                    </button>
+                </div>
+              </div>
             </div>
-            <div>
-              
+            <div className="col-span-7">
+              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
+                <div className="flex gap-4 mb-10">
+                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
+                    <p className="text-xl font-medium text-black-33">?</p>
+                  </div>
+                  <div className="w-[calc(100%_-_50px)] ">
+                    <p className=" text-base font-semibold text-black-33  tracking-tight ">
+                    Our traditional method of demand generation through leads is not working out due to high TAT and Junk Data
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">To address the challenges with high turnaround time (TAT) and junk data in your traditional demand generation methods, you need a solution that can streamline lead generation and data quality.</p>
+                  {/* <ul className="text-base font-normal text-black-33 mb-4">
+                    <li>- Data Integration</li>
+                    <li>- Data Activation</li>
+                    <li>- Security & Compliance</li>
+                  </ul> */}
+                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">Platform
+                  <div className="h-6 w-6">
+                    <Image src={'/blue-arrow.svg'} height={24} width={24} alt="img"/>
+                    </div>
+                    </button>
+                </div>
+              </div>
             </div>
+            <div className="col-span-7">
+              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
+                <div className="flex gap-4 mb-10">
+                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
+                    <p className="text-xl font-medium text-black-33">?</p>
+                  </div>
+                  <div className="w-[calc(100%_-_50px)] ">
+                    <p className=" text-base font-semibold text-black-33  tracking-tight">
+                    While the volume targets are getting achieved, we are facing issues with lead quality & CPl
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">To address the issues with lead quality and Cost Per Lead (CPL) while achieving volume targets, you need a solution that can improve lead targeting and qualification processes. By refining your targeting criteria and qualifying leads more effectively, you can improve lead quality and reduce CPL, ultimately enhancing the overall performance of your demand generation efforts.</p>
+                  {/* <ul className="text-base font-normal text-black-33 mb-4">
+                    <li>- Data Integration</li>
+                    <li>- Data Activation</li>
+                    <li>- Security & Compliance</li>
+                  </ul> */}
+                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">Platform
+                  <div className="h-6 w-6">
+                    <Image src={'/blue-arrow.svg'} height={24} width={24} alt="img"/>
+                    </div>
+                    </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-span-9">
+              <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
+                <div className="flex gap-4 mb-10">
+                  <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
+                    <p className="text-xl font-medium text-black-33">?</p>
+                  </div>
+                  <div className="w-[calc(100%_-_50px)] ">
+                    <p className=" text-base font-semibold text-black-33  tracking-tight">
+                    The challenge is acquiring and maintaining accurate location data for effective marketing and lead generation. Seamless integration with marketing systems is crucial for targeted success.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-base font-normal leading-[25px] text-black-33 mb-4">To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.</p>
+                  {/* <ul className="text-base font-normal text-black-33 mb-4">
+                    <li>- Data Integration</li>
+                    <li>- Data Activation</li>
+                    <li>- Security & Compliance</li>
+                  </ul> */}
+                  <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">Platform
+                  <div className="h-6 w-6">
+                    <Image src={'/blue-arrow.svg'} height={24} width={24} alt="img"/>
+                    </div>
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center justify-end gap-5">
+            <p className="text-base font-semibold text-black-33">Need more info?</p>
+                    <Button filled data="view more"/>
+          </div>
         </div>
       </section>
       <section className="bg-blue-900 py-[54px]">
@@ -160,8 +259,8 @@ const HomeComponent = () => {
                   <p className="text-base font-semibold leading-[22px]">
                     See all Case studies
                   </p>
-
-                  <button className="bg-yellow-900  h-8 w-8 border border-1 border-yellow-900 rounded-full flex items-center justify-center">
+                  <div>
+                  {/* <button className="bg-yellow-900  h-8 w-8 border border-1 border-yellow-900 rounded-full flex items-center justify-center">
                     <Image
                       className="w-6 "
                       src={"/forward-arrow.png"}
@@ -169,7 +268,47 @@ const HomeComponent = () => {
                       width={24}
                       alt="img"
                     />
-                  </button>
+                  </button> */}
+                  <div className="flex items-center">
+                  <div className="shadow border-[1px]  border-blue-900 h-8 w-8 rounded-full relative z-[8] hover:z-[9] transition-all overflow-hidden flex items-center justify-center bg-yellow-900 min-w-8 text-white p-1 text-xs">
+                    <Image
+                      className="w-6 "
+                      src={"/forward-arrow.png"}
+                      height={32}
+                      width={32}
+                      alt="img"
+                    />
+                    </div>
+                    <div className="h-8 w-8 min-w-8 rounded-full -ml-2 relative z-[7] hover:z-[9] transition-all overflow-hidden shadow border-[1px] border-blue-900">
+                      <Image
+                        src={"/avtar.png"}
+                        height={32}
+                        width={32}
+                        alt=""
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div className="-ml-2 h-8 w-8 min-w-8 rounded-full relative z-[6] hover:z-[9] transition-all overflow-hidden shadow border-[1px] border-blue-900">
+                      <Image
+                        src={"/avtar.png"}
+                        height={32}
+                        width={32}
+                        alt=""
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    <div className="-ml-2 h-8 w-8 min-w-8 rounded-full relative hover:z-[9] transition-all overflow-hidden shadow border-[1px] border-blue-900">
+                      <Image
+                        src={"/avtar.png"}
+                        height={32}
+                        width={32}
+                        alt=""
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    
+                  </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -213,7 +352,7 @@ const HomeComponent = () => {
                       <Image
                         className="w-full h-full object-cover object-center"
                         src={"/case-studies-1.png"}
-                        height={304}
+                        height={500}
                         width={348}
                         alt="img"
                       />
@@ -271,7 +410,6 @@ const HomeComponent = () => {
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>
