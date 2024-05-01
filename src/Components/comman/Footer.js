@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className=" py-[100px]">
       <div className="container">
         <div className="grid grid-cols-4 gap-12">
-          <div className="col-span-4 sm:col-span-2 md:col-span-1 pl-4 md:pl-8">
+          <div className="col-span-4 sm:col-span-2 md:col-span-1 pr-8">
             <div>
               <div className="mb-[52px] h-[95px] w-[99px]">
                 <Image

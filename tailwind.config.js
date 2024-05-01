@@ -12,35 +12,30 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         // Simple 16 column grid
-        '16': 'repeat(16, minmax(0, 1fr))',
-
-      }
+        16: "repeat(16, minmax(0, 1fr))",
+      },
     },
     colors: {
-      white:"#ffffff",
-      whites:{
-        10:"#F9FAFD"
-      },
+      white: "#ffffff",
       blue: {
         900: "#2C74F7",
         600: "#2670FB",
-        200:"#EAECF6",
-        100:"#D6E6FF"
+        200: "#EAECF6",
+        100: "#D6E6FF",
       },
       yellow: {
         900: "#FDD53E",
-        100:"#F7FAB7",
+        100: "#F7FAB7",
       },
-      black:{
-        900:"#000000",
-        33:"#33323C",
+      black: {
+        900: "#000000",
+        33: "#33323C",
       },
-      gray:{
-        400:"#EAEAEA",
-        100:"#F9FAFD"
-      }
+      gray: {
+        400: "#EAEAEA",
+        100: "#F9FAFD",
+      },
     },
-    
   },
   plugins: [],
 };

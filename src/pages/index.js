@@ -18,19 +18,21 @@ let bannerObj1 = {
 
 export default function Home() {
   return (
-    <div className="bg-blue-900">
-      <Banner
-        {...bannerObj}
-        image={{
-          src: "/marketing-img.gif",
-          alt: "img",
-          height: 500,
-          width: 500,
-        }}
-        containerStyle="flex-col mx:w-full items-center text-center"
-        desciptionSty
-        headinWidth="w-[936px] mx-auto text-center mb-12"
-      />
+    <>
+      <div>
+        <Banner
+          {...bannerObj}
+          image={{
+            src: "/marketing-img.gif",
+            alt: "img",
+            height: 500,
+            width: 500,
+          }}
+          containerStyle="flex-col mx:w-full items-center text-center pt-[56px]"
+          desciptionSty
+          headinWidth="w-[936px] mx-auto text-center mb-12"
+        />
+      </div>
 
       {/* <Banner
         {...bannerObj1}
@@ -45,6 +47,6 @@ export default function Home() {
         headinWidth="max-w-[479px] mb-12"
       /> */}
       <HomeComponent />
-    </div>
+    </>
   );
 }
