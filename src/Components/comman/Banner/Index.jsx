@@ -5,14 +5,15 @@ import Image from "next/image";
 const Banner = ({
   title,
   desciption,
-  desciptionSty = false,
+  desciptionSty = 'text-yellow-900 mb-0',
   renderElement = null,
   image,
   containerStyle,
   headinWidth,
+  sectionSty,
 }) => {
   return (
-    <section className="bg-blue-900">
+    <div className={` ${sectionSty} bg-blue-900`}>
       <div className={`flex ${containerStyle} items-center`}>
         <div className={` ${headinWidth} `}>
           <div className={` text-white`}>
@@ -22,7 +23,7 @@ const Banner = ({
             {desciption && (
               <p
                 className={`text-base font-normal leading-[22px] mb-8 ${
-                  desciptionSty ? "text-yellow-900 mb-0" : ""
+                  desciptionSty 
                 }`}
               >
                 {desciption}
@@ -39,7 +40,7 @@ const Banner = ({
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

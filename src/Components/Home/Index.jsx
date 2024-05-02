@@ -7,6 +7,8 @@ import CardSection from "../comman/Card/CardSection";
 import Button from "../comman/ButtonComponent/Index";
 import HyperlocalStrategyForm from "../comman/Form/hyperlocalStrategyForm";
 import InfoCard from "../comman/Card/InfoCard";
+import SliderSection from "../comman/Card/SliderSection";
+import ImageCard from "../comman/Card/ImageCard";
 
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);
@@ -79,6 +81,64 @@ const HomeComponent = () => {
     },
   ];
 
+  let silderData = [
+    {
+      image: {
+        src: "/case-studies-1.png",
+        height: 304,
+        width: 348,
+        alt: "img",
+      },
+
+      footer: {
+        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
+        title: "Increase ROI by",
+        size: "31x",
+      },
+    },
+    {
+      image: {
+        src: "/case-studies.png",
+        height: 500,
+        width: 348,
+        alt: "img",
+      },
+
+      footer: {
+        image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
+        size: "10x",
+      },
+    },
+    {
+      image: {
+        src: "/case-studies-1.png",
+        height: 304,
+        width: 348,
+        alt: "img",
+      },
+
+      footer: {
+        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
+        title: "Increase ROI by",
+        size: "31x",
+      },
+    },
+    {
+      image: {
+        src: "/case-studies.png",
+        height: 500,
+        width: 348,
+        alt: "img",
+      },
+
+      footer: {
+        image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
+        size: "10x",
+      },
+    },
+  ];
+
+ 
   const handleLearnMore = useCallback((index) => {
     if (learnMore[index]) {
       setLearnMore({ [index]: false });
@@ -484,172 +544,14 @@ const HomeComponent = () => {
               google search products Making sure you dominate the s"
         renderElement={challengesElement}
       />
-      <section className="bg-blue-900 py-[54px]">
-        <div className="container">
-          <div className="grid grid-cols-10">
-            <div className="col-span-4 flex items-center">
-              <div className="w-full text-white">
-                <h1 className="text-[42px] font-medium tracking-tighter leading-[55px] mb-5">
-                  Key Success Metrics Case Studies
-                </h1>
-                <p className="text-base font-normal leading-[25px] mb-[52px] w-1/2">
-                  How Sekel Tech helped to increase the clients’ ROI
-                </p>
-                <div className="flex gap-10 items-center">
-                  <p className="text-base font-semibold leading-[22px]">
-                    See all Case studies
-                  </p>
-                  <div>
-                    {/* <button className="bg-yellow-900  h-8 w-8 border border-1 border-yellow-900 rounded-full flex items-center justify-center">
-                    <Image
-                      className="w-6 "
-                      src={"/forward-arrow.png"}
-                      height={24}
-                      width={24}
-                      alt="img"
-                    />
-                  </button> */}
-                    <div className="flex items-center">
-                      <div className="shadow border-[1px]  border-blue-900 h-8 w-8 rounded-full relative z-[8] hover:z-[9] transition-all overflow-hidden flex items-center justify-center bg-yellow-900 min-w-8 text-white p-1 text-xs">
-                        <Image
-                          className="w-6 "
-                          src={"/forward-arrow.png"}
-                          height={32}
-                          width={32}
-                          alt="img"
-                        />
-                      </div>
-                      <div className="h-8 w-8 min-w-8 rounded-full -ml-2 relative z-[7] hover:z-[9] transition-all overflow-hidden shadow border-[1px] border-blue-900">
-                        <Image
-                          src={"/avtar.png"}
-                          height={32}
-                          width={32}
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                      <div className="-ml-2 h-8 w-8 min-w-8 rounded-full relative z-[6] hover:z-[9] transition-all overflow-hidden shadow border-[1px] border-blue-900">
-                        <Image
-                          src={"/avtar.png"}
-                          height={32}
-                          width={32}
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                      <div className="-ml-2 h-8 w-8 min-w-8 rounded-full relative hover:z-[9] transition-all overflow-hidden shadow border-[1px] border-blue-900">
-                        <Image
-                          src={"/avtar.png"}
-                          height={32}
-                          width={32}
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-6">
-              <div className="w-full flex gap-5 overflow-x-auto pb-5 ">
-                <div className="min-w-[360px] max-w-[360px] p-5 bg-blue-100 bg-opacity-10 rounded-xl">
-                  <div className="mb-5 w-full h-[280px] rounded-xl overflow-hidden">
-                    <Image
-                      className="w-full h-full object-cover object-center"
-                      src={"/case-studies-1.png"}
-                      height={304}
-                      width={348}
-                      alt="img"
-                    />
-                  </div>
-                  <div className="flex gap-2 justify-between items-center">
-                    <div className="w-[110px]">
-                      <Image
-                        className="w-full h-full"
-                        src={"/kalyan-logo.png"}
-                        height={448}
-                        width={692}
-                        alt="img"
-                      />
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <p className="text-base font-normal text-white w-16">
-                        Increase ROI by
-                      </p>
-                      <p className="text-[54px] font-normal leading-[60px] text-white">
-                        31x
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="min-w-[360px] max-w-[360px] p-5 bg-blue-100 bg-opacity-10 rounded-xl">
-                  <div className="mb-5 w-full h-[280px] rounded-xl overflow-hidden">
-                    <Image
-                      className="w-full h-full object-cover object-center"
-                      src={"/case-studies.png"}
-                      height={500}
-                      width={348}
-                      alt="img"
-                    />
-                  </div>
-                  <div className="flex gap-2 justify-between items-center">
-                    <div className="w-[110px]">
-                      <Image
-                        className="w-full h-full"
-                        src={"/kalyan-logo.png"}
-                        height={448}
-                        width={692}
-                        alt="img"
-                      />
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <p className="text-base font-normal text-white w-16">
-                        Increase ROI by
-                      </p>
-                      <p className="text-[54px] font-normal leading-[60px] text-white">
-                        31x
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="min-w-[360px] max-w-[360px] p-5 bg-blue-100 bg-opacity-10 rounded-xl">
-                  <div className="mb-5 w-full h-[280px] rounded-xl overflow-hidden">
-                    <Image
-                      className="w-full h-full object-cover object-center"
-                      src={"/case-studies-1.png"}
-                      height={304}
-                      width={348}
-                      alt="img"
-                    />
-                  </div>
-                  <div className="flex gap-2 justify-between items-center">
-                    <div className="w-[110px]">
-                      <Image
-                        className="w-full h-full"
-                        src={"/kalyan-logo.png"}
-                        height={448}
-                        width={692}
-                        alt="img"
-                      />
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <p className="text-base font-normal text-white w-16">
-                        Increase ROI by
-                      </p>
-                      <p className="text-[54px] font-normal leading-[60px] text-white">
-                        31x
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SliderSection
+        title="Key Success Metrics Case Studies"
+        description="How Sekel Tech helped to increase the clients’ ROI"
+        profileButton
+        renderElement={silderData?.map((item, index) => {
+          return <ImageCard {...item} key={index} />;
+        })}
+      />
       <section className="py-[100px] bg-white">
         <div className="container">
           <div className="grid grid-cols-10 gap-6 mb-5">

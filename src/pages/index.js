@@ -28,7 +28,7 @@ export default function Home() {
           width: 500,
         }}
         containerStyle="flex-col mx:w-full items-center text-center"
-        desciptionSty
+  
         headinWidth="w-[936px] mx-auto text-center mb-12"
       />
 

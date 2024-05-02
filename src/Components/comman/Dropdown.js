@@ -4,7 +4,7 @@ import DownArrow from "@/assets/DownArrow";
 import Link from "next/link";
 import Image from "next/image";
 
-const Dropdown = ({ text, list }) => {
+const Dropdown = ({ text, list, image }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -17,7 +17,7 @@ const Dropdown = ({ text, list }) => {
 
   return (
     <div className="">
-      <div className="relative inline-block">
+      <div className="relative inline-block" onBlur={closeDropdown}>
         <button
           type="button"
           className="px-4 py-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm inline-flex items-center"
@@ -28,7 +28,7 @@ const Dropdown = ({ text, list }) => {
         </button>
 
         {isOpen && (
-          <div className="origin-top-right absolute right-0 mt-4 rounded-xl shadow-lg bg-white text-black-33  p-[52px]">
+          <div className="origin-top-right absolute right-0 mt-4 rounded-xl shadow-lg bg-white text-black-33 p-[52px]">
             <div className="flex gap-x-[80px]">
             <ul
               role="menu"
@@ -36,10 +36,11 @@ const Dropdown = ({ text, list }) => {
               aria-labelledby="options-menu"
             >
               {list?.map((item, index) => {
+                console.log("chekc ", "000", item.path)
                 return (
                   <li key={index}>
                     <Link
-                      href={item.name}
+                      href={item.path}
                       className="block px-4 py-2 text-base font-medium text-black-900 hover:bg-gray-100"
                       onClick={closeDropdown}
                     >
@@ -50,7 +51,7 @@ const Dropdown = ({ text, list }) => {
               })}
             </ul>
             <div className="w-[201px] h-[176px] rounded-3xl overflow-hidden">
-              <Image className="h-full w-full" src={'/Product.png'} height={176} width={200} alt="img"/>
+              <Image className="h-full w-full" {...image} alt="img"/>
             </div>
 
             </div>

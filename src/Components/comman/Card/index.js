@@ -8,13 +8,17 @@ const Card = ({
   action,
   buttonIcon,
   learnMore,
+  cardDataSty,
+  cardImgSty,
+  cardSty ='p-10 rounded-2xl',
+  headingSty='mb-4',
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
-    <div className="p-10 h-full bg-gray-100 rounded-2xl">
-      <div className="mb-6">
+    <div className={`${cardSty}  h-full bg-gray-100 `}>
+      <div className={`${cardDataSty} mb-6`}>
         {titleIcon && <div>{titleIcon}</div>}
-        <h2 className="text-[28px] font-medium mb-4 leading-[30px] text-black-33">
+        <h2 className={`${headingSty} text-[28px] font-medium leading-[30px] text-black-33`}>
           {cardData?.title}
         </h2>
 
@@ -31,8 +35,8 @@ const Card = ({
           {buttonIcon && <div>{buttonIcon}</div>}
         </button>
       </div>
-      <div>
-        <Image height={57} width={300} alt="img" {...cardData.image} />
+      <div className={`${cardImgSty} `}>
+        <Image className="mx-auto" height={57} width={300} alt="img" {...cardData.image} />
       </div>
     </div>
   );
