@@ -14,21 +14,29 @@ const Card = ({
     <div className="p-10 h-full bg-gray-100 rounded-2xl">
       <div className="mb-6">
         {titleIcon && <div>{titleIcon}</div>}
-        <h2 className="text-[28px] font-medium mb-4 leading-[30px] text-black-33">{cardData?.title}</h2>
-      
-      <div>
-        <p className="text-base font-normal leading-[22px] text-black-33 mb-4">{cardData?.description}</p>
+        <h2 className="text-[28px] font-medium mb-4 leading-[30px] text-black-33">
+          {cardData?.title}
+        </h2>
+
+        <div>
+          <p className="text-base font-normal leading-[22px] text-black-33 mb-4">
+            {cardData?.description}
+          </p>
+        </div>
+        <button
+          onClick={handleAction}
+          className="flex gap-1 items-center text-base font-medium "
+        >
+          {actionType}
+          {buttonIcon && <div>{buttonIcon}</div>}
+        </button>
       </div>
-      <button onClick={handleAction} className="flex gap-1 items-center text-base font-medium " >
-        {actionType}
-        {buttonIcon && <div>{buttonIcon}</div>}
-      </button>
-      </div>
       <div>
-        <Image src={'/play-data.gif'} height={57} width={300} alt="img"/>
+        <Image height={57} width={300} alt="img" {...cardData.image} />
       </div>
     </div>
   );
 };
 
 export default Card;
+
