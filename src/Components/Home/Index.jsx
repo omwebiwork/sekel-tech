@@ -6,6 +6,7 @@ import DownArrow from "@/assets/DownArrow";
 import CardSection from "../comman/Card/CardSection";
 import Button from "../comman/ButtonComponent/Index";
 import HyperlocalStrategyForm from "../comman/Form/hyperlocalStrategyForm";
+import InfoCard from "../comman/Card/InfoCard";
 
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);
@@ -77,7 +78,6 @@ const HomeComponent = () => {
       desciption: `To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.`,
     },
   ];
-
 
   const handleLearnMore = useCallback((index) => {
     if (learnMore[index]) {
@@ -440,63 +440,43 @@ const HomeComponent = () => {
   return (
     <>
       <CardSection {...discoveryObj} renderElement={renderCard} />
-      <section className="pt-[100px] bg-gray-100">
-        <div className="container">
-          <div className="grid grid-cols-10 gap-6">
-            <div className="col-span-4">
-              <div className=" w-[479px]">
-                <h3 className="text-[42px] font-medium mb-4 leading-[52px] tracking-tighter text-black-33">
-                  Beyond Tehnology Business Transformation
-                </h3>
-                <p className="text-base font-normal leading-[21px] mb-8 mx-auto text-black-33 mr-6">
-                  SellrApp provides data & insights for superior
-                  decision-making, driving complete business transformation.
-                  SellrApp is not just a technology point solution, but a
-                  complete business transformation tool. It can help companies
-                  achieve their business goals.
-                </p>
-                <div className="flex gap-8">
-                  <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
-                    <Image
-                      src={"/google-store.png"}
-                      height={57}
-                      width={188}
-                      alt="btn"
-                    />
-                  </button>
-                  <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
-                    <Image
-                      src={"/app-store.png"}
-                      height={57}
-                      width={188}
-                      alt="btn"
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-span-6">
-              <div className="h-[448px] w-[692px]">
-                <Image
-                  className="w-full h-full"
-                  src={"/business-transformation.gif"}
-                  height={448}
-                  width={692}
-                  alt="img"
-                />
-              </div>
-            </div>
+      <InfoCard
+        title="Beyond Tehnology Business Transformation"
+        description=" SellrApp provides data & insights for superior
+              decision-making, driving complete business transformation.
+              SellrApp is not just a technology point solution, but a
+              complete business transformation tool. It can help companies
+              achieve their business goals."
+        image={{
+          src: "/business-transformation.gif",
+          height: 448,
+          width: 692,
+          alt: "img",
+        }}
+        bordershow
+        renderElement={
+          <div className="flex gap-8">
+            <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
+              <Image
+                src={"/google-store.png"}
+                height={57}
+                width={188}
+                alt="btn"
+              />
+            </button>
+            <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
+              <Image src={"/app-store.png"} height={57} width={188} alt="btn" />
+            </button>
           </div>
-        </div>
-        <div className="bg-yellow-100 h-[46px] border-b border-yellow-900"></div>
-      </section>
+        }
+      />
       <CardSection
         title="Competition comparison data"
         containerSty="border-b border-gray-400"
         desciption="Making sure you dominate the search results organically across google search products Making sure you dominate the search results organically across "
         renderElement={renderCompetition}
       />
-     <CardSection
+      <CardSection
         headingSty=""
         descriptionSty=""
         title="Challenges Q/A"
