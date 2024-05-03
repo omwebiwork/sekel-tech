@@ -3,6 +3,8 @@ import { useCallback } from "react";
 
 const Card = ({
   titleIcon,
+  cardCountNo = null,
+  cardCountNoSty = "",
   cardData,
   actionType,
   action,
@@ -13,10 +15,18 @@ const Card = ({
   cardSty = "p-10 rounded-2xl",
   headingSty = "mb-4",
   buttonSty = "flex gap-1 items-center text-base font-medium",
+  renderElement = null
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
-    <div className={`${cardSty}  h-full bg-gray-100 `}>
+    <div className={`${cardSty} h-full bg-gray-100 `}>
+      {cardCountNo && (
+        <p
+          className={`text-white text-[54px] font-normal leading-[65px] absolute right-4 top-10 ${cardCountNoSty}`}
+        >
+          {cardCountNo}
+        </p>
+      )}
       <div className={`${cardDataSty} mb-6`}>
         {titleIcon && <div>{titleIcon}</div>}
         <h2
@@ -35,15 +45,18 @@ const Card = ({
           {buttonIcon && <div>{buttonIcon}</div>}
         </button>
       </div>
-      <div className={`${cardImgSty} `}>
-        <Image
-          className="mx-auto"
-          height={57}
-          width={300}
-          alt="img"
-          {...cardData.image}
-        />
-      </div>
+      {cardData?.image.src && (
+        <div className={`${cardImgSty} `}>
+          <Image
+            className="mx-auto"
+            height={57}
+            width={300}
+            alt="img"
+            {...cardData.image}
+          />
+        </div>
+      )}
+      {renderElement && renderElement}
     </div>
   );
 };
