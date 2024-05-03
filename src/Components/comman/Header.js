@@ -75,8 +75,7 @@ const Header = () => {
     },
     [asPath]
   );
-
-  console.log("router", asPath);
+  
   return (
     <header className="bg-blue-900">
       <div class="container w-full">

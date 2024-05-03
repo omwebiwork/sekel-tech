@@ -8,7 +8,7 @@ import GetStartForm from "@/Components/comman/Form/StartForm";
 const inter = Inter({ subsets: ["latin"] });
 let bannerObj = {
   title: "Unlock Local Market Dominance with Geo-Fenced Marketing Magic",
-  desciption: `Effortlessly Convert Searches into Local Sales`,
+  description: `Effortlessly Convert Searches into Local Sales`,
 };
 
 export default function Home() {

@@ -41,14 +41,14 @@ const HomeComponent = () => {
 
   let discoveryObj = {
     title: "Data, Discovery and Demand Story",
-    desciption:
+    description:
       " Making sure you dominate the search results organically across google search products",
   };
   let chanllenges = [
     {
       title:
         "We generate plenty of leads monthly, but lack visibility on their outcomes. How do we gain insights and optimise our efforts?",
-      desciption: `To gain insights and optimize your efforts with generated leads,
+      description: `To gain insights and optimize your efforts with generated leads,
     you need a solution that offers robust analytics and tracking
     capabilities. This will allow you to monitor the outcomes of your
     leads and adjust your strategies accordingly.`,
@@ -67,17 +67,17 @@ const HomeComponent = () => {
     {
       title:
         "Our traditional method of demand generation through leads is not working out due to high TAT and Junk Data",
-      desciption: `To address the challenges with high turnaround time (TAT) and junk data in your traditional demand generation methods, you need a solution that can streamline lead generation and data quality.`,
+      description: `To address the challenges with high turnaround time (TAT) and junk data in your traditional demand generation methods, you need a solution that can streamline lead generation and data quality.`,
     },
     {
       title:
         " While the volume targets are getting achieved, we are facing issues with lead quality & CPl",
-      desciption: `To address the issues with lead quality and Cost Per Lead (CPL) while achieving volume targets, you need a solution that can improve lead targeting and qualification processes. By refining your targeting criteria and qualifying leads more effectively, you can improve lead quality and reduce CPL, ultimately enhancing the overall performance of your demand generation efforts.`,
+      description: `To address the issues with lead quality and Cost Per Lead (CPL) while achieving volume targets, you need a solution that can improve lead targeting and qualification processes. By refining your targeting criteria and qualifying leads more effectively, you can improve lead quality and reduce CPL, ultimately enhancing the overall performance of your demand generation efforts.`,
     },
     {
       title:
         "The challenge is acquiring and maintaining accurate location data for effective marketing and lead generation. Seamless integration with marketing systems is crucial for targeted success.",
-      desciption: `To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.`,
+      description: `To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.`,
     },
   ];
 
@@ -138,7 +138,6 @@ const HomeComponent = () => {
     },
   ];
 
- 
   const handleLearnMore = useCallback((index) => {
     if (learnMore[index]) {
       setLearnMore({ [index]: false });
@@ -170,7 +169,7 @@ const HomeComponent = () => {
     );
   };
 
-  let chanllengesCard = ({ title, desciption, gridColSize, list }) => {
+  let chanllengesCard = ({ title, description, gridColSize, list }) => {
     return (
       <div className={`${gridColSize}`}>
         <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
@@ -186,7 +185,7 @@ const HomeComponent = () => {
           </div>
           <div>
             <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
-              {desciption}
+              {description}
             </p>
             <ul className="list-['-_'] pl-4 text-base font-normal text-black-33 mb-4">
               {list?.map((listItem, listIndex) => {
@@ -533,14 +532,14 @@ const HomeComponent = () => {
       <CardSection
         title="Competition comparison data"
         containerSty="border-b border-gray-400"
-        desciption="Making sure you dominate the search results organically across google search products Making sure you dominate the search results organically across "
+        description="Making sure you dominate the search results organically across google search products Making sure you dominate the search results organically across "
         renderElement={renderCompetition}
       />
       <CardSection
         headingSty=""
         descriptionSty=""
         title="Challenges Q/A"
-        desciption=" Making sure you dominate the search results organically across
+        description=" Making sure you dominate the search results organically across
               google search products Making sure you dominate the s"
         renderElement={challengesElement}
       />

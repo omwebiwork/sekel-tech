@@ -36,7 +36,6 @@ const Dropdown = ({ text, list, image }) => {
               aria-labelledby="options-menu"
             >
               {list?.map((item, index) => {
-                console.log("chekc ", "000", item.path)
                 return (
                   <li key={index}>
                     <Link

@@ -7,10 +7,9 @@ import InfoCard from "@/Components/comman/Card/InfoCard";
 import SliderSection from "@/Components/comman/Card/SliderSection";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
-const sellerApp = () => {
+const SellrApp = () => {
   let cardData = [
     {
       title: "Instant Order Notifications",
@@ -68,7 +67,7 @@ const sellerApp = () => {
   ];
   let discoveryObj = {
     title: "Dealer Success with SellrApp: Sell More, Sell Smarter!",
-    desciption:
+    description:
       " Simplify lead management, enhance your store's visibility, and gain real-time insights into your  store performance",
   };
   let list = [
@@ -146,7 +145,7 @@ const sellerApp = () => {
     <div>
       <Banner
         title="One App, All Things Retail"
-        desciption={`From onboarding all your dealers and sales partners to automating retail operations and taking  control of your locations, products, and leads – all at your fingertips.`}
+        description={`From onboarding all your dealers and sales partners to automating retail operations and taking  control of your locations, products, and leads – all at your fingertips.`}
         image={{
           src: "/one-app-img.png",
           alt: "img",
@@ -172,72 +171,104 @@ const sellerApp = () => {
           </div>
         }
         headinWidth="max-w-[443px] mb-12"
-        desciptionSty="mr-[67px] leading-[25px] mt-8 text-yellow-900"
+        descriptionSty="mr-[67px] leading-[25px] mt-8 text-yellow-900"
       />
       {/* <CardSection
         headingSty=""
         descriptionSty=""
         sectionStyle="bg-gray-100 py-[100px]"
         title="Dominate Your Market With SellrApp"
-        desciption="From overseeing multiple locations to handling your catalog, products, leads, and real-time data  analytics – all in one powerful app"
+        description="From overseeing multiple locations to handling your catalog, products, leads, and real-time data  analytics – all in one powerful app"
         renderElement={() =><><div>hello</div></>}
       /> */}
       <section className="bg-blue-200 py-20">
         <div className="container">
           <div className=" mb-[52px] ">
             <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-black-33">
-            Dominate Your Market With SellrApp
+              Dominate Your Market With SellrApp
             </h3>
             <p className="text-base font-normal leading-[22px] max-w-[686px] text-black-33">
-            From overseeing multiple locations to handling your catalog, products, leads, and real-time data  analytics – all in one powerful app
+              From overseeing multiple locations to handling your catalog,
+              products, leads, and real-time data analytics – all in one
+              powerful app
             </p>
           </div>
           <div className="grid grid-cols-4 ">
             <div className="col-span-1">
               <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
                 <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image src={'/multi-location.png'} height={32} width={32} alt="img"/>
+                  <Image
+                    src={"/multi-location.png"}
+                    height={32}
+                    width={32}
+                    alt="img"
+                  />
                 </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">Multi-Location Management</h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">Effortlessly manage all your dealers and sales partners.</p>
-
+                <h3 className="text-xl font-medium leading-[30px] mb-8">
+                  Multi-Location Management
+                </h3>
+                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
+                  Effortlessly manage all your dealers and sales partners.
+                </p>
               </div>
-
             </div>
             <div className="col-span-1">
               <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
                 <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image src={'/catalog.png'} height={32} width={32} alt="img"/>
+                  <Image
+                    src={"/catalog.png"}
+                    height={32}
+                    width={32}
+                    alt="img"
+                  />
                 </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">Product and Catalog Management</h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">Update all products in real-time, giving brands comprehensive control.</p>
-
+                <h3 className="text-xl font-medium leading-[30px] mb-8">
+                  Product and Catalog Management
+                </h3>
+                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
+                  Update all products in real-time, giving brands comprehensive
+                  control.
+                </p>
               </div>
-
             </div>
             <div className="col-span-1">
               <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
                 <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image src={'/management.png'} height={32} width={32} alt="img"/>
+                  <Image
+                    src={"/management.png"}
+                    height={32}
+                    width={32}
+                    alt="img"
+                  />
                 </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">Lead Management</h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">Streamline lead management with a centralized platform for efficiency.</p>
-
+                <h3 className="text-xl font-medium leading-[30px] mb-8">
+                  Lead Management
+                </h3>
+                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
+                  Streamline lead management with a centralized platform for
+                  efficiency.
+                </p>
               </div>
-
             </div>
             <div className="col-span-1">
               <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
                 <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image src={'/data-analytics.png'} height={32} width={32} alt="img"/>
+                  <Image
+                    src={"/data-analytics.png"}
+                    height={32}
+                    width={32}
+                    alt="img"
+                  />
                 </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">Real-Time Data Analytics</h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">Gain instant insights, empower strategic decisions with real-time analytics</p>
-
+                <h3 className="text-xl font-medium leading-[30px] mb-8">
+                  Real-Time Data Analytics
+                </h3>
+                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
+                  Gain instant insights, empower strategic decisions with
+                  real-time analytics
+                </p>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
@@ -263,7 +294,7 @@ const sellerApp = () => {
             <div className="w-1/3">
               <ul className="pr-24">
                 <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:-right-[130px] after:w-[115px] after:z-10 after:border-b-[1px] after:border-blue-100">
-                Marketing
+                  Marketing
                   <Image
                     className=" w-16 "
                     src={"/marketing-li.svg"}
@@ -271,10 +302,9 @@ const sellerApp = () => {
                     width={64}
                     alt="img"
                   />
-
                 </li>
                 <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:-right-[130px] after:w-[115px] after:z-10 after:border-b-[1px] after:border-blue-100">
-                Sales
+                  Sales
                   <Image
                     className=" w-16 "
                     src={"/sales-li.svg"}
@@ -284,7 +314,7 @@ const sellerApp = () => {
                   />
                 </li>
                 <li className="flex items-center justify-end gap-4 text-xl font-medium text-white relative after:content[''] after:absolute after:-right-[130px] after:w-[115px] after:z-10 after:border-b-[1px] after:border-blue-100">
-                Service
+                  Service
                   <Image
                     className=" w-16 "
                     src={"/service-li.svg"}
@@ -296,21 +326,19 @@ const sellerApp = () => {
               </ul>
             </div>
             <div className="w-1/3">
-                <div className="max-w-[359px] mx-auto">
-
-              <Image
-                className="h-full w-full object-cover"
-                src={"/seller-app.png"}
-                height={500}
-                width={500}
-                alt="img"
-              />
-                </div>
+              <div className="max-w-[359px] mx-auto">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={"/seller-app.png"}
+                  height={500}
+                  width={500}
+                  alt="img"
+                />
+              </div>
             </div>
             <div className="w-1/3">
               <ul className="pl-24">
                 <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:-left-[130px] after:w-[115px] after:z-10 after:border-b-[1px] after:border-blue-100">
-               
                   <Image
                     className=" w-16 "
                     src={"/retargeting-tools.svg"}
@@ -321,7 +349,6 @@ const sellerApp = () => {
                   Retargeting Tools
                 </li>
                 <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:-left-[130px] after:w-[115px] after:z-10 after:border-b-[1px] after:border-blue-100">
-                
                   <Image
                     className=" w-16 "
                     src={"/automation-tools.svg"}
@@ -332,7 +359,6 @@ const sellerApp = () => {
                   Automation Tools
                 </li>
                 <li className="flex items-center gap-4 text-xl font-medium text-white relative after:content[''] after:absolute after:-left-[130px] after:w-[115px] after:z-10 after:border-b-[1px] after:border-blue-100">
-                
                   <Image
                     className=" w-16 "
                     src={"/analytics-tools.svg"}
@@ -359,7 +385,7 @@ const sellerApp = () => {
         sectionStyle="py-[52px] px-[42px] rounded-[24px] bg-gray-100"
         containtWidth="max-w-[490px]"
         titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-8"
-        descriptionSty='mb-8'
+        descriptionSty="mb-8"
         imageContainerSty="max-h-[535px] max-w-[673px]"
         imageContentSty="col-span-7 h-full flex items-center"
         textContainerSty="col-span-4 h-full "
@@ -388,7 +414,7 @@ const sellerApp = () => {
         title="Going Beyond - Growing Bigger"
         description="The power of lead management system at scale - all in one app"
         textContentSty="col-span-3"
-        discriptionSty = "w-full"
+        discriptionSty="w-full"
         cardContentSty="col-span-7 pl-8"
         renderElement={beyondSliderData?.map((item, index) => {
           return (
@@ -406,4 +432,4 @@ const sellerApp = () => {
   );
 };
 
-export default sellerApp;
+export default SellrApp;

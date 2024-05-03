@@ -64,7 +64,7 @@ export default function Dashboard() {
           width: 1138,
         }}
         containerStyle="flex-col mx:w-full items-center text-center pt-[56px]"
-        desciptionSty
+        descriptionSty
         headinWidth="w-[936px] mx-auto text-center mb-12"
         renderElement={
           <div>
@@ -79,7 +79,7 @@ export default function Dashboard() {
         headingSty="flex items-end mx-4 gap-[60px]"
         descriptionSty=""
         title="Key product features tab"
-        desciption="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
+        description="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
         headerSection={
           <div>
             <GetStartForm
@@ -101,12 +101,11 @@ export default function Dashboard() {
           height: 900,
           width: 900,
           alt: "img",
-         
         }}
         sectionStyle="py-[100px] bg-gray-100"
         containerSty="container"
         containtWidth="max-w-[490px]"
-        imageContainerSty=' w-full max-w-[580px] '
+        imageContainerSty=" w-full max-w-[580px] "
         textContainerSty="order-2 col-span-5"
         imageContentSty="order-1 col-span-6"
         renderElement={
@@ -136,7 +135,7 @@ export default function Dashboard() {
           </div>
         }
       />
-       <InfoCard
+      <InfoCard
         title="Seamless Integration With Your Data Systems"
         description="Elevate efficiency as our platform seamlessly blends into your existing systems, offering a streamlined and unified digital experience"
         image={{
@@ -148,11 +147,16 @@ export default function Dashboard() {
         sectionStyle="py-[52px] px-[42px] rounded-[24px]"
         containtWidth="max-w-[490px]"
         textContainerSty="col-span-5 flex items-center"
-        descriptionSty='mb-8'
-        imageContainerSty='max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden'
+        descriptionSty="mb-8"
+        imageContainerSty="max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden"
         imageContentSty="col-span-6"
         renderElement={
-          <Button data="View all integrations" clsStyle="py-3" filled action={() => {}} />
+          <Button
+            data="View all integrations"
+            clsStyle="py-3"
+            filled
+            action={() => {}}
+          />
         }
       />
       <InfoCard
@@ -163,7 +167,6 @@ export default function Dashboard() {
           height: 500,
           width: 500,
           alt: "img",
-        
         }}
         sectionStyle="py-[100px] bg-blue-900"
         containerSty="container "
@@ -171,22 +174,27 @@ export default function Dashboard() {
         titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
         descriptionSty="text-white max-w-[542px] mb-8 mr-auto"
         gridContainerSty="gap-0 grid grid-cols-11"
-        imageContainerSty=' w-full max-w-[497px] ml-0'
+        imageContainerSty=" w-full max-w-[497px] ml-0"
         textContainerSty=" col-span-6"
         imageContentSty=" col-span-5 flex items-center"
         renderElement={
           <>
             <Button filled data="Request Demo" clsStyle="py-3" />
             <div>
-            <div className='ml-auto w-full max-w-[369px] rounded-2xl overflow-hidden'>
-                <Image className="w-full h-full" src={'/ultimate-platform2.png'} height={500} width={500} alt='img'/>
+              <div className="ml-auto w-full max-w-[369px] rounded-2xl overflow-hidden">
+                <Image
+                  className="w-full h-full"
+                  src={"/ultimate-platform2.png"}
+                  height={500}
+                  width={500}
+                  alt="img"
+                />
               </div>
             </div>
-
           </>
         }
       />
-      <HyperlocalStrategyForm containerSty="container"/>
+      <HyperlocalStrategyForm containerSty="container" />
     </div>
   );
 }

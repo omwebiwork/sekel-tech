@@ -81,7 +81,7 @@ export default function HowItWorks() {
 
   let bannerObj = {
     title: "360º Retail Journey with Sekel Tech",
-    desciption: `Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI
+    description: `Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI
   `,
   };
 

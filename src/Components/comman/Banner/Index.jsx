@@ -4,13 +4,16 @@ import Image from "next/image";
 
 const Banner = ({
   title,
-  desciption,
-  desciptionSty = 'text-yellow-900 mb-0',
+  subTitle = null,
+  description,
+  descriptionSty = 'text-yellow-900 mb-0',
   renderElement = null,
   image,
   containerStyle,
   headinWidth,
-  sectionSty,
+  sectionSty='',
+  subTitleSty,
+  imgContainerSty,
 }) => {
   return (
     <div className={` ${sectionSty} bg-blue-900`}>
@@ -20,21 +23,30 @@ const Banner = ({
             <h1 className="text-[54px] font-normal leading-[75px] mb-4 tracking-tighter">
               {title}
             </h1>
-            {desciption && (
+            {subTitle && (
               <p
-                className={`text-base font-normal leading-[22px] mb-8 ${
-                  desciptionSty 
+                className={`text-[28px] font-medium leading-[32px] mb-8 tracking-tight ${
+                  subTitleSty 
                 }`}
               >
-                {desciption}
+                {subTitle}
+              </p>
+            )}
+            {description && (
+              <p
+                className={`text-base font-normal leading-[25px] mb-8 ${
+                  descriptionSty 
+                }`}
+              >
+                {description}
               </p>
             )}
             {renderElement}
           </div>
         </div>
-        <div className="">
+        <div >
           {image && (
-            <div className="">
+            <div className={`${imgContainerSty}`}>
               <Image className="w-full object-cover object-center" {...image} />
             </div>
           )}

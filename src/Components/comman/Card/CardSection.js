@@ -1,6 +1,6 @@
 const CardSection = ({
   title,
-  desciption,
+  description,
   renderElement,
   headerSection,
   headingSty = "text-center",
@@ -18,7 +18,7 @@ const CardSection = ({
             <p
               className={`text-base font-normal leading-[22px] ${descriptionSty} text-black-33`}
             >
-              {desciption}
+              {description}
             </p>
           </div>
           {headerSection}
