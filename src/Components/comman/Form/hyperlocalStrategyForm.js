@@ -4,12 +4,15 @@ const HyperlocalStrategyForm = ({
   title = "Supercharge Your Hyperlocal Strategy Today!",
   placeholder = "Enter your email",
   buttonTitle = "Get a  FREE Audit",
+  containerSty=""
 }) => {
   const handleAction = () => {
     console.log("submit");
   };
   return (
-    <div className="flex gap-8 bg-yellow-100 py-[18px] px-10 rounded-[14px]">
+    <div className=" bg-yellow-100 py-[18px] px-10 rounded-[14px]">
+      <div className={`${containerSty} flex gap-8`}>
+
       <p className="text-[28px] text-blue-600 font-medium">{title}</p>
       <div className="flex-1">
         <div className="flex gap-4 ">
@@ -24,6 +27,7 @@ const HyperlocalStrategyForm = ({
             action={handleAction}
           />
         </div>
+      </div>
       </div>
     </div>
   );

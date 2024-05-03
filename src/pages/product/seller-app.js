@@ -356,9 +356,10 @@ const sellerApp = () => {
           width: 673,
           alt: "management-system",
         }}
-        sectionStyle="py-[52px] px-[42px] rounded-[24px]"
+        sectionStyle="py-[52px] px-[42px] rounded-[24px] bg-gray-100"
         containtWidth="max-w-[490px]"
-        titleSty="mb-8"
+        titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-8"
+        descriptionSty='mb-8'
         imageContainerSty="max-h-[535px] max-w-[673px]"
         imageContentSty="col-span-7 h-full flex items-center"
         textContainerSty="col-span-4 h-full "

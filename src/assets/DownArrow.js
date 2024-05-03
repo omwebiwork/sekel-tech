@@ -1,7 +1,7 @@
 const DownArrow = (props) => {
   return (
     <svg
-      class="w-2.5 h-2.5 ml-2.5"
+      className="w-2.5 h-2.5 ml-2.5"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -10,9 +10,9 @@ const DownArrow = (props) => {
     >
       <path
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
         d="m1 1 4 4 4-4"
       />
     </svg>

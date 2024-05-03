@@ -7,27 +7,29 @@ const InfoCard = ({
   image,
   renderElement,
   bordershow = false,
-  sectionStyle = "py-[100px]",
+  sectionStyle = "py-[100px] bg-gray-100",
   containerSty = "container",
   containtWidth = "max-w-[479px]",
-  titleSty = "mb-4",
+  titleSty = "text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-4",
+  descriptionSty='mx-auto mr-6',
   imageContainerSty = "max-h-[448px] max-w-[692px]",
   textContainerSty = "col-span-5",
   imageContentSty = "col-span-6",
+  gridContainerSty='grid grid-cols-11 gap-6'
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
-    <section className={`${sectionStyle} bg-gray-100`}>
+    <section className={`${sectionStyle}`}>
       <div className={`${containerSty}`}>
-        <div className="grid grid-cols-11 gap-6">
+        <div className={` ${gridContainerSty}`}>
           <div className={`${textContainerSty}`}>
             <div className={`${containtWidth}`}>
               <h3
-                className={`text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 ${titleSty}`}
+                className={` ${titleSty}`}
               >
                 {title}
               </h3>
-              <p className="text-base font-normal leading-[25px] mb-8 mx-auto text-black-33 mr-6">
+              <p className={`text-base font-normal leading-[25px] ${descriptionSty}`}>
                 {description}
               </p>
               {renderElement}
@@ -36,7 +38,7 @@ const InfoCard = ({
           {image && (
             <div className={`${imageContentSty}`}>
               <div className={`${imageContainerSty} mx-auto`}>
-                <Image className="w-full h-full" {...image} />
+                <Image className="w-full h-full object-cover object-center" {...image} />
               </div>
             </div>
           )}

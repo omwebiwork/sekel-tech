@@ -10,11 +10,6 @@ let bannerObj = {
   title: "Unlock Local Market Dominance with Geo-Fenced Marketing Magic",
   desciption: `Effortlessly Convert Searches into Local Sales`,
 };
-let bannerObj1 = {
-  title: "360º Retail Journey with Sekel Tech",
-  desciption: `Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI
-`,
-};
 
 export default function Home() {
   return (
@@ -28,22 +23,8 @@ export default function Home() {
           width: 500,
         }}
         containerStyle="flex-col mx:w-full items-center text-center"
-  
         headinWidth="w-[936px] mx-auto text-center mb-12"
       />
-
-      {/* <Banner
-        {...bannerObj1}
-        image={{
-          src: "/retail.png",
-          alt: "img",
-          height: 400,
-          width: 400,
-        }}
-        containerStyle="container justify-between"
-        renderElement={<GetStartForm buttonTitle="Get started" />}
-        headinWidth="max-w-[479px] mb-12"
-      /> */}
       <HomeComponent />
     </div>
   );
