@@ -192,7 +192,7 @@ const HomeComponent = () => {
                 return <li key={listIndex}>{listItem.title}</li>;
               })}
             </ul>
-            <button class="flex gap-2 items-center text-base text-blue-900 font-medium ">
+            <button className="flex gap-2 items-center text-base text-blue-900 font-medium ">
               Platform
               <div className="h-6 w-6">
                 <Image
@@ -475,7 +475,7 @@ const HomeComponent = () => {
               <div className="col-span-1">
                 <div className="flex items-center justify-between">
                   <div>
-                    <button class="bg-yellow-900 h-[60px] w-[60px] min-w-[60px] border border-1 border-yellow-900 rounded-full flex items-center justify-center">
+                    <button className="bg-yellow-900 h-[60px] w-[60px] min-w-[60px] border border-1 border-yellow-900 rounded-full flex items-center justify-center">
                       <Image
                         src={"forword-arrow.svg"}
                         height={35}

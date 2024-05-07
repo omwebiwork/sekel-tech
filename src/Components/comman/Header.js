@@ -24,7 +24,7 @@ const Header = () => {
   
   return (
     <header className="bg-blue-900">
-      <div class="container w-full">
+      <div className="container w-full">
         <div className=" flex py-8">
           <div className="w-[221px]">
             <Image src={"/logo.svg"} width={221} height={34} alt="logo" />

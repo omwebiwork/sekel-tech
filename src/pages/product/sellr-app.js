@@ -114,6 +114,51 @@ const SellrApp = () => {
       },
     },
   ];
+  let managementCardData = [
+    {
+      title: "Multi-Location Management",
+      description: "Effortlessly manage all your dealers and sales partners.",
+      titleIcon: {
+        src: "/multi-location.png",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+    {
+      title: "Product and Catalog Management",
+      description:
+        "Update all products in real-time, giving brands comprehensive control.",
+      titleIcon: {
+        src: "/catalog.png",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+    {
+      title: "Lead Management",
+      description:
+        "Streamline lead management with a centralized platform for efficiency.",
+      titleIcon: {
+        src: "/management.png",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+    {
+      title: "Real-Time Data Analytics",
+      description:
+        "Gain instant insights, empower strategic decisions with real-time analytics",
+      titleIcon: {
+        src: "/data-analytics.png",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+  ];
 
   const renderCard = () => {
     return (
@@ -125,12 +170,12 @@ const SellrApp = () => {
                 <Card
                   key={index}
                   cardData={item}
-                  headingSty={"mb-8 tracking-tighter"}
+                  headingSty={"mb-8 tracking-tighter leading-[30px]"}
                   cardSty={`${
                     index === 1 ? "flex gap-10" : ""
                   } rounded-xl p-5 pt-[52px] ${
                     index === 0 || index === 3 ? "bg-yellow-100" : ""
-                  }`}
+                  }  h-full bg-gray-100`}
                   cardDataSty={`${index === 1 ? "w-1/2" : ""}`}
                 />
               </div>
@@ -173,15 +218,35 @@ const SellrApp = () => {
         headinWidth="max-w-[443px] mb-12"
         descriptionSty="mr-[67px] leading-[25px] mt-8 text-yellow-900"
       />
-      {/* <CardSection
-        headingSty=""
-        descriptionSty=""
-        sectionStyle="bg-gray-100 py-[100px]"
-        title="Dominate Your Market With SellrApp"
-        description="From overseeing multiple locations to handling your catalog, products, leads, and real-time data  analytics – all in one powerful app"
-        renderElement={() =><><div>hello</div></>}
-      /> */}
-      <section className="bg-blue-200 py-20">
+      <CardSection
+        headingSty="flex items-end mx-4 gap-[60px]"
+        title={"Dominate Your Market With SellrApp"}
+        description={`From overseeing multiple locations to handling your catalog,
+      products, leads, and real-time data analytics – all in one
+      powerful app`}
+        sectionStyle="py-[100px] bg-blue-200"
+        descriptionSty="max-w-[686px]"
+        renderElement={() => (
+          <div className="grid grid-cols-3">
+            {managementCardData?.map((item, index) => {
+              return (
+                <div className="col-span-1" key={index}>
+                  <Card
+                    titleIcon={item.titleIcon}
+                    headingSty="text-xl font-medium leading-[30px] mb-8 text-black-900"
+                    cardSty="bg-blue-200 px-5 py-8 rounded-2xl border-[1px] border-white h-full"
+                    cardData={{
+                      title: item?.title,
+                      description: item?.description,
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      />
+      {/* <section className="bg-blue-200 py-20">
         <div className="container">
           <div className=" mb-[52px] ">
             <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-black-33">
@@ -271,7 +336,7 @@ const SellrApp = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <CardSection
         {...discoveryObj}
         renderElement={renderCard}

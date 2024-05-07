@@ -1,15 +1,9 @@
 import Banner from "@/Components/comman/Banner/Index";
-import Button from "@/Components/comman/ButtonComponent/Index";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
-import ImageCard from "@/Components/comman/Card/ImageCard";
-import InfoCard from "@/Components/comman/Card/InfoCard";
-import SliderSection from "@/Components/comman/Card/SliderSection";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import DownArrow from "@/assets/DownArrow";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState, useCallback } from "react";
 
 const Discovery = () => {
@@ -148,21 +142,72 @@ const Discovery = () => {
     description: null,
   };
 
-  let card = [
+  let advantagesCardData = [
     {
       title: "Authenticity and Trust",
       description:
         "Organic discovery builds trust by presenting content naturally, without pushy ads, making it more genuine and reliable",
+      titleIcon: {
+        src: "/authenticity.svg",
+        height: 32,
+        width: 32,
+        alt: "Authenticity",
+      },
     },
     {
-      title: "Authenticity and Trust",
+      title: "Higher Engagement and Retention",
       description:
-        "Organic discovery builds trust by presenting content naturally, without pushy ads, making it more genuine and reliable",
+        "Organic traffic, with increased engagement and longer on-site time, indicates genuine interest, potentially leading to higher conversions.",
+      titleIcon: {
+        src: "/higher-engagement.svg",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
     },
     {
-      title: "Authenticity and Trust",
+      title: "Cost-Efficiency in the Long Run",
       description:
-        "Organic discovery builds trust by presenting content naturally, without pushy ads, making it more genuine and reliable",
+        "Unlike paid ads, which offer quick results but demand ongoing spending, organic content sustains user engagement over time as a cost-effective, lasting solution.",
+      titleIcon: {
+        src: "/cost-efficiency.svg",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+    {
+      title: "Building Brand Authority",
+      description:
+        "Through organic discovery, we establish ourselves as an authority in our field, with consistent, valuable content enhancing our credibility and expertise in the eyes of our audience",
+      titleIcon: {
+        src: "/building-brand.svg",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+    {
+      title: "Better SEO Rankings and Visibility",
+      description:
+        "Well-optimized organic content attains higher positions in search results, resulting in increased visibility, clicks, and ultimately, more conversions.",
+      titleIcon: {
+        src: "/seo-ranking.svg",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
+    },
+    {
+      title: "Continuous Growth",
+      description:
+        "Organic content provides value without the expense of paid promotions, making it a budget-friendly strategy for sustainable growth and long-term engagement.",
+      titleIcon: {
+        src: "/continuous-growth.svg",
+        height: 32,
+        width: 32,
+        alt: "img",
+      },
     },
   ];
   const handleKnowMore = useCallback((index) => {
@@ -223,8 +268,8 @@ const Discovery = () => {
                       className: "h-full w-full object-cover object-center",
                     },
                   }}
-                  headingSty={"mb-8 tracking-tighter"}
-                  cardSty={item.cardSty}
+                  headingSty={"mb-8 tracking-tighter leading-[30px]"}
+                  cardSty={item.cardSty + " h-full bg-gray-100"}
                   cardDataSty={item.cardDataSty}
                   cardImgSty={item.cardImgSty}
                 />
@@ -266,43 +311,36 @@ const Discovery = () => {
       <CardSection
         title="Advantages of Sekel Tech Hyperlocal Dynamic Engagement Commerce"
         description="Unlocking the Power of Organic Discovery"
-        sectionStyle="py-[100px] bg-blue-200 "
+        sectionStyle="py-[100px] bg-blue-200"
         headingSty="max-w-[803px] mx-auto text-center"
         renderElement={() => (
-          <div className="grid grid-cols-4 ">
-            {card?.map((item, index) => {
+          <div className="grid grid-cols-3 mx-10">
+            {advantagesCardData?.map((item, index) => {
               return (
                 <div className="col-span-1" key={index}>
-                  <div className="px-6 py-8 rounded-2xl border-[1px] border-white h-full">
-                    <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-5 ">
-                      <Image
-                        src={"/multi-location.png"}
-                        height={32}
-                        width={32}
-                        alt="img"
-                      />
-                    </div>
-                    <h3 className="text-xl font-medium leading-[30px] mb-8">
-                      {item.title}
-                    </h3>
-                    <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
-                      {item.description}
-                    </p>
-                  </div>
+                  <Card
+                    titleIcon={item.titleIcon}
+                    headingSty="text-xl font-medium leading-[30px] mb-8 text-black-900"
+                    cardSty="bg-blue-200 px-5 py-5 rounded-2xl border-[1px] border-white h-full"
+                    cardData={{
+                      title: item?.title,
+                      description: item?.description,
+                    }}
+                    titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-5"
+                    descriptionSty="text-base font-normal leading-[22px] text-black-33"
+                  />
                 </div>
               );
             })}
           </div>
         )}
       />
-
       <CardSection
         headingSty="max-w-[803px]"
         descriptionSty=""
         {...discoveryObj}
         renderElement={renderCard}
       />
-
       <HyperlocalStrategyForm containerSty="container" />
     </div>
   );
