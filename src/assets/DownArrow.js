@@ -1,7 +1,7 @@
 const DownArrow = (props) => {
   return (
     <svg
-      className="w-2.5 h-2.5 ml-2.5"
+      className={`w-2.5 h-2.5 ${props.ml? props.ml :'ml-2.5'}`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

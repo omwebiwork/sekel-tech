@@ -2,7 +2,6 @@ import Banner from "@/Components/comman/Banner/Index";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/ButtonComponent/Index";
 import InfoCard from "@/Components/comman/Card/InfoCard";
-import StoreCard from "@/Components/comman/Card/StoreCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import Image from "next/image";
@@ -470,7 +469,6 @@ const Demand = () => {
       />
 
       <HyperlocalStrategyForm containerSty="container" />
-      <StoreCard/>
     </>
   );
 };
