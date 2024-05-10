@@ -155,7 +155,7 @@ const HomeComponent = () => {
               <div className="col-span-1">
                 <Card
                   key={index}
-                  cardData={item}
+                  {...item}
                   actionType="Learn more"
                   action={() => handleLearnMore(index)}
                   learnMore={learnMore[index]}
@@ -537,7 +537,7 @@ const HomeComponent = () => {
       />
       <CardSection
         headingSty=""
-        descriptionSty=""
+        descriptionSty="text-base font-normal leading-[25px]"
         title="Challenges Q/A"
         description=" Making sure you dominate the search results organically across
               google search products Making sure you dominate the s"

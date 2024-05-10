@@ -11,7 +11,7 @@ const InfoCard = ({
   containerSty = "container",
   containtWidth = "max-w-[479px]",
   titleSty = "text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-4",
-  descriptionSty='mx-auto mr-6',
+  descriptionSty='mx-auto mr-6 text-base font-normal leading-[25px]',
   imageContainerSty = "max-h-[448px] max-w-[692px]",
   textContainerSty = "col-span-5",
   imageContentSty = "col-span-6",
@@ -29,7 +29,7 @@ const InfoCard = ({
               >
                 {title}
               </h3>
-              <p className={`text-base font-normal leading-[25px] ${descriptionSty}`}>
+              <p className={` ${descriptionSty}`}>
                 {description}
               </p>
               {renderElement}
@@ -37,7 +37,8 @@ const InfoCard = ({
           </div>
           {image && (
             <div className={`${imageContentSty}`}>
-              <div className={`${imageContainerSty} mx-auto`}>
+
+              <div className={`${imageContainerSty} mx-auto `}>
                 <Image className="w-full h-full object-cover object-center" {...image} />
               </div>
             </div>

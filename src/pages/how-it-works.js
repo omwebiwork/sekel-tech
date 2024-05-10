@@ -110,7 +110,7 @@ export default function HowItWorks() {
               containtWidth="max-w-[536px] mx-auto"
               containerSty=""
               titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-[26px]"
-              descriptionSty="mb-4 "
+              descriptionSty="mb-4 text-base font-normal leading-[25px]"
               gridContainerSty="grid grid-cols-12 gap-6"
               renderElement={
                 <>
@@ -146,7 +146,7 @@ export default function HowItWorks() {
         containerSty="container "
         containtWidth=""
         titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
-        descriptionSty="text-white max-w-[542px] mb-8 mr-auto"
+        descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
         // gridContainerSty="gap-6 grid grid-cols-11"
         imageContainerSty=" w-full max-w-[497px] "
         textContainerSty=" col-span-6 flex items-center"

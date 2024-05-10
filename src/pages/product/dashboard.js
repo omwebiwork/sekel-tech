@@ -147,7 +147,7 @@ export default function Dashboard() {
         sectionStyle="py-[52px] px-[42px] rounded-[24px]"
         containtWidth="max-w-[490px]"
         textContainerSty="col-span-5 flex items-center"
-        descriptionSty="mb-8"
+        descriptionSty="mb-8 text-base font-normal leading-[25px]"
         imageContainerSty="max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden"
         imageContentSty="col-span-6"
         renderElement={
@@ -172,7 +172,7 @@ export default function Dashboard() {
         containerSty="container "
         containtWidth=""
         titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
-        descriptionSty="text-white max-w-[542px] mb-8 mr-auto"
+        descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
         gridContainerSty="gap-0 grid grid-cols-11"
         imageContainerSty=" w-full max-w-[497px] ml-0"
         textContainerSty=" col-span-6"

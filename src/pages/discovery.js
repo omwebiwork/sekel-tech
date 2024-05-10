@@ -230,8 +230,7 @@ const Discovery = () => {
               >
                 <Card
                   key={index}
-                  cardData={item}
-                  cardImgSty={item.cardImgSty}
+                  {...item}
                   actionType="Know more"
                   action={() => handleKnowMore(index)}
                   learnMore={knowMore[index]}
@@ -261,17 +260,15 @@ const Discovery = () => {
               >
                 <Card
                   key={index}
-                  cardData={{
-                    ...item,
-                    image: {
-                      ...item.image,
-                      className: "h-full w-full object-cover object-center",
-                    },
+                  {
+                    ...item
+                  }
+                  image= {{
+                    ...item.image,
+                    className: "h-full w-full object-cover object-center"
                   }}
-                  headingSty={"mb-8 tracking-tighter leading-[30px]"}
                   cardSty={item.cardSty + " h-full bg-gray-100"}
-                  cardDataSty={item.cardDataSty}
-                  cardImgSty={item.cardImgSty}
+                  headingSty={"mb-8 tracking-tighter leading-[30px]"}
                 />
               </div>
             );
@@ -319,13 +316,10 @@ const Discovery = () => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
-                    titleIcon={item.titleIcon}
+                    {...item}
                     headingSty="text-xl font-medium leading-[30px] mb-8 text-black-900"
                     cardSty="bg-blue-200 px-5 py-5 rounded-2xl border-[1px] border-white h-full"
-                    cardData={{
-                      title: item?.title,
-                      description: item?.description,
-                    }}
+                   
                     titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-5"
                     descriptionSty="text-base font-normal leading-[22px] text-black-33"
                   />

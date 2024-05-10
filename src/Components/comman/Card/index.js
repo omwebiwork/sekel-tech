@@ -3,21 +3,24 @@ import { useCallback } from "react";
 
 const Card = ({
   titleIcon,
+  title,
+  description,
+  image,
   cardCountNo = null,
   cardCountNoSty = "",
-  cardData,
   actionType,
   action,
   buttonIcon,
   learnMore,
+  dataDivSty,
   cardDataSty = "mb-6",
   cardImgSty = "",
   cardSty = "p-10 rounded-2xl h-full bg-gray-100",
   headingSty = "mb-4 leading-[30px] text-[28px] font-medium text-black-33",
   buttonSty = "flex gap-1 items-center text-base font-medium",
   renderElement = null,
-  descriptionSty = 'text-base font-normal leading-[22px] text-black-33 mb-4',
-  titleIconSty = 'h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 '
+  descriptionSty = "text-base font-normal leading-[22px] text-black-33 mb-4",
+  titleIconSty = "h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ",
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
@@ -32,19 +35,20 @@ const Card = ({
       <div className={`${cardDataSty}`}>
         {titleIcon && (
           <div className={`${titleIconSty}`}>
-            <Image {...titleIcon} />
+            {titleIcon?.src && <Image {...titleIcon} />}
+            {titleIcon?.iconNumber && (
+              <p className="text-[28px] font-medium text-blue-900">
+                {titleIcon.iconNumber}
+              </p>
+            )}
           </div>
         )}
-        <h2
-          className={`${headingSty}`}
-        >
-          {cardData?.title}
-        </h2>
+        <div className={`${dataDivSty}`}>
+          <h2 className={`${headingSty}`}>{title}</h2>
 
-        <div>
-          <p className={`${descriptionSty}`}>
-            {cardData?.description}
-          </p>
+          <div>
+            <p className={`${descriptionSty}`}>{description}</p>
+          </div>
         </div>
         {actionType && (
           <button onClick={handleAction} className={`${buttonSty}`}>
@@ -53,14 +57,14 @@ const Card = ({
           </button>
         )}
       </div>
-      {cardData?.image?.src && (
+      {image?.src && (
         <div className={`${cardImgSty} `}>
           <Image
             className="mx-auto"
             height={57}
             width={300}
             alt="img"
-            {...cardData.image}
+            {...image}
           />
         </div>
       )}

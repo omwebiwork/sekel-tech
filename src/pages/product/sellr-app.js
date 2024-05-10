@@ -169,7 +169,7 @@ const SellrApp = () => {
               <div className={`${index === 1 ? "col-span-2" : "col-span-1"}`}>
                 <Card
                   key={index}
-                  cardData={item}
+                  {...item}
                   headingSty={"mb-8 tracking-tighter leading-[30px]"}
                   cardSty={`${
                     index === 1 ? "flex gap-10" : ""
@@ -232,13 +232,9 @@ const SellrApp = () => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
-                    titleIcon={item.titleIcon}
+                    {...item}
                     headingSty="text-xl font-medium leading-[30px] mb-8 text-black-900"
                     cardSty="bg-blue-200 px-5 py-8 rounded-2xl border-[1px] border-white h-full"
-                    cardData={{
-                      title: item?.title,
-                      description: item?.description,
-                    }}
                   />
                 </div>
               );
@@ -246,97 +242,6 @@ const SellrApp = () => {
           </div>
         )}
       />
-      {/* <section className="bg-blue-200 py-20">
-        <div className="container">
-          <div className=" mb-[52px] ">
-            <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-black-33">
-              Dominate Your Market With SellrApp
-            </h3>
-            <p className="text-base font-normal leading-[22px] max-w-[686px] text-black-33">
-              From overseeing multiple locations to handling your catalog,
-              products, leads, and real-time data analytics – all in one
-              powerful app
-            </p>
-          </div>
-          <div className="grid grid-cols-4 ">
-            <div className="col-span-1">
-              <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
-                <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image
-                    src={"/multi-location.png"}
-                    height={32}
-                    width={32}
-                    alt="img"
-                  />
-                </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">
-                  Multi-Location Management
-                </h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
-                  Effortlessly manage all your dealers and sales partners.
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1">
-              <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
-                <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image
-                    src={"/catalog.png"}
-                    height={32}
-                    width={32}
-                    alt="img"
-                  />
-                </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">
-                  Product and Catalog Management
-                </h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
-                  Update all products in real-time, giving brands comprehensive
-                  control.
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1">
-              <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
-                <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image
-                    src={"/management.png"}
-                    height={32}
-                    width={32}
-                    alt="img"
-                  />
-                </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">
-                  Lead Management
-                </h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
-                  Streamline lead management with a centralized platform for
-                  efficiency.
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1">
-              <div className="px-5 py-8 rounded-2xl border-[1px] border-white h-full">
-                <div className="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ">
-                  <Image
-                    src={"/data-analytics.png"}
-                    height={32}
-                    width={32}
-                    alt="img"
-                  />
-                </div>
-                <h3 className="text-xl font-medium leading-[30px] mb-8">
-                  Real-Time Data Analytics
-                </h3>
-                <p className="text-base text-black-33 font-normal leading-[25px] mb-8">
-                  Gain instant insights, empower strategic decisions with
-                  real-time analytics
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <CardSection
         {...discoveryObj}
         renderElement={renderCard}
@@ -450,7 +355,7 @@ const SellrApp = () => {
         sectionStyle="py-[52px] px-[42px] rounded-[24px] bg-gray-100"
         containtWidth="max-w-[490px]"
         titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-8"
-        descriptionSty="mb-8"
+        descriptionSty="mb-8 text-base font-normal leading-[25px]"
         imageContainerSty="max-h-[535px] max-w-[673px]"
         imageContentSty="col-span-7 h-full flex items-center"
         textContainerSty="col-span-4 h-full "

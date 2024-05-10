@@ -253,8 +253,7 @@ const Data = () => {
               >
                 <Card
                   key={index}
-                  cardData={item}
-                  cardImgSty={item.cardImgSty}
+                  {...item}
                   actionType="Know more"
                   action={() => handleKnowMore(index)}
                   learnMore={knowMore[index]}
@@ -284,18 +283,16 @@ const Data = () => {
               >
                 <Card
                   key={index}
-                  cardData={{
-                    ...item,
-                    image: {
-                      ...item.image,
-                      className: "h-full w-full object-cover object-center",
-                    },
+                  {...item}
+                  image={{
+                    ...item.image,
+                    className: "h-full w-full object-cover object-center",
                   }}
-                  headingSty={"mb-8 tracking-tighter leading-[30px] text-[28px] font-medium text-black-33"}
-                  cardCountNo={index < 9 ? "0" + (index + 1) : index + 1}
                   cardSty={item.cardSty + " h-full bg-gray-100"}
-                  cardDataSty={item.cardDataSty}
-                  cardImgSty={item.cardImgSty}
+                  headingSty={
+                    "mb-8 tracking-tighter leading-[30px] text-[28px] font-medium text-black-33"
+                  }
+                  cardCountNo={index < 9 ? "0" + (index + 1) : index + 1}
                 />
               </div>
             );
@@ -441,10 +438,8 @@ const Data = () => {
                     titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-4"
                     headingSty="text-[28px] font-medium leading-[30px] mb-4 text-black-900"
                     cardSty="bg-blue-200 px-6 py-6 rounded-2xl border-[1px] border-white h-full"
-                    cardData={{
-                      title: item?.title,
-                      description: item?.description,
-                    }}
+                    title={item?.title}
+                    description={item?.description}
                     descriptionSty="text-base font-normal leading-[22px] text-black-33"
                   />
                 </div>
@@ -466,7 +461,7 @@ const Data = () => {
         description="Digital-to-physical customer journey mapping is essential for businesses aiming to elevate the customer experience. Sekel’s CDP delivers the crucial insights and tools that brands require to enhance interactions across all channels."
         sectionStyle="bg-blue-900 pt-[100px]"
         titleSty="text-[28px] font-medium leading-[39px] tracking-tighter text-white mb-8"
-        descriptionSty="text-yellow-900"
+        descriptionSty="text-yellow-900 text-base font-normal leading-[25px]"
         // containerSty = 'container px-[100px]'
         image={{
           src: "/journey.png",

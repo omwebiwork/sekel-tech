@@ -1,4 +1,11 @@
+import Banner from "@/Components/comman/Banner/Index";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
+import Button from "@/Components/comman/ButtonComponent/Index";
 import InfoCard from "@/Components/comman/Card/InfoCard";
+import StoreCard from "@/Components/comman/Card/StoreCard";
+import GetStartForm from "@/Components/comman/Form/StartForm";
+import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
+import Image from "next/image";
 
 const { default: Card } = require("@/Components/comman/Card");
 const {
@@ -6,6 +13,13 @@ const {
 } = require("@/Components/comman/Card/CardSection");
 
 const Demand = () => {
+  let bannerObj = {
+    title: "Demand Generation",
+    description:
+      "Unlock demand like never before with Sekel Tech's Hyperlocal Dynamic Engagement Commerce platform. Unleash the potential of privacy sandbox retargeting, transforming unknown leads into valuable connections. Join us in revolutionising the way you engage with your audience!",
+    subTitle: `Empowering Demand in a Hyperlocal World`,
+  };
+
   let demandGenerationFeature = {
     title: "Demand Generation Feature",
     description: null,
@@ -138,7 +152,7 @@ const Demand = () => {
         width: 32,
         alt: "img",
       },
-      descriptionSty :"mb-0"
+      descriptionSty: "mb-0",
     },
     {
       title: "Reduced CAC",
@@ -150,7 +164,7 @@ const Demand = () => {
         width: 32,
         alt: "img",
       },
-      descriptionSty :"mb-0"
+      descriptionSty: "mb-0",
     },
     {
       title: "Permission Marketing",
@@ -162,7 +176,7 @@ const Demand = () => {
         width: 32,
         alt: "img",
       },
-      descriptionSty :"mb-0"
+      descriptionSty: "mb-0",
     },
     {
       title: "Direct engagement",
@@ -174,7 +188,37 @@ const Demand = () => {
         width: 32,
         alt: "img",
       },
-      descriptionSty :"mb-0"
+      descriptionSty: "mb-0",
+    },
+  ];
+  let mediaPlanningData = [
+    {
+      title: "Define your goals",
+      description:
+        "What do you want to achieve with your media campaign? Do you want to increase foot traffic to your stores? Generate more call leads? Drive online sales? Once you know your goals, you can start to develop a strategy to achieve them.",
+      titleIcon: { iconNumber: 1 },
+      descriptionSty: "mb-0",
+    },
+    {
+      title: "Use compelling content",
+      description:
+        "Make ads that match your audience's interests, grab their attention with great visuals, and write clear, short messages.",
+      titleIcon: { iconNumber: 2 },
+      descriptionSty: "mb-0",
+    },
+    {
+      title: "Target audience",
+      description:
+        "Sekel Tech's Hyperlocal Dynamic Engagement Commerce lets you show ads to people who visited your site or showed interest. It's a smart way to connect with potential customers who already know your brand and are keen on what you offer.",
+      titleIcon: { iconNumber: 3 },
+      descriptionSty: "mb-0",
+    },
+    {
+      title: "Test & Optimise",
+      description:
+        "Once you have launched your campaigns, it is important to monitor their performance and make adjustments as needed. Use A/B testing to test different ad copy, images, and targeting strategies.",
+      titleIcon: { iconNumber: 4 },
+      descriptionSty: "mb-0",
     },
   ];
 
@@ -184,10 +228,10 @@ const Demand = () => {
       description:
         "Sekel Tech collects data on customer interactions across websites, apps, stores, and social media, providing more accurate and relevant insights than just relying on keywords.",
       //   buttonText: "Explore Discovery",
-      imageContentSty:
-        "order-1 col-span-6 h-full flex items-center bg-gray-100 ",
-      textContainerSty: "order-2 col-span-6 h-full flex items-center",
-      imageContainerSty: "max-h-[480px] w-full max-w-[624px]",
+      imageContentSty: "order-1 col-span-6 h-full flex items-center ",
+      textContainerSty: "order-2 col-span-5 h-full flex items-center",
+      imageContainerSty:
+        "max-h-[480px] w-full max-w-[624px] pl-[15px] pt-[55px]  bg-blue-200 rounded-[16px] overflow-hidden",
       image: {
         src: "/DemandGTFeatureImgs/accurate-contextual .png",
         height: 536,
@@ -217,7 +261,8 @@ const Demand = () => {
         "Gain insights into customer needs and preferences to deliver better-targeted ads.",
       imageContentSty: "order-1 col-span-6 h-full flex items-center",
       textContainerSty: "order-2 col-span-6 h-full flex items-center",
-      imageContainerSty: "max-h-[361px] w-full max-w-[638px]",
+      imageContainerSty:
+        "max-h-[361px] w-full max-w-[638px] pl-[12px]  bg-blue-200 rounded-[12px] overflow-hidden",
       image: {
         src: "/retail-demand.png",
         height: 536,
@@ -240,18 +285,12 @@ const Demand = () => {
               >
                 <Card
                   key={index}
-                  cardData={{
-                    ...item,
-                    image: {
-                      ...item.image,
-                      className: "h-full w-full object-cover object-center",
-                    },
+                  {...item}
+                  image={{
+                    ...item.image,
+                    className: "h-full w-full object-cover object-center",
                   }}
-                  headingSty={item?.headingSty}
                   cardSty={item.cardSty + " h-full"}
-                  cardDataSty={item.cardDataSty}
-                  cardImgSty={item.cardImgSty}
-                  descriptionSty={item.descriptionSty}
                 />
               </div>
             );
@@ -263,6 +302,22 @@ const Demand = () => {
 
   return (
     <>
+      <Banner
+        {...bannerObj}
+        image={{
+          src: "/demand-generation.png",
+          alt: "img",
+          height: 418,
+          width: 650,
+        }}
+        sectionSty="pb-[100px] pt-20"
+        containerStyle="container justify-between"
+        descriptionSty="mr-16"
+        imgContainerSty="max-w-[650px] max-h-[418px] w-full"
+        renderElement={<GetStartForm buttonTitle="Get started" />}
+        headinWidth="max-w-[500px] w-full mb-12"
+      />
+      <Breadcrumb />
       <CardSection
         {...demandGenerationFeature}
         renderElement={renderDemandGenerationCard}
@@ -279,15 +334,10 @@ const Demand = () => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
-                    titleIcon={item.titleIcon}
+                    {...item}
                     headingSty="text-[28px] font-medium leading-[30px] mb-8 text-black-900"
                     cardSty="bg-blue-200 px-5 py-5 rounded-2xl border-[1px] border-white h-full"
-                    cardData={{
-                      title: item?.title,
-                      description: item?.description,
-                    }}
-                    descriptionSty={item.descriptionSty}
-                    cardDataSty = ''
+                    cardDataSty=""
                   />
                 </div>
               );
@@ -295,7 +345,42 @@ const Demand = () => {
           </div>
         )}
       />
-
+      <InfoCard
+        title="Master Local Advertising"
+        description="Sekel Tech’s Demand Generation Platform"
+        sectionStyle="py-[100px] bg-blue-900"
+        containerSty="container "
+        containtWidth=""
+        titleSty="text-white text-[42px] font-medium mb-2 leading-[60px] tracking-tighter"
+        descriptionSty="text-white text-[28px] font-medium  mb-8  "
+        gridContainerSty="gap-0 grid grid-cols-11"
+        imageContainerSty=" w-full max-w-[497px] ml-0"
+        textContainerSty=" col-span-11 "
+        imageContentSty=" col-span-0 "
+        renderElement={
+          <>
+            <div>
+              <div className="mx-auto w-full max-w-[930px] rounded-2xl overflow-hidden mb-8">
+                <Image
+                  className="w-full h-full"
+                  src={"/advertising.png"}
+                  height={500}
+                  width={500}
+                  alt="img"
+                />
+              </div>
+            </div>
+            <div className="max-w-[455px]">
+              <p className="text-white text-base font-normal mb-5">
+                Revolutionize your local discovery strategy with Sekel’s Demand
+                Generation Platform, turbocharging your brand’s presence and
+                customer connections
+              </p>
+              <Button filled data="Get Started" clsStyle="py-3" />
+            </div>
+          </>
+        }
+      />
       <CardSection
         title="Sekels way to Master Local Demand"
         titleSty="text-start text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33"
@@ -305,34 +390,87 @@ const Demand = () => {
               <InfoCard
                 key={index}
                 {...item}
-                sectionStyle="py-8 px-5 rounded-[16px] my-8"
-                containtWidth="max-w-[536px] mx-auto"
+                sectionStyle="py-8 rounded-[16px] my-8"
+                containtWidth="max-w-[536px] mx-auto "
                 containerSty=""
                 titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-[26px]"
-                descriptionSty="mb-4 "
+                descriptionSty="mb-8 leading-[20px] text-base font-normal"
                 gridContainerSty="grid grid-cols-12 gap-6"
-                // renderElement={
-                //   <>
-                //     <ul className="list-disc pl-6 mb-[26px]">
-                //       {item?.list?.map((item, index) => {
-                //         return (
-                //           <li
-                //             key={index}
-                //             className="text-base font-normal text-black-33 leading-[25px]"
-                //           >
-                //             {item.title}
-                //           </li>
-                //         );
-                //       })}
-                //     </ul>
-                //     {/* <Button filled data={item?.buttonText} clsStyle="py-3" /> */}
-                //   </>
-                // }
+                renderElement={
+                  <>
+                    <div
+                      className={`${
+                        index === 1 ? "ml-auto rotate-[135deg]" : "rotate-45"
+                      } h-[66px] w-[66px]  rounded-full bg-yellow-900 flex items-center justify-center mb-8`}
+                    >
+                      <Image
+                        src={"/forword-arrow.svg"}
+                        height={32}
+                        width={32}
+                        alt="img"
+                      />
+                    </div>
+                    {/* <Button filled data={item?.buttonText} clsStyle="py-3" /> */}
+                  </>
+                }
               />
             );
           })
         }
       />
+      <HyperlocalStrategyForm
+        showForm={false}
+        title="All of the above flows into generating a suggestive media"
+        containerSty="container justify-center"
+      />
+      {/* change it later */}
+
+      <CardSection
+        title="Media Planning"
+        description="Strategic Media Planning with Sekel Tech’s Demand Generation Platform for Leading Brands"
+        sectionStyle="py-[100px] bg-blue-900 "
+        titleSty="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-white"
+        descriptionSty="w-[456px] mx-auto text-white"
+        renderElement={() => (
+          <div className="grid grid-cols-4 gap-20">
+            <div className="col-span-2">
+              {mediaPlanningData?.map((item, index) => {
+                return (
+                 
+                    <Card
+                      {...item}
+                      headingSty="text-[28px] font-medium leading-[30px] mb-[26px] mt-4 text-white"
+                      cardSty="rounded-2xl mb-8 text-white "
+                      dataDivSty="w-[calc(100%_-_90px)]"
+                      cardDataSty='flex gap-8'
+                    />
+                  
+                );
+              })}
+            </div>
+            <div className="col-span-2 h-full  flex flex-col justify-center">
+              <div class="max-w-[599px] max-h-[489px] w-full">
+                <Image
+                  src={"/meeting-data.png"}
+                  height={489}
+                  width={599}
+                  alt="img"
+                />
+              </div>
+              <div className="max-w-[438px] ml-auto mt-8 p-4 rounded-[8px] bg-white bg-opacity-10 border-[1px] border-white">
+                <p className="text-base text-yellow-900 font-normal">
+                  By following these tips, you can create effective media
+                  campaigns using Sekel Tech Demand Generation Platform that
+                  will help you achieve your marketing goals.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      />
+
+      <HyperlocalStrategyForm containerSty="container" />
+      <StoreCard/>
     </>
   );
 };
