@@ -356,7 +356,7 @@ const SellrApp = () => {
         containtWidth="max-w-[490px]"
         titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-8"
         descriptionSty="mb-8 text-base font-normal leading-[25px]"
-        imageContainerSty="max-h-[535px] max-w-[673px]"
+        imageContainerSty="max-h-[535px] max-w-[673px] mx-auto"
         imageContentSty="col-span-7 h-full flex items-center"
         textContainerSty="col-span-4 h-full "
         renderElement={

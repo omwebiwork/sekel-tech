@@ -5,17 +5,23 @@ const InfoCard = ({
   title,
   description,
   image,
+  leadText,
+  subTitle,
+  subheadTitle,
   renderElement,
   bordershow = false,
   sectionStyle = "py-[100px] bg-gray-100",
   containerSty = "container",
   containtWidth = "max-w-[479px]",
   titleSty = "text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-4",
-  descriptionSty='mx-auto mr-6 text-base font-normal leading-[25px]',
-  imageContainerSty = "max-h-[448px] max-w-[692px]",
+  descriptionSty = "mx-auto mr-6 text-base font-normal leading-[25px]",
+  imageContainerSty = "max-h-[448px] max-w-[692px] mx-auto",
   textContainerSty = "col-span-5",
   imageContentSty = "col-span-6",
-  gridContainerSty='grid grid-cols-11 gap-6'
+  gridContainerSty = "grid grid-cols-11 gap-6",
+  subTitleSty = "hidden",
+  subheadTitleSty = "hidden",
+  leadTextSty = "hidden"
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
@@ -24,22 +30,21 @@ const InfoCard = ({
         <div className={` ${gridContainerSty}`}>
           <div className={`${textContainerSty}`}>
             <div className={`${containtWidth}`}>
-              <h3
-                className={` ${titleSty}`}
-              >
-                {title}
-              </h3>
-              <p className={` ${descriptionSty}`}>
-                {description}
-              </p>
+              <h5 className={` ${subTitleSty}`}> {subTitle}</h5>
+              <h3 className={` ${titleSty}`}>{title}</h3>
+              <h4 className={` ${subheadTitleSty}`}>{subheadTitle}</h4>
+              <p className={` ${descriptionSty}`}>{description}</p>
+              <p className={` ${leadTextSty}`}>{leadText}</p>
               {renderElement}
             </div>
           </div>
           {image && (
             <div className={`${imageContentSty}`}>
-
-              <div className={`${imageContainerSty} mx-auto `}>
-                <Image className="w-full h-full object-cover object-center" {...image} />
+              <div className={`${imageContainerSty} `}>
+                <Image
+                  className="w-full h-full object-cover object-center"
+                  {...image}
+                />
               </div>
             </div>
           )}

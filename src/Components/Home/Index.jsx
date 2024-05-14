@@ -514,7 +514,7 @@ const HomeComponent = () => {
         }}
         bordershow
         renderElement={
-          <div className="flex gap-8">
+          <div className="flex gap-8 pt-6">
             <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
               <Image
                 src={"/google-store.png"}

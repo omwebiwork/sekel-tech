@@ -24,7 +24,7 @@ export default function HowItWorks() {
       buttonText: "Explore Discovery",
       imageContentSty: "order-1 col-span-6 h-full flex items-center",
       textContainerSty: "order-2 col-span-6 h-full flex items-center",
-      imageContainerSty: "max-h-[480px] w-full max-w-[624px]",
+      imageContainerSty: "max-h-[480px] w-full max-w-[624px] mx-auto",
       image: {
         src: "/hyperlocal-discovery.png",
         height: 536,
@@ -47,7 +47,7 @@ export default function HowItWorks() {
       buttonText: "Explore CDP",
       imageContentSty: "col-span-6 h-full flex items-center",
       textContainerSty: "col-span-6 h-full  flex items-center ",
-      imageContainerSty: "max-h-[414px] w-full max-w-[540px]",
+      imageContainerSty: "max-h-[414px] w-full max-w-[540px] mx-auto",
       image: {
         src: "/Product.png",
         height: 536,
@@ -69,7 +69,7 @@ export default function HowItWorks() {
       buttonText: "Get Started",
       imageContentSty: "order-1 col-span-6 h-full flex items-center",
       textContainerSty: "order-2 col-span-6 h-full flex items-center",
-      imageContainerSty: "max-h-[361px] w-full max-w-[638px]",
+      imageContainerSty: "max-h-[361px] w-full max-w-[638px] mx-auto",
       image: {
         src: "/retail-demand.png",
         height: 536,
@@ -148,7 +148,7 @@ export default function HowItWorks() {
         titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
         descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
         // gridContainerSty="gap-6 grid grid-cols-11"
-        imageContainerSty=" w-full max-w-[497px] "
+        imageContainerSty=" w-full max-w-[497px] mx-auto"
         textContainerSty=" col-span-6 flex items-center"
         imageContentSty=" col-span-5 flex items-center"
         renderElement={

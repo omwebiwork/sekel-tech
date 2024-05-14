@@ -105,7 +105,7 @@ export default function Dashboard() {
         sectionStyle="py-[100px] bg-gray-100"
         containerSty="container"
         containtWidth="max-w-[490px]"
-        imageContainerSty=" w-full max-w-[580px] "
+        imageContainerSty=" w-full max-w-[580px] mx-auto"
         textContainerSty="order-2 col-span-5"
         imageContentSty="order-1 col-span-6"
         renderElement={
@@ -148,7 +148,7 @@ export default function Dashboard() {
         containtWidth="max-w-[490px]"
         textContainerSty="col-span-5 flex items-center"
         descriptionSty="mb-8 text-base font-normal leading-[25px]"
-        imageContainerSty="max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden"
+        imageContainerSty="max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden mx-auto"
         imageContentSty="col-span-6"
         renderElement={
           <Button
@@ -174,7 +174,7 @@ export default function Dashboard() {
         titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
         descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
         gridContainerSty="gap-0 grid grid-cols-11"
-        imageContainerSty=" w-full max-w-[497px] ml-0"
+        imageContainerSty=" w-full max-w-[497px] ml-0 mx-auto"
         textContainerSty=" col-span-6"
         imageContentSty=" col-span-5 flex items-center"
         renderElement={

@@ -230,7 +230,7 @@ const Demand = () => {
       imageContentSty: "order-1 col-span-6 h-full flex items-center ",
       textContainerSty: "order-2 col-span-5 h-full flex items-center",
       imageContainerSty:
-        "max-h-[480px] w-full max-w-[624px] pl-[15px] pt-[55px]  bg-blue-200 rounded-[16px] overflow-hidden",
+        "max-h-[480px] w-full max-w-[624px] pl-[15px] pt-[55px]  bg-blue-200 rounded-[16px] overflow-hidden mx-auto",
       image: {
         src: "/DemandGTFeatureImgs/accurate-contextual .png",
         height: 536,
@@ -246,7 +246,7 @@ const Demand = () => {
 
       imageContentSty: "col-span-6 h-full flex items-center",
       textContainerSty: "col-span-6 h-full  flex items-center ",
-      imageContainerSty: "max-h-[414px] w-full max-w-[540px]",
+      imageContainerSty: "max-h-[414px] w-full max-w-[540px] mx-auto",
       image: {
         src: "/DemandGTFeatureImgs/enhanced-customer.png",
         height: 536,
@@ -261,7 +261,7 @@ const Demand = () => {
       imageContentSty: "order-1 col-span-6 h-full flex items-center",
       textContainerSty: "order-2 col-span-6 h-full flex items-center",
       imageContainerSty:
-        "max-h-[361px] w-full max-w-[638px] pl-[12px]  bg-blue-200 rounded-[12px] overflow-hidden",
+        "max-h-[361px] w-full max-w-[638px] pl-[12px]  bg-blue-200 rounded-[12px] overflow-hidden mx-auto",
       image: {
         src: "/retail-demand.png",
         height: 536,
@@ -316,7 +316,13 @@ const Demand = () => {
         renderElement={<GetStartForm buttonTitle="Get started" />}
         headinWidth="max-w-[500px] w-full mb-12"
       />
-      <Breadcrumb />
+      <Breadcrumb
+        breadcrumbList={[
+          { link: "/", label: "Home" },
+          { link: "/how-it-works", label: "How it works" },
+          { link: "/demand", label: "Demand" },
+        ]}
+      />
       <CardSection
         {...demandGenerationFeature}
         renderElement={renderDemandGenerationCard}
@@ -353,7 +359,7 @@ const Demand = () => {
         titleSty="text-white text-[42px] font-medium mb-2 leading-[60px] tracking-tighter"
         descriptionSty="text-white text-[28px] font-medium  mb-8  "
         gridContainerSty="gap-0 grid grid-cols-11"
-        imageContainerSty=" w-full max-w-[497px] ml-0"
+        imageContainerSty=" w-full max-w-[497px] ml-0 mx-auto"
         textContainerSty=" col-span-11 "
         imageContentSty=" col-span-0 "
         renderElement={
@@ -382,14 +388,15 @@ const Demand = () => {
       />
       <CardSection
         title="Sekels way to Master Local Demand"
-        titleSty="text-start text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33"
+        sectionStyle="pt-[100px] pb-[50px]"
+        titleSty="text-start text-[42px] font-medium mb-[52px] leading-[52px] tracking-tighter text-black-33"
         renderElement={() =>
           data?.map((item, index) => {
             return (
               <InfoCard
                 key={index}
                 {...item}
-                sectionStyle="py-8 rounded-[16px] my-8"
+                sectionStyle="rounded-[16px] mb-[20px]"
                 containtWidth="max-w-[536px] mx-auto "
                 containerSty=""
                 titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-[26px]"
@@ -431,24 +438,22 @@ const Demand = () => {
         titleSty="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-white"
         descriptionSty="w-[456px] mx-auto text-white"
         renderElement={() => (
-          <div className="grid grid-cols-4 gap-20">
-            <div className="col-span-2">
+          <div className="flex items-center">
+            <div className="w-[42%]">
               {mediaPlanningData?.map((item, index) => {
                 return (
-                 
-                    <Card
-                      {...item}
-                      headingSty="text-[28px] font-medium leading-[30px] mb-[26px] mt-4 text-white"
-                      cardSty="rounded-2xl mb-8 text-white "
-                      dataDivSty="w-[calc(100%_-_90px)]"
-                      cardDataSty='flex gap-8'
-                    />
-                  
+                  <Card
+                    {...item}
+                    headingSty="text-[28px] font-medium leading-[30px] mb-[26px] mt-4 text-white"
+                    cardSty="rounded-2xl mb-8 text-white "
+                    dataDivSty="w-[calc(100%_-_90px)]"
+                    cardDataSty="flex gap-8"
+                  />
                 );
               })}
             </div>
-            <div className="col-span-2 h-full  flex flex-col justify-center">
-              <div class="max-w-[599px] max-h-[489px] w-full">
+            <div className="w-[55%] pl-[40px] h-full flex flex-col justify-end">
+              <div class="max-w-[599px] max-h-[489px] w-full ml-auto">
                 <Image
                   src={"/meeting-data.png"}
                   height={489}

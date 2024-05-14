@@ -5,7 +5,10 @@ const HyperlocalStrategyForm = ({
   placeholder = "Enter your email",
   buttonTitle = "Get a  FREE Audit",
   containerSty = "",
+  newsLetter = "",
+  newsLetterSty = "hidden",
   showForm = true,
+  newsTitle="text-blue-600"
 }) => {
   const handleAction = () => {
     console.log("submit");
@@ -13,7 +16,7 @@ const HyperlocalStrategyForm = ({
   return (
     <div className=" bg-yellow-100 py-[18px] px-10 rounded-[14px]">
       <div className={`${containerSty} flex gap-8`}>
-        <p className="text-[28px] text-blue-600 font-medium">{title}</p>
+        <p className= {`${newsTitle} text-[28px] font-medium`}>{title}</p>
         {showForm && (
           <div className="flex-1">
             <div className="flex gap-4 ">
@@ -30,6 +33,9 @@ const HyperlocalStrategyForm = ({
             </div>
           </div>
         )}
+        <div className="max-w-[65%] ml-auto">
+          <h3 className={`${newsLetterSty}`}>{newsLetter}</h3>
+        </div>
       </div>
     </div>
   );

@@ -21,6 +21,7 @@ const Card = ({
   renderElement = null,
   descriptionSty = "text-base font-normal leading-[22px] text-black-33 mb-4",
   titleIconSty = "h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ",
+  iconSty = "",
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
@@ -35,7 +36,9 @@ const Card = ({
       <div className={`${cardDataSty}`}>
         {titleIcon && (
           <div className={`${titleIconSty}`}>
-            {titleIcon?.src && <Image {...titleIcon} />}
+            {titleIcon?.src && (
+              <Image {...titleIcon} className={`${iconSty}`} />
+            )}
             {titleIcon?.iconNumber && (
               <p className="text-[28px] font-medium text-blue-900">
                 {titleIcon.iconNumber}
@@ -45,7 +48,6 @@ const Card = ({
         )}
         <div className={`${dataDivSty}`}>
           <h2 className={`${headingSty}`}>{title}</h2>
-
           <div>
             <p className={`${descriptionSty}`}>{description}</p>
           </div>
