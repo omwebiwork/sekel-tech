@@ -1,4 +1,5 @@
 import Banner from "@/Components/comman/Banner";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
@@ -17,7 +18,10 @@ export default function Dashboard() {
     return (
       <InfoCard
         title="Manage all locations in a single screen"
-        description="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
+        subheadTitle="Sekel Tech offers Dynamic Listing Management (DLM), a powerful solution that helps businesses manage and update their online listings."
+        description="DLM optimises online presence, attracts more customers, and improves marketing efforts"
+        subheadTitleSty = "mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
+        descriptionSty = "mx-auto mr-6 text-base font-normal leading-[25px] "
         image={{
           src: "/location-screen.svg",
           height: 900,
@@ -26,29 +30,8 @@ export default function Dashboard() {
         }}
         sectionStyle="py-[52px] px-[42px] rounded-[24px] bg-gray-100"
         containerSty="p-0"
-        containtWidth="max-w-[490px]"
-        renderElement={
-          <div className="">
-            <div className="flex items-center gap-x-[13px] mb-1.5">
-              <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
-              <Link
-                href={""}
-                className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
-              >
-                Location level edit
-              </Link>
-            </div>
-            <div className="flex items-center gap-x-[13px]">
-              <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
-              <Link
-                href={""}
-                className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
-              >
-                Location based Microsites
-              </Link>
-            </div>
-          </div>
-        }
+        containtWidth="max-w-[490px] h-full flex flex-col justify-center"
+        
       />
     );
   };
@@ -75,10 +58,17 @@ export default function Dashboard() {
           </div>
         }
       />
+      <Breadcrumb
+        breadcrumbList={[
+          { link: "/", label: "Home" },
+          { link: "/product", label: "Product" },
+          { link: "/product/dashboard", label: "Dashboard" },
+        ]}
+      />
       <CardSection
-        headingSty="flex items-end mx-4 gap-[60px]"
-        descriptionSty="text-base font-normal leading-[22px] text-black-33"
-        title="Key product features tab"
+        headingSty="flex items-end mx-4 gap-[60px] mb-[52px]"
+        descriptionSty="text-base font-normal leading-[22px] text-black-33 "
+        title="Key product features"
         description="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
         headerSection={
           <div>
@@ -95,7 +85,7 @@ export default function Dashboard() {
 
       <InfoCard
         title="Other Important Features"
-        description="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
+        description="Sekel Cloud Infrastructure offers scalability, cost-efficiency, and enhanced security, empowering businesses to focus on innovation and growth."
         image={{
           src: "/feature-img.png",
           height: 900,
@@ -104,7 +94,8 @@ export default function Dashboard() {
         }}
         sectionStyle="py-[100px] bg-gray-100"
         containerSty="container"
-        containtWidth="max-w-[490px]"
+        containtWidth="max-w-[490px] h-full flex flex-col justify-center"
+        descriptionSty = "mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
         imageContainerSty=" w-full max-w-[580px] mx-auto"
         textContainerSty="order-2 col-span-5"
         imageContentSty="order-1 col-span-6"
@@ -116,7 +107,7 @@ export default function Dashboard() {
                 href={""}
                 className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
               >
-                Location level edit
+               Role Based Access
               </Link>
             </div>
             <div className="flex items-center gap-x-[13px]">
@@ -125,12 +116,20 @@ export default function Dashboard() {
                 href={""}
                 className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
               >
-                Location based Microsites
+                Store Locator
+              </Link>
+            </div>
+            <div className="flex items-center gap-x-[13px]">
+              <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
+              <Link
+                href={""}
+                className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
+              >
+                Store2Door Omni Commerce
               </Link>
             </div>
             <div className="mt-8 bg-yellow-100 text-blue-600 p-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.{" "}
+            GDPR Compliance and Data Security
             </div>
           </div>
         }

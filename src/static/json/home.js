@@ -102,4 +102,36 @@ export const bannerData = {
     description:
       "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
   };
+  export const competitionData = {
+    sidebar: [
+      { label: "Multi-country Store Locator" },
+      { label: "Microsites with Product Selector" },
+      { label: "5 Types of User Role Access" },
+      { label: "4 Level category PIMS" },
+      { label: "Microsite Offers, Deals & Appointment" },
+      { label: "Paid Hyperlocal & Retargeted Ads" },
+      { label: "Lead Management" },
+      { label: "SellrApp" },
+    ],
+    typicalyAgency: [
+      { label: "City Level Store Locator", active: true },
+      { label: "One page Website", active: true },
+      { label: "No User Roles", active: false },
+      { label: "PIMS", active: true },
+      { label: "No Campaigns", active: false },
+      { label: "Ads", active: true },
+      { label: "No CMS", active: true },
+      { label: "No Mobile App", active: false },
+    ],
+    otherSoftwares: [
+      { label: "Store Locator", active: true },
+      { label: "One page Microsites", active: true },
+      { label: "User Roles", active: true },
+      { label: "PIMS", active: true },
+      { label: "No Campaigns", active: false },
+      { label: "No Ads", active: false },
+      { label: "CMS", active: true },
+      { label: "No Mobile App", active: false },
+    ],
+  };
   

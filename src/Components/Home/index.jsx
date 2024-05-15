@@ -16,6 +16,8 @@ import {
   chanllenges,
   chanllengesSection,
   sliderSection,
+  competitionData,
+  
 } from "@/static/json/home";
 import Button from "../comman/Button";
 
@@ -170,26 +172,7 @@ const HomeComponent = () => {
       </>
     );
   };
-
-  const competitionData = [
-    {
-      sidebar: [
-        { label: "Multi-country Store Locator" },
-        { label: "Microsites with Product Selector" },
-        { label: "5 Types of User Role Access" },
-        { label: "4 Level category PIMS" },
-        { label: "Microsite Offers, Deals & Appointment" },
-        { label: "Paid Hyperlocal & Retargeted Ads" },
-        { label: "Lead Management" },
-        { label: "SellrApp" },
-      ],
-      typicalyAgency: [
-        { label: "City Level Store Locator", active: true },
-        { label: "City Level Store Locator", active: true },
-      ],
-    },
-  ];
-  const renderCompetition = () => {
+    const renderCompetition = () => {
     return (
       <section className="pt-[28px]">
         <div className="bg-blue-900 pl-6 rounded-t-2xl">
@@ -207,78 +190,20 @@ const HomeComponent = () => {
                     />
                   </div>
                   <div className="py-4 border-t-[2px] border-white">
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      Multi-country Store Locator
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      Microsites with Product Selector
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      5 Types of User Role Access
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      4 Level category PIMS
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      4 Level category PIMS
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      Paid Hyperlocal & Retargeted Ads
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      Lead Management
-                    </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                      <Image
-                        src={"/arrow.svg"}
-                        height={24}
-                        width={24}
-                        alt="arrow"
-                      />
-                      SellrApp
-                    </div>
+                    {competitionData?.sidebar?.map((sidebar, index) => (
+                      <div
+                        key={index}
+                        className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white"
+                      >
+                        <Image
+                          src={"/arrow.svg"}
+                          height={24}
+                          width={24}
+                          alt="arrow"
+                        />
+                        {sidebar?.label}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -293,79 +218,20 @@ const HomeComponent = () => {
                       </h2>
                     </div>
                     <div className="pt-4 border-t-[2px] border-white">
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        City Level Store Locator
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        One page Website
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No User Roles
-                      </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        PIMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Campaigns
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        Ads
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No CMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Mobile App
-                      </div>
+                      {competitionData?.typicalyAgency?.map((item, index) => (
+                        <div
+                          key={index}
+                          className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white"
+                        >
+                          <Image
+                            src={item?.active ? "/check.svg" : "/close.svg"}
+                            height={24}
+                            width={24}
+                            alt="check"
+                          />
+                          {item?.label}
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-span-1">
@@ -375,80 +241,22 @@ const HomeComponent = () => {
                       </h2>
                     </div>
                     <div className="pt-4 border-t-[2px] border-white">
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        Store Locator
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        One page Microsites
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        User Roles
-                      </div>
+                      {competitionData?.otherSoftwares?.map((item, index) => (
+                        <div
+                          key={index}
+                          className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white"
+                        >
+                          <Image
+                            src={item?.active ? "/check.svg" : "/close.svg"}
+                            height={24}
+                            width={24}
+                            alt="check"
+                          />
+                          {item?.label}
+                        </div>
+                      ))}
 
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        PIMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Campaigns
-                      </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Ads
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        CMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Mobile App
-                      </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -487,6 +295,8 @@ const HomeComponent = () => {
       </section>
     );
   };
+
+
 
   return (
     <>

@@ -1,4 +1,5 @@
 import Banner from "@/Components/comman/Banner";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
@@ -170,7 +171,7 @@ const SellrApp = () => {
                 <Card
                   key={index}
                   {...item}
-                  headingSty={"mb-8 tracking-tighter leading-[30px]"}
+                  headingSty={"mb-8 tracking-tighter leading-[30px] text-[28px] text-black-33 font-medium"}
                   cardSty={`${
                     index === 1 ? "flex gap-10" : ""
                   } rounded-xl p-5 pt-[52px] ${
@@ -216,18 +217,23 @@ const SellrApp = () => {
           </div>
         }
         headinWidth="max-w-[443px] mb-12"
-        descriptionSty="mr-[67px] leading-[25px] mt-8 text-yellow-900"
+        descriptionSty="mr-[67px] leading-[25px] mt-8 text-yellow-900 mb-8"
+      />
+       <Breadcrumb
+        breadcrumbList={[
+          { link: "/", label: "Home" },
+          { link: "/product", label: "Product" },
+          { link: "/product/SellrApp", label: "SellrApp" },
+        ]}
       />
       <CardSection
         headingSty="flex items-end mx-4 gap-[60px]"
         title={"Dominate Your Market With SellrApp"}
-        description={`From overseeing multiple locations to handling your catalog,
-      products, leads, and real-time data analytics – all in one
-      powerful app`}
+        description={`From overseeing multiple locations to handling your catalog, products, leads, and real-time data analytics – all in one powerful app`}
         sectionStyle="py-[100px] bg-blue-200"
-        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
+        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33 mb-[52px]"
         renderElement={() => (
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-4">
             {managementCardData?.map((item, index) => {
               return (
                 <div className="col-span-1" key={index}>

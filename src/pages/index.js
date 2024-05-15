@@ -1,6 +1,7 @@
 import Banner from "@/Components/comman/Banner";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
-import HomeComponent from "@/Components/Home/Index";
+import HomeComponent from "@/Components/Home";
 import { bannerData } from "@/static/json/home";
 
 export default function Home() {
@@ -19,6 +20,10 @@ export default function Home() {
           </div>
         }
       />
+      <Breadcrumb breadcrumbList={[
+          { link: "/", label: "Home" },
+          
+        ]}/>
       <HomeComponent />
     </div>
   );

@@ -311,7 +311,7 @@ const Demand = () => {
         }}
         sectionSty="pb-[100px] pt-20"
         containerStyle="container justify-between"
-        descriptionSty="mr-16"
+        descriptionSty="mr-16 mb-10"
         imgContainerSty="max-w-[650px] max-h-[418px] w-full"
         renderElement={<GetStartForm buttonTitle="Get started" />}
         headinWidth="max-w-[500px] w-full mb-12"
@@ -320,7 +320,7 @@ const Demand = () => {
         breadcrumbList={[
           { link: "/", label: "Home" },
           { link: "/how-it-works", label: "How it works" },
-          { link: "/demand", label: "Demand" },
+          { link: "/demand", label: "Demand Generation" },
         ]}
       />
       <CardSection
@@ -332,7 +332,8 @@ const Demand = () => {
         title="Demand Generation Reimagined."
         description="Why Sekel Leads the Way"
         sectionStyle="py-[100px] bg-blue-200"
-        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
+        titleSty="text-[28px] font-medium mb-3 leading-[30px] tracking-tighter text-black-33"
+        descriptionSty="max-w-[686px] text-[28px] font-normal leading-[22px] text-black-33 mb-20"
         renderElement={() => (
           <div className="grid grid-cols-4">
             {demandGenerationCardData?.map((item, index) => {

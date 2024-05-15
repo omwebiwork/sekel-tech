@@ -1,4 +1,5 @@
 import Banner from "@/Components/comman/Banner";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
@@ -80,8 +81,8 @@ export default function HowItWorks() {
   ];
 
   let bannerObj = {
-    title: "360º Retail Journey with Sekel Tech",
-    description: `Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI
+    title: "360º Consumer Journey from Discovery to Delivery",
+    description: `Enabling retail brands to seamlessly navigate the consumer journey from discovery to delivery.
   `,
   };
 
@@ -97,9 +98,15 @@ export default function HowItWorks() {
         }}
         containerStyle="container justify-between"
         renderElement={<GetStartForm buttonTitle="Get started" />}
-        headinWidth="max-w-[479px] mb-12"
+        headinWidth="max-w-[491px] mb-12"
+        titleSty="text-[36px] leading-[50px] md:text-[42px] font-medium md:leading-[60px] mb-4 tracking-tight"
       />
-
+      <Breadcrumb
+        breadcrumbList={[
+          { link: "/", label: "Home" },
+          { link: "/how-it-works", label: "how it works" },
+        ]}
+      />
       <div className="container">
         {data?.map((item, index) => {
           return (
@@ -135,7 +142,7 @@ export default function HowItWorks() {
       </div>
       <InfoCard
         title="Seamless Integration With Your Data Systems"
-        description="Elevate efficiency as our platform seamlessly blends into your existing systems, offering a streamlined and unified digital experience"
+        description="Ensure efficiency as our platform seamlessly blends into your existing data systems, offering a streamlined and unified digital experience."
         image={{
           src: "/integration.png",
           height: 500,
@@ -153,7 +160,7 @@ export default function HowItWorks() {
         imageContentSty=" col-span-5 flex items-center"
         renderElement={
           <>
-            <Button filled data="Request Demo" clsStyle="py-3" />
+            <Button filled data="View all integrations" clsStyle="py-3" />
           </>
         }
       />
