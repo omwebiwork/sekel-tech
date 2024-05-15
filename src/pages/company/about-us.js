@@ -166,7 +166,7 @@ const AboutUs = () => {
         sectionStyle="py-[138px] bg-gray-100"
         descriptionSty="mr-0 text-base font-normal leading-[25px]"
         image={{
-          src: "/amplifyBanner.png",
+          src: "/amplify.png",
           height: 448,
           width: 692,
           alt: "img",

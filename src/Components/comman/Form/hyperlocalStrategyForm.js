@@ -5,8 +5,6 @@ const HyperlocalStrategyForm = ({
   placeholder = "Enter your email",
   buttonTitle = "Get a  FREE Audit",
   containerSty = "",
-  newsLetter = "",
-  newsLetterSty = "hidden",
   showForm = true,
   newsTitle="text-blue-600"
 }) => {
@@ -32,10 +30,7 @@ const HyperlocalStrategyForm = ({
               />
             </div>
           </div>
-        )}
-        <div className="max-w-[65%] ml-auto">
-          <h3 className={`${newsLetterSty}`}>{newsLetter}</h3>
-        </div>
+        )}      
       </div>
     </div>
   );

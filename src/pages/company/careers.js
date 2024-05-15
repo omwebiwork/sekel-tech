@@ -7,6 +7,7 @@ import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyF
 import Button from "@/Components/comman/ButtonComponent/Index";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import Image from "next/image";
+import Link from "next/link";
 
 const Careers = () => {
   let bannerObj = {
@@ -276,14 +277,18 @@ const Careers = () => {
         }
       />
 
-      <HyperlocalStrategyForm
-        containerSty="container items-center"
-        title={"How to Apply"}
-        newsLetter="Send an email with “Job Title” in the subject along with your resume attached to careers@sekel.tech"
-        newsLetterSty="text-[24px] text-black mb-0"
-        showForm={false}
-        newsTitle="text-black"
-      />
+      <section className="bg-yellow-100 py-8">
+        <div className="container">
+          <div className="grid grid-cols-12 gap-12 items-center">
+            <div className="col-span-4">
+            <p class="text-black-33 text-[28px] font-medium">How to Apply</p>
+            </div>
+            <div className="col-span-8">
+              <h4 className="text-black-33 text-[28px] font-medium">Send an email with “Job Title” in the subject along with your resume attached to <Link href={''} className="text-blue-600">careers@sekel.tech</Link></h4>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
