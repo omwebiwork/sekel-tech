@@ -1,18 +1,18 @@
 import React from "react";
-import Button from "../ButtonComponent/Index";
+import Button from "../Button";
 import Image from "next/image";
 
 const Banner = ({
   title,
   subTitle = null,
   description,
-  descriptionSty = "text-yellow-900 mb-8",
+  descriptionSty = "text-base font-normal leading-[25px] text-yellow-900 mb-8",
   renderElement = null,
   image,
   containerStyle,
   headinWidth,
   sectionSty = "",
-  subTitleSty = "mb-8",
+  subTitleSty = "text-[28px] font-medium leading-[32px] tracking-tight mb-8",
   imgContainerSty,
   aboutHead,
   aboutHeadBox,
@@ -24,12 +24,12 @@ const Banner = ({
         <div className={` ${headinWidth} `}>
           <div className={` ${aboutHead} text-white`}>
             <div className={` ${aboutHeadBox} `}>
-              <h1 className="text-[54px] font-normal leading-[75px] mb-4 tracking-tighter">
+              <h1 className="text-[36px] leading-[50px] md:text-[54px] font-normal md:leading-[75px] mb-4 tracking-tighter">
                 {title}
               </h1>
               {subTitle && (
                 <p
-                  className={`text-[28px] font-medium leading-[32px] tracking-tight ${subTitleSty}`}
+                className={`${subTitleSty}`}
                 >
                   {subTitle}
                 </p>
@@ -37,7 +37,7 @@ const Banner = ({
             </div>
             {description && (
               <p
-                className={`text-base font-normal leading-[25px] ${descriptionSty}`}
+              className={`${descriptionSty}`}
               >
                 {description}
               </p>

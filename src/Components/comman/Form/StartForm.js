@@ -1,4 +1,4 @@
-import Button from "../ButtonComponent/Index";
+import Button from "../Button";
 
 const GetStartForm = ({
   buttonTitle,

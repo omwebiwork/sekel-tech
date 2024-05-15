@@ -6,7 +6,7 @@ const CardSection = ({
   renderElement,
   headerSection,
   headingSty = "text-center mb-[52px]",
-  descriptionSty = "w-[456px] mx-auto",
+  descriptionSty = "text-base font-normal leading-[22px] text-black-33 w-[456px] mx-auto",
   sectionStyle = "py-[100px] bg-white",
   titleSty = 'text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33'
 }) => {
@@ -29,7 +29,7 @@ const CardSection = ({
             )}
             {description && (
               <p
-                className={`text-base font-normal leading-[22px] ${descriptionSty} text-black-33`}
+              className={`${descriptionSty}`}
               >
                 {description}
               </p>

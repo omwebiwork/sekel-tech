@@ -1,4 +1,4 @@
-import Banner from "@/Components/comman/Banner/Index";
+import Banner from "@/Components/comman/Banner";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";

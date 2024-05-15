@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./ButtonComponent/Index";
+import Button from "./Button";
 import Dropdown from "./Dropdown";
 import { useCallback } from "react";
 import { useRouter } from "next/router";

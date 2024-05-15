@@ -1,6 +1,6 @@
-import Banner from "@/Components/comman/Banner/Index";
+import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
-import Button from "@/Components/comman/ButtonComponent/Index";
+import Button from "@/Components/comman/Button";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
@@ -332,7 +332,7 @@ const Demand = () => {
         title="Demand Generation Reimagined."
         description="Why Sekel Leads the Way"
         sectionStyle="py-[100px] bg-blue-200"
-        descriptionSty="max-w-[686px]"
+        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
         renderElement={() => (
           <div className="grid grid-cols-4">
             {demandGenerationCardData?.map((item, index) => {
@@ -400,7 +400,7 @@ const Demand = () => {
                 containtWidth="max-w-[536px] mx-auto "
                 containerSty=""
                 titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-[26px]"
-                descriptionSty="mb-8 leading-[20px] text-base font-normal"
+                descriptionSty="mb-8 leading-[20px] text-base font-normal text-black-33"
                 gridContainerSty="grid grid-cols-12 gap-6"
                 renderElement={
                   <>
@@ -436,7 +436,7 @@ const Demand = () => {
         description="Strategic Media Planning with Sekel Tech’s Demand Generation Platform for Leading Brands"
         sectionStyle="py-[100px] bg-blue-900 "
         titleSty="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-white"
-        descriptionSty="w-[456px] mx-auto text-white"
+        descriptionSty="w-[456px] mx-auto text-white leading-[22px] text-black-33"
         renderElement={() => (
           <div className="flex items-center">
             <div className="w-[42%]">

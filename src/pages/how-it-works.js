@@ -1,5 +1,5 @@
-import Banner from "@/Components/comman/Banner/Index";
-import Button from "@/Components/comman/ButtonComponent/Index";
+import Banner from "@/Components/comman/Banner";
+import Button from "@/Components/comman/Button";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";

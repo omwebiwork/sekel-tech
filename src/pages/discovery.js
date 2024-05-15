@@ -1,4 +1,4 @@
-import Banner from "@/Components/comman/Banner/Index";
+import Banner from "@/Components/comman/Banner";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import GetStartForm from "@/Components/comman/Form/StartForm";
@@ -331,7 +331,7 @@ const Discovery = () => {
       />
       <CardSection
         headingSty="max-w-[803px]"
-        descriptionSty=""
+        descriptionSty="text-base font-normal leading-[22px] text-black-33"
         {...discoveryObj}
         renderElement={renderCard}
       />

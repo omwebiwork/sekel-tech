@@ -1,6 +1,6 @@
 import CardSection from "@/Components/comman/Card/CardSection";
 import Card from "@/Components/comman/Card";
-import Banner from "@/Components/comman/Banner/Index";
+import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import SliderSection from "@/Components/comman/Card/SliderSection";

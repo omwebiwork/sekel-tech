@@ -1,4 +1,4 @@
-import Button from "../ButtonComponent/Index";
+import Button from "../Button";
 
 const HyperlocalStrategyForm = ({
   title = "Supercharge Your Hyperlocal Strategy Today!",

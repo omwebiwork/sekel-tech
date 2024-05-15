@@ -1,5 +1,5 @@
-import Banner from "@/Components/comman/Banner/Index";
-import Button from "@/Components/comman/ButtonComponent/Index";
+import Banner from "@/Components/comman/Banner";
+import Button from "@/Components/comman/Button";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import ImageCard from "@/Components/comman/Card/ImageCard";
@@ -225,7 +225,7 @@ const SellrApp = () => {
       products, leads, and real-time data analytics – all in one
       powerful app`}
         sectionStyle="py-[100px] bg-blue-200"
-        descriptionSty="max-w-[686px]"
+        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
         renderElement={() => (
           <div className="grid grid-cols-3">
             {managementCardData?.map((item, index) => {
@@ -245,7 +245,7 @@ const SellrApp = () => {
       <CardSection
         {...discoveryObj}
         renderElement={renderCard}
-        descriptionSty="w-full"
+        descriptionSty="w-full text-base font-normal leading-[22px] text-black-33"
       />
       <section className="bg-blue-900 py-20">
         <div className="container">

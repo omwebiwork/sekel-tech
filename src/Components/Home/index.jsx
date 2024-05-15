@@ -4,82 +4,24 @@ import Card from "@/Components/comman/Card";
 import { useCallback, useState } from "react";
 import DownArrow from "@/assets/DownArrow";
 import CardSection from "../comman/Card/CardSection";
-import Button from "../comman/ButtonComponent/Index";
 import HyperlocalStrategyForm from "../comman/Form/hyperlocalStrategyForm";
 import InfoCard from "../comman/Card/InfoCard";
 import SliderSection from "../comman/Card/SliderSection";
 import ImageCard from "../comman/Card/ImageCard";
+import {
+  discovery,
+  beyondTech,
+  discoveryCardData,
+  competitionComparison,
+  chanllenges,
+  chanllengesSection,
+  sliderSection,
+} from "@/static/json/home";
+import Button from "../comman/Button";
 
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);
-  let [cardData, setCardData] = useState([
-    {
-      title: "Get Discovered",
-      description:
-        "Making sure you dominate the search results organically across google search products which drives greater hyperlocal visibility and conversions.",
-      image: {
-        src: "/discoverd-img.gif",
-      },
-    },
-    {
-      title: "Plug & Play Data",
-      description:
-        "Making sure all dealer, product, and lead data is captured, we seamlessly integrate it with your CRM, DMS, CDP, and LMS for effortless data flow and management. And get a single view. ",
-      image: {
-        src: "/play-data.gif",
-      },
-    },
-    {
-      title: "Generate Demand",
-      description:
-        "Making sure your brand stands out, by utilising features like targeted Google and Meta campaigns to boost demand and generate more walkins ",
-      image: {
-        src: "/generate-demand-img.gif",
-      },
-    },
-  ]);
-
-  let discoveryObj = {
-    title: "Data, Discovery and Demand Story",
-    description:
-      " Making sure you dominate the search results organically across google search products",
-  };
-  let chanllenges = [
-    {
-      title:
-        "We generate plenty of leads monthly, but lack visibility on their outcomes. How do we gain insights and optimise our efforts?",
-      description: `To gain insights and optimize your efforts with generated leads,
-    you need a solution that offers robust analytics and tracking
-    capabilities. This will allow you to monitor the outcomes of your
-    leads and adjust your strategies accordingly.`,
-      list: [
-        {
-          title: "Data Integration",
-        },
-        {
-          title: "Data Activation",
-        },
-        {
-          title: "Data Integration",
-        },
-      ],
-    },
-    {
-      title:
-        "Our traditional method of demand generation through leads is not working out due to high TAT and Junk Data",
-      description: `To address the challenges with high turnaround time (TAT) and junk data in your traditional demand generation methods, you need a solution that can streamline lead generation and data quality.`,
-    },
-    {
-      title:
-        " While the volume targets are getting achieved, we are facing issues with lead quality & CPl",
-      description: `To address the issues with lead quality and Cost Per Lead (CPL) while achieving volume targets, you need a solution that can improve lead targeting and qualification processes. By refining your targeting criteria and qualifying leads more effectively, you can improve lead quality and reduce CPL, ultimately enhancing the overall performance of your demand generation efforts.`,
-    },
-    {
-      title:
-        "The challenge is acquiring and maintaining accurate location data for effective marketing and lead generation. Seamless integration with marketing systems is crucial for targeted success.",
-      description: `To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.`,
-    },
-  ];
+  let [cardData, setCardData] = useState(discoveryCardData);
 
   let silderData = [
     {
@@ -146,7 +88,7 @@ const HomeComponent = () => {
     }
   });
 
-  const renderCard = () => {
+  const renderDiscoveryCard = () => {
     return (
       <div>
         <div className="grid grid-cols-3 gap-8">
@@ -193,7 +135,7 @@ const HomeComponent = () => {
               })}
             </ul>
             <button className="flex gap-2 items-center text-base text-blue-900 font-medium ">
-              Platform
+              Explore our Data Platform
               <div className="h-6 w-6">
                 <Image
                   src={"/blue-arrow.svg"}
@@ -211,18 +153,42 @@ const HomeComponent = () => {
 
   const challengesElement = () => {
     return (
-      <div className="grid grid-cols-16 gap-5 mb-8">
-        {chanllenges?.map((item, index) =>
-          chanllengesCard({
-            ...item,
-            gridColSize:
-              index === 1 || index === 2 ? "col-span-7" : "col-span-9",
-          })
-        )}
-      </div>
+      <>
+        <div className="grid grid-cols-16 gap-5 mb-8">
+          {chanllenges?.map((item, index) =>
+            chanllengesCard({
+              ...item,
+              gridColSize:
+                index === 1 || index === 2 ? "col-span-7" : "col-span-9",
+            })
+          )}
+        </div>
+        <div className="flex items-center justify-end gap-x-5">
+          <h3 className="font-semibold text-base">Need more info?</h3>
+          <Button data={"View more"} filled></Button>
+        </div>
+      </>
     );
   };
 
+  const competitionData = [
+    {
+      sidebar: [
+        { label: "Multi-country Store Locator" },
+        { label: "Microsites with Product Selector" },
+        { label: "5 Types of User Role Access" },
+        { label: "4 Level category PIMS" },
+        { label: "Microsite Offers, Deals & Appointment" },
+        { label: "Paid Hyperlocal & Retargeted Ads" },
+        { label: "Lead Management" },
+        { label: "SellrApp" },
+      ],
+      typicalyAgency: [
+        { label: "City Level Store Locator", active: true },
+        { label: "City Level Store Locator", active: true },
+      ],
+    },
+  ];
   const renderCompetition = () => {
     return (
       <section className="pt-[28px]">
@@ -241,61 +207,70 @@ const HomeComponent = () => {
                     />
                   </div>
                   <div className="py-4 border-t-[2px] border-white">
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
                         width={24}
                         alt="arrow"
                       />
-                      CDP
+                      Multi-country Store Locator
                     </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
                         width={24}
                         alt="arrow"
                       />
-                      CRM
+                      Microsites with Product Selector
                     </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
                         width={24}
                         alt="arrow"
                       />
-                      PIMS
+                      5 Types of User Role Access
                     </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
                         width={24}
                         alt="arrow"
                       />
-                      IVR
+                      4 Level category PIMS
                     </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
                         width={24}
                         alt="arrow"
                       />
-                      Generative AI
+                      4 Level category PIMS
                     </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
                         width={24}
                         alt="arrow"
                       />
-                      Lead Classification
+                      Paid Hyperlocal & Retargeted Ads
                     </div>
-                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-3 border-b border-white">
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                      <Image
+                        src={"/arrow.svg"}
+                        height={24}
+                        width={24}
+                        alt="arrow"
+                      />
+                      Lead Management
+                    </div>
+                    <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                       <Image
                         src={"/arrow.svg"}
                         height={24}
@@ -314,29 +289,39 @@ const HomeComponent = () => {
                   <div className="col-span-1">
                     <div className="pb-8 h-[68px]">
                       <h2 className="text-white font-medium text-[20px]">
-                        Typically SEO agency
+                        Typicaly Agency
                       </h2>
                     </div>
                     <div className="pt-4 border-t-[2px] border-white">
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/check.svg"}
                           height={24}
                           width={24}
                           alt="check"
                         />
-                        CDP
+                        City Level Store Locator
                       </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        One page Website
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/close.svg"}
                           height={24}
                           width={24}
                           alt="close"
                         />
-                        CRM
+                        No User Roles
                       </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/check.svg"}
                           height={24}
@@ -345,72 +330,80 @@ const HomeComponent = () => {
                         />
                         PIMS
                       </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/close.svg"}
                           height={24}
                           width={24}
                           alt="close"
                         />
-                        IVR
+                        No Campaigns
                       </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        Ads
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/close.svg"}
                           height={24}
                           width={24}
                           alt="close"
                         />
-                        Generative AI
+                        No CMS
                       </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
-                          src={"/check.svg"}
+                          src={"/close.svg"}
                           height={24}
                           width={24}
-                          alt="check"
+                          alt="close"
                         />
-                        Lead Classification
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        SellrApp
+                        No Mobile App
                       </div>
                     </div>
                   </div>
                   <div className="col-span-1">
                     <div className="pb-8 h-[68px]">
                       <h2 className="text-white font-medium text-[20px]">
-                        In house SEO
+                        Other Softwares
                       </h2>
                     </div>
                     <div className="pt-4 border-t-[2px] border-white">
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
-                          src={"/close.svg"}
+                          src={"/check.svg"}
                           height={24}
                           width={24}
-                          alt="close"
+                          alt="check"
                         />
-                        CDP
+                        Store Locator
                       </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
-                          src={"/close.svg"}
+                          src={"/check.svg"}
                           height={24}
                           width={24}
-                          alt="close"
+                          alt="check"
                         />
-                        CRM
+                        One page Microsites
                       </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        User Roles
+                      </div>
+
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/check.svg"}
                           height={24}
@@ -419,43 +412,42 @@ const HomeComponent = () => {
                         />
                         PIMS
                       </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/close.svg"}
                           height={24}
                           width={24}
                           alt="close"
                         />
-                        IVR
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        Generative AI
+                        No Campaigns
                       </div>
 
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/close.svg"}
                           height={24}
                           width={24}
                           alt="close"
                         />
-                        Lead Classification
+                        No Ads
                       </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-3 border-b border-white">
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
                         <Image
                           src={"/check.svg"}
                           height={24}
                           width={24}
                           alt="check"
                         />
-                        SellrApp
+                        CMS
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/close.svg"}
+                          height={24}
+                          width={24}
+                          alt="close"
+                        />
+                        No Mobile App
                       </div>
                     </div>
                   </div>
@@ -498,20 +490,10 @@ const HomeComponent = () => {
 
   return (
     <>
-      <CardSection {...discoveryObj} renderElement={renderCard} />
+      <CardSection {...discovery} renderElement={renderDiscoveryCard} />
       <InfoCard
-        title="Beyond Tehnology Business Transformation"
-        description=" SellrApp provides data & insights for superior
-              decision-making, driving complete business transformation.
-              SellrApp is not just a technology point solution, but a
-              complete business transformation tool. It can help companies
-              achieve their business goals."
-        image={{
-          src: "/business-transformation.gif",
-          height: 448,
-          width: 692,
-          alt: "img",
-        }}
+        titleSty="text-[36px] font-medium leading-[140%] tracking-tighter text-black-33 mb-4"
+        {...beyondTech}
         bordershow
         renderElement={
           <div className="flex gap-8 pt-6">
@@ -530,22 +512,18 @@ const HomeComponent = () => {
         }
       />
       <CardSection
-        title="Competition comparison data"
+        {...competitionComparison}
         containerSty="border-b border-gray-400"
-        description="Making sure you dominate the search results organically across google search products Making sure you dominate the search results organically across "
         renderElement={renderCompetition}
       />
       <CardSection
+        {...chanllengesSection}
         headingSty=""
-        descriptionSty="text-base font-normal leading-[25px]"
-        title="Challenges Q/A"
-        description=" Making sure you dominate the search results organically across
-              google search products Making sure you dominate the s"
+        descriptionSty="text-base font-normal leading-[25px] mb-[52px] text-black-33"
         renderElement={challengesElement}
       />
       <SliderSection
-        title="Key Success Metrics Case Studies"
-        description="How Sekel Tech helped to increase the clients’ ROI"
+        {...sliderSection}
         profileButton
         renderElement={silderData?.map((item, index) => {
           return <ImageCard {...item} key={index} />;
@@ -560,14 +538,17 @@ const HomeComponent = () => {
                   About Sekel
                 </h3>
                 <p className="text-base font-normal leading-[25px] mb-5 mx-auto text-black-33 ">
-                  Our ambition is clear, To transform the landscape of
-                  omni-channel commerce. In a world brimming with channels,
-                  brands often struggle with fragmented customer insights and
-                  complex engagements. This is the challenge we tackle. The
-                  heart of our platform is the power of first-party data,
-                  offering genuine and direct insights. This allows brands to
-                  optimize their approach, ensuring efficiency in both strategy
-                  and spend.
+                  Sekel Tech’s all-in-one software helps multi-location
+                  businesses unlock their full potential with one centralised
+                  tool. Designed to help retail businesses, Sekel Tech platform
+                  helps manage brands’ online presence, store orders, and
+                  consumers’ online to offline journey.
+                  <br /> <br /> Embarking on our journey in 2016, Sekel Tech has
+                  been at the forefront of revolutionizing omni-channel commerce
+                  for retail brands. With a vision for improved customer
+                  experiences, we have continuously innovated to provide
+                  cutting-edge solutions that empower businesses to thrive in
+                  the digital landscape.
                 </p>
                 <p className="text-base font-semibold leading-[21px]  mx-auto text-black-33 mr-6">
                   Join us as we redefine commerce, creating an enduring,

@@ -1,10 +1,10 @@
 import CardSection from "@/Components/comman/Card/CardSection";
 import Card from "@/Components/comman/Card";
-import Banner from "@/Components/comman/Banner/Index";
+import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
-import Button from "@/Components/comman/ButtonComponent/Index";
+import Button from "@/Components/comman/Button";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import Image from "next/image";
 import Link from "next/link";
@@ -186,7 +186,7 @@ const Careers = () => {
         description={`We strive to be consistently good, rather than occasionally great, as we believe that sustainable progress comes from consistently meeting high standards.`}
         sectionStyle="py-[100px] bg-blue-200"
         titleSty="text-[42px] font-medium mb-8 leading-[140%] tracking-tighter text-black-33"
-        descriptionSty="max-w-[686px]"
+        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
         renderElement={() => (
           <div className="grid grid-cols-3">
             {consistentCardData?.map((item, index) => {
@@ -213,7 +213,7 @@ const Careers = () => {
         description={
           "We are direct and open in our conversations, and we strive to be hard on the issue and soft on the person. We value our relationships and strive to get to the heart of the matter quickly and efficiently."
         }
-        descriptionSty="mx-auto text-white w-[659px]"
+        descriptionSty="mx-auto text-white w-[659px] text-base font-normal leading-[22px]"
         headingSty="text-center mx-auto max-w-[900px] mb-8"
         sectionStyle="pt-[80px] pb-[100px] bg-blue-900 text-white"
         titleSty="text-[42px] font-medium mb-[20px] leading-[140%] tracking-tighter text-white"

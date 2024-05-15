@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./ButtonComponent/Index";
+import Button from "./Button";
 import Link from "next/link";
 import { company, product } from "@/static/json/header";
 

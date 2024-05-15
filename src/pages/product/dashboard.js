@@ -1,5 +1,5 @@
-import Banner from "@/Components/comman/Banner/Index";
-import Button from "@/Components/comman/ButtonComponent/Index";
+import Banner from "@/Components/comman/Banner";
+import Button from "@/Components/comman/Button";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
@@ -77,7 +77,7 @@ export default function Dashboard() {
       />
       <CardSection
         headingSty="flex items-end mx-4 gap-[60px]"
-        descriptionSty=""
+        descriptionSty="text-base font-normal leading-[22px] text-black-33"
         title="Key product features tab"
         description="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
         headerSection={

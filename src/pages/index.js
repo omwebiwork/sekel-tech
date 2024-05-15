@@ -1,29 +1,23 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Card from "@/Components/comman/Card";
-import Banner from "@/Components/comman/Banner/Index";
+import Banner from "@/Components/comman/Banner";
+import Button from "@/Components/comman/Button";
 import HomeComponent from "@/Components/Home/Index";
-import GetStartForm from "@/Components/comman/Form/StartForm";
-
-const inter = Inter({ subsets: ["latin"] });
-let bannerObj = {
-  title: "Unlock Local Market Dominance with Geo-Fenced Marketing Magic",
-  description: `Effortlessly Convert Searches into Local Sales`,
-};
+import { bannerData } from "@/static/json/home";
 
 export default function Home() {
   return (
-    <div className="bg-blue-900">
+    <div className="bg-blue-900 pt-8 md:pt-[56px]">
       <Banner
-        {...bannerObj}
-        image={{
-          src: "/marketing-img.gif",
-          alt: "img",
-          height: 500,
-          width: 500,
-        }}
-        containerStyle="flex-col mx:w-full items-center text-center"
-        headinWidth="w-[936px] mx-auto text-center mb-12"
+        {...bannerData}
+        subTitleSty="text-base font-medium leading-[140%] text-yellow-900"
+        descriptionSty="text-base font-medium leading-[140%] text-yellow-900"
+        containerStyle="flex-col mx:w-full items-center"
+        headinWidth="max-md:px-3 max-w-[665px] mx-auto mb-6 md:mb-12"
+        sectionSty="md:text-center"
+        renderElement={
+          <div className="pt-4">
+            <Button data="Request Demo" filled></Button>
+          </div>
+        }
       />
       <HomeComponent />
     </div>
