@@ -39,7 +39,7 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
       </button>
 
       {isOpen && (
-        <div className={`${dropdownContainerSty} origin-top-right left-auto lg:absolute right-0 lg:mt-4 lg:rounded-xl lg:shadow-lg bg-white text-black-33 pt-4 lg:p-[52px]`}>
+        <div className={`${dropdownContainerSty} origin-top-right left-auto lg:absolute right-0 lg:mt-4 lg:rounded-xl lg:shadow-lg bg-white text-black-33 lg:pt-4 lg:p-[52px]`}>
           <div className="lg:flex">
             <div className="lg:w-[calc(100%_-_201px)]">
               <ul
@@ -54,7 +54,7 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
                     <li className="block" key={index}>
                       <Link
                         href={`${item.redirectPath}`}
-                        className="block pb-[24px] lg:py-2 text-base font-medium text-black-900 hover:bg-gray-100 whitespace-nowrap"
+                        className="block px-[10px] lg:px-0 py-[12px] lg:py-2 text-base font-medium text-black-900 hover:bg-gray-100 whitespace-nowrap"
                         onClick={closeDropdown}
                       >
                         {item.name}

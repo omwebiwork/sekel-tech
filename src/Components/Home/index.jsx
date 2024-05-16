@@ -48,7 +48,8 @@ const HomeComponent = () => {
                 <Card
                   key={index}
                   {...item}
-                  cardSty="p-5 md:p-4 lg:p-10 rounded-2xl h-full bg-gray-100"
+                  headingSty="mb-4 leading-[30px] text-[24px] md:text-[22px] lg:text-[28px] font-medium text-black-33 tracking-tight"
+                  cardSty="p-5 md:p-4 lg:p-6 xl:p-10 rounded-2xl h-full bg-gray-100"
                   actionType="Learn more"
                   action={() => handleLearnMore(index)}
                   learnMore={learnMore[index]}
@@ -65,7 +66,7 @@ const HomeComponent = () => {
   let chanllengesCard = ({ title, description, gridColSize, list }) => {
     return (
       <div className={`${gridColSize}`}>
-        <div className="h-full py-8 px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
+        <div className="h-full p-6 lg:p-8 xl:py-8 xl:px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
           <div className="flex gap-4 mb-10">
             <div className="h-9 w-9 rounded-full border-[1px] border-black-33 flex items-center justify-center">
               <p className="text-xl font-medium text-black-33">?</p>
@@ -108,12 +109,12 @@ const HomeComponent = () => {
   const challengesElement = () => {
     return (
       <>
-        <div className="grid grid-cols-16 gap-5 mb-8">
+        <div className="max-md:flex max-md:gap-x-7 max-md:overflow-x-auto md:grid md:grid-cols-16 md:gap-5 mb-5 md:mb-8">
           {chanllenges?.map((item, index) => {
             return chanllengesCard({
               ...item,
               gridColSize:
-                "col-span-box [&:nth-child(4n+1)]:col-span-9 [&:nth-child(4n+2)]:col-span-7 [&:nth-child(4n+3)]:col-span-7 [&:nth-child(4n+4)]:col-span-9",
+                "max-md:min-w-[385px] max-md:mb-6 md:[&:nth-child(4n+1)]:col-span-9 md:[&:nth-child(4n+2)]:col-span-7 md:[&:nth-child(4n+3)]:col-span-7 md:[&:nth-child(4n+4)]:col-span-9",
             });
           })}
         </div>
@@ -162,7 +163,7 @@ const HomeComponent = () => {
               </div>
             </div>
             <div className="col-span-2 border-b border-blue-100">
-              <div className="px-[60px] py-[34px]">
+              <div className="px-8 py-8 lg:px-[60px] lg:py-[34px]">
                 <div className="grid grid-cols-2">
                   <div className="col-span-1">
                     <div className="pb-8 h-[68px]">
@@ -258,7 +259,7 @@ const HomeComponent = () => {
         renderElement={
           <div className="flex gap-8 pt-6">
             <button
-              className="h-[57px] w-[188px] rounded-lg overflow-hidden"
+              className="max-h-[57px] max-w-[188px] rounded-lg overflow-hidden"
               // onClick={() =>
               //   window.open(
               //     "",
@@ -274,7 +275,7 @@ const HomeComponent = () => {
               />
             </button>
             <button
-              className="h-[57px] w-[188px] rounded-lg overflow-hidden"
+              className="max-h-[57px] max-w-[188px] rounded-lg overflow-hidden"
               //  onClick={() =>
               //   window.open(
               //     "",

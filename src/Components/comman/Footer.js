@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="col-span-4 md:col-span-1 lg:pl-4">
               <div className="max-md:border-b max-md:border-[#A3ACB1]/60">
                 <div className="py-6 lg:mb-[52px] flex items-center justify-between">
-                  <h5 className="text-xl text-black-33 font-medium">Product</h5> <span className="lg:hidden"><Image src={'/chevron-down.svg'} height={25} width={25} alt="" /></span>
+                  <h5 className="text-base md:text-xl text-black-33 font-medium">Product</h5> <span className="lg:hidden"><Image src={'/chevron-down.svg'} height={25} width={25} alt="" /></span>
                 </div>
                 <div className="max-md:hidden">
                   {product?.map((item, index) =>
@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="col-span-4 md:col-span-1 lg:pl-4">
               <div className="max-md:border-b max-md:border-[#A3ACB1]/60">
                 <div className="py-6 lg:mb-[52px] flex items-center justify-between">
-                  <h5 className="text-xl text-black-33 font-medium">Company</h5> <span className="lg:hidden"><Image src={'/chevron-down.svg'} height={25} width={25} alt="" /></span>
+                  <h5 className="text-base md:text-xl text-black-33 font-medium">Company</h5> <span className="lg:hidden"><Image src={'/chevron-down.svg'} height={25} width={25} alt="" /></span>
                 </div>
                 <div className="max-md:hidden lg:mb-[52px]">
                   <p className="font-normal text-base leading-[25px] mb-3 text-black-33">
@@ -117,7 +117,7 @@ const Footer = () => {
             <div className="col-span-4 md:col-span-1 lg:pl-4">
               <div>
                 <div className="py-6 lg:mb-[52px]">
-                  <h5 className="text-xl text-black-33 font-medium">
+                  <h5 className="text-base md:text-xl text-black-33 font-medium">
                     How it Works
                   </h5>
                 </div>
