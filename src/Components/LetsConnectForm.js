@@ -1,9 +1,16 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Button from "./comman/Button";
 
 const LetsConnectForm = () => {
   return (
+    <div>
+      <div className="text-center mb-[52px]">
+
+      <h4 className="text-[42px] text-white font-medium leading-[52px] mb-1.5">Let's Connect</h4>
+      <p className="text-base font-semibold text-white">Understand Our Solution Better!</p>
+      </div>
     <Formik
       initialValues={{ firstName: "", lastName: "", email: "" }}
       validationSchema={Yup.object({
@@ -23,15 +30,18 @@ const LetsConnectForm = () => {
       }}
     >
       <Form>
-        <Field className='bg-[#FFFFFF] bg-opacity-10' name="firstName" type="text" />
+        <Field className='bg-white mb-4 rounded-lg bg-opacity-10 w-full py-3 px-5' placeholder='your name'  name="firstName" type="text" />
         <ErrorMessage name="firstName" />
 
-        <Field name="email" type="email" />
+        <Field className='bg-white mb-4 rounded-lg bg-opacity-10 w-full py-3 px-5' placeholder='your email' name="email" type="email" />
         <ErrorMessage name="email" />
 
-        <button type="submit">Submit</button>
+        <Field component="textArea" className='bg-white mb-4 rounded-lg bg-opacity-10 w-full py-3 px-5 min-h-[181px]' placeholder='your email' name="email" type="email" />
+        <ErrorMessage name="email" />
+       <Button data='Get a Free Quote' filled type="submit"/>
       </Form>
     </Formik>
+    </div>
   );
 };
 

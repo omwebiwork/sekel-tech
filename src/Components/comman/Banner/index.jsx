@@ -8,6 +8,7 @@ const Banner = ({
   description,
   descriptionSty = "text-base font-normal leading-[25px] text-yellow-900 mb-8",
   renderElement = null,
+  renderFormElement,
   image,
   containerStyle,
   headinWidth,
@@ -52,6 +53,7 @@ const Banner = ({
               <Image className="w-full object-cover object-center" {...image} />
             </div>
           )}
+          {renderFormElement  && renderFormElement}
         </div>
       </div>
     </div>
