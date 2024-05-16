@@ -1,12 +1,10 @@
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
-import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
-import Image from "next/image";
-import Link from "next/link";
+import { bannerHowItworks } from "@/static/json/howItWorks";
 import React from "react";
 
 export default function HowItWorks() {
@@ -89,13 +87,7 @@ export default function HowItWorks() {
   return (
     <div>
       <Banner
-        {...bannerObj}
-        image={{
-          src: "/retail.png",
-          alt: "img",
-          height: 400,
-          width: 400,
-        }}
+        {...bannerHowItworks}
         containerStyle="container justify-between"
         renderElement={<GetStartForm buttonTitle="Get started" />}
         headinWidth="max-w-[491px] mb-12"
@@ -133,7 +125,7 @@ export default function HowItWorks() {
                       );
                     })}
                   </ul>
-                  <Button filled data={item?.buttonText} clsStyle="py-3" />
+                  <Button filled data={item?.buttonText} clsStyle="py-3 px-8" />
                 </>
               }
             />
@@ -154,13 +146,12 @@ export default function HowItWorks() {
         containtWidth=""
         titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
         descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
-        // gridContainerSty="gap-6 grid grid-cols-11"
         imageContainerSty=" w-full max-w-[497px] mx-auto"
         textContainerSty=" col-span-6 flex items-center"
         imageContentSty=" col-span-5 flex items-center"
         renderElement={
           <>
-            <Button filled data="View all integrations" clsStyle="py-3" />
+            <Button filled data="View all integrations" clsStyle="py-3 px-8" />
           </>
         }
       />

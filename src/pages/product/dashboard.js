@@ -9,7 +9,7 @@ import {
   bannerData,
   importantFeatures,
   keyProductSectionData,
-  manageInfoCardData,
+  manageInfoCard,
   oneUltimatePlatform,
   seamlessIntegration,
 } from "@/static/json/dashboard";
@@ -40,6 +40,7 @@ export default function Dashboard() {
               />
               <Button
                 data="Know More"
+                clsStyle="py-2 px-8 text-white"
                 action={() => router.push("/company/contact-us")}
               />
             </div>
@@ -55,25 +56,36 @@ export default function Dashboard() {
       />
       <CardSection
         {...keyProductSectionData}
-        headingSty="flex items-end mx-4 gap-[60px] mb-[52px]"
+        headingSty="flex items-end mx-4 gap-[60px] mb-[52px] max-w-[600px]"
         descriptionSty="text-base font-normal leading-[22px] text-black-33 "
-        headerSection={
-          <div>
-            <GetStartForm
-              buttonTitle="Search"
-              placeholder="Hyperlocation Management"
-              type="text"
-              inputSty="text-black-33 placeholder:text-black-33 border-gray-400"
-            />
-          </div>
-        }
         renderElement={() => (
           <InfoCard
-            {...manageInfoCardData}
+            {...manageInfoCard?.sectionData}
+            renderFilterElement={
+              <div className="flex justify-between px-4 pt-[52px]">
+                {manageInfoCard?.renderFilterData?.map((item, index) => (
+                  <div>
+                    <Button
+                      key={index}
+                      data={item?.label}
+                      filled={item?.active ? true : false}
+                      clsStyle={`py-2 px-5 text-sm ${
+                        item?.active ? "" : "bg-[#FCFBB3] text-black-33"
+                      }`}
+                    />
+                  </div>
+                ))}
+              </div>
+            }
             subheadTitleSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
             descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] "
+<<<<<<< HEAD
             sectionStyle="p-4 md:p-8 lg:py-[52px] lg:px-[42px] rounded-[24px] bg-gray-100"
             containerSty="p-0"
+=======
+            sectionStyle=" rounded-[24px] bg-gray-100"
+            containerSty="py-[52px] px-[42px]"
+>>>>>>> feature/dicovery-page
             containtWidth="max-w-[490px] h-full flex flex-col justify-center"
           />
         )}
@@ -122,7 +134,7 @@ export default function Dashboard() {
         renderElement={
           <Button
             data="View all integrations"
-            clsStyle="py-3"
+            clsStyle="py-3 px-8"
             filled
             action={() => {
               router.push("/product/integration");
@@ -144,7 +156,7 @@ export default function Dashboard() {
         dashImageSty="col-span-11 lg:hidden pt-10"
         renderElement={
           <>
-            <Button filled data="Request Demo" clsStyle="py-3"   action={() => router.push("/company/contact-us")}/>
+            <Button filled data="Request Demo" clsStyle="py-3 px-8"   action={() => router.push("/company/contact-us")}/>
             <div className="max-lg:hidden">
               <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                 <Image

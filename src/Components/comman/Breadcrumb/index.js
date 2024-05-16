@@ -7,7 +7,6 @@ const Breadcrumb = ({ breadcrumbList }) => {
       <div className="container">
         <div className="text-base text-black-33 leading-6">
           {breadcrumbList?.map((breadcrumb, index) => {
-            console.log("chhekc", breadcrumb);
             return (
               <Link key={index} href={breadcrumb?.link}>{`${breadcrumb?.label}${
                 index < breadcrumbList?.length - 1 ? ">" : ""

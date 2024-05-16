@@ -382,7 +382,7 @@ const Demand = () => {
                 Generation Platform, turbocharging your brand’s presence and
                 customer connections
               </p>
-              <Button filled data="Get Started" clsStyle="py-3" />
+              <Button filled data="Get Started" clsStyle="py-3 px-8" />
             </div>
           </>
         }
