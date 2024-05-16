@@ -20,6 +20,7 @@ export default function Home() {
           <div className="pt-4">
             <Button
               data="Request Demo"
+              clsStyle="py-2 px-8 text-white"
               action={() => router.push("/company/contact-us")}
               filled
             ></Button>

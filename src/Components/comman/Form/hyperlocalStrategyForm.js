@@ -68,7 +68,7 @@ const HyperlocalStrategyForm = ({
                       type="submit"
                       disabled={isLoading}
                       data={buttonTitle}
-                      clsStyle="py-3 px-10 bg-blue-900 border-blue-900"
+                      clsStyle="py-3 px-10 bg-blue-900 border-blue-900 text-white"
                     />
                   </div>
 

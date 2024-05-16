@@ -207,72 +207,6 @@ const HomeComponent = () => {
                           {item?.label}
                         </div>
                       ))}
-
-                      {/* <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        One page Microsites
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        User Roles
-                      </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        PIMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Campaigns
-                      </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Ads
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        CMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Mobile App
-                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -314,7 +248,6 @@ const HomeComponent = () => {
 
   return (
     <>
-      <Breadcrumb breadcrumbList={[{ link: "/", label: "Home" }]} />
       <CardSection {...discovery} renderElement={renderDiscoveryCard} />
       <InfoCard
         titleSty="text-[36px] font-medium leading-[140%] tracking-tighter text-black-33 mb-4"

@@ -9,6 +9,7 @@ const InfoCard = ({
   subTitle,
   subheadTitle,
   renderElement,
+  renderFilterElement,
   bordershow = false,
   sectionStyle = "py-[100px] bg-gray-100",
   containerSty = "container",
@@ -26,6 +27,7 @@ const InfoCard = ({
   const handleAction = useCallback(() => action && action());
   return (
     <section className={`${sectionStyle}`}>
+        {renderFilterElement && renderFilterElement}
       <div className={`${containerSty}`}>
         <div className={` ${gridContainerSty}`}>
           <div className={`${textContainerSty}`}>
