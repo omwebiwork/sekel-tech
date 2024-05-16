@@ -5,55 +5,41 @@ import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
+import {
+  bannerData,
+  importantFeatures,
+  keyProductSectionData,
+  manageInfoCardData,
+  oneUltimatePlatform,
+  seamlessIntegration,
+} from "@/static/json/dashboard";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 export default function Dashboard() {
-  let bannerObj = {
-    title: "Hyperlocation without Tech is Useless",
-  };
-
-  const challengesElement = () => {
-    return (
-      <InfoCard
-        title="Manage all locations in a single screen"
-        subheadTitle="Sekel Tech offers Dynamic Listing Management (DLM), a powerful solution that helps businesses manage and update their online listings."
-        description="DLM optimises online presence, attracts more customers, and improves marketing efforts"
-        subheadTitleSty = "mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
-        descriptionSty = "mx-auto mr-6 text-base font-normal leading-[25px] "
-        image={{
-          src: "/location-screen.svg",
-          height: 900,
-          width: 900,
-          alt: "img",
-        }}
-        sectionStyle="py-[52px] px-[42px] rounded-[24px] bg-gray-100"
-        containerSty="p-0"
-        containtWidth="max-w-[490px] h-full flex flex-col justify-center"
-        
-      />
-    );
-  };
+  const router = useRouter();
 
   return (
     <div>
       <Banner
-        {...bannerObj}
-        image={{
-          src: "/dashboard.png",
-          alt: "img",
-          height: 561,
-          width: 1138,
-        }}
+        {...bannerData}
         containerStyle="flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
         headinWidth="w-[936px] mx-auto text-center mb-12"
         renderElement={
           <div>
             <div className="flex justify-center gap-4">
-              <Button filled data="Request Demo" />
-              <Button data="Know More" />
+              <Button
+                filled
+                data="Request Demo"
+                action={() => router.push("/company/contact-us")}
+              />
+              <Button
+                data="Know More"
+                action={() => router.push("/company/contact-us")}
+              />
             </div>
           </div>
         }
@@ -66,10 +52,9 @@ export default function Dashboard() {
         ]}
       />
       <CardSection
+        {...keyProductSectionData}
         headingSty="flex items-end mx-4 gap-[60px] mb-[52px]"
         descriptionSty="text-base font-normal leading-[22px] text-black-33 "
-        title="Key product features"
-        description="Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500"
         headerSection={
           <div>
             <GetStartForm
@@ -80,69 +65,51 @@ export default function Dashboard() {
             />
           </div>
         }
-        renderElement={challengesElement}
+        renderElement={() => (
+          <InfoCard
+            {...manageInfoCardData}
+            subheadTitleSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
+            descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] "
+            sectionStyle="py-[52px] px-[42px] rounded-[24px] bg-gray-100"
+            containerSty="p-0"
+            containtWidth="max-w-[490px] h-full flex flex-col justify-center"
+          />
+        )}
       />
 
       <InfoCard
-        title="Other Important Features"
-        description="Sekel Cloud Infrastructure offers scalability, cost-efficiency, and enhanced security, empowering businesses to focus on innovation and growth."
-        image={{
-          src: "/feature-img.png",
-          height: 900,
-          width: 900,
-          alt: "img",
-        }}
+        {...importantFeatures?.sectionData}
         sectionStyle="py-[100px] bg-gray-100"
         containerSty="container"
         containtWidth="max-w-[490px] h-full flex flex-col justify-center"
-        descriptionSty = "mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
+        descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
         imageContainerSty=" w-full max-w-[580px] mx-auto"
         textContainerSty="order-2 col-span-5"
         imageContentSty="order-1 col-span-6"
         renderElement={
           <div className="">
-            <div className="flex items-center gap-x-[13px] mb-1.5">
-              <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
-              <Link
-                href={""}
-                className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
+            {importantFeatures?.list.map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-x-[13px] mb-1.5"
               >
-               Role Based Access
-              </Link>
-            </div>
-            <div className="flex items-center gap-x-[13px]">
-              <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
-              <Link
-                href={""}
-                className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
-              >
-                Store Locator
-              </Link>
-            </div>
-            <div className="flex items-center gap-x-[13px]">
-              <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
-              <Link
-                href={""}
-                className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
-              >
-                Store2Door Omni Commerce
-              </Link>
-            </div>
+                <span className="h-[15px] w-[15px] rounded-full min-w-[15px] bg-[#FCFBB3]"></span>
+                <Link
+                  href={item?.link}
+                  className="text-[16px] text-blue-600 w-[calc(100%_-_30px)]"
+                >
+                  {item?.label}
+                </Link>
+              </div>
+            ))}
             <div className="mt-8 bg-yellow-100 text-blue-600 p-4">
-            GDPR Compliance and Data Security
+              {importantFeatures?.footerText}
             </div>
           </div>
         }
       />
       <InfoCard
-        title="Seamless Integration With Your Data Systems"
-        description="Elevate efficiency as our platform seamlessly blends into your existing systems, offering a streamlined and unified digital experience"
-        image={{
-          src: "/integration.png",
-          height: 900,
-          width: 900,
-          alt: "integration",
-        }}
+        {...seamlessIntegration}
         sectionStyle="py-[52px] px-[42px] rounded-[24px]"
         containtWidth="max-w-[490px]"
         textContainerSty="col-span-5 flex items-center"
@@ -154,19 +121,14 @@ export default function Dashboard() {
             data="View all integrations"
             clsStyle="py-3"
             filled
-            action={() => {}}
+            action={() => {
+              router.push("/product/integration");
+            }}
           />
         }
       />
       <InfoCard
-        title="Choose all in One Ultimate  Platform"
-        description="Elevate efficiency as our platform seamlessly blends into your existing systems, offering a streamlined and unified digital experience"
-        image={{
-          src: "/ultimate-platform1.png",
-          height: 500,
-          width: 500,
-          alt: "img",
-        }}
+        {...oneUltimatePlatform}
         sectionStyle="py-[100px] bg-blue-900"
         containerSty="container "
         containtWidth=""
@@ -178,7 +140,7 @@ export default function Dashboard() {
         imageContentSty=" col-span-5 flex items-center"
         renderElement={
           <>
-            <Button filled data="Request Demo" clsStyle="py-3" />
+            <Button filled data="Request Demo" clsStyle="py-3"   action={() => router.push("/company/contact-us")}/>
             <div>
               <div className="ml-auto w-full max-w-[369px] rounded-2xl overflow-hidden">
                 <Image

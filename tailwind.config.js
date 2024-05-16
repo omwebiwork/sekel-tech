@@ -36,6 +36,9 @@ module.exports = {
         400: "#EAEAEA",
         100: "#F9FAFD",
       },
+      red:{
+        600:'#ff0000'
+      }
     },
   },
   plugins: [],

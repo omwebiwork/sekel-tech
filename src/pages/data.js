@@ -1,4 +1,5 @@
 import Banner from "@/Components/comman/Banner";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
@@ -49,9 +50,9 @@ const Data = () => {
       cardDataSty: "w-full",
     },
     {
-      title: "Data Collection Process",
+      title: "Data Storytelling",
       description:
-        "Data is collected from a variety of sources, including hyperlocal data sources, physical sales channels, and other CDP routine data collection processes. ",
+        "Visualization of data is utilized to generate reports and dashboards, facilitating the extraction of actionable insights. ",
       image: {
         src: "/data-process.png",
         height: "500",
@@ -99,7 +100,7 @@ const Data = () => {
       cardImgSty: "max-w-[340px] max-h-[169px] w-full mx-auto",
     },
     {
-      title: "Data Role Based Access",
+      title: "Role Based Access",
       description:
         "Granting permissions to data and systems based on an individual's job role or responsibilities.",
       image: {
@@ -121,9 +122,9 @@ const Data = () => {
       cardImgSty: " max-w-[304px] max-h-[156px] w-full mx-auto",
     },
     {
-      title: "Data Activation",
+      title: "Security & Compliance",
       description:
-        "Using collected data to drive actions or decisions, in marketing or business operations.",
+        "Refers to measures and protocols in place to protect data and ensure adherence to relevant laws and regulations.",
       image: {
         src: "/content-optimisation.png",
         height: "500",
@@ -254,13 +255,9 @@ const Data = () => {
                 <Card
                   key={index}
                   {...item}
-                  actionType="Know more"
-                  action={() => handleKnowMore(index)}
-                  learnMore={knowMore[index]}
-                  buttonSty="flex gap-1 items-center text-base font-medium text-blue-900"
-                  buttonIcon={
-                    <DownArrow className="w-2.5 h-2.5 ml-2.5 -rotate-90" />
-                  }
+                 
+                 
+                 
                 />
               </div>
             );
@@ -320,10 +317,17 @@ const Data = () => {
         }}
         sectionSty="pb-[100px] pt-20"
         containerStyle="container justify-between"
-        descriptionSty="mr-16"
+        descriptionSty="mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"
         renderElement={<GetStartForm buttonTitle="Get started" />}
         headinWidth="max-w-[572px] w-full mb-12"
+      />
+      <Breadcrumb
+        breadcrumbList={[
+          { link: "/", label: "Home" },
+          { link: "/how-it-works", label: "how it works" },
+          { link: "/data", label: "Unified Data Platform" },
+        ]}
       />
       <CardSection
         {...discoveryFeatureObj}
@@ -427,7 +431,7 @@ const Data = () => {
         title="Systematic gathering of information from various sources, ensuring accuracy and relevance for analysis and decision-making."
         sectionStyle="py-[100px] bg-blue-200 "
         headingSty=""
-        titleSty="text-[28px] font-medium mb-20 leading-[39px] tracking-tighter text-black-33"
+        titleSty="text-[28px] font-medium mb-20 leading-[39px] tracking-tighter text-black-33 max-w-[900px]"
         renderElement={() => (
           <div className="grid grid-cols-4">
             {systematicCardData?.map((item, index) => {
@@ -460,7 +464,7 @@ const Data = () => {
         title="Sekel CDP helps brands overcome the gaps in digital to physical customer journey mapping"
         description="Digital-to-physical customer journey mapping is essential for businesses aiming to elevate the customer experience. Sekel’s CDP delivers the crucial insights and tools that brands require to enhance interactions across all channels."
         sectionStyle="bg-blue-900 pt-[100px]"
-        titleSty="text-[28px] font-medium leading-[39px] tracking-tighter text-white mb-8"
+        titleSty="text-[28px] font-medium leading-[39px] tracking-tight text-white mb-8"
         descriptionSty="text-yellow-900 text-base font-normal leading-[25px]"
         // containerSty = 'container px-[100px]'
         image={{

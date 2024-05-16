@@ -1,9 +1,11 @@
 import Banner from "@/Components/comman/Banner";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import DownArrow from "@/assets/DownArrow";
+import Image from "next/image";
 import React, { useState, useCallback } from "react";
 
 const Discovery = () => {
@@ -81,7 +83,7 @@ const Discovery = () => {
     },
     {
       title: "Store Locator",
-      description: "Help customers find your physical locations online.",
+      description: "Help customers find all your physical locations online.",
       image: {
         src: "/store-locator.png",
         height: "500",
@@ -92,7 +94,7 @@ const Discovery = () => {
     {
       title: "Store Microsites",
       description:
-        "Create mini websites focused on specific stores to promote unique features & offerings.",
+        "Have mini website Automated Local SEO for all your stores/dealers/outlets in minutes",
       image: {
         src: "/store-microsites.png",
         height: "500",
@@ -102,7 +104,8 @@ const Discovery = () => {
     },
     {
       title: "Product Catalogue",
-      description: "Showcase your brand's products and their details.",
+      description:
+        "Showcase your brand's products and their details. Bulk Manage with Drag & Drop experience.",
       image: {
         src: "/product-catalogue.png",
         height: "500",
@@ -113,7 +116,7 @@ const Discovery = () => {
     {
       title: "Review Management",
       description:
-        "Sekel Paves the way for digital success, aiding business’s growth, reputation, and customer engagement.",
+        "Consolidate reviews from Google, Meta platforms. Automate reviews management for all your physical locations.",
       image: {
         src: "/review-management.png",
         height: "500",
@@ -123,7 +126,8 @@ const Discovery = () => {
     },
     {
       title: "Content Optimisation",
-      description: "Share your brand's stories, insights, and updates.",
+      description:
+        "Create, Publish & Optimize content at scale across all your locations.",
       image: {
         src: "/content-optimisation.png",
         height: "500",
@@ -231,13 +235,7 @@ const Discovery = () => {
                 <Card
                   key={index}
                   {...item}
-                  actionType="Know more"
-                  action={() => handleKnowMore(index)}
-                  learnMore={knowMore[index]}
                   buttonSty="flex gap-1 items-center text-base font-medium text-blue-900"
-                  buttonIcon={
-                    <DownArrow className="w-2.5 h-2.5 ml-2.5 -rotate-90" />
-                  }
                 />
               </div>
             );
@@ -260,15 +258,15 @@ const Discovery = () => {
               >
                 <Card
                   key={index}
-                  {
-                    ...item
-                  }
-                  image= {{
+                  {...item}
+                  image={{
                     ...item.image,
-                    className: "h-full w-full object-cover object-center"
+                    className: "h-full w-full object-cover object-center",
                   }}
                   cardSty={item.cardSty + " h-full bg-gray-100"}
-                  headingSty={"mb-8 tracking-tighter leading-[30px]"}
+                  headingSty={
+                    "mb-8 tracking-tighter leading-[30px] text-[28px]"
+                  }
                 />
               </div>
             );
@@ -279,7 +277,7 @@ const Discovery = () => {
   };
   let bannerObj = {
     title: "Discovery Platform",
-    description: `Sekel Tech’s organic and paid discovery is about forming genuine connections with your audience online. It amplifies return on advertising spends ( ROAS ) and brings lasting benefits, building trust and authority in your digital space.
+    description: `Leverage Sekel Tech's organic and paid discovery for genuine leads, boosting footfalls and establishing trust and authority in your digital landscape with real-time reporting
     `,
     subTitle: "Building Genuine Digital Connections",
   };
@@ -296,10 +294,17 @@ const Discovery = () => {
         }}
         sectionSty="pb-[100px] pt-20"
         containerStyle="container justify-between"
-        descriptionSty="mr-16"
+        descriptionSty="mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"
         renderElement={<GetStartForm buttonTitle="Get started" />}
         headinWidth="max-w-[500px] w-full mb-12"
+      />
+      <Breadcrumb
+        breadcrumbList={[
+          { link: "/", label: "Home" },
+          { link: "/how-it-works", label: "how it works" },
+          { link: "/discovery", label: "Discovery Platform" },
+        ]}
       />
       <CardSection
         {...discoveryFeatureObj}
@@ -309,7 +314,7 @@ const Discovery = () => {
         title="Advantages of Sekel Tech Hyperlocal Dynamic Engagement Commerce"
         description="Unlocking the Power of Organic Discovery"
         sectionStyle="py-[100px] bg-blue-200"
-        headingSty="max-w-[803px] mx-auto text-center"
+        headingSty="max-w-[803px] mx-auto text-center mb-[52px]"
         renderElement={() => (
           <div className="grid grid-cols-3 mx-10">
             {advantagesCardData?.map((item, index) => {
@@ -317,9 +322,8 @@ const Discovery = () => {
                 <div className="col-span-1" key={index}>
                   <Card
                     {...item}
-                    headingSty="text-xl font-medium leading-[30px] mb-8 text-black-900"
+                    headingSty="text-[28px] font-medium leading-[30px] mb-8 text-black-900"
                     cardSty="bg-blue-200 px-5 py-5 rounded-2xl border-[1px] border-white h-full"
-                   
                     titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-5"
                     descriptionSty="text-base font-normal leading-[22px] text-black-33"
                   />
@@ -330,11 +334,87 @@ const Discovery = () => {
         )}
       />
       <CardSection
-        headingSty="max-w-[803px]"
+        headingSty="max-w-[790px] mb-[52px]"
         descriptionSty="text-base font-normal leading-[22px] text-black-33"
         {...discoveryObj}
         renderElement={renderCard}
       />
+      <section className="bg-blue-900 py-20">
+        <div className="container">
+          <div className=" mb-[52px] ">
+            <h3 className="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-white">
+              Why Sekel Tech is the Ideal Choice
+            </h3>
+            <p className="text-base font-normal leading-[22px] max-w-[722px] text-yellow-900">
+              Empower Your Digital Presence with Sekel Tech. Sekel Tech offers
+              advanced features, including
+            </p>
+          </div>
+          <div className="flex items-center">
+            <div className="w-[25%] h-full mt-auto">
+              <ul className="pr-5 ">
+                <li className="ml-auto max-w-[243px] text-end  mb-[87px] ">
+                  <p className="mb-[14px] text-xl font-medium text-white ">
+                    Automated and Scaled Engagement
+                  </p>
+                  <p className="text-sm font-light text-white text-end">
+                    Automate responses and content delivery for consistent,
+                    valuable interactions.
+                  </p>
+                </li>
+                <li className="ml-auto max-w-[243px] text-end ">
+                  <p className="mb-[14px] text-xl font-medium text-white ">
+                    Comprehensive Educational Resources
+                  </p>
+                  <p className="text-sm font-light text-white text-end">
+                    Access a rich array of FAQs, videos and articles to empower
+                    end-users in making informed choices.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div className="w-[50%] h-full">
+              <div className="max-w-[591px] w-full mx-auto">
+                <Image
+                  className="h-full w-full object-cover"
+                  src={"/Choice.png"}
+                  height={562}
+                  width={591}
+                  alt="img"
+                />
+              </div>
+            </div>
+            <div className="w-[25%] h-full ">
+              <ul className="pr-5 ">
+                <li className="ml-auto max-w-[243px]  mb-[68px] ">
+                  <p className="mb-[14px] text-xl font-medium text-white ">
+                  Secure Payment and Consent-Driven Engagement
+                  </p>
+                  <p className="text-sm font-light text-white ">
+                  Prioritize secure payment options and consent-driven engagemen to reinforce trust.
+                  </p>
+                </li>
+                <li className="ml-auto max-w-[243px] mb-[68px]">
+                  <p className="mb-[14px] text-xl font-medium text-white ">
+                  Automated and Scaled Engagement
+                  </p>
+                  <p className="text-sm font-light text-white ">
+                  Automate responses and content delivery for consistent, valuable interactions.
+                  </p>
+                </li>
+                <li className="ml-auto max-w-[243px] ">
+                  <p className="mb-[14px] text-xl font-medium text-white ">
+                  Automated and Scaled Engagement
+                  </p>
+                  <p className="text-sm font-light text-white ">
+                  Automate responses and content delivery for consistent, valuable interactions.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <HyperlocalStrategyForm containerSty="container" />
     </div>
   );

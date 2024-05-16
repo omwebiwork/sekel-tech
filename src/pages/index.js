@@ -3,8 +3,10 @@ import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import HomeComponent from "@/Components/Home";
 import { bannerData } from "@/static/json/home";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="bg-blue-900 pt-8 md:pt-[56px]">
       <Banner
@@ -16,14 +18,15 @@ export default function Home() {
         sectionSty="md:text-center"
         renderElement={
           <div className="pt-4">
-            <Button data="Request Demo" filled></Button>
+            <Button
+              data="Request Demo"
+              action={() => router.push("/company/contact-us")}
+              filled
+            ></Button>
           </div>
         }
       />
-      <Breadcrumb breadcrumbList={[
-          { link: "/", label: "Home" },
-          
-        ]}/>
+      <Breadcrumb breadcrumbList={[{ link: "/", label: "Home" }]} />
       <HomeComponent />
     </div>
   );

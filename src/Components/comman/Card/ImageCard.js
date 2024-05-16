@@ -7,7 +7,7 @@ const ImageCard = ({
   imgContainerSty = "mb-5 h-[280px]",
 }) => {
   return (
-    <div
+    <div id="scrollImage" 
       className={`${containerSty} bg-blue-100 bg-opacity-10 rounded-xl`}
     >
       <div className={` ${imgContainerSty} w-full rounded-xl overflow-hidden`}>

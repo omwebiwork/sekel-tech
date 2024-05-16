@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "@/Components/comman/Card";
 import { useCallback, useState } from "react";
 import DownArrow from "@/assets/DownArrow";
@@ -17,70 +17,18 @@ import {
   chanllengesSection,
   sliderSection,
   competitionData,
-  
+  sliderImage,
+  sliderData,
 } from "@/static/json/home";
 import Button from "../comman/Button";
+import { useRouter } from "next/router";
+import Breadcrumb from "../comman/Breadcrumb";
 
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);
+  let [offset, setOffset] = useState(4);
   let [cardData, setCardData] = useState(discoveryCardData);
-
-  let silderData = [
-    {
-      image: {
-        src: "/case-studies-1.png",
-        height: 304,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-        title: "Increase ROI by",
-        size: "31x",
-      },
-    },
-    {
-      image: {
-        src: "/case-studies.png",
-        height: 500,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
-        size: "10x",
-      },
-    },
-    {
-      image: {
-        src: "/case-studies-1.png",
-        height: 304,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-        title: "Increase ROI by",
-        size: "31x",
-      },
-    },
-    {
-      image: {
-        src: "/case-studies.png",
-        height: 500,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
-        size: "10x",
-      },
-    },
-  ];
+  const router = useRouter();
 
   const handleLearnMore = useCallback((index) => {
     if (learnMore[index]) {
@@ -136,7 +84,10 @@ const HomeComponent = () => {
                 return <li key={listIndex}>{listItem.title}</li>;
               })}
             </ul>
-            <button className="flex gap-2 items-center text-base text-blue-900 font-medium ">
+            <button
+              className="flex gap-2 items-center text-base text-blue-900 font-medium "
+              onClick={() => router.push("/data")}
+            >
               Explore our Data Platform
               <div className="h-6 w-6">
                 <Image
@@ -157,22 +108,23 @@ const HomeComponent = () => {
     return (
       <>
         <div className="grid grid-cols-16 gap-5 mb-8">
-          {chanllenges?.map((item, index) =>
-            chanllengesCard({
+          {chanllenges?.map((item, index) => {
+            return chanllengesCard({
               ...item,
               gridColSize:
-                index === 1 || index === 2 ? "col-span-7" : "col-span-9",
-            })
-          )}
+                "col-span-box [&:nth-child(4n+1)]:col-span-9 [&:nth-child(4n+2)]:col-span-7 [&:nth-child(4n+3)]:col-span-7 [&:nth-child(4n+4)]:col-span-9",
+            });
+          })}
         </div>
         <div className="flex items-center justify-end gap-x-5">
           <h3 className="font-semibold text-base">Need more info?</h3>
-          <Button data={"View more"} filled></Button>
+          <Button data={"View more"} filled action={() => {}}></Button>
         </div>
       </>
     );
   };
-    const renderCompetition = () => {
+
+  const renderCompetition = () => {
     return (
       <section className="pt-[28px]">
         <div className="bg-blue-900 pl-6 rounded-t-2xl">
@@ -256,7 +208,71 @@ const HomeComponent = () => {
                         </div>
                       ))}
 
-                    
+                      {/* <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        One page Microsites
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        User Roles
+                      </div>
+
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        PIMS
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/close.svg"}
+                          height={24}
+                          width={24}
+                          alt="close"
+                        />
+                        No Campaigns
+                      </div>
+
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/close.svg"}
+                          height={24}
+                          width={24}
+                          alt="close"
+                        />
+                        No Ads
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/check.svg"}
+                          height={24}
+                          width={24}
+                          alt="check"
+                        />
+                        CMS
+                      </div>
+                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
+                        <Image
+                          src={"/close.svg"}
+                          height={24}
+                          width={24}
+                          alt="close"
+                        />
+                        No Mobile App
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -296,10 +312,9 @@ const HomeComponent = () => {
     );
   };
 
-
-
   return (
     <>
+      <Breadcrumb breadcrumbList={[{ link: "/", label: "Home" }]} />
       <CardSection {...discovery} renderElement={renderDiscoveryCard} />
       <InfoCard
         titleSty="text-[36px] font-medium leading-[140%] tracking-tighter text-black-33 mb-4"
@@ -307,7 +322,15 @@ const HomeComponent = () => {
         bordershow
         renderElement={
           <div className="flex gap-8 pt-6">
-            <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
+            <button
+              className="h-[57px] w-[188px] rounded-lg overflow-hidden"
+              // onClick={() =>
+              //   window.open(
+              //     "",
+              //     "_blank"
+              //   )
+              // }
+            >
               <Image
                 src={"/google-store.png"}
                 height={57}
@@ -315,7 +338,15 @@ const HomeComponent = () => {
                 alt="btn"
               />
             </button>
-            <button className="h-[57px] w-[188px] rounded-lg overflow-hidden">
+            <button
+              className="h-[57px] w-[188px] rounded-lg overflow-hidden"
+              //  onClick={() =>
+              //   window.open(
+              //     "",
+              //     "_blank"
+              //   )
+              // }
+            >
               <Image src={"/app-store.png"} height={57} width={188} alt="btn" />
             </button>
           </div>
@@ -329,13 +360,14 @@ const HomeComponent = () => {
       <CardSection
         {...chanllengesSection}
         headingSty=""
-        descriptionSty="text-base font-normal leading-[25px] mb-[52px] text-black-33"
+        descriptionSty="text-base font-normal leading-[25px] mb-[52px]"
         renderElement={challengesElement}
       />
       <SliderSection
         {...sliderSection}
+        sliderImage={sliderImage}
         profileButton
-        renderElement={silderData?.map((item, index) => {
+        renderElement={sliderData?.map((item, index) => {
           return <ImageCard {...item} key={index} />;
         })}
       />

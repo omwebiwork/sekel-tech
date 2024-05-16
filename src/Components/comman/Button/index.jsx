@@ -1,14 +1,23 @@
 import React, { useCallback } from "react";
 
-const Button = ({ filled = false, data, clsStyle = "py-2", action }) => {
+const Button = ({
+  disabled = false,
+  filled = false,
+  data,
+  clsStyle = "py-2",
+  action,
+  type = "button",
+}) => {
   const handleClick = useCallback(() => {
-    action && action;
+    action && action();
   }, []);
   return (
     <button
-      className={`${
+      type={type}
+      disabled={disabled}
+      className={` ${disabled ? "cursor-not-allowed opacity-50" : ""} ${
         filled ? "bg-yellow-900 text-black-33" : "text-white"
-      } leading-[140%] ${clsStyle} px-8 border border-1 border-yellow-900 rounded-full`}
+      } leading-[140%] ${clsStyle} px-8 border border-1 border-yellow-900 rounded-full font-medium`}
       onClick={handleClick}
     >
       {data}
