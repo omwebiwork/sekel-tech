@@ -41,13 +41,14 @@ const HomeComponent = () => {
   const renderDiscoveryCard = () => {
     return (
       <div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-y-6 md:gap-x-2 lg:gap-x-8">
           {cardData?.map((item, index) => {
             return (
-              <div className="col-span-1">
+              <div className="col-span-3 md:col-span-1">
                 <Card
                   key={index}
                   {...item}
+                  cardSty="p-5 md:p-4 lg:p-10 rounded-2xl h-full bg-gray-100"
                   actionType="Learn more"
                   action={() => handleLearnMore(index)}
                   learnMore={learnMore[index]}
@@ -207,72 +208,6 @@ const HomeComponent = () => {
                           {item?.label}
                         </div>
                       ))}
-
-                      {/* <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        One page Microsites
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        User Roles
-                      </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        PIMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Campaigns
-                      </div>
-
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Ads
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/check.svg"}
-                          height={24}
-                          width={24}
-                          alt="check"
-                        />
-                        CMS
-                      </div>
-                      <div className="relative py-2 px-3 flex items-center gap-x-[16px] text-white font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white">
-                        <Image
-                          src={"/close.svg"}
-                          height={24}
-                          width={24}
-                          alt="close"
-                        />
-                        No Mobile App
-                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -314,9 +249,9 @@ const HomeComponent = () => {
 
   return (
     <>
-      <Breadcrumb breadcrumbList={[{ link: "/", label: "Home" }]} />
       <CardSection {...discovery} renderElement={renderDiscoveryCard} />
       <InfoCard
+        sectionStyle="pt-[50px] md:pt-[75px] lg:pt-[100px] bg-gray-100"
         titleSty="text-[36px] font-medium leading-[140%] tracking-tighter text-black-33 mb-4"
         {...beyondTech}
         bordershow
@@ -371,11 +306,11 @@ const HomeComponent = () => {
           return <ImageCard {...item} key={index} />;
         })}
       />
-      <section className="py-[100px] bg-white">
+      <section className="py-[50px] md:py-[75px] lg:py-[100px] bg-white">
         <div className="container">
           <div className="grid grid-cols-10 gap-6 mb-5">
-            <div className="col-span-4">
-              <div className=" w-[479px] h-full flex flex-col justify-center">
+            <div className="col-span-12 lg:col-span-5 xl:col-span-4">
+              <div className="lg:max-w-[479px] h-full flex flex-col justify-center">
                 <h3 className="text-[42px] font-medium mb-[44px] leading-[52px] tracking-tighter text-black-33">
                   About Sekel
                 </h3>
@@ -398,8 +333,8 @@ const HomeComponent = () => {
                 </p>
               </div>
             </div>
-            <div className="col-span-6">
-              <div className="ml-auto max-h-[476px] max-w-[600px] rounded-[15px] overflow-hidden ">
+            <div className="col-span-12 lg:col-span-5 xl:col-span-6">
+              <div className="max-lg:mx-auto lg:ml-auto lg:max-h-[476px] lg:max-w-[600px] rounded-[20px] overflow-hidden">
                 <Image
                   className="w-full h-full object-cover object-center"
                   src={"/about.png"}

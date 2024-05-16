@@ -11,18 +11,18 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        // Simple 16 column grid
         16: "repeat(16, minmax(0, 1fr))",
       },
     },
     colors: {
+      transparent: "rgba(0,0,0,0)",
       white: "#ffffff",
       blue: {
         900: "#2C74F7",
         600: "#2670FB",
         200: "#EAECF6",
         100: "#D6E6FF",
-        50:"#DEE1EF",
+        50: "#DEE1EF",
       },
       yellow: {
         900: "#FDD53E",

@@ -7,9 +7,9 @@ const SliderSection = ({
   sliderImage = [],
   renderElement,
   profileButton = false,
-  textContentSty = "col-span-4",
-  cardContentSty = "col-span-6",
-  discriptionSty = "w-1/2",
+  textContentSty = "col-span-10 lg:col-span-4",
+  cardContentSty = "col-span-10 lg:col-span-6",
+  discriptionSty = "max-w-[240px]",
   clickImageAction = () => {},
 }) => {
   let [imageIndex, setImageIndex] = useState(0);
@@ -35,13 +35,15 @@ const SliderSection = ({
   return (
     <section className="bg-blue-900 py-[54px]">
       <div className="container">
-        <div className="grid grid-cols-10">
+        <div className="grid grid-cols-10 gap-x-5">
           <div className={`${textContentSty} flex items-center`}>
-            <div className="w-full text-white">
-              <h1 className="text-[42px] font-medium tracking-tighter leading-[55px] mb-5">
+            <div className="w-full text-white max-lg:pb-10">
+              <h1 className="text-[36px] leading-[120%] lg:text-[42px] font-medium tracking-tighter lg:leading-[140%] mb-5">
                 {title}
               </h1>
-              <p className={`text-base font-normal leading-[25px] mb-[52px] ${discriptionSty}`}>
+              <p
+                className={`text-base font-normal leading-[25px] mb-6 lg:mb-[52px] ${discriptionSty}`}
+              >
                 {description}
               </p>
               {profileButton && (

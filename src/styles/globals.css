@@ -33,39 +33,39 @@ body {
 }
 
 .container {
-  padding: 0 24px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 640px) {
   .container {
     max-width: 600px;
-    padding: 0 10px;
+    padding: 0 16px;
   }
 }
 @media screen and (min-width: 768px) {
   .container {
     max-width: 750px;
-    padding: 0 10px;
+    padding: 0 16px;
   }
 }
 @media screen and (min-width: 1024px) {
   .container {
     max-width: 1000px;
-    padding: 0 12px;
+    padding: 0 18px;
   }
 }
 
 @media screen and (min-width: 1199px) {
   .container {
     max-width: 1162px;
-    padding: 0 16px;
+    padding: 0 20px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
     max-width: 1232px;
-    padding: 0 16px;
+    padding: 0 24px;
   }
 }

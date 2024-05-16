@@ -6,9 +6,9 @@ const CardSection = ({
   renderElement,
   headerSection,
   headingSty = "text-center mb-[52px]",
-  descriptionSty = "text-base font-normal leading-[22px] text-black-33 w-[456px] mx-auto",
-  sectionStyle = "py-[100px] bg-white",
-  titleSty = 'text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33'
+  descriptionSty = "text-base font-normal leading-[22px] text-black-33 max-w-[456px] mx-auto",
+  sectionStyle = "py-[50px] md:py-[75px] lg:py-[100px] bg-white",
+  titleSty = 'text-[32px] lg:text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-black-33'
 }) => {
   return (
     <section className={`${sectionStyle}`}>
