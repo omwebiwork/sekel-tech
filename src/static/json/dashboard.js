@@ -1,7 +1,7 @@
 export const bannerData = {
   title: "Hyperlocation without Tech is Useless",
   image: {
-    src: "/dashboard.png",
+    src: "/dashboard-banner.png",
     alt: "img",
     height: 561,
     width: 1138,

@@ -14,14 +14,19 @@ const HyperlocalStrategyForm = ({
   buttonTitle = "Get a  FREE Audit",
   containerSty = "",
   showForm = true,
+  newsTitle = "text-blue-600",
 }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className=" bg-yellow-100 py-[18px] px-10 rounded-[14px]">
-      <div className={`${containerSty} flex gap-8`}>
-        <p className="text-[28px] text-blue-600 font-medium">{title}</p>
+    <div className="p-5 md:p-7 bg-yellow-100 lg:py-[18px] lg:px-10 rounded-[14px]">
+      <div className={`${containerSty} lg:flex lg:gap-8 items-center`}>
+        <p
+          className={`${newsTitle} max-lg:mb-5 max-lg:text-center text-[28px] font-medium`}
+        >
+          {title}
+        </p>
         {showForm && (
           <div className="flex-1">
             <Formik
@@ -37,11 +42,11 @@ const HyperlocalStrategyForm = ({
                   const result = await getQuote({ email });
                   setIsLoading(false);
                   if (result.status === 200 || result.data.success === true) {
-                  enqueueSnackbar("Mail sent successfully.", {
-                    variant: "success",
-                  });
-                  console.log("values", values);
-                  resetForm();
+                    enqueueSnackbar("Mail sent successfully.", {
+                      variant: "success",
+                    });
+                    console.log("values", values);
+                    resetForm();
                   } else {
                     enqueueSnackbar("Something Went Wrong.", {
                       variant: "error",
@@ -57,9 +62,9 @@ const HyperlocalStrategyForm = ({
             >
               {({}) => (
                 <Form>
-                  <div className="flex gap-4 ">
+                  <div className="sm:flex gap-4">
                     <Field
-                      className="text-black-33 placeholder:text-black-33 flex-grow leading-5 py-2 px-8 border border-1 border-gray-400  rounded-full bg-white focus:ring-0 focus:outline-none focus-visible:ring-0"
+                      className="h-[50px] max-sm:mb-3 max-sm:w-full text-black-33 placeholder:text-black-33 flex-grow leading-5 py-2 px-8 border border-1 border-gray-400 rounded-full bg-white focus:ring-0 focus:outline-none focus-visible:ring-0"
                       type="email"
                       placeholder={placeholder}
                       name="email"
@@ -68,7 +73,7 @@ const HyperlocalStrategyForm = ({
                       type="submit"
                       disabled={isLoading}
                       data={buttonTitle}
-                      clsStyle="py-3 px-10 bg-blue-900 border-blue-900 text-white"
+                      clsStyle="h-[50px] max-sm:w-full py-3 px-10 bg-blue-900 border-blue-900 text-white"
                     />
                   </div>
 

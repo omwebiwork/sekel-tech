@@ -25,9 +25,11 @@ export default function Dashboard() {
     <div>
       <Banner
         {...bannerData}
-        containerStyle="flex-col mx:w-full items-center text-center pt-[56px]"
+        containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
-        headinWidth="w-[936px] mx-auto text-center mb-12"
+        imgContainerSty="max-w-[1080px] mx-auto"
+        imgGridSty="max-xl:px-6"
+        headinWidth="max-w-[936px] mx-auto text-center mb-12"
         renderElement={
           <div>
             <div className="flex justify-center gap-4">
@@ -77,8 +79,13 @@ export default function Dashboard() {
             }
             subheadTitleSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
             descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] "
+<<<<<<< HEAD
+            sectionStyle="p-4 md:p-8 lg:py-[52px] lg:px-[42px] rounded-[24px] bg-gray-100"
+            containerSty="p-0"
+=======
             sectionStyle=" rounded-[24px] bg-gray-100"
             containerSty="py-[52px] px-[42px]"
+>>>>>>> feature/dicovery-page
             containtWidth="max-w-[490px] h-full flex flex-col justify-center"
           />
         )}
@@ -86,13 +93,14 @@ export default function Dashboard() {
 
       <InfoCard
         {...importantFeatures?.sectionData}
-        sectionStyle="py-[100px] bg-gray-100"
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-gray-100"
         containerSty="container"
         containtWidth="max-w-[490px] h-full flex flex-col justify-center"
-        descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
+        descriptionSty="max-lg:text-center mx-auto lg:mr-6 text-base font-normal leading-[25px] mb-8"
         imageContainerSty=" w-full max-w-[580px] mx-auto"
-        textContainerSty="order-2 col-span-5"
-        imageContentSty="order-1 col-span-6"
+        textContainerSty="order-2 col-span-11 lg:col-span-5"
+        imageContentSty="order-1 col-span-11 lg:col-span-6 max-lg:mb-6"
+        titleSty="max-lg:text-center text-[32px] lg:text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-4"
         renderElement={
           <div className="">
             {importantFeatures?.list.map((item, index) => (
@@ -117,12 +125,12 @@ export default function Dashboard() {
       />
       <InfoCard
         {...seamlessIntegration}
-        sectionStyle="py-[52px] px-[42px] rounded-[24px]"
+        sectionStyle="py-10 px-1 lg:py-[52px] lg:px-[42px] rounded-[24px]"
         containtWidth="max-w-[490px]"
-        textContainerSty="col-span-5 flex items-center"
-        descriptionSty="mb-8 text-base font-normal leading-[25px]"
+        textContainerSty="col-span-11 lg:col-span-5 max-lg:mb-8 flex items-center"
+        imageContentSty="col-span-11 lg:col-span-6"
+        descriptionSty="mb-3 md:mb-8 text-base font-normal leading-[25px]"
         imageContainerSty="max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden mx-auto"
-        imageContentSty="col-span-6"
         renderElement={
           <Button
             data="View all integrations"
@@ -136,25 +144,21 @@ export default function Dashboard() {
       />
       <InfoCard
         {...oneUltimatePlatform}
-        sectionStyle="py-[100px] bg-blue-900"
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-900"
         containerSty="container "
         containtWidth=""
-        titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
-        descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
+        titleSty="text-white text-[36px] lg:text-[54px] font-normal mb-3 lg:mb-8 leading-[140%] tracking-tighter"
+        descriptionSty="text-white lg:max-w-[542px] mb-5 lg:mb-8 mr-auto text-base font-normal leading-[25px]"
         gridContainerSty="gap-0 grid grid-cols-11"
         imageContainerSty=" w-full max-w-[497px] ml-0 mx-auto"
-        textContainerSty=" col-span-6"
-        imageContentSty=" col-span-5 flex items-center"
+        textContainerSty="col-span-11 lg:col-span-6 max-lg:mb-10"
+        imageContentSty="col-span-11 lg:col-span-5 flex items-center"
+        dashImageSty="col-span-11 lg:hidden pt-10"
         renderElement={
           <>
-            <Button
-              filled
-              data="Request Demo"
-              clsStyle="py-3 px-8"
-              action={() => router.push("/company/contact-us")}
-            />
-            <div>
-              <div className="ml-auto w-full max-w-[369px] rounded-2xl overflow-hidden">
+            <Button filled data="Request Demo" clsStyle="py-3 px-8"   action={() => router.push("/company/contact-us")}/>
+            <div className="max-lg:hidden">
+              <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                 <Image
                   className="w-full h-full"
                   src={"/ultimate-platform2.png"}

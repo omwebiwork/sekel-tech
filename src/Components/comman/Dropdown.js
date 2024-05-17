@@ -28,10 +28,10 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
   }, []);
 
   return (
-    <div className="relative inline-block" ref={dropdownRef}>
+    <div className="relative max-lg:border-b border-[#A3ACB1]/60" ref={dropdownRef}>
       <button
         type="button"
-        className="px-6 py-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm inline-flex items-center"
+        className="lg:px-3 xl:px-8 leading-[140%] tracking-tight py-6 lg:py-2 max-lg:w-full lg:text-white bg-blue-700 hover:bg-blue-800 focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium text-base inline-flex items-center"
         onClick={toggleDropdown}
       >
         {text}
@@ -39,14 +39,14 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
       </button>
 
       {isOpen && (
-        <div className={`${dropdownContainerSty} origin-top-right left-auto absolute right-0 mt-4 rounded-xl shadow-lg bg-white text-black-33 p-[52px]`}>
-          <div className="flex">
-            <div className="w-[calc(100%_-_201px)]">
+        <div className={`${dropdownContainerSty} origin-top-right left-auto lg:absolute right-0 lg:mt-4 lg:rounded-xl lg:shadow-lg bg-white text-black-33 lg:pt-4 lg:p-[52px]`}>
+          <div className="lg:flex">
+            <div className="lg:w-[calc(100%_-_201px)]">
               <ul
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
-                className="flex flex-wrap flex-col max-h-[160px] pr-[80px] gap-x-[80px]"
+                className="lg:flex flex-wrap flex-col lg:max-h-[160px] lg:pr-[80px] lg:gap-x-[80px]"
               >
                 {list?.map((item, index) => {
                   console.log("chekc ", "000", item.path);
@@ -54,7 +54,7 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
                     <li className="block" key={index}>
                       <Link
                         href={`${item.redirectPath}`}
-                        className="block py-2 text-base font-medium text-black-900 hover:bg-gray-100 whitespace-nowrap"
+                        className="block px-[10px] lg:px-0 py-[12px] lg:py-2 text-base font-medium text-black-900 hover:bg-gray-100 whitespace-nowrap"
                         onClick={closeDropdown}
                       >
                         {item.name}
@@ -64,7 +64,7 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
                 })}
               </ul>
             </div>
-            <div className="min-w-[201px] w-[201px] h-[176px] rounded-3xl overflow-hidden">
+            <div className="max-lg:hidden min-w-[201px] w-[201px] h-[176px] rounded-3xl overflow-hidden">
               <Image className="h-full w-full" {...image} alt="img" />
             </div>
           </div>
