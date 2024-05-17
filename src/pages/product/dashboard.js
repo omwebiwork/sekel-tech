@@ -62,14 +62,14 @@ export default function Dashboard() {
           <InfoCard
             {...manageInfoCard?.sectionData}
             renderFilterElement={
-              <div className="flex justify-between px-4 pt-[52px]">
+              <div className="flex justify-between gap-2  mb-7 -mx-6 overflow-x-auto">
                 {manageInfoCard?.renderFilterData?.map((item, index) => (
-                  <div>
+                  <div className="mb-2">
                     <Button
                       key={index}
                       data={item?.label}
                       filled={item?.active ? true : false}
-                      clsStyle={`py-2 px-5 text-sm ${
+                      clsStyle={`py-2 px-5 text-sm whitespace-nowrap ${
                         item?.active ? "" : "bg-[#FCFBB3] text-black-33"
                       }`}
                     />
@@ -79,13 +79,8 @@ export default function Dashboard() {
             }
             subheadTitleSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
             descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] "
-<<<<<<< HEAD
             sectionStyle="p-4 md:p-8 lg:py-[52px] lg:px-[42px] rounded-[24px] bg-gray-100"
             containerSty="p-0"
-=======
-            sectionStyle=" rounded-[24px] bg-gray-100"
-            containerSty="py-[52px] px-[42px]"
->>>>>>> feature/dicovery-page
             containtWidth="max-w-[490px] h-full flex flex-col justify-center"
           />
         )}
