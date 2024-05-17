@@ -5,6 +5,7 @@ import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import { bannerHowItworks } from "@/static/json/howItWorks";
+import Image from "next/image";
 import React from "react";
 
 export default function HowItWorks() {
@@ -77,20 +78,28 @@ export default function HowItWorks() {
       },
     },
   ];
-
-  let bannerObj = {
-    title: "360º Consumer Journey from Discovery to Delivery",
-    description: `Enabling retail brands to seamlessly navigate the consumer journey from discovery to delivery.
-  `,
-  };
-
   return (
     <div>
       <Banner
         {...bannerHowItworks}
-        containerStyle="container justify-between"
-        renderElement={<GetStartForm buttonTitle="Get started" />}
-        headinWidth="max-w-[491px] mb-12"
+        containerStyle="container justify-between relative"
+        renderElement={
+          <>
+            <GetStartForm buttonTitle="Get started" />
+            <div className="absolute bottom-0 ">
+              <Image
+                className="w-full object-cover object-center"
+                src={"/how-it-work-banner.png"}
+                height={792}
+                width={1000}
+                alt="img"
+              />
+            </div>
+          </>
+        }
+        headinWidth="max-w-[491px] mb-[400px]"
+        descriptionSty="text-base font-normal leading-[25px] mb-8 text-white"
+        imgContainerSty="max-w-[564px] h-[631px] w-full rounded-[20px] overflow-hidden mt-[161px]"
         titleSty="text-[36px] leading-[50px] md:text-[42px] font-medium md:leading-[60px] mb-4 tracking-tight"
       />
       <Breadcrumb

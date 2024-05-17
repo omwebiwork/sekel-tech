@@ -3,9 +3,9 @@ export const bannerHowItworks = {
   description: `Enabling retail brands to seamlessly navigate the consumer journey from discovery to delivery.
   `,
   image: {
-    src: "/retail.png",
+    src: "/consumer-journey.png",
     alt: "img",
-    height: 400,
-    width: 400,
+    height: 631,
+    width: 564,
   },
 };

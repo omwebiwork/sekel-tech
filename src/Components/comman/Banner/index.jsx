@@ -55,7 +55,7 @@ const Banner = ({
           )}
           {renderFormElement  && renderFormElement}
         </div>
-      </div>
+           </div>
     </div>
   );
 };
