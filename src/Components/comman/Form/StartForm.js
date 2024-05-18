@@ -6,7 +6,8 @@ const GetStartForm = ({
   type = "email",
   value = "",
   filled = true,
-  inputSty = "text-white placeholder:text-white border-white",
+  clsStyle="py-3 px-8",
+  inputSty = "text-white placeholder:text-white border-white bg-gray-100 bg-opacity-10",
 }) => {
   return (
     <div className="flex gap-4">
@@ -14,9 +15,9 @@ const GetStartForm = ({
         type={type}
         placeholder={placeholder}
         value={value}
-        className={`leading-5 py-2 px-8 border border-1 rounded-full bg-gray-100 bg-opacity-10 focus:ring-0 focus:outline-none focus-visible:ring-0 ${inputSty}`}
+        className={`leading-5 py-2 px-8 border border-1 rounded-full  focus:ring-0 focus:outline-none focus-visible:ring-0 ${inputSty}`}
       />
-      <Button filled={filled} data={buttonTitle} clsStyle="py-3 px-8" />
+      <Button filled={filled} data={buttonTitle}  clsStyle={clsStyle}/>
     </div>
   );
 };

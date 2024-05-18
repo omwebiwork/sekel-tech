@@ -255,7 +255,7 @@ const Careers = () => {
               placeholder="Hyperlocation Management"
               value="All Posts"
               type="text"
-              inputSty="text-black-33 placeholder:text-black-33 border-gray-400"
+              inputSty="text-black-33 placeholder:text-black-33 border-gray-400 bg-gray-100 bg-opacity-10"
             />
           </div>
         }

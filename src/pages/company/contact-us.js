@@ -5,11 +5,12 @@ import Button from "@/Components/comman/Button";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
+import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import Image from "next/image";
 import React, { useState } from "react";
 
 const ContactUs = () => {
-  const [accordianState, setAccordianState] = useState([]);
+  const [accordianState, setAccordianState] = useState(['5','9']);
   let bannerObj = {
     title: "Discover The Power Of Digital At Your Physical Stores",
     description: `Designed to help retail businesses, Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey.
@@ -105,16 +106,16 @@ const ContactUs = () => {
     }
   };
   return (
-    <div className="bg-blue-600">
+    <>
       <Banner
         {...bannerObj}
-        sectionSty="pb-[100px] pt-20"
+        sectionSty="pb-8 pt-[50px]"
         containerStyle="container justify-between h-full gap-[80px]"
         descriptionSty="mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"
         imgGridSty="w-full h-full  "
         renderElement={
-          <div className="-mt-[180px] -mr-[80px]">
+          <div className="-mt-[200px] -mr-[80px]">
             <Image
               className="w-full object-cover"
               src={"/digital-graph.svg"}
@@ -140,7 +141,7 @@ const ContactUs = () => {
       />
       <CardSection
         headingSty="flex items-end mx-4 gap-[60px]"
-        sectionStyle="py-[100px] bg-white"
+        sectionStyle="py-[50px] bg-white"
         descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33 mb-[52px]"
         renderElement={() => (
           <div className="grid grid-cols-3 gap-5">
@@ -163,7 +164,7 @@ const ContactUs = () => {
       />
       <InfoCard
         {...seamlessIntegration}
-        sectionStyle="py-[52px] px-[42px]  bg-white"
+        sectionStyle="pt-[50px] pb-[100px] px-[42px]  bg-white"
         containtWidth="max-w-[371px]"
         textContainerSty="col-span-5 flex items-center"
         descriptionSty="mb-8 text-base font-normal leading-[25px]"
@@ -255,7 +256,8 @@ const ContactUs = () => {
           </>
         }
       />
-    </div>
+       <HyperlocalStrategyForm containerSty="container" buttonTitle="Get a  FREE Audit" placeholder="Enter your email" />
+    </>
   );
 };
 
