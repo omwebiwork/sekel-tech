@@ -64,7 +64,7 @@ export default function Dashboard() {
           <InfoCard
             {...manageInfoCard?.sectionData[activeTab]}
             renderFilterElement={
-              <div className="flex justify-between gap-2  mb-7 -mx-6 overflow-x-auto">
+              <div className="flex justify-between gap-2 mb-7 xl:-mx-6 overflow-x-auto">
                 {manageInfoCard?.renderFilterData?.map((item, index) => (
                   <div className="mb-2">
                     <Button

@@ -128,7 +128,7 @@ const HomeComponent = () => {
 
   const renderCompetition = () => {
     return (
-      <section className="pt-[28px]">
+      <section className="pt-[40px]">
         <div className="bg-blue-900 pl-6 rounded-t-2xl">
           <div className="grid grid-cols-3">
             <div className="col-span-1">
@@ -147,7 +147,7 @@ const HomeComponent = () => {
                     {competitionData?.sidebar?.map((sidebar, index) => (
                       <div
                         key={index}
-                        className="relative py-2 px-3 flex items-center gap-x-[16px] text-black-33 font-medium text-[16px] mb-4 tracking-tighter line-clamp-1 border-b border-white"
+                        className="relative py-2 px-3 flex items-center text-black-33 font-medium mb-4 tracking-tighter border-b border-white"
                       >
                         <Image
                           src={"/arrow.svg"}
@@ -155,7 +155,9 @@ const HomeComponent = () => {
                           width={24}
                           alt="arrow"
                         />
-                        {sidebar?.label}
+                        <div className="text-[14px] lg:text-[16px] w-[calc(100%_-_24px)] pl-3 text-ellipsis overflow-hidden">
+                          {sidebar?.label}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -183,7 +185,9 @@ const HomeComponent = () => {
                             width={24}
                             alt="check"
                           />
-                          {item?.label}
+                          <div className="text-[14px] lg:text-[16px] w-[calc(100%_-_24px)] pl-3 text-ellipsis overflow-hidden">
+                            {item?.label}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -206,7 +210,9 @@ const HomeComponent = () => {
                             width={24}
                             alt="check"
                           />
-                          {item?.label}
+                          <div className="text-[14px] lg:text-[16px] w-[calc(100%_-_24px)] pl-3 text-ellipsis overflow-hidden">
+                            {item?.label}
+                          </div>
                         </div>
                       ))}
                     </div>
