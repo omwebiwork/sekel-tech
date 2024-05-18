@@ -11,7 +11,7 @@ import {
   bannerDiscovery,
   discoveryFeature,
   investmentFocus,
-} from "@/static/discovery";
+} from "@/static/json/discovery";
 
 const Discovery = () => {
   const renderDiscoveryFeature = () => {

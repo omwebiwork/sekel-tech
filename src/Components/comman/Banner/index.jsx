@@ -12,7 +12,7 @@ const Banner = ({
   containerStyle,
   headinWidth,
   sectionSty = "",
-  titleSty="text-[36px] leading-[50px] md:text-[54px] font-normal md:leading-[75px] mb-4 tracking-tighter",
+  titleSty = "text-[36px] lg:text-[54px] font-normal leading-[140%] mb-4 tracking-tighter",
   subTitleSty = "text-[28px] font-medium leading-[32px] tracking-tight mb-8",
   imgContainerSty,
   aboutHead,
@@ -25,23 +25,11 @@ const Banner = ({
         <div className={` ${headinWidth} `}>
           <div className={` ${aboutHead} text-white`}>
             <div className={` ${aboutHeadBox} `}>
-              <h1 className={`${titleSty}`}>
-                {title}
-              </h1>
-              {subTitle && (
-                <p
-                className={`${subTitleSty}`}
-                >
-                  {subTitle}
-                </p>
-              )}
+              <h1 className={`${titleSty}`}>{title}</h1>
+              {subTitle && <p className={`${subTitleSty}`}>{subTitle}</p>}
             </div>
             {description && (
-              <p
-              className={`${descriptionSty}`}
-              >
-                {description}
-              </p>
+              <p className={`${descriptionSty}`}>{description}</p>
             )}
             {renderElement}
           </div>
@@ -53,7 +41,7 @@ const Banner = ({
             </div>
           )}
         </div>
-           </div>
+      </div>
     </div>
   );
 };

@@ -3,55 +3,17 @@ import Card from "@/Components/comman/Card";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import InfoCard from "@/Components/comman/Card/InfoCard";
-import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import Button from "@/Components/comman/Button";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  bannerCareers,
+  ourCulture,
+  weCommunicate,
+} from "@/static/json/careers";
 
 const Careers = () => {
-  let bannerObj = {
-    title: "About Us",
-    description:
-      "Designed to help retail businesses, Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey.",
-    subTitle: `Revolutionising Retail Tech with Sekel Tech`,
-  };
-  let consistentCardData = [
-    {
-      title: "Commitment to Skill Growth",
-      description:
-        "Dive into a culture of perpetual learning, accessing cutting-edge training, mentorship, and growth opportunities for a rewarding career journey.",
-      titleIcon: {
-        src: "/skill-growth.png",
-        height: 182,
-        width: 290,
-        alt: "img",
-      },
-    },
-    {
-      title: "Collaborative Excellence",
-      description:
-        "Embrace a collaborative team driving innovation, where diverse perspectives fuel exceptional results and professional growth within our culture of consistent excellence.",
-      titleIcon: {
-        src: "/collaborative -excellence.png",
-        height: 223,
-        width: 271,
-        alt: "img",
-      },
-    },
-    {
-      title: "Impactful Contributions",
-      description:
-        "Shape industries, impact lives, and leave a legacy in our company where your contributions drive unwavering excellence and meaningful career accomplishments.",
-      titleIcon: {
-        src: "/impactful-contributions.png",
-        height: 198,
-        width: 223,
-        alt: "img",
-      },
-    },
-  ];
-
   let positionCardData = [
     {
       title: "Copy Writer",
@@ -78,16 +40,7 @@ const Careers = () => {
   return (
     <>
       <Banner
-        {...bannerObj}
-        image={{
-          src: "/team.png",
-          alt: "img",
-          height: 800,
-          width: 1200,
-        }}
-        title="Careers"
-        subTitle="Collaboration Is Key To Our Success"
-        description="We believe that by working together, we can achieve more than the sum of our individual efforts. Quoting the great Johan Cruyff, “Alone you can do so little; together you can do so much.”"
+        {...bannerCareers}
         sectionSty="pt-20 pb-[100px]"
         containerStyle="container block flex-wrap"
         descriptionSty="mb-0"
@@ -181,15 +134,14 @@ const Careers = () => {
       </section>
 
       <CardSection
+        {...ourCulture?.sectionData}
         headingSty="max-w-[720px] mb-[52px]"
-        title={"Our culture is one of consistent excellence."}
-        description={`We strive to be consistently good, rather than occasionally great, as we believe that sustainable progress comes from consistently meeting high standards.`}
         sectionStyle="py-[100px] bg-blue-200"
         titleSty="text-[42px] font-medium mb-8 leading-[140%] tracking-tighter text-black-33"
         descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
         renderElement={() => (
           <div className="grid grid-cols-3">
-            {consistentCardData?.map((item, index) => {
+            {ourCulture?.cardData?.map((item, index) => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
@@ -209,19 +161,14 @@ const Careers = () => {
       />
 
       <CardSection
-        title={"We communicate transparently and honestly"}
-        description={
-          "We are direct and open in our conversations, and we strive to be hard on the issue and soft on the person. We value our relationships and strive to get to the heart of the matter quickly and efficiently."
-        }
+        {...weCommunicate?.sectionData}
         descriptionSty="mx-auto text-white w-[659px] text-base font-normal leading-[22px]"
         headingSty="text-center mx-auto max-w-[900px] mb-8"
         sectionStyle="pt-[80px] pb-[100px] bg-blue-900 text-white"
         titleSty="text-[42px] font-medium mb-[20px] leading-[140%] tracking-tighter text-white"
         renderElement={() => (
           <InfoCard
-            title="Our Perks"
-            subheadTitle="At Sekel Tech, We also prioritise taking care of our employees’ health and well-being. That’s why we have a minimum leave policy instead of a maximum."
-            description="We believe in fostering growth, development and upskilling,so we encourage our employees to attend courses, training, workshops and more."
+            {...weCommunicate?.ourPerks}
             subheadTitleSty="mr-0 text-base font-normal leading-[25px] mb-3"
             titleSty="text-white text-[54px] font-normal leading-[140%] tracking-tighter mb-8"
             sectionStyle="pt-[50px] text-white"
@@ -234,12 +181,6 @@ const Careers = () => {
             imageContainerSty="max-h-auto max-w-[500px] ml-auto"
             leadText="Finally, we like to have fun! We host office dinners and team parties so that our employees can bond with each other."
             leadTextSty="text-[20px] font-normal leading-[25px] text-yellow-900"
-            image={{
-              src: "/perks.png",
-              height: 448,
-              width: 692,
-              alt: "img",
-            }}
           />
         )}
       />
