@@ -9,6 +9,7 @@ const InfoCard = ({
   subTitle,
   subheadTitle,
   renderElement,
+  renderSecondElement,
   renderFilterElement,
   bordershow = false,
   sectionStyle = "py-[50px] md:py-[75px] lg:py-[100px] bg-gray-100",
@@ -64,6 +65,8 @@ const InfoCard = ({
               </div>
             </>
           )}
+
+          {renderSecondElement && <div className={imageContentSty}>{renderSecondElement}</div>}
         </div>
       </div>
       {bordershow && (
