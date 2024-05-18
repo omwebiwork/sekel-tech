@@ -27,6 +27,7 @@ export default function Dashboard() {
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
+        sectionSty="max-sm:pt-4"
         imgContainerSty="max-w-[1080px] mx-auto"
         imgGridSty="max-xl:px-6"
         headinWidth="max-w-[936px] mx-auto text-center mb-12"

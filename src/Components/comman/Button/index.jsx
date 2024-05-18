@@ -4,7 +4,7 @@ const Button = ({
   disabled = false,
   filled = false,
   data,
-  clsStyle = "py-2 px-8",
+  clsStyle = "py-2 px-4 sm:px-6 md:px-8",
   action,
   type = "button",
 }) => {
