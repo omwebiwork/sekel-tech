@@ -204,32 +204,26 @@ export const caseStudyCardData = [
 export const caseFilterData = [
   {
     label: "All Industries",
-    value: "All Industries",
-    active: true,
+    value: "all",
   },
   {
     label: "Lifestyle",
-    value: "Lifestyle",
-    active: false,
+    value: "Lifestyle In",
   },
   {
     label: "Automotive & Automobile",
     value: "Automotive & Automobile",
-    active: false,
   },
   {
     label: "Electrical and Electronics",
-    value: "Electrical and Electronics",
-    active: false,
+    value: "Electrical And Electronics",
   },
   {
     label: "Home Services",
     value: "Home Services",
-    active: false,
   },
   {
     label: "Restaurants",
     value: "Restaurants",
-    active: false,
   },
 ];

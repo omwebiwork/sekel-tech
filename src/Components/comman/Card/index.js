@@ -22,6 +22,7 @@ const Card = ({
   descriptionSty = "text-base font-normal leading-[150%] text-black-33 mb-4",
   titleIconSty = "h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 ",
   iconSty = "",
+  iconNumberSty="text-[28px] font-medium text-blue-900"
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
@@ -40,7 +41,7 @@ const Card = ({
               <Image {...titleIcon} className={`${iconSty}`} />
             )}
             {titleIcon?.iconNumber && (
-              <p className="text-[28px] font-medium text-blue-900">
+              <p className={iconNumberSty}>
                 {titleIcon.iconNumber}
               </p>
             )}

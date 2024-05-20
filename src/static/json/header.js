@@ -34,8 +34,8 @@ let company = [
   },
   {
     id: "4",
-    name: "Parter Program",
-    redirectPath: "/company/pater-program",
+    name: "Partner Programme",
+    redirectPath: "/company/partner-programme",
   },
   {
     id: "5",

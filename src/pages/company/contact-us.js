@@ -6,11 +6,13 @@ import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
+import DownArrow from "@/assets/DownArrow";
 import Image from "next/image";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const ContactUs = () => {
-  const [accordianState, setAccordianState] = useState(['5','9']);
+  const [accordianState, setAccordianState] = useState({ 0: false });
   let bannerObj = {
     title: "Discover The Power Of Digital At Your Physical Stores",
     description: `Designed to help retail businesses, Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey.
@@ -21,9 +23,11 @@ const ContactUs = () => {
       title: "Email",
       subtitle: "info@sekel.tech",
       description: (
-        <p>
-          info@sekel.tech <br /> careers@sekel.tech
-        </p>
+        <>
+          <Link href={"mailto:info@sekel.tech"}>info@sekel.tech</Link>
+          <br />
+          <Link href={"mailto:careers@sekel.tech"}>careers@sekel.tech</Link>
+        </>
       ),
       titleIcon: {
         src: "/Mail.png",
@@ -45,7 +49,11 @@ const ContactUs = () => {
     },
     {
       title: "Contact",
-      description: "+91-794-256-9371",
+      description: (
+        <>
+          <Link href={"tel:+917942569371"}>+91-794-256-9371</Link>
+        </>
+      ),
       titleIcon: {
         src: "/Phone.png",
         height: 53,
@@ -59,11 +67,15 @@ const ContactUs = () => {
     description:
       "Visit our office to meet us in person! See where ideas come to life, have real conversations, and be a part of our story.",
     leadText: (
-      <div className="text-[20px] font-medium mb-8">
-        {" "}
-        <p>Monday -Friday</p>
-        <p>09:30am - 06:30pm</p>
-      </div>
+      <>
+        <span className="text-[20px] font-medium inline-block mb-2">
+          Monday -Friday
+        </span>
+        <br />
+        <span className="text-[20px] font-medium inline-block">
+          09:30am - 06:30pm
+        </span>
+      </>
     ),
     image: {
       src: "/map.png",
@@ -99,7 +111,7 @@ const ContactUs = () => {
     ],
   };
   let handleAccordian = (index) => {
-    if (accordianState[index]) {
+    if (accordianState?.[index]) {
       setAccordianState({ [index]: false });
     } else {
       setAccordianState({ [index]: true });
@@ -171,14 +183,18 @@ const ContactUs = () => {
         imageContainerSty="max-h-[504px] w-full max-w-[624px] rounded-[20px] overflow-hidden mx-auto"
         imageContentSty="col-span-6"
         titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-8"
-        leadTextSty=""
+        leadTextSty="mb-8"
         renderElement={
           <Button
             data="Get Direction"
-            clsStyle="py-2"
+            clsStyle="py-2 px-8"
             filled
             action={() => {
-              router.push("/product/integration");
+              window?.open(
+                "https://www.google.com/maps/dir//sekel+tech+pune/@18.561688,73.8602503,14z/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x3bc2c1fb070ebbd9:0x25d044c2fb6f27f9!3e0",
+                "_blank",
+                "noopener noreferrer"
+              );
             }}
           />
         }
@@ -208,14 +224,14 @@ const ContactUs = () => {
                     <div
                       onClick={() => handleAccordian(index)}
                       className={`${
-                        accordianState[index] === true
+                        accordianState?.[index] === true
                           ? ""
                           : "border-0 border-b-[1px] border-white"
                       } text-white font-medium cursor-pointer`}
                     >
                       <div
                         className={`${
-                          accordianState[index] === true
+                          accordianState?.[index] === true
                             ? "rounded-t-xl bg-white border-[1px] border-b-0 bg-opacity-10 "
                             : ""
                         } flex justify-between items-center  list-none px-3   py-4 `}
@@ -224,19 +240,7 @@ const ContactUs = () => {
                           {index + 1}. {item.question}
                         </span>
                         <span className="transition group-open:rotate-180">
-                          <svg
-                            fill="none"
-                            height="24"
-                            shape-rendering="geometricPrecision"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                            viewBox="0 0 24 24"
-                            width="24"
-                          >
-                            <path d="M6 9l6 6 6-6"></path>
-                          </svg>
+                          <DownArrow />
                         </span>
                       </div>
                       <p
@@ -256,7 +260,11 @@ const ContactUs = () => {
           </>
         }
       />
-       <HyperlocalStrategyForm containerSty="container" buttonTitle="Get a  FREE Audit" placeholder="Enter your email" />
+      <HyperlocalStrategyForm
+        containerSty="container"
+        buttonTitle="Get a  FREE Audit"
+        placeholder="Enter your email"
+      />
     </>
   );
 };
