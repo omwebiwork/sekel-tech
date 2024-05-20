@@ -25,7 +25,7 @@ const StoreCard = ({ bgImage, logoImage, btnLabel, description, slug }) => {
       </p>
       <button
         class="flex gap-1 items-center text-base text-blue-900 font-medium"
-        onClick={() => router.push(`/company/case-study/${slug}`)}
+        onClick={() => router.push(`/company/case-studies/${slug}`)}
       >
         Read more
         <span className="-rotate-90">
