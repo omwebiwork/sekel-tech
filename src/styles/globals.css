@@ -38,7 +38,7 @@ body {
 }
 
 section {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 640px) {

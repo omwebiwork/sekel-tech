@@ -20,7 +20,7 @@ const Banner = ({
   imgGridSty,
 }) => {
   return (
-    <div className={` ${sectionSty} bg-blue-900`}>
+    <div className={`${sectionSty} bg-blue-900`}>
       <div className={`flex ${containerStyle} items-center`}>
         <div className={` ${headinWidth} `}>
           <div className={` ${aboutHead} text-white`}>

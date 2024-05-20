@@ -30,13 +30,10 @@ const Data = () => {
   const renderDiscoveryFeature = () => {
     return (
       <div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {dataPlatformFeatures?.cardData?.map((item, index) => {
             return (
-              <div
-                className={` "col-span-1"
-                `}
-              >
+              <div className={`col-span-1`}>
                 <Card key={index} {...item} />
               </div>
             );
@@ -54,7 +51,9 @@ const Data = () => {
             return (
               <div
                 className={`${
-                  index === 0 || index === 3 ? "col-span-2" : "col-span-1"
+                  index === 0 || index === 3
+                    ? "col-span-3 lg:col-span-2"
+                    : "col-span-3 lg:col-span-1"
                 }`}
               >
                 <Card
@@ -66,7 +65,7 @@ const Data = () => {
                   }}
                   cardSty={item.cardSty + " h-full bg-gray-100"}
                   headingSty={
-                    "mb-8 tracking-tighter leading-[30px] text-[28px] font-medium text-black-33"
+                    "max-md:font-medium mb-3 lg:mb-8 tracking-tighter leading-[120%] text-[18px] md:text-[28px]"
                   }
                   cardCountNo={index < 9 ? "0" + (index + 1) : index + 1}
                 />
@@ -82,12 +81,13 @@ const Data = () => {
     <div>
       <Banner
         {...bannerUnifiedData}
-        sectionSty="pb-[100px] pt-20"
-        containerStyle="container justify-between"
+        sectionSty="max-lg:pt-5 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
+        containerStyle="container justify-between grid grid-cols-11 lg:gap-[30px] xl:gap-[60px]"
         descriptionSty="mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"
         renderElement={<GetStartForm buttonTitle="Get started" />}
-        headinWidth="max-w-[572px] w-full mb-12"
+        imgGridSty="col-span-11 lg:col-span-5 xl:col-span-6"
+        headinWidth="lg:max-w-[500px] w-full mb-12 col-span-11 lg:col-span-6 xl:col-span-5"
       />
       <Breadcrumb
         breadcrumbList={[
@@ -98,11 +98,12 @@ const Data = () => {
       />
       <CardSection
         {...dataPlatformFeatures?.sectionData}
+        headingSty="text-center mb-[36px] lg:mb-[52px]"
         renderElement={renderDiscoveryFeature}
       />
       <section className="bg-blue-900 py-20">
         <div className="container">
-          <div className=" mb-[52px] ">
+          <div className="mb-[52px]">
             <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-white">
               Core Functions of Sekel CDP
             </h3>
@@ -113,11 +114,11 @@ const Data = () => {
           </div>
           <div className="flex items-center">
             <div className="w-[30%] h-full mt-auto mb-5">
-              <ul className="pr-20 ">
+              <ul className="pr-20">
                 <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:left-[312px] after:w-[50px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Marketing
                   <Image
-                    className=" w-16 "
+                    className="w-16"
                     src={"/marketing-li.svg"}
                     height={64}
                     width={64}
@@ -127,7 +128,7 @@ const Data = () => {
                 <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute  after:left-[312px] after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Sales
                   <Image
-                    className=" w-16 "
+                    className="w-16"
                     src={"/sales-li.svg"}
                     height={64}
                     width={64}
@@ -137,7 +138,7 @@ const Data = () => {
                 <li className="flex items-center justify-end gap-4 text-xl font-medium text-white relative after:content[''] after:absolute  after:left-[312px] after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Service
                   <Image
-                    className=" w-16 "
+                    className="w-16"
                     src={"/service-li.svg"}
                     height={64}
                     width={64}
@@ -161,7 +162,7 @@ const Data = () => {
               <ul className="pl-20 ">
                 <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className=" w-16 "
+                    className="w-16"
                     src={"/retargeting-tools.svg"}
                     height={64}
                     width={64}
@@ -171,7 +172,7 @@ const Data = () => {
                 </li>
                 <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className=" w-16 "
+                    className="w-16"
                     src={"/automation-tools.svg"}
                     height={64}
                     width={64}
@@ -181,7 +182,7 @@ const Data = () => {
                 </li>
                 <li className="flex items-center gap-4 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[50px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className=" w-16 "
+                    className="w-16"
                     src={"/analytics-tools.svg"}
                     height={64}
                     width={64}
@@ -196,19 +197,19 @@ const Data = () => {
       </section>
       <CardSection
         {...systematicGathering?.sectionData}
-        sectionStyle="py-[100px] bg-blue-200 "
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-200 asdads"
         headingSty=""
-        titleSty="text-[28px] font-medium mb-20 leading-[39px] tracking-tighter text-black-33 max-w-[900px]"
+        titleSty="text-[20px] md:text-[28px] font-medium mb-8 lg:mb-20 leading-[140%] tracking-tighter text-black-33 max-w-[900px]"
         renderElement={() => (
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 lg:gap-0 md:grid-cols-3 lg:grid-cols-4">
             {systematicGathering?.cardData?.map((item, index) => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
                     {...item}
                     titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-4"
-                    headingSty="text-[28px] font-medium leading-[30px] mb-4 text-black-900"
-                    cardSty="bg-blue-200 px-6 py-6 rounded-2xl border-[1px] border-white h-full"
+                    headingSty="text-[18px] lg:text-[28px] font-medium leading-[140%] mb-4 text-black-900"
+                    cardSty="bg-blue-200 p-4 lg:p-6 rounded-2xl border border-white h-full"
                     descriptionSty="text-base font-normal leading-[22px] text-black-33"
                   />
                 </div>
@@ -227,9 +228,11 @@ const Data = () => {
 
       <InfoCard
         {...sekelCDP}
-        sectionStyle="bg-blue-900 pt-[100px]"
+        containtWidth="max-lg:mb-6 lg:max-w-[479px]"
+        sectionStyle="bg-blue-900 pt-[50px] md:pt-[65px] lg:pt-[100px]"
         titleSty="text-[28px] font-medium leading-[39px] tracking-tight text-white mb-8"
         descriptionSty="text-yellow-900 text-base font-normal leading-[25px]"
+        imageContainerSty="lg:max-h-[448px] lg:max-w-[692px] md:mx-auto ml-auto -mr-5"
       />
 
       <HyperlocalStrategyForm containerSty="container" />

@@ -138,7 +138,7 @@ const Careers = () => {
         headingSty="max-w-[720px] mb-[52px]"
         sectionStyle="py-[100px] bg-blue-200"
         titleSty="text-[42px] font-medium mb-8 leading-[140%] tracking-tighter text-black-33"
-        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33"
+        descriptionSty="max-w-[686px] text-base font-normal leading-[140%] text-black-33"
         renderElement={() => (
           <div className="grid grid-cols-3">
             {ourCulture?.cardData?.map((item, index) => {
@@ -149,7 +149,7 @@ const Careers = () => {
                     titleIconSty="mb-[32px]"
                     headingSty="text-[28px] font-medium leading-[140%] mb-4 text-black-900"
                     cardSty="bg-blue-200 px-5 py-8 rounded-2xl border-[1px] border-white h-full"
-                    descriptionSty="mb-0 text-base font-normal leading-[22px] text-black-33"
+                    descriptionSty="mb-0 text-base font-normal leading-[140%] text-black-33"
                     cardDataSty="mb-0"
                     iconSty="mx-auto"
                   />
@@ -162,14 +162,14 @@ const Careers = () => {
 
       <CardSection
         {...weCommunicate?.sectionData}
-        descriptionSty="mx-auto text-white w-[659px] text-base font-normal leading-[22px]"
+        descriptionSty="mx-auto text-white w-[659px] text-base font-normal leading-[140%]"
         headingSty="text-center mx-auto max-w-[900px] mb-8"
         sectionStyle="pt-[80px] pb-[100px] bg-blue-900 text-white"
         titleSty="text-[42px] font-medium mb-[20px] leading-[140%] tracking-tighter text-white"
         renderElement={() => (
           <InfoCard
             {...weCommunicate?.ourPerks}
-            subheadTitleSty="mr-0 text-base font-normal leading-[25px] mb-3"
+            subheadTitleSty="mr-0 text-base font-normal leading-[140%] mb-3"
             titleSty="text-white text-[54px] font-normal leading-[140%] tracking-tighter mb-8"
             sectionStyle="pt-[50px] text-white"
             imageContentSty="col-span-6"
@@ -177,10 +177,10 @@ const Careers = () => {
             containerSty=""
             containtWidth="max-w-[504px] pt-[38px]"
             gridContainerSty="items-center grid grid-cols-11 gap-6"
-            descriptionSty="mr-0 text-base font-normal leading-[25px] mb-8"
+            descriptionSty="mr-0 text-base font-normal leading-[140%] mb-8"
             imageContainerSty="max-h-auto max-w-[500px] ml-auto"
             leadText="Finally, we like to have fun! We host office dinners and team parties so that our employees can bond with each other."
-            leadTextSty="text-[20px] font-normal leading-[25px] text-yellow-900"
+            leadTextSty="text-[20px] font-normal leading-[140%] text-yellow-900"
           />
         )}
       />
@@ -188,7 +188,7 @@ const Careers = () => {
       <CardSection
         headingSty="flex justify-between gap-[60px] pb-[80px] border-b border-gray-400"
         title="Position Open"
-        titleSty="text-[42px] font-medium mb-0 leading-[52px] tracking-tighter text-black-33"
+        titleSty="text-[42px] font-medium mb-0 leading-[140%] tracking-tighter text-black-33"
         headerSection={
           <div className="my-auto">
             <GetStartForm

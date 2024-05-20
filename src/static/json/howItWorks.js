@@ -7,6 +7,14 @@ export const bannerHowItworks = {
     alt: "img",
     height: 631,
     width: 564,
+    className: "max-lg:hidden"
+  },
+  image: {
+    src: "/how-it-banner.png",
+    alt: "img",
+    height: 631,
+    width: 564,
+    className: "lg:hidden"
   },
 };
 
@@ -24,8 +32,8 @@ export const hyperlocalDiscovery = [
     ],
     buttonText: "Explore Discovery",
     buttonAction:"/discovery",
-    imageContentSty: "order-1 col-span-6 h-full flex items-center",
-    textContainerSty: "order-2 col-span-6 h-full flex items-center",
+    imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center",
+    textContainerSty: "order-2 col-span-12 lg:col-span-6 h-full flex items-center",
     imageContainerSty: "max-h-[480px] w-full max-w-[624px] mx-auto",
     image: {
       src: "/hyperlocal-discovery.png",
@@ -48,8 +56,8 @@ export const hyperlocalDiscovery = [
     ],
     buttonText: "Explore CDP",
     buttonAction:"/data",
-    imageContentSty: "col-span-6 h-full flex items-center",
-    textContainerSty: "col-span-6 h-full  flex items-center ",
+    imageContentSty: "col-span-12 lg:col-span-6 h-full flex items-center",
+    textContainerSty: "col-span-12 lg:col-span-6 h-full  flex items-center ",
     imageContainerSty: "max-h-[414px] w-full max-w-[540px] mx-auto",
     image: {
       src: "/Product.png",
@@ -71,8 +79,8 @@ export const hyperlocalDiscovery = [
     ],
     buttonText: "Get Started",
     buttonAction:"/demand",
-    imageContentSty: "order-1 col-span-6 h-full flex items-center",
-    textContainerSty: "order-2 col-span-6 h-full flex items-center",
+    imageContentSty: "order-1 col-span-12 md:col-span-6 h-full flex items-center",
+    textContainerSty: "order-2 col-span-12 md:col-span-6 h-full flex items-center",
     imageContainerSty: "max-h-[361px] w-full max-w-[638px] mx-auto",
     image: {
       src: "/retail-demand.png",

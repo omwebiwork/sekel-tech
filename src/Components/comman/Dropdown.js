@@ -49,7 +49,6 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
                 className="lg:flex flex-wrap flex-col lg:max-h-[160px] lg:pr-[80px] lg:gap-x-[80px]"
               >
                 {list?.map((item, index) => {
-                  console.log("chekc ", "000", item.path);
                   return (
                     <li className="block" key={index}>
                       <Link

@@ -195,18 +195,18 @@ export const investmentFocus = {
         height: "500",
         width: "500",
       },
-      cardImgSty: "max-w-[408px] max-h-[240px] w-full mx-auto",
+      cardImgSty: "lg:max-w-[408px] lg:max-h-[240px] w-full mx-auto",
 
-      cardSty: "flex gap-4 rounded-xl p-5 pt-[52px] relative",
-      cardDataSty: "w-1/2",
+      cardSty: "md:flex gap-4 rounded-xl p-5 lg:pt-[52px] relative",
+      cardDataSty: "md:w-1/2",
     },
     {
       title: "Sekel Data Cleaning Process",
       description:
         "Data is cleaned and prepared to ensure that it is consistent and accurate. Our Algorithm updates all the data of repeat customers by engaging across touchpoints in real time. ",
-      cardImgSty: "max-w-[300px] max-h-[131px] w-full mx-auto",
+      cardImgSty: "lg:max-w-[300px] lg:max-h-[131px] w-full mx-auto",
 
-      cardSty: " rounded-xl p-5 pt-[52px] bg-yellow-100 relative",
+      cardSty: "rounded-xl p-5 lg:pt-[52px] bg-yellow-100 relative",
       cardDataSty: "w-full",
     },
     {
@@ -218,9 +218,9 @@ export const investmentFocus = {
         height: "500",
         width: "500",
       },
-      cardImgSty: "max-w-[291px] max-h-[178px] w-full mx-auto",
+      cardImgSty: "lg:max-w-[291px] lg:max-h-[178px] w-full mx-auto",
 
-      cardSty: "rounded-xl p-5 pt-[52px] bg-yellow-100 relative",
+      cardSty: "rounded-xl p-5 lg:pt-[52px] bg-yellow-100 relative",
       cardDataSty: "w-full",
     },
     {
@@ -233,9 +233,9 @@ export const investmentFocus = {
         width: "500",
       },
 
-      cardImgSty: "max-w-[396px] max-h-[241px] w-full mx-auto mt-14",
-      cardSty: " flex gap-2 rounded-xl p-5 pt-[52px] relative",
-      cardDataSty: "w-1/2",
+      cardImgSty: "sm:max-w-[396px] sm:max-h-[241px] w-full mx-auto mt-14",
+      cardSty: " md:flex gap-2 rounded-xl p-5 lg:pt-[52px] relative",
+      cardDataSty: "md:w-1/2",
     },
   ],
 };
