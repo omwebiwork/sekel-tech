@@ -7,15 +7,18 @@ import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyF
 import DownArrow from "@/assets/DownArrow";
 import { oneUltimatePlatform } from "@/static/json/dashboard";
 import {
-  agencyGrowth,
+  accelerateAgency,
   demandGeneration,
   expendYourReach,
+  questionAnswers,
   retailSuccess,
 } from "@/static/json/partnerProgramme";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
 const PartnerProgramme = () => {
+  const router = useRouter();
   return (
     <div>
       <InfoCard
@@ -67,39 +70,33 @@ const PartnerProgramme = () => {
 
       <section className="pt-[50px] md:py-[75px] lg:pt-[80px] lg:pb-[100px] bg-blue-200">
         <div className="container">
-          <h1 className="text-[36px] leading-[50px] md:text-[42px] font-medium md:leading-[52px]  max-w-[521px]">
-            Accelerate your Agency’s growth with Sekel Tech Partner Program
+          <h1 className="text-[36px] leading-[50px] md:text-[42px] font-medium md:leading-[52px] pb-[20px] max-w-[521px]">
+            {accelerateAgency?.sectionData?.title}
           </h1>
           <div className="gap-[60px] grid grid-cols-12">
             <div className="col-span-12 lg:col-span-6 max-lg:mb-10 ">
               <div>
-                <div className=" undefined ">
+                <div className="">
                   <p className="text-[28px] font-normal leading-[32px] tracking-tight mb-20">
-                    Expand your portfolio with our hyperlocal SAAS platform.
-                    Enjoy profitable sharing, support, and co-marketing for
-                    agency success.
+                    {accelerateAgency?.sectionData?.description}
                   </p>
                 </div>
                 <div className="max-w-[521px] w-full ">
                   <Image
                     className="object-cover w-full"
-                    src={"/partner-program.png"}
-                    height={611}
-                    width={521}
-                    alt="img"
+                    {...accelerateAgency?.sectionData?.image}
                   />
                 </div>
               </div>
             </div>
             <div className="col-span-12 lg:col-span-6 max-lg:mb-10 ">
               <div className="flex justify-between  flex-wrap w-full ">
-                {agencyGrowth?.map((item, index) => {
+                {accelerateAgency?.growthCardList?.map((item, index) => {
                   return (
                     <Card
                       {...item}
                       headingSty="text-[28px] font-medium leading-[30px] mb-4  "
                       cardSty="mb-8 w-[calc(50%_-_10px)] "
-                      // dataDivSty="w-[calc(100%_-_90px)]"
                       cardDataSty=""
                       titleIconSty="h-[58px] w-[58px] rounded-full bg-yellow-100 flex items-center justify-center mb-5 "
                       iconNumberSty="text-[28px] font-medium text-black-33"
@@ -114,9 +111,9 @@ const PartnerProgramme = () => {
       <section className="py-[100px]">
         <div className="container">
           <h3 className="text-[42px] lg:text-[42px] font-medium mb-[52px] text-center leading-[52px] tracking-tighter text-black-33">
-            Discovery, Customer data, Demand Generation
+            {demandGeneration?.sectionData?.title}
           </h3>
-          {demandGeneration?.map((item, index) => {
+          {demandGeneration?.listData?.map((item, index) => {
             return (
               <InfoCard
                 key={index}
@@ -139,9 +136,9 @@ const PartnerProgramme = () => {
                         </div>
                       }
                       action={() => {
-                        //   if (item.buttonAction) {
-                        //     router.push(item.buttonAction);
-                        //   }
+                        if (item.buttonAction) {
+                          router.push(item.buttonAction);
+                        }
                       }}
                       clsStyle="border-none text-blue-900"
                     />
@@ -215,41 +212,27 @@ const PartnerProgramme = () => {
           </div>
         </div>
       </section>
+
       <section className="py-[100px]">
         <div className="container">
           <h3 className="text-[42px] lg:text-[42px] font-medium mb-20 leading-[52px] tracking-tighter text-black-33 ">
-            Questions/ Answers
+            {questionAnswers?.title}
           </h3>
-          <div className="py-5 border-t-[1px] border-gray-400 flex justify-between items-center mb-8">
-            <div className="w-[35%]">
-            <h4 className="text-base font-semibold">Who Can Join Sekel Tech's Partner Program?</h4>
+          {questionAnswers?.list?.map((item, index) => (
+            <div
+              key={index}
+              className={`py-5 border-t-[1px] border-gray-400 flex justify-between items-center ${
+                questionAnswers?.list?.length - 1 === index ? "" : "mb-8"
+              }`}
+            >
+              <div className="w-[35%]">
+                <h4 className="text-base font-semibold">{item?.question}</h4>
+              </div>
+              <div className="w-[55%]">
+                <p className="text-base font-normal">{item?.answer}</p>
+              </div>
             </div>
-            <div className="w-[55%]">
-            <p className="text-base font-normal">
-            Any digital marketing agency or individual can join Sekel Tech's Partner Program. The program is open to individuals and businesses interested in collaborating with Sekel Tech to promote its products and services.
-            </p>
-            </div>
-          </div>
-          <div className="py-5 border-t-[1px] border-gray-400 flex justify-between items-center mb-8">
-            <div className="w-[35%]">
-            <h4 className="text-base font-semibold">How Much Time Does It Take to Become a Partner?</h4>
-            </div>
-            <div className="w-[55%]">
-            <p className="text-base font-normal">
-            The time it takes to become a partner may vary depending on completing necessary documentation and agreements. Typically, the process can be completed within a few days to a week.
-            </p>
-            </div>
-          </div>
-          <div className="py-5 border-t-[1px] border-gray-400 flex justify-between items-center ">
-            <div className="w-[35%]">
-            <h4 className="text-base font-semibold">How are we different from other GMB Managers, Discovery Platforms, and Marketing Agencies?</h4>
-            </div>
-            <div className="w-[55%]">
-            <p className="text-base font-normal">
-            Sekel Tech stands out with its unique Last Mile First Approach, seamlessly connecting GMB management, discovery platforms, and marketing. Our solutions prioritize enhanced retail connectivity, address offline preferences, and spotlight retailers for collaborative success, setting us apart in the evolving retail landscape.
-            </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
       <HyperlocalStrategyForm containerSty="container" />
