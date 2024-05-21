@@ -3,113 +3,21 @@ import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import Card from "@/Components/comman/Card";
-import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import DownArrow from "@/assets/DownArrow";
 import Image from "next/image";
 import React, { useState } from "react";
-import Link from "next/link";
+import {
+  bannerDiscoverPower,
+  frequentlyAsked,
+  information,
+  seamlessIntegration,
+} from "@/static/json/contactUs";
 
 const ContactUs = () => {
   const [accordianState, setAccordianState] = useState({ 0: false });
-  let bannerObj = {
-    title: "Discover The Power Of Digital At Your Physical Stores",
-    description: `Designed to help retail businesses, Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey.
-    `,
-  };
-  let managementCardData = [
-    {
-      title: "Email",
-      subtitle: "info@sekel.tech",
-      description: (
-        <>
-          <Link href={"mailto:info@sekel.tech"}>info@sekel.tech</Link>
-          <br />
-          <Link href={"mailto:careers@sekel.tech"}>careers@sekel.tech</Link>
-        </>
-      ),
-      titleIcon: {
-        src: "/Mail.png",
-        height: 53,
-        width: 53,
-        alt: "img",
-      },
-    },
-    {
-      title: "Address",
-      description:
-        "91 Springboard, Creaticity Mall, Yerawada, Pune, Maharashtra-411006",
-      titleIcon: {
-        src: "/Location marker.png",
-        height: 53,
-        width: 53,
-        alt: "img",
-      },
-    },
-    {
-      title: "Contact",
-      description: (
-        <>
-          <Link href={"tel:+917942569371"}>+91-794-256-9371</Link>
-        </>
-      ),
-      titleIcon: {
-        src: "/Phone.png",
-        height: 53,
-        width: 53,
-        alt: "img",
-      },
-    },
-  ];
-  const seamlessIntegration = {
-    title: "Visit our office !",
-    description:
-      "Visit our office to meet us in person! See where ideas come to life, have real conversations, and be a part of our story.",
-    leadText: (
-      <>
-        <span className="text-[20px] font-medium inline-block mb-2">
-          Monday -Friday
-        </span>
-        <br />
-        <span className="text-[20px] font-medium inline-block">
-          09:30am - 06:30pm
-        </span>
-      </>
-    ),
-    image: {
-      src: "/map.png",
-      height: 900,
-      width: 900,
-      alt: "integration",
-    },
-  };
-  let faq = {
-    sectionData: { title: "Frequently Asked Questions", image: {} },
-    list: [
-      {
-        question: "What is hyperlocal marketing?",
-        answer: "",
-      },
-      {
-        question: "How does hyperlocal marketing benefit businesses?",
-        answer: "",
-      },
-      {
-        question: "What strategies can I use for hyperlocal marketing?",
-        answer: "",
-      },
-      {
-        question: "What strategies can I use for hyperlocal marketing?",
-        answer:
-          "Track metrics like foot traffic, local website visits, and social media engagement specific to your targeted area to gauge the effectiveness of your hyperlocal marketing efforts.",
-      },
-      {
-        question: "How can I measure the success of my hyperlocal campaigns?",
-        answer: "",
-      },
-    ],
-  };
+
   let handleAccordian = (index) => {
     if (accordianState?.[index]) {
       setAccordianState({ [index]: false });
@@ -120,7 +28,7 @@ const ContactUs = () => {
   return (
     <>
       <Banner
-        {...bannerObj}
+        {...bannerDiscoverPower}
         sectionSty="pb-8 pt-[50px]"
         containerStyle="container justify-between h-full gap-[80px]"
         descriptionSty="mr-16 mb-8"
@@ -130,10 +38,7 @@ const ContactUs = () => {
           <div className="-mt-[200px] -mr-[80px]">
             <Image
               className="w-full object-cover"
-              src={"/digital-graph.svg"}
-              height={300}
-              width={300}
-              alt="img"
+              {...bannerDiscoverPower?.renderImage}
             />
           </div>
         }
@@ -151,29 +56,25 @@ const ContactUs = () => {
           { link: "/contact-us", label: "Contact" },
         ]}
       />
-      <CardSection
-        headingSty="flex items-end mx-4 gap-[60px]"
-        sectionStyle="py-[50px] bg-white"
-        descriptionSty="max-w-[686px] text-base font-normal leading-[22px] text-black-33 mb-[52px]"
-        renderElement={() => (
-          <div className="grid grid-cols-3 gap-5">
-            {managementCardData?.map((item, index) => {
-              return (
-                <div className="col-span-1" key={index}>
-                  <Card
-                    {...item}
-                    headingSty="text-xl font-medium leading-[30px] mb-[14px] text-black-900"
-                    cardSty="bg-gray-100 px-5 py-5 rounded-2xl border-[1px] border-gray-400 h-full "
-                    cardDataSty="flex gap-6"
-                    dataDivSty="max-w-[206px]"
-                    titleIconSty="h-[77px] w-[77px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 "
-                  />
-                </div>
-              );
-            })}
-          </div>
-        )}
-      />
+      <section className="container">
+        <div className="grid grid-cols-3 gap-5 py-[50px] bg-white">
+          {information?.map((item, index) => {
+            return (
+              <div className="col-span-1" key={index}>
+                <Card
+                  {...item}
+                  headingSty="text-xl font-medium leading-[30px] mb-[14px] text-black-900"
+                  cardSty="bg-gray-100 px-5 py-5 rounded-2xl border-[1px] border-gray-400 h-full "
+                  cardDataSty="flex gap-6"
+                  dataDivSty="max-w-[206px]"
+                  titleIconSty="h-[77px] w-[77px] rounded-full bg-yellow-100 flex items-center justify-center mb-8 "
+                />
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       <InfoCard
         {...seamlessIntegration}
         sectionStyle="pt-[50px] pb-[100px] px-[42px]  bg-white"
@@ -199,14 +100,9 @@ const ContactUs = () => {
           />
         }
       />
+
       <InfoCard
-        title="Frequently Asked Questions"
-        image={{
-          src: "/faq.png",
-          height: 500,
-          width: 500,
-          alt: "img",
-        }}
+        {...frequentlyAsked?.sectionData}
         sectionStyle="py-[100px] bg-blue-900"
         containerSty="container "
         containtWidth=""
@@ -218,7 +114,7 @@ const ContactUs = () => {
         renderElement={
           <>
             <div className=" grid  max-w-xl mx-auto mt-8">
-              {faq.list?.map((item, index) => {
+              {frequentlyAsked?.faqList?.map((item, index) => {
                 return (
                   <div className="py-2">
                     <div
