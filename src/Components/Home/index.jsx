@@ -22,7 +22,6 @@ import {
 } from "@/static/json/home";
 import Button from "../comman/Button";
 import { useRouter } from "next/router";
-import Breadcrumb from "../comman/Breadcrumb";
 
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);

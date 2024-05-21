@@ -9,12 +9,10 @@ const StoreCard = ({ bgImage, logoImage, btnLabel, description, slug }) => {
     <div className="">
       <div className="relative max-w-[376px] max-h-[380px] w-full h-full mb-[28px] border-[1px] border-blue-200 rounded-2xl overflow-hidden">
         <Image {...bgImage} />
-        {logoImage ? (
+        {logoImage && (
           <div className="absolute flex items-center justify-center top-[121px] left-[127px] w-[123px] h-[139px] bg-white">
             <Image {...logoImage} className="w-auto h-auto" />
           </div>
-        ) : (
-          ""
         )}
       </div>
       <p className="text-base border-[1px] border-yellow-900 font-medium tracking-tight leading-[22px] text-black-33 py-2 px-8 bg-yellow-100 rounded-full inline-block mb-7">
