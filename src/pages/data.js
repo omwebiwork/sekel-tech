@@ -101,7 +101,7 @@ const Data = () => {
         headingSty="text-center mb-[36px] lg:mb-[52px]"
         renderElement={renderDiscoveryFeature}
       />
-      <section className="bg-blue-900 py-20">
+      <section className="bg-blue-900 py-[50px] md:py-[60px] lg:py-[100px]">
         <div className="container">
           <div className="mb-[52px]">
             <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-white">
@@ -112,33 +112,33 @@ const Data = () => {
               accuracy and relevance for analysis and decision-making.
             </p>
           </div>
-          <div className="flex items-center">
-            <div className="w-[30%] h-full mt-auto mb-5">
-              <ul className="pr-20">
-                <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:left-[312px] after:w-[50px] after:z-10 after:border-b-[1px] after:border-blue-100">
+          <div className="flex items-center max-md:justify-between relative">
+            <div className="w-[40%] max-md:-ml-auto md:w-[30%] h-full mt-8 lg:mt-auto lg:mb-5 relative z-[5]">
+              <ul className="pr-6 xl:pr-20">
+                <li className="flex items-center justify-end gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] after:absolute lg:after:-right-[40px] lg:after:w-[30px] xl:right:-left-[90px] xl:after:w-[80px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Marketing
                   <Image
-                    className="w-16"
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/marketing-li.svg"}
                     height={64}
                     width={64}
                     alt="img"
                   />
                 </li>
-                <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute  after:left-[312px] after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center justify-end gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] after:absolute  lg:after:-right-[60px] lg:after:w-[50px] xl:after:-right-[130px] xl:after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Sales
                   <Image
-                    className="w-16"
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/sales-li.svg"}
                     height={64}
                     width={64}
                     alt="img"
                   />
                 </li>
-                <li className="flex items-center justify-end gap-4 text-xl font-medium text-white relative after:content[''] after:absolute  after:left-[312px] after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center justify-end gap-4 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-md:after:hidden after:absolute lg:after:-right-[110px] lg:after:w-[100px] xl:after:-right-[190px] xl:after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Service
                   <Image
-                    className="w-16"
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/service-li.svg"}
                     height={64}
                     width={64}
@@ -147,22 +147,22 @@ const Data = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-[40%] h-full">
+            <div className="max-md:absolute left-0 right-0 mx-auto w-[40%] md:w-[40%] h-full">
               <div className="max-w-[591px] w-full mx-auto">
                 <Image
                   className="h-full w-full object-cover"
-                  src={"/core-function.png"}
+                  src={"/core-function.svg"}
                   height={562}
                   width={591}
                   alt="img"
                 />
               </div>
             </div>
-            <div className="w-[30%] h-full mb-auto mt-5">
-              <ul className="pl-20 ">
-                <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
+            <div className="w-[40%] max-md:-mr-auto md:w-[30%] h-full mb-8 lg:mb-auto lg:mt-5 relative z-[5]">
+              <ul className="pl-6 xl:pl-20">
+                <li className="flex items-center gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-lg:after:hidden after:absolute lg:after:-left-[110px] lg:after:w-[100px] xl:after:-left-[190px] xl:after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className="w-16"
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/retargeting-tools.svg"}
                     height={64}
                     width={64}
@@ -170,9 +170,9 @@ const Data = () => {
                   />
                   Retargeting Tools
                 </li>
-                <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-lg:after:hidden after:absolute lg:after:-left-[60px] lg:after:w-[50px] xl:after:-left-[130px] xl:after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className="w-16"
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/automation-tools.svg"}
                     height={64}
                     width={64}
@@ -180,9 +180,9 @@ const Data = () => {
                   />
                   Automation Tools
                 </li>
-                <li className="flex items-center gap-4 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[50px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center gap-4 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-lg:after:hidden after:absolute lg:after:-left-[40px] lg:after:w-[30px] xl:after:-left-[90px] xl:after:w-[80px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className="w-16"
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/analytics-tools.svg"}
                     height={64}
                     width={64}

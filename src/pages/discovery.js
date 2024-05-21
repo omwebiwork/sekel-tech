@@ -20,9 +20,7 @@ const Discovery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-3 lg:gap-5">
           {discoveryFeature?.cardData?.map((item, index) => {
             return (
-              <div
-                className={`col-span-1`}
-              >
+              <div className={`col-span-1`}>
                 <Card
                   key={index}
                   {...item}
@@ -132,10 +130,10 @@ const Discovery = () => {
               advanced features, including
             </p>
           </div>
-          <div className="flex flex-wrap items-center">
-            <div className="w-full lg:w-[25%] h-full mt-auto">
-              <ul className="md:pr-5">
-                <li className="ml-auto lg:max-w-[243px] lg:text-end mb-[30px] md:mb-[87px]">
+          <div className="flex flex-wrap items-center relative max-lg:max-w-[345px] max-lg:mx-auto">
+            <div className="w-full lg:w-[25%] lg:h-full mt-auto max-lg:absolute max-lg:pl-[90px] max-lg:max-w-[400px] left-0 top-0">
+              <ul className="lg:pr-5">
+                <li className="ml-auto lg:max-w-[243px] lg:text-end mb-[30px] lg:mb-[87px]">
                   <p className="mb-[14px] text-xl font-medium text-white ">
                     Automated and Scaled Engagement
                   </p>
@@ -158,16 +156,23 @@ const Discovery = () => {
             <div className="w-full lg:w-[50%] h-full">
               <div className="max-w-[591px] w-full mx-auto">
                 <Image
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover max-lg:hidden"
                   src={"/Choice.png"}
+                  height={562}
+                  width={591}
+                  alt="img"
+                />
+                <Image
+                  className="h-full w-full object-cover lg:hidden"
+                  src={"/discover-choice-mobile.svg"}
                   height={562}
                   width={591}
                   alt="img"
                 />
               </div>
             </div>
-            <div className="w-full lg:w-[25%] h-full ">
-              <ul className="max-lg:pt-8 lg:pr-5">
+            <div className="w-full lg:w-[25%] lg:h-full max-lg:absolute max-lg:pr-[90px] max-lg:max-w-[400px] right-0 bottom-[20px] top-auto max-md:mt-auto">
+              <ul className="lg:pr-5">
                 <li className="ml-auto mb-[30px] lg:max-w-[243px] max-lg:text-end lg:mb-[68px]">
                   <p className="mb-[14px] text-xl font-medium text-white">
                     Secure Payment and Consent-Driven Engagement
