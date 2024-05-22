@@ -173,9 +173,9 @@ export const investmentFocus = {
         height: "500",
         width: "500",
       },
-      cardImgSty: "max-w-[428px] w-full mx-auto -mb-5 -mr-5",
-      cardSty: "flex gap-4 rounded-xl p-5 pt-[52px] ",
-      cardDataSty: "w-1/2",
+      cardImgSty: "ml-auto max-w-[85%] md:max-w-[428px] w-full -mb-5 lg:-mr-5",
+      cardSty: "lg:flex gap-4 rounded-xl p-5 lg:pt-[52px] ",
+      cardDataSty: "lg:w-1/2",
     },
     {
       title: "Optimisation for Search Engines",
@@ -187,7 +187,7 @@ export const investmentFocus = {
         width: "500",
       },
       cardImgSty: "max-w-[300px] max-h-[131px] w-full mx-auto",
-      cardSty: " rounded-xl p-5 pt-[52px] bg-yellow-100",
+      cardSty: " rounded-xl p-5 lg:pt-[52px] bg-yellow-100",
       cardDataSty: "w-full",
     },
     {
@@ -200,7 +200,7 @@ export const investmentFocus = {
         width: "500",
       },
       cardImgSty: "max-w-[327px] max-h-[86px] w-full mx-auto",
-      cardSty: "rounded-xl p-5 pt-[52px] bg-yellow-100",
+      cardSty: "rounded-xl p-5 lg:pt-[52px] bg-yellow-100",
       cardDataSty: "w-full",
     },
     {
@@ -213,9 +213,9 @@ export const investmentFocus = {
         width: "500",
       },
 
-      cardImgSty: "max-w-[332px] max-h-[276px] w-full mx-auto",
-      cardSty: " flex gap-2 rounded-xl p-5 pt-[52px]",
-      cardDataSty: "w-1/2",
+      cardImgSty: "lg:max-w-[332px] lg:max-h-[276px] w-full mx-auto",
+      cardSty: "lg:flex gap-2 rounded-xl p-5 lg:pt-[52px]",
+      cardDataSty: "lg:w-1/2",
     },
   ],
 };

@@ -45,7 +45,6 @@ const HyperlocalStrategyForm = ({
                     enqueueSnackbar("Mail sent successfully.", {
                       variant: "success",
                     });
-                    console.log("values", values);
                     resetForm();
                   } else {
                     enqueueSnackbar("Something Went Wrong.", {

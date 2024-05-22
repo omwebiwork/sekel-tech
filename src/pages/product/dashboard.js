@@ -16,10 +16,11 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Dashboard() {
   const router = useRouter();
+  const [activeTab, setActiveTab] = useState("hyperLocations");
 
   return (
     <div>
@@ -27,6 +28,7 @@ export default function Dashboard() {
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
+        sectionSty="max-sm:pt-4"
         imgContainerSty="max-w-[1080px] mx-auto"
         imgGridSty="max-xl:px-6"
         headinWidth="max-w-[936px] mx-auto text-center mb-12"
@@ -60,17 +62,22 @@ export default function Dashboard() {
         descriptionSty="text-base font-normal leading-[22px] text-black-33 "
         renderElement={() => (
           <InfoCard
-            {...manageInfoCard?.sectionData}
+            {...manageInfoCard?.sectionData[activeTab]}
             renderFilterElement={
-              <div className="flex justify-between gap-2  mb-7 -mx-6 overflow-x-auto">
+              <div className="flex justify-between gap-2 mb-7 xl:-mx-6 overflow-x-auto">
                 {manageInfoCard?.renderFilterData?.map((item, index) => (
                   <div className="mb-2">
                     <Button
                       key={index}
                       data={item?.label}
-                      filled={item?.active ? true : false}
+                      filled={item?.value === activeTab ? true : false}
+                      action={() => {
+                        setActiveTab(item.value);
+                      }}
                       clsStyle={`py-2 px-5 text-sm whitespace-nowrap ${
-                        item?.active ? "" : "bg-[#FCFBB3] text-black-33"
+                        item?.value === activeTab
+                          ? ""
+                          : "bg-[#FCFBB3] text-black-33"
                       }`}
                     />
                   </div>
@@ -151,7 +158,12 @@ export default function Dashboard() {
         dashImageSty="col-span-11 lg:hidden pt-10"
         renderElement={
           <>
-            <Button filled data="Request Demo" clsStyle="py-3 px-8"   action={() => router.push("/company/contact-us")}/>
+            <Button
+              filled
+              data="Request Demo"
+              clsStyle="py-3 px-8"
+              action={() => router.push("/company/contact-us")}
+            />
             <div className="max-lg:hidden">
               <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                 <Image
