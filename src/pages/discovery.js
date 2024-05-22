@@ -71,7 +71,7 @@ const Discovery = () => {
     <div>
       <Banner
         {...bannerDiscovery}
-        sectionSty="max-lg:pt-5 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
+        sectionSty="max-lg:pt-8 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
         containerStyle="container grid grid-cols-11 lg:gap-[30px] xl:gap-[60px]"
         descriptionSty="lg:mr-16 mb-8"
         headinWidth="lg:max-w-[500px] w-full mb-12 col-span-11 lg:col-span-6 xl:col-span-5"

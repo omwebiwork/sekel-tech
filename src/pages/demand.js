@@ -23,12 +23,14 @@ const Demand = () => {
   let renderDemandGenerationCard = () => {
     return (
       <div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-3 gap-8 lg:gap-5">
           {demandGenerationFeature?.cardData?.map((item, index) => {
             return (
               <div
                 className={`${
-                  index === 0 || index === 3 ? "col-span-2" : "col-span-1"
+                  index === 0 || index === 3
+                    ? "col-span-3 lg:col-span-2"
+                    : "col-span-3 lg:col-span-1"
                 }`}
               >
                 <Card
@@ -52,12 +54,14 @@ const Demand = () => {
     <>
       <Banner
         {...bannerDemand}
-        sectionSty="pb-[100px] pt-20"
-        containerStyle="container justify-between"
-        descriptionSty="mr-16 mb-10"
-        imgContainerSty="max-w-[650px] max-h-[418px] w-full"
+        sectionSty="py-[50px] lg:py-[65px] xl:pb-[100px] lg:pt-[52px]"
+        containerStyle="container grid grid-cols-11 gap-4 justify-between"
+        descriptionSty="lg:mr-16 mb-10"
+        imgContainerSty="lg:max-w-[650px] lg:max-h-[418px] w-full"
         renderElement={<GetStartForm buttonTitle="Get started" />}
-        headinWidth="max-w-[500px] w-full mb-12"
+        headinWidth="lg:max-w-[500px] max-lg:order-2 col-span-11 lg:col-span-5 w-full lg:mb-12"
+        imgGridSty="max-lg:order-1 lg:col-span-6 col-span-11 max-lg:mb-10"
+        titleSty="text-[36px] lg:text-[42px] xl:text-[54px] font-normal leading-[140%] mb-4 tracking-tighter"
       />
       <Breadcrumb
         breadcrumbList={[
@@ -72,18 +76,18 @@ const Demand = () => {
       />
       <CardSection
         {...demandGenerationReimagined?.sectionData}
-        headingSty="flex items-end mx-4 gap-[60px]"
-        sectionStyle="py-[100px] bg-blue-200"
-        titleSty="text-[28px] font-medium mb-3 leading-[30px] tracking-tighter text-black-33"
-        descriptionSty="max-w-[686px] text-[28px] font-normal leading-[22px] text-black-33 mb-20"
+        headingSty="flex items-end lg:mx-4 gap-[60px]"
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-200"
+        titleSty="text-[24px] lg:text-[28px] font-medium mb-3 leading-[140%] tracking-tighter text-black-33"
+        descriptionSty="max-w-[686px] text-[16px] xl:text-[28px] font-normal leading-[140%] text-black-33 mb-8 lg:mb-20"
         renderElement={() => (
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 gap-5 lg:gap-0">
             {demandGenerationReimagined?.cardData?.map((item, index) => {
               return (
-                <div className="col-span-1" key={index}>
+                <div className="col-span-2 lg:col-span-1" key={index}>
                   <Card
                     {...item}
-                    headingSty="text-[28px] font-medium leading-[30px] mb-8 text-black-900"
+                    headingSty="text-[16px] lg:text-[28px] font-medium leading-[130%] mb-3 lg:mb-8 text-black-900"
                     cardSty="bg-blue-200 px-5 py-5 rounded-2xl border-[1px] border-white h-full"
                     cardDataSty=""
                   />
@@ -95,15 +99,15 @@ const Demand = () => {
       />
       <InfoCard
         {...masterLocalAdvertising?.sectionData}
-        sectionStyle="py-[100px] bg-blue-900"
-        containerSty="container "
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-900"
+        containerSty="container"
         containtWidth=""
-        titleSty="text-white text-[42px] font-medium mb-2 leading-[60px] tracking-tighter"
-        descriptionSty="text-white text-[28px] font-medium  mb-8  "
+        titleSty="text-white text-[34px] lg:text-[42px] font-medium mb-2 leading-[140%] tracking-tighter"
+        descriptionSty="text-white text-[16px] lg:text-[28px] font-medium mb-5 lg:mb-8"
         gridContainerSty="gap-0 grid grid-cols-11"
-        imageContainerSty=" w-full max-w-[497px] ml-0 mx-auto"
-        textContainerSty=" col-span-11 "
-        imageContentSty=" col-span-0 "
+        imageContainerSty="w-full max-w-[497px] ml-0 mx-auto"
+        textContainerSty="col-span-11"
+        imageContentSty="col-span-0"
         renderElement={
           <>
             <div>
@@ -116,7 +120,6 @@ const Demand = () => {
             </div>
             <div className="max-w-[455px]">
               <p className="text-white text-base font-normal mb-5">
-                {" "}
                 {...masterLocalAdvertising?.renderElementContent?.contentText}
               </p>
               <Button filled data="Get Started" clsStyle="py-3 px-8" />
@@ -126,8 +129,8 @@ const Demand = () => {
       />
       <CardSection
         {...sekelsWayToMaster?.sectionData}
-        sectionStyle="pt-[100px] pb-[50px]"
-        titleSty="text-start text-[42px] font-medium mb-[52px] leading-[52px] tracking-tighter text-black-33"
+        sectionStyle="pt-[50px] md:pt-[75px] lg:pt-[100px] pb-[50px]"
+        titleSty="text-start text-[32px] lg:text-[42px] font-medium mb-[52px] leading-[140%] tracking-tighter text-black-33"
         renderElement={() =>
           sekelsWayToMaster?.infoCardData?.map((item, index) => {
             return (
@@ -135,9 +138,9 @@ const Demand = () => {
                 key={index}
                 {...item}
                 sectionStyle="rounded-[16px] mb-[20px]"
-                containtWidth="max-w-[536px] mx-auto "
+                containtWidth="lg:max-w-[536px] lg:mx-auto w-full"
                 containerSty=""
-                titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-[26px]"
+                titleSty="text-[32px] lg:text-[42px] font-medium leading-[140%] tracking-tighter text-black-33 mb-[26px]"
                 descriptionSty="mb-8 leading-[20px] text-base font-normal text-black-33"
                 gridContainerSty="grid grid-cols-12 gap-6"
                 renderElement={
@@ -145,7 +148,7 @@ const Demand = () => {
                     <div
                       className={`${
                         index === 1 ? "ml-auto rotate-[135deg]" : "rotate-45"
-                      } h-[66px] w-[66px]  rounded-full bg-yellow-900 flex items-center justify-center mb-8`}
+                      } h-[66px] w-[66px] rounded-full bg-yellow-900 flex items-center justify-center mb-8`}
                     >
                       <Image {...sekelsWayToMaster?.renderElementContantImg} />
                     </div>
@@ -163,12 +166,12 @@ const Demand = () => {
       />
       <CardSection
         {...mediaPlanning?.sectionData}
-        sectionStyle="py-[100px] bg-blue-900 "
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-900 "
         titleSty="text-[42px] font-medium mb-3 leading-[52px] tracking-tighter text-white"
         descriptionSty="w-[456px] mx-auto text-white leading-[22px] text-black-33"
         renderElement={() => (
-          <div className="flex items-center">
-            <div className="w-[42%]">
+          <div className="flex max-lg:flex-wrap items-center">
+            <div className="w-full max-lg:order-2 lg:w-[42%]">
               {mediaPlanning?.renderElement?.cardData?.map((item, index) => {
                 return (
                   <Card
@@ -181,7 +184,7 @@ const Demand = () => {
                 );
               })}
             </div>
-            <div className="w-[55%] pl-[40px] h-full flex flex-col justify-end">
+            <div className="w-full max-lg:order-1 lg:w-[55%] pl-[40px] h-full flex flex-col justify-end mb-12 lg:mb-0">
               <div class="max-w-[599px] max-h-[489px] w-full ml-auto">
                 <Image {...mediaPlanning?.renderElement?.image} />
               </div>

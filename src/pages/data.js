@@ -81,7 +81,7 @@ const Data = () => {
     <div>
       <Banner
         {...bannerUnifiedData}
-        sectionSty="max-lg:pt-5 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
+        sectionSty="max-lg:pt-8 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
         containerStyle="container justify-between grid grid-cols-11 lg:gap-[30px] xl:gap-[60px]"
         descriptionSty="mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"

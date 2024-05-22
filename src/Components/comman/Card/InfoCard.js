@@ -51,7 +51,7 @@ const InfoCard = ({
                   />
                 </div>
               </div>
-              <div className={`${dashImageSty} col-span-11 lg:hidden pt-10`}>
+              <div className={`${dashImageSty} op col-span-11 lg:hidden pt-10`}>
                 <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                   <Image
                     className="w-full h-full"

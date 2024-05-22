@@ -55,13 +55,13 @@ const Footer = () => {
             <div className="col-span-4 md:col-span-1 lg:pl-4">
               <div className="max-md:border-b max-md:border-[#A3ACB1]/60">
                 <div
-                  className="py-6 lg:mb-[52px] flex items-center justify-between"
+                  className="max-md:py-6 md:mb-[35px] lg:mb-[52px] flex items-center justify-between"
                   onClick={() => handleDropDown("product")}
                 >
                   <h5 className="text-base md:text-xl text-black-33 font-medium">
                     Product
-                  </h5>{" "}
-                  <span className="lg:hidden">
+                  </h5>
+                  <span className="md:hidden">
                     <Image
                       src={"/chevron-down.svg"}
                       height={25}
@@ -73,24 +73,20 @@ const Footer = () => {
                 <div className={`${open["product"] ? "" : "max-md:hidden"} `}>
                   {product?.map((item, index) =>
                     renderNavigationLinks(item?.redirectPath, item?.name, index)
-                  )}
-
-                  {/* <p className="font-normal text-base leading-[140%] mb-3 text-black-33">
-                  SellerApp
-                </p> */}
+                  )}                 
                 </div>
               </div>
             </div>
             <div className="col-span-4 md:col-span-1 lg:pl-4">
               <div className="max-md:border-b max-md:border-[#A3ACB1]/60">
                 <div
-                  className="py-6 lg:mb-[52px] flex items-center justify-between"
+                  className="max-md:py-6 md:mb-[35px] lg:mb-[52px] flex items-center justify-between"
                   onClick={() => handleDropDown("company")}
                 >
                   <h5 className="text-base md:text-xl text-black-33 font-medium">
                     Company
-                  </h5>{" "}
-                  <span className="lg:hidden">
+                  </h5>
+                  <span className="md:hidden">
                     <Image
                       src={"/chevron-down.svg"}
                       height={25}
@@ -156,7 +152,7 @@ const Footer = () => {
             </div>
             <div className="col-span-4 md:col-span-1 lg:pl-4">
               <div>
-                <div className="py-6 lg:mb-[52px]">
+                <div className="max-md:py-6 md:mb-[35px] lg:mb-[52px]">
                   <h5 className="text-base md:text-xl text-black-33 font-medium">
                     How it Works
                   </h5>

@@ -58,7 +58,7 @@ export const hyperlocalDiscovery = [
     buttonAction:"/data",
     imageContentSty: "col-span-12 lg:col-span-6 h-full flex items-center",
     textContainerSty: "col-span-12 lg:col-span-6 h-full  flex items-center ",
-    imageContainerSty: "max-h-[414px] w-full max-w-[540px] mx-auto",
+    imageContainerSty: "lg:max-h-[414px] w-full lg:max-w-[540px] mx-auto",
     image: {
       src: "/Product.png",
       height: 536,

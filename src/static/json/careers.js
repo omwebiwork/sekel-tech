@@ -70,6 +70,15 @@ export const weCommunicate = {
       height: 448,
       width: 692,
       alt: "img",
+      className: "max-md:hidden",
+    },
+    image: {
+      src: "/perks-mobile.png",
+      height: 448,
+      width: 692,
+      alt: "img",
+      className: "md:hidden",
+
     },
   },
 };

@@ -8,9 +8,10 @@ const GetStartForm = ({
   filled = true,
   clsStyle="py-3 px-8",
   inputSty = "text-white placeholder:text-white border-white bg-gray-100 bg-opacity-10",
+  formMainDiv = "max-md:flex-wrap",
 }) => {
   return (
-    <div className="max-md:flex-wrap flex gap-4">
+    <div className={`flex gap-2 xl:gap-4 ${formMainDiv}`}>
       <input
         type={type}
         placeholder={placeholder}
