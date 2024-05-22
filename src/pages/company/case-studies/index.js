@@ -55,7 +55,6 @@ const CaseStudy = () => {
                           )}
                         </div>
                       }
-                      filled={item?.value === currentFilter ? true : false}
                       clsStyle={`py-2 px-5 text-sm whitespace-nowrap ${
                         item?.value === currentFilter
                           ? "bg-[#FCFBB3] max-md:bg-white max-md:border-gray-400 max-md:w-full max-md:text-start"
