@@ -27,11 +27,12 @@ export const demandGenerationFeature = {
         width: "500",
       },
       cardImgSty:
-        "mt-[33px] max-w-[436px] w-full mx-auto rounded-[12px] overflow-hidden",
-      cardSty: "flex gap-4 rounded-xl pl-5 pr-3 pt-[52px] bg-blue-200",
-      cardDataSty: "w-1/2",
+        "mt-6 lg:mt-[33px] max-w-[436px] w-full mx-auto rounded-[12px] overflow-hidden",
+      cardSty:
+        "lg:flex gap-4 rounded-xl p-5 lg:pl-5 lg:pr-3 lg:pt-[52px] bg-blue-200",
+      cardDataSty: "lg:w-1/2",
       headingSty:
-        "mb-[52px] leading-[30px] text-[28px] font-medium text-black-33",
+        "mb-5 lg:mb-[52px] leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
     {
       title: "Customer Relation Management",
@@ -46,7 +47,7 @@ export const demandGenerationFeature = {
       cardSty: "rounded-xl p-5 pt-6 bg-yellow-100 flex flex-col",
       cardDataSty: "w-full",
       headingSty:
-        "mb-[32px] h-[78px] line-clamp-2 leading-[36px] text-[28px] font-medium text-black-33",
+        "mb-6 lg:mb-[32px] lg:h-[78px] lg:line-clamp-2 leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
     {
       title: "SellrApp",
@@ -57,11 +58,12 @@ export const demandGenerationFeature = {
         height: "500",
         width: "500",
       },
-      cardImgSty: "max-w-[163px] w-full mx-auto mt-[102px]",
-      cardSty: "flex gap-4 rounded-xl p-5 pb-0 pt-[52px] bg-yellow-100 pr-3",
-      cardDataSty: "w-[45%]",
+      cardImgSty: "max-w-[163px] w-full mx-auto mt-8 lg:[80px] xl:mt-[102px]",
+      cardSty:
+        "lg:flex gap-4 rounded-xl p-5 lg:pb-0 lg:pt-[52px] bg-yellow-100 lg:pr-3",
+      cardDataSty: "w-full lg:w-[45%]",
       headingSty:
-        "mb-[52px] leading-[30px] text-[28px] font-medium text-black-33",
+        "mb-5 lg:mb-[52px] leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
     {
       title: "Conversion Analytics",
@@ -74,11 +76,12 @@ export const demandGenerationFeature = {
       },
 
       cardImgSty:
-        "mt-[60px] rounded-[12px] overflow-hidden border border-[#EAEAEA] shadow-[0_1px_2px_rgb(0 0 0 / 25%)] max-w-[411px] max-h-[274px]",
-      cardSty: "flex gap-4 rounded-xl p-5 pb-5 pr-[30px] pt-[38px] bg-blue-200",
-      cardDataSty: "w-[45%]",
+        "mt-6 lg:mt-[60px] rounded-[12px] overflow-hidden border border-[#EAEAEA] shadow-[0_1px_2px_rgb(0 0 0 / 25%)] lg:max-w-[411px] lg:max-h-[274px]",
+      cardSty:
+        "lg:flex gap-4 rounded-xl p-5 lg:pb-5 lg:pr-[30px] lg:pt-[38px] bg-blue-200",
+      cardDataSty: "lg:w-[45%]",
       headingSty:
-        "mb-[29px] leading-[30px] text-[28px] font-medium text-black-33",
+        "mb-5 lg:mb-[29px] leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
     {
       title: "Planogram",
@@ -90,12 +93,12 @@ export const demandGenerationFeature = {
         width: "500",
       },
       descriptionSty:
-        "mb-[20px] h-[72px] line-clamp-3 leading-[24px] text-[16px]",
+        "mb-5 lg:h-[72px] lg:line-clamp-3 leading-[24px] text-[16px]",
       cardImgSty: "max-w-[247px] w-full mt-auto mx-auto",
       cardSty: "rounded-xl p-5 pt-[32px] bg-blue-200 flex flex-col",
       cardDataSty: "w-full",
       headingSty:
-        "mb-[20px] h-[78px] line-clamp-2 leading-[36px] text-[28px] font-medium text-black-33",
+        "mb-5 lg:h-[78px] lg:line-clamp-2 leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
     {
       title: "Intelligent Response System",
@@ -106,13 +109,12 @@ export const demandGenerationFeature = {
         height: "500",
         width: "500",
       },
-      descriptionSty:
-        "mb-[20px] h-[72px] line-clamp-3 leading-[24px] text-[16px]",
+      descriptionSty: "mb-5 h-[72px] line-clamp-3 leading-[24px] text-[16px]",
       cardImgSty: "max-w-[350px] w-full mt-auto mx-auto",
-      cardSty: "rounded-xl p-5 pt-[32px] bg-yellow-100 flex flex-col",
+      cardSty: "rounded-xl p-5 lg:pt-[32px] bg-yellow-100 flex flex-col",
       cardDataSty: "w-full",
       headingSty:
-        "mb-[20px] h-[78px] line-clamp-2 leading-[36px] text-[28px] font-medium text-black-33",
+        "mb-5 lg:h-[78px] lg:line-clamp-2 leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
     {
       title: "Store2Door Omni Commerce",
@@ -123,12 +125,12 @@ export const demandGenerationFeature = {
         width: "500",
       },
       descriptionSty:
-        "mb-[20px] h-[72px] line-clamp-3 leading-[24px] text-[16px]",
+        "mb-5 lg:h-[72px] lg:line-clamp-3 leading-[24px] text-[16px]",
       cardImgSty: "max-w-[286px] mt-auto w-full mx-auto",
-      cardSty: "rounded-xl p-5 pt-[32px] bg-blue-200 flex flex-col",
+      cardSty: "rounded-xl p-5 lg:pt-[32px] bg-blue-200 flex flex-col",
       cardDataSty: "w-full",
       headingSty:
-        "mb-[20px] h-[78px] line-clamp-2 leading-[36px] text-[28px] font-medium text-black-33",
+        "mb-5 lg:h-[78px] lg:line-clamp-2 leading-[140%] text-[16px] md:text-[24px] lg:text-[28px] font-medium text-black-33",
     },
   ],
 };
@@ -212,10 +214,10 @@ export const sekelsWayToMaster = {
       description:
         "Sekel Tech collects data on customer interactions across websites, apps, stores, and social media, providing more accurate and relevant insights than just relying on keywords.",
       //   buttonText: "Explore Discovery",
-      imageContentSty: "order-1 col-span-6 h-full flex items-center ",
-      textContainerSty: "order-2 col-span-5 h-full flex items-center",
+      imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center ",
+      textContainerSty: "order-2 col-span-12 lg:col-span-5 h-full flex items-center",
       imageContainerSty:
-        "max-h-[480px] w-full max-w-[624px] pl-[15px] pt-[55px]  bg-blue-200 rounded-[16px] overflow-hidden mx-auto",
+        "lg:max-h-[480px] w-full lg:max-w-[624px] pl-[15px] pt-[15px] lg:pt-[55px] bg-blue-200 rounded-[16px] max-md:-mr-[30px] overflow-hidden mx-auto",
       image: {
         src: "/DemandGTFeatureImgs/accurate-contextual .png",
         height: 536,
@@ -229,9 +231,9 @@ export const sekelsWayToMaster = {
       description:
         "Automate your store for increased footfall and digital expansion, creating a smoother and spontaneous shopping experience.",
 
-      imageContentSty: "col-span-6 h-full flex items-center",
-      textContainerSty: "col-span-6 h-full  flex items-center ",
-      imageContainerSty: "max-h-[414px] w-full max-w-[540px] mx-auto",
+      imageContentSty: "max-lg:order-1 col-span-12 lg:col-span-6 h-full flex items-center",
+      textContainerSty: "max-lg:order-2 col-span-12 lg:col-span-6 h-full  flex items-center ",
+      imageContainerSty: "lg:max-h-[414px] w-full lg:max-w-[540px] mx-auto",
       image: {
         src: "/DemandGTFeatureImgs/enhanced-customer.png",
         height: 536,
@@ -243,10 +245,10 @@ export const sekelsWayToMaster = {
       title: "Understanding Customer Needs",
       description:
         "Gain insights into customer needs and preferences to deliver better-targeted ads.",
-      imageContentSty: "order-1 col-span-6 h-full flex items-center",
-      textContainerSty: "order-2 col-span-6 h-full flex items-center",
+      imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center",
+      textContainerSty: "order-2 col-span-12 lg:col-span-6 h-full flex items-center",
       imageContainerSty:
-        "max-h-[361px] w-full max-w-[638px] pl-[12px]  bg-blue-200 rounded-[12px] overflow-hidden mx-auto",
+        "lg:max-h-[361px] w-full lg:max-w-[638px] lg:pl-[12px] bg-blue-200 rounded-[12px] overflow-hidden mx-auto",
       image: {
         src: "/retail-demand.png",
         height: 536,

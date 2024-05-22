@@ -41,13 +41,13 @@ const Careers = () => {
     <>
       <Banner
         {...bannerCareers}
-        sectionSty="pt-20 pb-[100px]"
-        containerStyle="container block flex-wrap"
+        sectionSty="py-[50px] md:py-[60px] lg:pt-20 lg:pb-[100px]"
+        containerStyle="container flex-wrap grid grid-cols-2 gap-8"
         descriptionSty="mb-0"
-        imgContainerSty="max-h-[468px] overflow-hidden rounded-3xl w-full"
-        headinWidth="w-1/2"
-        imgGridSty="w-1/2"
-        aboutHead="max-w-[506px]"
+        imgContainerSty="md:max-h-[468px] overflow-hidden rounded-3xl w-full"
+        headinWidth="col-span-2 md:col-span-1"
+        imgGridSty="col-span-2 md:col-span-1"
+        aboutHead="md:max-w-[506px]"
         subTitleSty="tracking-tighter mb-6"
         renderElement={
           <div className="pt-5">
@@ -59,74 +59,76 @@ const Careers = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How it works" },
-          { link: "/demand", label: "Demand" },
+          { link: "/company", label: "Company" },
+          { link: "/company/about-us", label: "About Us" },
         ]}
       />
 
-      <section className="py-[100px] bg-white">
+      <section className="py-[50px] md:py-[60px] lg:py-[100px] bg-white">
         <div className="container">
-          <div className="grid grid-cols-6 gap-x-5 items-center">
-            <div className="col-span-2">
-              <div className="w-full rounded-2xl overflow-hidden ">
-                <Image
-                  src={"/picture-1.png"}
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+          <div className="overflow-x-auto">
+            <div className="grid grid-cols-6 gap-x-5 w-[1140px]">
+              <div className="col-span-2">
+                <div className="w-full rounded-2xl overflow-hidden h-full">
+                  <Image
+                    src={"/picture-1.png"}
+                    width={300}
+                    height={300}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-span-1">
-              <div className="w-full rounded-2xl overflow-hidden mb-5 max-h-[300px]">
-                <Image
-                  src={"/picture-2.png"}
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+              <div className="col-span-1">
+                <div className="w-full rounded-2xl overflow-hidden mb-5 max-h-[286px]">
+                  <Image
+                    src={"/picture-2.png"}
+                    width={300}
+                    height={300}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-full rounded-2xl overflow-hidden">
+                  <Image
+                    src={"/picture-3.png"}
+                    width={300}
+                    height={300}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <div className="w-full rounded-2xl overflow-hidden">
-                <Image
-                  src={"/picture-3.png"}
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+              <div className="col-span-2">
+                <div className="w-full rounded-2xl overflow-hidden mb-5 max-h-[230px]">
+                  <Image
+                    src={"/picture-4.png"}
+                    width={300}
+                    height={300}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-full rounded-2xl overflow-hidden max-h-[230px]">
+                  <Image
+                    src={"/picture-5.png"}
+                    width={300}
+                    height={300}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-span-2">
-              <div className="w-full rounded-2xl overflow-hidden mb-5 max-h-[230px]">
-                <Image
-                  src={"/picture-4.png"}
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-full rounded-2xl overflow-hidden max-h-[230px]">
-                <Image
-                  src={"/picture-5.png"}
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="col-span-1">
-              <div className="w-full rounded-2xl overflow-hidden">
-                <Image
-                  src={"/picture-6.png"}
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+              <div className="col-span-1">
+                <div className="w-full rounded-2xl overflow-hidden h-full">
+                  <Image
+                    src={"/picture-6.png"}
+                    width={300}
+                    height={300}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -135,20 +137,20 @@ const Careers = () => {
 
       <CardSection
         {...ourCulture?.sectionData}
-        headingSty="max-w-[720px] mb-[52px]"
-        sectionStyle="py-[100px] bg-blue-200"
-        titleSty="text-[42px] font-medium mb-8 leading-[140%] tracking-tighter text-black-33"
-        descriptionSty="max-w-[686px] text-base font-normal leading-[140%] text-black-33"
+        headingSty="lg:max-w-[720px] mb-10 lg:mb-[52px]"
+        sectionStyle="py-[50px] md:py-[60px] lg:py-[100px] bg-blue-200"
+        titleSty="text-[32px] lg:text-[42px] font-medium mb-4 lg:mb-8 leading-[140%] tracking-tighter text-black-33"
+        descriptionSty="lg:max-w-[686px] text-base font-normal leading-[140%] text-black-33"
         renderElement={() => (
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 gap-4 lg:gap-0">
             {ourCulture?.cardData?.map((item, index) => {
               return (
-                <div className="col-span-1" key={index}>
+                <div className="col-span-3 md:col-span-1" key={index}>
                   <Card
                     {...item}
                     titleIconSty="mb-[32px]"
-                    headingSty="text-[28px] font-medium leading-[140%] mb-4 text-black-900"
-                    cardSty="bg-blue-200 px-5 py-8 rounded-2xl border-[1px] border-white h-full"
+                    headingSty="text-[24px] lg:text-[28px] font-medium leading-[140%] mb-4 text-black-900"
+                    cardSty="bg-blue-200 p-4 lg:px-5 lg:py-8 rounded-2xl border-[1px] border-white h-full"
                     descriptionSty="mb-0 text-base font-normal leading-[140%] text-black-33"
                     cardDataSty="mb-0"
                     iconSty="mx-auto"
@@ -162,41 +164,43 @@ const Careers = () => {
 
       <CardSection
         {...weCommunicate?.sectionData}
-        descriptionSty="mx-auto text-white w-[659px] text-base font-normal leading-[140%]"
+        descriptionSty="mx-auto text-white lg:w-[659px] text-base font-normal leading-[140%]"
         headingSty="text-center mx-auto max-w-[900px] mb-8"
-        sectionStyle="pt-[80px] pb-[100px] bg-blue-900 text-white"
-        titleSty="text-[42px] font-medium mb-[20px] leading-[140%] tracking-tighter text-white"
+        sectionStyle="py-[50px] md:py-[60px] lg:pt-[80px] lg:pb-[100px] bg-blue-900 text-white"
+        titleSty="text-[32px] lg:text-[42px] font-medium mb-[30px] lg:mb-[20px] leading-[140%] tracking-tighter text-white"
         renderElement={() => (
           <InfoCard
             {...weCommunicate?.ourPerks}
-            subheadTitleSty="mr-0 text-base font-normal leading-[140%] mb-3"
-            titleSty="text-white text-[54px] font-normal leading-[140%] tracking-tighter mb-8"
-            sectionStyle="pt-[50px] text-white"
-            imageContentSty="col-span-6"
-            textContainerSty="col-span-5"
+            gridContainerSty="items-center grid grid-cols-11 gap-y-[30px] lg:gap-6"
+            imageContentSty="max-lg:order-1 col-span-12 lg:col-span-6"
+            textContainerSty="max-lg:order-2 col-span-12 lg:col-span-5"
+            subheadTitleSty="mr-0 text-base font-normal leading-[140%] mb-6 lg:mb-3"
+            containtWidth="lg:max-w-[504px] lg:pt-[26px]"
+            titleSty="text-white text-[32px] md:text-[42px] xl:text-[54px] font-normal leading-[140%] tracking-tighter mb-6 lg:mb-8"
+            imageContainerSty="max-h-auto lg:max-w-[500px] ml-auto"
+            sectionStyle="lg:pt-[50px] text-white"
+            leadTextSty="text-[16px] lg:text-[20px] font-normal leading-[140%] text-yellow-900"
+            descriptionSty="mr-0 text-base font-normal leading-[140%] mb-6 lg:mb-8"
             containerSty=""
-            containtWidth="max-w-[504px] pt-[38px]"
-            gridContainerSty="items-center grid grid-cols-11 gap-6"
-            descriptionSty="mr-0 text-base font-normal leading-[140%] mb-8"
-            imageContainerSty="max-h-auto max-w-[500px] ml-auto"
             leadText="Finally, we like to have fun! We host office dinners and team parties so that our employees can bond with each other."
-            leadTextSty="text-[20px] font-normal leading-[140%] text-yellow-900"
           />
         )}
       />
 
       <CardSection
-        headingSty="flex justify-between gap-[60px] pb-[80px] border-b border-gray-400"
+        headingSty="lg:flex justify-between gap-[60px] pb-8 lg:pb-[80px] border-b border-gray-400"
         title="Position Open"
-        titleSty="text-[42px] font-medium mb-0 leading-[140%] tracking-tighter text-black-33"
+        titleSty="text-[32px] lg:text-[42px] font-medium mb-6 lg:mb-0 leading-[140%] tracking-tighter text-black-33"
         headerSection={
           <div className="my-auto">
             <GetStartForm
+              formMainDiv="justify-between flex-wrap"
               buttonTitle="Search"
+              formBtnSty="max-sm:w-full"
               placeholder="Hyperlocation Management"
               value="All Posts"
               type="text"
-              inputSty="text-black-33 placeholder:text-black-33 border-gray-400"
+              inputSty="max-sm:w-full max-md:w-[calc(100%_-_135px)] max-lg:w-[calc(100%_-_135px)] text-black-33 placeholder:text-black-33 border-gray-400"
             />
           </div>
         }
@@ -205,13 +209,15 @@ const Careers = () => {
             return (
               <Card
                 key={index}
-                cardDataSty="mb-0"
+                cardDataSty="mb-6 md:b-0"
                 title={item.title}
                 headingSty="mb-0 text-base font-medium mb-1"
                 descriptionSty="mb-0 text-base font-normal"
                 description={item.description}
-                cardSty="flex justify-between items-center py-[20px] border-b border-gray-400"
-                renderElement={<Button data="Apply" filled />}
+                cardSty="md:flex justify-between items-center py-[20px] border-b border-gray-400"
+                renderElement={
+                  <Button data="Apply" filled clsStyle="px-8 py-2" />
+                }
               />
             );
           })
@@ -220,12 +226,18 @@ const Careers = () => {
 
       <section className="bg-yellow-100 py-8">
         <div className="container">
-          <div className="grid grid-cols-12 gap-12 items-center">
-            <div className="col-span-4">
-            <p class="text-black-33 text-[28px] font-medium">How to Apply</p>
+          <div className="grid grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
+            <div className="col-span-12 lg:col-span-4">
+              <p class="text-black-33 text-[28px] font-medium">How to Apply</p>
             </div>
-            <div className="col-span-8">
-              <h4 className="text-black-33 text-[28px] font-medium">Send an email with “Job Title” in the subject along with your resume attached to <Link href={''} className="text-blue-600">careers@sekel.tech</Link></h4>
+            <div className="col-span-12 lg:col-span-8">
+              <h4 className="text-black-33 text-[16px] lg:text-[28px] font-medium">
+                Send an email with “Job Title” in the subject along with your
+                resume attached to{" "}
+                <Link href={""} className="text-blue-600">
+                  careers@sekel.tech
+                </Link>
+              </h4>
             </div>
           </div>
         </div>

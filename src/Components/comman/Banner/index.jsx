@@ -22,7 +22,7 @@ const Banner = ({
   return (
     <div className={`${sectionSty} bg-blue-900`}>
       <div className={`flex ${containerStyle} items-center`}>
-        <div className={` ${headinWidth} `}>
+        <div className={`${headinWidth}`}>
           <div className={` ${aboutHead} text-white`}>
             <div className={` ${aboutHeadBox} `}>
               <h1 className={`${titleSty}`}>{title}</h1>

@@ -61,7 +61,7 @@ const SellrApp = () => {
       <Banner
         {...bannerOneApp}
         containerStyle="container justify-between max-md:flex-wrap"
-        sectionSty="max-lg:pt-5 pb-[50px] md:pb-[60px] lg:pb-[100px]"
+        sectionSty="max-lg:pt-8 pb-[50px] md:pb-[60px] lg:pb-[100px]"
         imgContainerSty="max-w-full"
         imgGridSty="max-md:w-full"
         renderElement={
@@ -95,7 +95,7 @@ const SellrApp = () => {
             </button>
           </div>
         }
-        headinWidth="md:max-w-[400px] lg:max-w-[443px] lg:mb-12 mb-8"
+        headinWidth="md:max-w-[400px] lg:max-w-[443px] lg:mb-12 max-md:mb-8"
         descriptionSty="lg:mr-[67px] leading-[25px] mt-2 mb-6 lg:my-8 text-yellow-900"
       />
       <Breadcrumb

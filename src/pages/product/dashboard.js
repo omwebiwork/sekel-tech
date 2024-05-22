@@ -84,8 +84,8 @@ export default function Dashboard() {
                 ))}
               </div>
             }
-            subheadTitleSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
-            descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] "
+            subheadTitleSty="mx-auto lg:mr-6 text-base font-normal leading-[25px] mb-8"
+            descriptionSty="mx-auto lg:mr-6 text-base font-normal leading-[25px] "
             sectionStyle="p-4 md:p-8 lg:py-[52px] lg:px-[42px] rounded-[24px] bg-gray-100"
             containerSty="p-0"
             containtWidth="max-w-[490px] h-full flex flex-col justify-center"
@@ -164,7 +164,7 @@ export default function Dashboard() {
               clsStyle="py-3 px-8"
               action={() => router.push("/company/contact-us")}
             />
-            <div className="max-lg:hidden">
+            <div className="max-lg:hidden ashish">
               <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                 <Image
                   className="w-full h-full"

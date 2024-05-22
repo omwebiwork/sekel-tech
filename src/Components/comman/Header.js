@@ -42,12 +42,12 @@ const Header = () => {
           <div
             className={` ${
               toggle ? "max-lg:-right-[360px]" : "max-lg:right-0"
-            } ml-auto max-lg:fixed max-lg:bg-white max-lg:shadow-[0px_0px_25px_rgba(0,0,0,0.15)] max-lg:max-w-[350px] w-full top-0 max-lg:py-10 max-lg:px-5 max-lg:h-full bottom-0 transition-all	duration-300 z-[999]`}
+            } ml-auto max-lg:fixed max-lg:bg-white max-lg:shadow-[0px_0px_25px_rgba(0,0,0,0.15)] max-lg:max-w-[350px] w-full top-0 max-lg:pt-10 max-lg:pb-20 max-lg:px-5 max-lg:h-full bottom-0 transition-all	duration-300 z-[999]`}
           >
             <button onClick={handleClick} className="lg:hidden absolute right-3 top-3">
               <Image src={'/close.svg'} height={25} width={25} alt="" />
             </button>
-            <ul className="justify-end lg:flex items-center gap-x-1">
+            <ul className="justify-end lg:flex items-center gap-x-1 max-lg:max-h-[calc(100vh_-_120px)] overflow-y-auto">
               <li>
                 <Link
                   href={"/"}
@@ -88,7 +88,7 @@ const Header = () => {
                 </div>
               </li>
               <li>
-                <Link href={"/"} className="max-lg:flex max-lg:pt-10 lg:ml-1">
+                <Link href={"/"} className="max-lg:absolute bottom-5 left-5 flex">
                   <Button filled data="Log In" />
                 </Link>
               </li>
