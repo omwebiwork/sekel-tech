@@ -72,13 +72,12 @@ export const weCommunicate = {
       alt: "img",
       className: "max-md:hidden",
     },
-    image: {
+    mobileImage: {
       src: "/perks-mobile.png",
       height: 448,
       width: 692,
       alt: "img",
       className: "md:hidden",
-
     },
   },
 };

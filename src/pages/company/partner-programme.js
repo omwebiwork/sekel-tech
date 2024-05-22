@@ -33,7 +33,6 @@ const PartnerProgramme = () => {
         imageContainerSty=" w-full max-w-[562px] ml-0 mx-auto"
         textContainerSty="col-span-11 lg:col-span-6 max-lg:mb-10 flex items-center"
         imageContentSty="col-span-11 lg:col-span-5 flex items-center"
-        dashImageSty="col-span-11 lg:hidden pt-10"
       />
       <Breadcrumb
         breadcrumbList={[

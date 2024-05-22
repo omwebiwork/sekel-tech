@@ -10,6 +10,13 @@ export const bannerDiscoverPower = {
     width: 300,
     alt: "img",
   },
+  renderMobileImage: {
+    src: "/digital-graph-mobile.svg",
+    height: 140,
+    width: 300,
+    alt: "img",
+  },
+
 };
 
 export const information = [

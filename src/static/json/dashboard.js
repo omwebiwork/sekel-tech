@@ -165,4 +165,10 @@ export const oneUltimatePlatform = {
     width: 500,
     alt: "img",
   },
+  mobileImage: {
+    src: "/ultimate-platform2.png",
+    height: 500,
+    width: 500,
+    alt: "img",
+  },
 };

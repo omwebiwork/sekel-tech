@@ -88,7 +88,7 @@ const Header = () => {
                 </div>
               </li>
               <li>
-                <Link href={"/"} className="max-lg:absolute bottom-5 left-5 flex">
+                <Link href={"/"} className="max-lg:absolute bottom-5 left-5 flex lg:ml-3">
                   <Button filled data="Log In" />
                 </Link>
               </li>

@@ -23,7 +23,9 @@ const InfoCard = ({
   subTitleSty = "hidden",
   subheadTitleSty = "hidden",
   leadTextSty = "hidden",
-  dashImageSty="hidden"
+  dashImageSty="hidden",
+  mobileImageSty='ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden',
+  mobileImage
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
@@ -51,17 +53,18 @@ const InfoCard = ({
                   />
                 </div>
               </div>
-              <div className={`${dashImageSty} op col-span-11 lg:hidden pt-10`}>
-                <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
+              {mobileImage && 
+              
+              <div className={`${dashImageSty}`}>
+                <div className={`${mobileImageSty}`}>
                   <Image
                     className="w-full h-full"
-                    src={"/ultimate-platform2.png"}
-                    height={500}
-                    width={500}
-                    alt="img"
+                    {...mobileImage}
                   />
                 </div>
               </div>
+              }
+
             </>
           )}
         </div>

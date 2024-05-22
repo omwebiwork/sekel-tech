@@ -155,7 +155,7 @@ export default function Dashboard() {
         imageContainerSty=" w-full max-w-[497px] ml-0 mx-auto"
         textContainerSty="col-span-11 lg:col-span-6 max-lg:mb-10"
         imageContentSty="col-span-11 lg:col-span-5 flex items-center"
-        dashImageSty="col-span-11 lg:hidden pt-10"
+        dashImageSty="col-span-11 lg:hidden pt-10 col-span-11 lg:hidden pt-10"
         renderElement={
           <>
             <Button

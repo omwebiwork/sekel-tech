@@ -182,6 +182,8 @@ const Careers = () => {
             leadTextSty="text-[16px] lg:text-[20px] font-normal leading-[140%] text-yellow-900"
             descriptionSty="mr-0 text-base font-normal leading-[140%] mb-6 lg:mb-8"
             containerSty=""
+            dashImageSty="col-span-11 lg:hidden pt-8"
+            mobileImageSty="w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden"
             leadText="Finally, we like to have fun! We host office dinners and team parties so that our employees can bond with each other."
           />
         )}

@@ -29,25 +29,28 @@ const ContactUs = () => {
     <>
       <Banner
         {...bannerDiscoverPower}
-        sectionSty="pb-8 pt-[50px]"
-        containerStyle="container justify-between h-full gap-[80px]"
-        descriptionSty="mr-16 mb-8"
+        sectionSty="py-[50px] lg:pb-8 lg:pt-[50px]"
+        containerStyle="container justify-between max-lg:flex-wrap h-full lg:gap-[80px]"
+        descriptionSty="lg:mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"
-        imgGridSty="w-full h-full  "
+        titleSty="text-[32px] md:text-[36px] lg:text-[54px] font-normal leading-[140%] mb-4 tracking-tighter"
+        imgGridSty="w-full lg:w-1/2"
         renderElement={
-          <div className="-mt-[200px] -mr-[80px]">
-            <Image
-              className="w-full object-cover"
-              {...bannerDiscoverPower?.renderImage}
-            />
-          </div>
+          <>
+            <div className="max-lg:hidden lg:-mt-[200px] lg:-mr-[80px]">
+              <Image className="w-full object-cover" {...bannerDiscoverPower?.renderImage} />
+            </div>
+            <div className="lg:hidden -mb-[100px]">
+              <Image className="w-full max-w-[90%]" {...bannerDiscoverPower?.renderMobileImage} />
+            </div>
+          </>
         }
         renderFormElement={
-          <div className="max-w-[605px] w-full h-[566px] border-[1px] border-white rounded-[20px] p-8">
+          <div className="w-full h-[566px] border-[1px] border-white rounded-[20px] p-8 bg-blue-900">
             <LetsConnectForm />
           </div>
         }
-        headinWidth="max-w-[calc(100%_-_700px)] w-full mb-12"
+        headinWidth="lg:w-1/2 mb-12"
       />
       <Breadcrumb
         breadcrumbList={[
