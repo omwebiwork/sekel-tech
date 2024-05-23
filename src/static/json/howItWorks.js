@@ -7,14 +7,12 @@ export const bannerHowItworks = {
     alt: "img",
     height: 631,
     width: 564,
-    className: "max-lg:hidden"
   },
-  image: {
+  mobileImage: {
     src: "/how-it-banner.png",
     alt: "img",
     height: 631,
     width: 564,
-    className: "lg:hidden"
   },
 };
 

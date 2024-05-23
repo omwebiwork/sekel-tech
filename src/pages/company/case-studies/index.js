@@ -15,10 +15,10 @@ const CaseStudy = () => {
         sidebarFilterData={caseFilterData}
         cardList={caseStudyCardData}
         cardContainerSty="grid grid-cols-12 gap-8"
-        sliderColSty="col-span-12 pb-[25px] xl:pb-[50px] pt-[50px] xl:pt-[100px] md:flex items-center"
+        sliderColSty="col-span-12 pb-[25px] xl:pb-[50px] pt-[50px] xl:pt-[100px] md:flex items-center justify-between"
         galleryColSty="col-span-12 md:pt-[10px] xl:pt-[100px]"
         galleryBoxSty=""
-        sliderTabSty="my-2 md:mt-0 md:mb-2 max-md:w-full text-left"
+        sliderTabSty="my-2 md:mt-0 md:mb-0 max-md:w-full text-left"
         sliderBtnSty="flex max-md:flex-wrap md:overflow-x-auto md:max-w-[calc(100%_-_250px)]"
         sideTitleSty="text-[32px] lg:text-[42px] font-medium tracking-tighter mb-8 md:mb-0 xl:w-[250px] md:pr-7"
         renderElement={(item, index) => (

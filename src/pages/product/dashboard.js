@@ -28,7 +28,7 @@ export default function Dashboard() {
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
-        sectionSty="max-sm:pt-4"
+        sectionSty="pt-[50px] md:pt-[60px] lg:pt-[88px]"
         imgContainerSty="max-w-[1080px] mx-auto"
         imgGridSty="max-xl:px-6"
         headinWidth="max-w-[936px] mx-auto text-center mb-12"
@@ -58,7 +58,7 @@ export default function Dashboard() {
       />
       <CardSection
         {...keyProductSectionData}
-        headingSty="flex items-end mx-4 gap-[60px] mb-[52px] max-w-[600px]"
+        headingSty="flex items-end gap-[60px] mb-[52px] max-w-[600px]"
         descriptionSty="text-base font-normal leading-[22px] text-black-33 "
         renderElement={() => (
           <InfoCard

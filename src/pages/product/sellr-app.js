@@ -135,9 +135,9 @@ const SellrApp = () => {
         descriptionSty="w-full text-base font-normal leading-[22px] text-black-33"
       />
 
-      <section className="bg-blue-900 py-20">
+      <section className="bg-blue-900 py-12 lg:py-20">
         <div className="container">
-          <div className=" mb-[52px] ">
+          <div className="mb-[52px]">
             <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-white">
               {chooseSellrApp?.sectionData?.title}
             </h3>

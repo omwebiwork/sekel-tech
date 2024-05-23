@@ -16,9 +16,11 @@ const Banner = ({
   titleSty = "text-[36px] lg:text-[54px] font-normal leading-[140%] mb-4 tracking-tighter",
   subTitleSty = "text-[28px] font-medium leading-[32px] tracking-tight mb-8",
   imgContainerSty,
+  imgMobileContainerSty='',
   aboutHead,
   aboutHeadBox,
   imgGridSty,
+  mobileImage
 }) => {
   return (
     <div className={`${sectionSty} bg-blue-900`}>
@@ -39,6 +41,11 @@ const Banner = ({
           {image && (
             <div className={`${imgContainerSty}`}>
               <Image className="w-full object-cover object-center" {...image} />
+            </div>
+          )}
+            {mobileImage && (
+            <div className={`${imgMobileContainerSty}`}>
+              <Image className="w-full object-cover object-center" {...mobileImage} />
             </div>
           )}
           {renderFormElement  && renderFormElement}

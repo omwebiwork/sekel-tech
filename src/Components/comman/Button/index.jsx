@@ -10,7 +10,7 @@ const Button = ({
 }) => {
   const handleClick = useCallback(() => {
     action && action();
-  }, []);
+  }, [action]);
   return (
     <button
       type={type}

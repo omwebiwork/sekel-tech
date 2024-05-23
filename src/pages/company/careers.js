@@ -12,30 +12,93 @@ import {
   ourCulture,
   weCommunicate,
 } from "@/static/json/careers";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
+
+const baseURLJob = `${process.env.STRAPI_PATH}/jobs?populate[0]=job_category&populate[1]=JobImage&sort=publishedAt:desc`;
+const baseURLJobCategory = `${process.env.STRAPI_PATH}/job-categories?fields[0]=name&fields[1]=slug`;
 
 const Careers = () => {
-  let positionCardData = [
-    {
-      title: "Copy Writer",
-      description: "Pune / Yerawada, Full Time",
-    },
-    {
-      title: "Copy Writer",
-      description: "Pune / Yerawada, Full Time",
-    },
-    {
-      title: "Copy Writer",
-      description: "Pune / Yerawada, Full Time",
-    },
-    {
-      title: "Copy Writer",
-      description: "Pune / Yerawada, Full Time",
-    },
-    {
-      title: "Copy Writer",
-      description: "Pune / Yerawada, Full Time",
-    },
-  ];
+  const inputRef = useRef(null);
+  const router = useRouter();
+  const [loaderStat, setLoader] = useState(false);
+  const [showDropdown, setShowDropDown] = useState(false);
+  // const [showEmptyMsg, setShowEmptyMsg] = useState(true);
+
+  const [jobList, setJobList] = useState([]);
+  const [jobCategoryList, setJobCategoryList] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState({
+    label: "",
+    value: "all",
+    filter: true,
+    selectedSlug: "all",
+  });
+
+  const handleFocus = () => {
+    setShowDropDown(true);
+  };
+
+  const handleClickOutside = (event) => {
+    if (inputRef.current && !inputRef.current.contains(event.target)) {
+      setShowDropDown(false);
+      console.log(inputRef.current.contains(event?.target), event.target);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    setLoader(true);
+    if (window.location.protocol.indexOf("https") == 0) {
+      var el = document.createElement("meta");
+      el.setAttribute("http-equiv", "Content-Security-Policy");
+      el.setAttribute("content", "upgrade-insecure-requests");
+      document.head.append(el);
+    }
+    // get jobs
+    axios
+      .get(baseURLJob)
+      .then((response) => {
+        setJobList(response.data.data);
+        setLoader(false);
+      })
+      .catch((error) => {
+        setLoader(false);
+        console.log(error);
+      });
+    // get job category
+    axios
+      .get(baseURLJobCategory)
+      .then((response) => {
+        setJobCategoryList(response.data.data);
+        setLoader(false);
+      })
+      .catch((error) => {
+        setLoader(false);
+        console.log(error);
+      });
+  }, []);
+
+  const jobFilterData = jobList.filter(
+    (item) =>
+      item?.attributes?.job_category?.data?.attributes?.slug ===
+        currentCategory.selectedSlug || currentCategory.selectedSlug === "all"
+  );
+
+  const jobCategoryFilterData = jobCategoryList.filter(
+    (item) =>
+      item?.attributes.name
+        .toLowerCase()
+        .includes(currentCategory?.label.toLowerCase()) ||
+      currentCategory?.value === "all" ||
+      currentCategory.filter
+  );
 
   return (
     <>
@@ -194,43 +257,121 @@ const Careers = () => {
         title="Position Open"
         titleSty="text-[32px] lg:text-[42px] font-medium mb-6 lg:mb-0 leading-[140%] tracking-tighter text-black-33"
         headerSection={
-          <div className="my-auto">
+          <div className="my-auto" ref={inputRef}>
             <GetStartForm
               formMainDiv="justify-between flex-wrap"
               buttonTitle="Search"
               clsStyle="py-3 px-8 max-sm:w-full"
-              placeholder="Hyperlocation Management"
-              value="All Posts"
+              placeholder="All Posts"
+              value={currentCategory?.label}
+              onChangeHandler={(e) => {
+                if (e.target.value.length === 0) {
+                  setCurrentCategory({
+                    ...currentCategory,
+                    label: e.target?.value,
+                    value: "all",
+                    selectedSlug: "all",
+                    filter: true,
+                  });
+                } else {
+                  setCurrentCategory({
+                    ...currentCategory,
+                    label: e.target?.value,
+                    value: "",
+                    filter: false,
+                  });
+                }
+              }}
+              onFocusHandler={handleFocus}
+              onHandleClick={() => {
+                setCurrentCategory({
+                  ...currentCategory,
+                  filter: true,
+                  selectedSlug: currentCategory?.value,
+                });
+
+                setShowDropDown(false);
+              }}
               type="text"
               inputSty="max-sm:w-full bg-gray-100 bg-opacity-10 max-md:w-[calc(100%_-_135px)] max-lg:w-[calc(100%_-_135px)] text-black-33 placeholder:text-black-33 border-gray-400 bg-opacity-10"
             />
+            {showDropdown && (
+              <div className="relative">
+                <ul className="absolute top-5 left-2 right-2 mx-auto bg-white rounded shadow-md p-4">
+                  {jobCategoryFilterData?.length > 0 ? (
+                    jobCategoryFilterData?.map((item, index) => {
+                      return (
+                        <li
+                          className="py-1.5 my-2 px-3 rounded-sm hover:bg-blue-200"
+                          key={index}
+                          onClick={() => {
+                            setCurrentCategory({
+                              ...currentCategory,
+                              label: item.attributes.name,
+                              value: item.attributes.slug,
+                              filter: false,
+                            });
+                            setShowDropDown(false);
+                          }}
+                        >
+                          {item.attributes.name}
+                        </li>
+                      );
+                    })
+                  ) : (
+                    <li className="py-1.5 my-2 px-3 rounded-sm hover:bg-blue-200">
+                      Not found any category
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
           </div>
         }
-        renderElement={() =>
-          positionCardData?.map((item, index) => {
+        renderElement={() => {
+          if (jobFilterData?.length > 0) {
+            return jobFilterData?.map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  cardDataSty="mb-6 md:b-0"
+                  title={item.attributes?.position}
+                  description={"Pune / Yerawada, Full Time"}
+                  headingSty="mb-0 text-base font-medium mb-1"
+                  descriptionSty="mb-0 text-base font-normal"
+                  cardSty="md:flex justify-between items-center py-[20px] border-b border-gray-400"
+                  renderElement={
+                    <Button
+                      data="Apply"
+                      filled
+                      clsStyle="px-8 py-2"
+                      action={() =>
+                        router.push(`/careers/${item.attributes?.slug}`)
+                      }
+                    />
+                  }
+                />
+              );
+            });
+          } else {
             return (
-              <Card
-                key={index}
-                cardDataSty="mb-6 md:b-0"
-                title={item.title}
-                headingSty="mb-0 text-base font-medium mb-1"
-                descriptionSty="mb-0 text-base font-normal"
-                description={item.description}
-                cardSty="md:flex justify-between items-center py-[20px] border-b border-gray-400"
-                renderElement={
-                  <Button data="Apply" filled clsStyle="px-8 py-2" />
-                }
-              />
+              <div className="flex pt-10 flex-wrap items-center justify-center">
+                <p className="font-sans text-xl font-bold">
+                  No Open Positions!
+                </p>
+              </div>
             );
-          })
-        }
+          }
+        }}
       />
 
       <section className="bg-yellow-100 py-8">
         <div className="container">
           <div className="grid grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
             <div className="col-span-12 lg:col-span-4">
-              <p className="text-black-33 text-[28px] font-medium">How to Apply</p>
+              <p className="text-black-33 text-[28px] font-medium">
+                How to Apply
+              </p>
             </div>
             <div className="col-span-12 lg:col-span-8">
               <h4 className="text-black-33 text-[16px] lg:text-[28px] font-medium">

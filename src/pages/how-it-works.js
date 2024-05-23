@@ -39,7 +39,8 @@ export default function HowItWorks() {
         imgGridSty="max-lg:max-w-[450px] max-lg:mx-auto max-lg:w-full max-lg:order-1 max-lg:mb-10"
         headinWidth="max-lg:order-2 w-full lg:max-w-[491px] mb-8 lg:mb-[400px]"
         descriptionSty="text-base font-normal leading-[140%] mb-8 text-white"
-        imgContainerSty="lg:max-w-[564px] lg:h-[631px] w-full lg:rounded-[20px] overflow-hidden lg:mt-[161px]"
+        imgContainerSty="lg:max-w-[564px] lg:h-[631px] w-full lg:rounded-[20px] overflow-hidden lg:mt-[161px] max-lg:hidden"
+        imgMobileContainerSty = 'lg:max-w-[564px] lg:h-[631px] w-full lg:rounded-[20px] overflow-hidden lg:mt-[161px] lg:hidden' 
         titleSty="text-[36px] leading-[140%] md:text-[42px] font-medium md:leading-[140%] mb-4 tracking-tight"
       />
       <Breadcrumb

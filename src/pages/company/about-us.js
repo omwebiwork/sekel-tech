@@ -78,7 +78,7 @@ const AboutUs = () => {
         sectionStyle="pt-[50px] max-lg:pb-[50px] lg:pt-[100px] bg-blue-900 text-white"
         imageContentSty="order-1 col-span-11 lg:col-span-5"
         textContainerSty="order-2 col-span-11 lg:col-span-6"
-        containtWidth="lg:max-w-[615px] ml-auto pt-[38px]"
+        containtWidth="lg:max-w-[615px] ml-auto pt-[38px] lg:pb-5"
         descriptionSty="mr-0 text-[15px] md:text-base font-normal leading-[125%]"
         imageContainerSty="max-h-auto max-w-[500px] mx-auto"
       />
