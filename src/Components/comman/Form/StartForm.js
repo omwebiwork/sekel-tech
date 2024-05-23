@@ -16,7 +16,7 @@ const GetStartForm = ({
         type={type}
         placeholder={placeholder}
         value={value}
-        className={`max-md:w-full h-[48px] leading-5 py-2 px-8 border border-1 rounded-full bg-gray-100 bg-opacity-10 focus:ring-0 focus:outline-none focus-visible:ring-0 ${inputSty}`}
+        className={`max-md:w-full h-[50px] leading-5 py-2 px-8 border border-1 rounded-full focus:ring-0 focus:outline-none focus-visible:ring-0 ${inputSty}`}
       />
       <Button filled={filled} data={buttonTitle}  clsStyle={clsStyle}/>
     </div>

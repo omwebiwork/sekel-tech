@@ -185,7 +185,7 @@ const Demand = () => {
               })}
             </div>
             <div className="w-full max-lg:order-1 lg:w-[55%] pl-[40px] h-full flex flex-col justify-end mb-12 lg:mb-0">
-              <div class="max-w-[599px] max-h-[489px] w-full ml-auto">
+              <div className="max-w-[599px] max-h-[489px] w-full ml-auto">
                 <Image {...mediaPlanning?.renderElement?.image} />
               </div>
               <div className="max-w-[438px] ml-auto mt-8 p-4 rounded-[8px] bg-white bg-opacity-10 border-[1px] border-white">

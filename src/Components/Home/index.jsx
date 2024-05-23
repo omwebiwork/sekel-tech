@@ -233,7 +233,7 @@ const HomeComponent = () => {
               <div className="col-span-1">
                 <div className="flex items-center justify-between">
                   <div>
-                    <button className="bg-yellow-900 h-[60px] w-[60px] min-w-[60px] border border-1 border-yellow-900 rounded-full flex items-center justify-center">
+                    <button className="bg-yellow-900 h-[60px] w-[60px] min-w-[60px] border border-yellow-900 rounded-full flex items-center justify-center">
                       <Image
                         src={"forword-arrow.svg"}
                         height={35}

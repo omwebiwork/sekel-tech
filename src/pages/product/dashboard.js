@@ -164,7 +164,7 @@ export default function Dashboard() {
               clsStyle="py-3 px-8"
               action={() => router.push("/company/contact-us")}
             />
-            <div className="max-lg:hidden ashish">
+            <div className="max-lg:hidden">
               <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                 <Image
                   className="w-full h-full"

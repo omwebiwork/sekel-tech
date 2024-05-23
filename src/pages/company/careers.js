@@ -202,7 +202,7 @@ const Careers = () => {
               placeholder="Hyperlocation Management"
               value="All Posts"
               type="text"
-              inputSty="max-sm:w-full max-md:w-[calc(100%_-_135px)] max-lg:w-[calc(100%_-_135px)] text-black-33 placeholder:text-black-33 border-gray-400 bg-opacity-10"
+              inputSty="max-sm:w-full bg-gray-100 bg-opacity-10 max-md:w-[calc(100%_-_135px)] max-lg:w-[calc(100%_-_135px)] text-black-33 placeholder:text-black-33 border-gray-400 bg-opacity-10"
             />
           </div>
         }
@@ -230,7 +230,7 @@ const Careers = () => {
         <div className="container">
           <div className="grid grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
             <div className="col-span-12 lg:col-span-4">
-              <p class="text-black-33 text-[28px] font-medium">How to Apply</p>
+              <p className="text-black-33 text-[28px] font-medium">How to Apply</p>
             </div>
             <div className="col-span-12 lg:col-span-8">
               <h4 className="text-black-33 text-[16px] lg:text-[28px] font-medium">

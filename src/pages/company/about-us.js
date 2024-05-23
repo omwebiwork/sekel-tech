@@ -87,7 +87,7 @@ const AboutUs = () => {
         <div className="container">
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-3">
-              <h2 class="text-black text-[36px] md:text-[42px] lg:text-[54px] font-normal leading-[140%] tracking-tighter mb-5">
+              <h2 className="text-black text-[36px] md:text-[42px] lg:text-[54px] font-normal leading-[140%] tracking-tighter mb-5">
                 Founders of Sekel Tech
               </h2>
             </div>

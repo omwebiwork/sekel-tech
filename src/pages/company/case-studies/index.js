@@ -1,7 +1,6 @@
-import Button from "@/Components/comman/Button";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
-import DownArrow from "@/assets/DownArrow";
+import SidebarSection from "@/Components/comman/SidebarSection";
 import { caseFilterData, caseStudyCardData } from "@/static/json/caseStudy";
 import React, { useState } from "react";
 
@@ -11,8 +10,28 @@ const CaseStudy = () => {
 
   return (
     <section>
-      <div className="container">
-        <div className="pt-[100px] pb-[50px] ">
+      <SidebarSection
+        sidebarTitle="Case Study"
+        sidebarFilterData={caseFilterData}
+        cardList={caseStudyCardData}
+        cardContainerSty="grid grid-cols-12 gap-8"
+        sliderColSty="col-span-12 pb-[25px] xl:pb-[50px] pt-[50px] xl:pt-[100px] md:flex items-center"
+        galleryColSty="col-span-12 md:pt-[10px] xl:pt-[100px]"
+        galleryBoxSty=""
+        sliderTabSty="my-2 md:mt-0 md:mb-2 max-md:w-full text-left"
+        sliderBtnSty="flex max-md:flex-wrap md:overflow-x-auto md:max-w-[calc(100%_-_250px)]"
+        sideTitleSty="text-[32px] lg:text-[42px] font-medium tracking-tighter mb-8 md:mb-0 xl:w-[250px] md:pr-7"
+        renderElement={(item, index) => (
+          <div
+            key={index}
+            className="col-span-6 lg:col-span-4 md:col-span-6 mb-10 xl:mb-[52px]"
+          >
+            <StoreCard {...item} />
+          </div>
+        )}
+      />
+      {/* <div className="container">
+        <div className="py-[50px] lg:pt-[100px] lg:pb-[50px] ">
           <div className="flex items-center gap-8 max-md:flex-col max-md:items-start">
             <div className="w-1/5 max-md:w-full">
               <h4 className="text-[42px] font-medium leading-[65px] text-black-33 tracking-tight">
@@ -55,7 +74,6 @@ const CaseStudy = () => {
                           )}
                         </div>
                       }
-                      filled={item?.value === currentFilter ? true : false}
                       clsStyle={`py-2 px-5 text-sm whitespace-nowrap ${
                         item?.value === currentFilter
                           ? "bg-[#FCFBB3] max-md:bg-white max-md:border-gray-400 max-md:w-full max-md:text-start"
@@ -68,7 +86,7 @@ const CaseStudy = () => {
             </div>
           </div>
         </div>
-        <div className="py-[100px]">
+        <div className="pt-[50px] lg:pb-[50px] lg:pt-[100px]">
           <div className="grid grid-cols-12 gap-8">
             {caseStudyCardData &&
               caseStudyCardData.map((item, index) => {
@@ -76,7 +94,7 @@ const CaseStudy = () => {
                   return (
                     <div
                       key={index}
-                      className="col-span-4 max-md:col-span-6 mb-[52px]"
+                      className="lg:col-span-4 md:col-span-6 mb-[52px]"
                     >
                       <StoreCard {...item} />
                     </div>
@@ -84,8 +102,8 @@ const CaseStudy = () => {
               })}
           </div>
         </div>
-      </div>
-      <LovedThisContent />
+      </div> */}
+      <LovedThisContent loveDesSty="text-black-33 max-lg:mb-5 text-base lg:max-w-[570px] font-medium" />
     </section>
   );
 };
