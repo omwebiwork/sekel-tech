@@ -127,7 +127,7 @@ export const dealerSuccess = {
 export const sekelDealer = {
   infoCardData: {
     title: "Sekel's Dealer Management System",
-    descriptio:
+    description:
       "Seamlessly Integrated with SellrApp, Increases profitability of dealers",
     image: {
       src: "/management-system.png",

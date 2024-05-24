@@ -17,14 +17,16 @@ const InfoCard = ({
   containtWidth = "lg:max-w-[479px]",
   titleSty = "text-[32px] lg:text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-4",
   descriptionSty = "mx-auto md:mr-6 text-base font-normal leading-[25px]",
-  imageContainerSty = "max-h-[448px] max-w-[692px] mx-auto",
+  imageContainerSty = "lg:max-h-[448px] lg:max-w-[692px] mx-auto",
   textContainerSty = "col-span-11 lg:col-span-5",
   imageContentSty = "col-span-11 lg:col-span-6",
   gridContainerSty = "grid grid-cols-11 md:gap-6",
   subTitleSty = "hidden",
   subheadTitleSty = "hidden",
   leadTextSty = "hidden",
-  dashImageSty="hidden"
+  dashImageSty="hidden",
+  mobileImageSty='ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden',
+  mobileImage
 }) => {
   const handleAction = useCallback(() => action && action());
   return (
@@ -52,17 +54,18 @@ const InfoCard = ({
                   />
                 </div>
               </div>
-              <div className={`${dashImageSty} col-span-11 lg:hidden pt-10`}>
-                <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
+              {mobileImage && 
+              
+              <div className={`${dashImageSty}`}>
+                <div className={`${mobileImageSty}`}>
                   <Image
                     className="w-full h-full"
-                    src={"/ultimate-platform2.png"}
-                    height={500}
-                    width={500}
-                    alt="img"
+                    {...mobileImage}
                   />
                 </div>
               </div>
+              }
+
             </>
           )}
 

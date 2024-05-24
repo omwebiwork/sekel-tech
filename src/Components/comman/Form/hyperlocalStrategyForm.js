@@ -12,7 +12,7 @@ const HyperlocalStrategyForm = ({
   title = "Supercharge Your Hyperlocal Strategy Today!",
   placeholder = "Enter your email",
   buttonTitle = "Get a  FREE Audit",
-  containerSty = "",
+  containerSty = "container",
   showForm = true,
   newsTitle = "text-blue-600",
 }) => {
@@ -20,7 +20,7 @@ const HyperlocalStrategyForm = ({
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className="p-5 md:p-7 bg-yellow-100 lg:py-[18px] lg:px-10 rounded-[14px]">
+    <div className="py-6 md:py-8 bg-yellow-100 lg:py-[18px] rounded-[14px]">
       <div className={`${containerSty} lg:flex lg:gap-8 items-center`}>
         <p
           className={`${newsTitle} max-lg:mb-5 max-lg:text-center text-[28px] font-medium`}
@@ -45,7 +45,6 @@ const HyperlocalStrategyForm = ({
                     enqueueSnackbar("Mail sent successfully.", {
                       variant: "success",
                     });
-                    console.log("values", values);
                     resetForm();
                   } else {
                     enqueueSnackbar("Something Went Wrong.", {

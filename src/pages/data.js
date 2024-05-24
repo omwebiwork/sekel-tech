@@ -6,233 +6,18 @@ import InfoCard from "@/Components/comman/Card/InfoCard";
 import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import DownArrow from "@/assets/DownArrow";
+import {
+  bannerUnifiedData,
+  dataPlatformFeatures,
+  systematicGathering,
+  investmentFocus,
+  sekelCDP,
+} from "@/static/json/data";
 import Image from "next/image";
 import React, { useState, useCallback } from "react";
 
 const Data = () => {
   const [knowMore, setKnowMore] = useState(false);
-  let cardData = [
-    {
-      title: "Data Collection Process",
-      description:
-        "Data is collected from a variety of sources, including hyperlocal data sources, physical sales channels, and other CDP routine data collection processes.",
-      image: {
-        src: "/data-collection.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: "max-w-[408px] max-h-[240px] w-full mx-auto",
-
-      cardSty: "flex gap-4 rounded-xl p-5 pt-[52px] relative",
-      cardDataSty: "w-1/2",
-    },
-    {
-      title: "Sekel Data Cleaning Process",
-      description:
-        "Data is cleaned and prepared to ensure that it is consistent and accurate. Our Algorithm updates all the data of repeat customers by engaging across touchpoints in real time. ",
-      cardImgSty: "max-w-[300px] max-h-[131px] w-full mx-auto",
-
-      cardSty: " rounded-xl p-5 pt-[52px] bg-yellow-100 relative",
-      cardDataSty: "w-full",
-    },
-    {
-      title: "Data Integration",
-      description:
-        "Data from different sources is integrated into a single view of the customer.",
-      image: {
-        src: "/Integration.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: "max-w-[291px] max-h-[178px] w-full mx-auto",
-
-      cardSty: "rounded-xl p-5 pt-[52px] bg-yellow-100 relative",
-      cardDataSty: "w-full",
-    },
-    {
-      title: "Data Storytelling",
-      description:
-        "Visualization of data is utilized to generate reports and dashboards, facilitating the extraction of actionable insights. ",
-      image: {
-        src: "/data-process.png",
-        height: "500",
-        width: "500",
-      },
-
-      cardImgSty: "max-w-[396px] max-h-[241px] w-full mx-auto mt-14",
-      cardSty: " flex gap-2 rounded-xl p-5 pt-[52px] relative",
-      cardDataSty: "w-1/2",
-    },
-  ];
-
-  let discoveryFeature = [
-    {
-      title: "Data Integration",
-      description:
-        "Sekel Tech seamlessly integrates with various data systems, fostering a streamlined, collaborative environment",
-      image: {
-        src: "/listing-management.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: "max-w-[279px] w-full mx-auto",
-    },
-    {
-      title: "Automation",
-      description:
-        "Using technology to automatically process or manage data without manual intervention.",
-      image: {
-        src: "/store-locator.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: "max-w-[300px] max-h-[183px] w-full mx-auto",
-    },
-    {
-      title: "Data Activation",
-      description:
-        "Using collected data to drive actions or decisions, in marketing or business operations.",
-      image: {
-        src: "/store-microsites.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: "max-w-[340px] max-h-[169px] w-full mx-auto",
-    },
-    {
-      title: "Role Based Access",
-      description:
-        "Granting permissions to data and systems based on an individual's job role or responsibilities.",
-      image: {
-        src: "/product-catalogue.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: "max-w-[230px] max-h-[202px] w-full mx-auto",
-    },
-    {
-      title: "Cloud-Based Infrastructure",
-      description:
-        "Using online servers and systems for data storage and operations, instead of on-site physical hardware.",
-      image: {
-        src: "/review-management.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: " max-w-[304px] max-h-[156px] w-full mx-auto",
-    },
-    {
-      title: "Security & Compliance",
-      description:
-        "Refers to measures and protocols in place to protect data and ensure adherence to relevant laws and regulations.",
-      image: {
-        src: "/content-optimisation.png",
-        height: "500",
-        width: "500",
-      },
-      cardImgSty: " max-w-[312px] max-h-[186px] w-full mx-auto",
-    },
-  ];
-  let discoveryObj = {
-    title: "Investment Focus for Long-Term Effect & Domain Authority",
-    description: null,
-  };
-
-  let discoveryFeatureObj = {
-    title: "Data Platform Features",
-    description: null,
-  };
-
-  let systematicCardData = [
-    {
-      title: "Data Collection and Integration",
-      description:
-        "Sekel collects data from multiple sources. Sekel CDP also has the capability to integrate data seamlessly, ensuring a holistic view of each customer.",
-      titleIcon: {
-        src: "/collection-integration.svg",
-        height: 32,
-        width: 32,
-        alt: "Authenticity",
-      },
-    },
-    {
-      title: "Compliance and Security",
-      description:
-        "Sekel CDP ensures compliance with regulations through automated data protection measures and robust security.",
-      titleIcon: {
-        src: "/compliance-security.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-    {
-      title: "Segmentation and Audience Building",
-      description:
-        "Sekel allows you to create detailed customer segments based on various attributes and behaviours.",
-      titleIcon: {
-        src: "/audience-building.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-    {
-      title: "Analytics and Reporting",
-      description:
-        "Robust analytics tools for gaining insights into customer behaviour, campaign effectiveness, and ROI. These insights are invaluable for refining marketing strategies",
-      titleIcon: {
-        src: "/analytics-reporting.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-    {
-      title: "Data Storage and Organization",
-      description:
-        "Sekel efficiently manages structured and unstructured data, organising it into complete customer profiles.",
-      titleIcon: {
-        src: "/storage-organization.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-    {
-      title: "Scalability and Flexibility",
-      description:
-        "Sekel CDP adapts as your business grows, offering dynamic scalability.",
-      titleIcon: {
-        src: "/Scalability-flexibility.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-    {
-      title: "Real-Time Data Access and Updates",
-      description:
-        "Sekel enables real-time access to customer data for timely responses to interactions.",
-      titleIcon: {
-        src: "/real-time-access.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-    {
-      title: "Cost-effectiveness and ROI",
-      description:
-        "Sekel delivers cost-effective solutions with innovative distribution, adaptability, and exceptional value, resulting in a strong return on investment.",
-      titleIcon: {
-        src: "/effectiveness-roi.svg",
-        height: 32,
-        width: 32,
-        alt: "img",
-      },
-    },
-  ];
 
   const handleKnowMore = useCallback((index) => {
     if (knowMore[index]) {
@@ -245,20 +30,11 @@ const Data = () => {
   const renderDiscoveryFeature = () => {
     return (
       <div>
-        <div className="grid grid-cols-3 gap-5">
-          {discoveryFeature?.map((item, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {dataPlatformFeatures?.cardData?.map((item, index) => {
             return (
-              <div
-                className={` "col-span-1"
-                `}
-              >
-                <Card
-                  key={index}
-                  {...item}
-                 
-                 
-                 
-                />
+              <div className={`col-span-1`}>
+                <Card key={index} {...item} />
               </div>
             );
           })}
@@ -271,11 +47,13 @@ const Data = () => {
     return (
       <div>
         <div className="grid grid-cols-3 gap-8">
-          {cardData?.map((item, index) => {
+          {investmentFocus?.cardData?.map((item, index) => {
             return (
               <div
                 className={`${
-                  index === 0 || index === 3 ? "col-span-2" : "col-span-1"
+                  index === 0 || index === 3
+                    ? "col-span-3 lg:col-span-2"
+                    : "col-span-3 lg:col-span-1"
                 }`}
               >
                 <Card
@@ -287,7 +65,7 @@ const Data = () => {
                   }}
                   cardSty={item.cardSty + " h-full bg-gray-100"}
                   headingSty={
-                    "mb-8 tracking-tighter leading-[30px] text-[28px] font-medium text-black-33"
+                    "max-md:font-medium mb-3 lg:mb-8 tracking-tighter leading-[120%] text-[18px] md:text-[28px]"
                   }
                   cardCountNo={index < 9 ? "0" + (index + 1) : index + 1}
                 />
@@ -298,29 +76,18 @@ const Data = () => {
       </div>
     );
   };
-  let bannerObj = {
-    title: "Unified Data Platform",
-    description: `Unlock the Power of Your Retail Business with Our Unified Data Platform. Seamlessly access, consolidate, and deploy data from your existing systems to supercharge discovery and engagement. Watch your content freshness and user experience soar, driving remarkable conversions and increased sales
-    `,
-    subTitle: "Empowering Your Insights with Data Fusion",
-  };
 
   return (
     <div>
       <Banner
-        {...bannerObj}
-        image={{
-          src: "/digital-connections.png",
-          alt: "img",
-          height: 419,
-          width: 643,
-        }}
-        sectionSty="pb-[100px] pt-20"
-        containerStyle="container justify-between"
+        {...bannerUnifiedData}
+        sectionSty="max-lg:pt-8 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
+        containerStyle="container justify-between grid grid-cols-11 lg:gap-[30px] xl:gap-[60px]"
         descriptionSty="mr-16 mb-8"
         imgContainerSty="max-w-[643px] max-h-[419px] w-full"
         renderElement={<GetStartForm buttonTitle="Get started" />}
-        headinWidth="max-w-[572px] w-full mb-12"
+        imgGridSty="col-span-11 lg:col-span-5 xl:col-span-6"
+        headinWidth="lg:max-w-[500px] w-full mb-12 col-span-11 lg:col-span-6 xl:col-span-5"
       />
       <Breadcrumb
         breadcrumbList={[
@@ -330,12 +97,13 @@ const Data = () => {
         ]}
       />
       <CardSection
-        {...discoveryFeatureObj}
+        {...dataPlatformFeatures?.sectionData}
+        headingSty="text-center mb-[36px] lg:mb-[52px]"
         renderElement={renderDiscoveryFeature}
       />
-      <section className="bg-blue-900 py-20">
+      <section className="bg-blue-900 py-[50px] md:py-[60px] lg:py-[100px]">
         <div className="container">
-          <div className=" mb-[52px] ">
+          <div className="mb-[52px]">
             <h3 className="text-[42px] font-medium mb-5 leading-[52px] tracking-tighter text-white">
               Core Functions of Sekel CDP
             </h3>
@@ -344,33 +112,33 @@ const Data = () => {
               accuracy and relevance for analysis and decision-making.
             </p>
           </div>
-          <div className="flex items-center">
-            <div className="w-[30%] h-full mt-auto mb-5">
-              <ul className="pr-20 ">
-                <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:left-[312px] after:w-[50px] after:z-10 after:border-b-[1px] after:border-blue-100">
+          <div className="flex items-center max-md:justify-between relative">
+            <div className="w-[40%] max-md:-ml-auto md:w-[30%] h-full mt-8 lg:mt-auto lg:mb-5 relative z-[5]">
+              <ul className="pr-6 xl:pr-20">
+                <li className="flex items-center justify-end gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] after:absolute lg:after:-right-[40px] lg:after:w-[30px] xl:right:-left-[90px] xl:after:w-[80px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Marketing
                   <Image
-                    className=" w-16 "
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/marketing-li.svg"}
                     height={64}
                     width={64}
                     alt="img"
                   />
                 </li>
-                <li className="flex items-center justify-end gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute  after:left-[312px] after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center justify-end gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] after:absolute  lg:after:-right-[60px] lg:after:w-[50px] xl:after:-right-[130px] xl:after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Sales
                   <Image
-                    className=" w-16 "
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/sales-li.svg"}
                     height={64}
                     width={64}
                     alt="img"
                   />
                 </li>
-                <li className="flex items-center justify-end gap-4 text-xl font-medium text-white relative after:content[''] after:absolute  after:left-[312px] after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center justify-end gap-4 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-md:after:hidden after:absolute lg:after:-right-[110px] lg:after:w-[100px] xl:after:-right-[190px] xl:after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   Service
                   <Image
-                    className=" w-16 "
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/service-li.svg"}
                     height={64}
                     width={64}
@@ -379,22 +147,22 @@ const Data = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-[40%] h-full">
+            <div className="max-md:absolute left-0 right-0 mx-auto w-[40%] md:w-[40%] h-full">
               <div className="max-w-[591px] w-full mx-auto">
                 <Image
                   className="h-full w-full object-cover"
-                  src={"/core-function.png"}
+                  src={"/core-function.svg"}
                   height={562}
                   width={591}
                   alt="img"
                 />
               </div>
             </div>
-            <div className="w-[30%] h-full mb-auto mt-5">
-              <ul className="pl-20 ">
-                <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
+            <div className="w-[40%] max-md:-mr-auto md:w-[30%] h-full mb-8 lg:mb-auto lg:mt-5 relative z-[5]">
+              <ul className="pl-6 xl:pl-20">
+                <li className="flex items-center gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-lg:after:hidden after:absolute lg:after:-left-[110px] lg:after:w-[100px] xl:after:-left-[190px] xl:after:w-[180px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className=" w-16 "
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/retargeting-tools.svg"}
                     height={64}
                     width={64}
@@ -402,9 +170,9 @@ const Data = () => {
                   />
                   Retargeting Tools
                 </li>
-                <li className="flex items-center gap-4 mb-9 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center gap-4 mb-4 lg:mb-5 xl:mb-9 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-lg:after:hidden after:absolute lg:after:-left-[60px] lg:after:w-[50px] xl:after:-left-[130px] xl:after:w-[120px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className=" w-16 "
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/automation-tools.svg"}
                     height={64}
                     width={64}
@@ -412,9 +180,9 @@ const Data = () => {
                   />
                   Automation Tools
                 </li>
-                <li className="flex items-center gap-4 text-xl font-medium text-white relative after:content[''] after:absolute after:right-[312px] after:w-[50px] after:z-10 after:border-b-[1px] after:border-blue-100">
+                <li className="flex items-center gap-4 text-sm md:text-md lg:text-xl font-medium text-white relative after:content[''] max-lg:after:hidden after:absolute lg:after:-left-[40px] lg:after:w-[30px] xl:after:-left-[90px] xl:after:w-[80px] after:z-10 after:border-b-[1px] after:border-blue-100">
                   <Image
-                    className=" w-16 "
+                    className="w-8 md:w-10 lg:w-12 xl:w-16"
                     src={"/analytics-tools.svg"}
                     height={64}
                     width={64}
@@ -428,22 +196,20 @@ const Data = () => {
         </div>
       </section>
       <CardSection
-        title="Systematic gathering of information from various sources, ensuring accuracy and relevance for analysis and decision-making."
-        sectionStyle="py-[100px] bg-blue-200 "
+        {...systematicGathering?.sectionData}
+        sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-200 asdads"
         headingSty=""
-        titleSty="text-[28px] font-medium mb-20 leading-[39px] tracking-tighter text-black-33 max-w-[900px]"
+        titleSty="text-[20px] md:text-[28px] font-medium mb-8 lg:mb-20 leading-[140%] tracking-tighter text-black-33 max-w-[900px]"
         renderElement={() => (
-          <div className="grid grid-cols-4">
-            {systematicCardData?.map((item, index) => {
+          <div className="grid grid-cols-2 gap-4 lg:gap-0 md:grid-cols-3 lg:grid-cols-4">
+            {systematicGathering?.cardData?.map((item, index) => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
-                    titleIcon={item.titleIcon}
+                    {...item}
                     titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-4"
-                    headingSty="text-[28px] font-medium leading-[30px] mb-4 text-black-900"
-                    cardSty="bg-blue-200 px-6 py-6 rounded-2xl border-[1px] border-white h-full"
-                    title={item?.title}
-                    description={item?.description}
+                    headingSty="text-[18px] lg:text-[28px] font-medium leading-[140%] mb-4 text-black-900"
+                    cardSty="bg-blue-200 p-4 lg:p-6 rounded-2xl border border-white h-full"
                     descriptionSty="text-base font-normal leading-[22px] text-black-33"
                   />
                 </div>
@@ -454,25 +220,19 @@ const Data = () => {
       />
 
       <CardSection
+        {...investmentFocus?.sectionData}
         headingSty="max-w-[803px]"
         descriptionSty=""
-        {...discoveryObj}
         renderElement={renderCard}
       />
 
       <InfoCard
-        title="Sekel CDP helps brands overcome the gaps in digital to physical customer journey mapping"
-        description="Digital-to-physical customer journey mapping is essential for businesses aiming to elevate the customer experience. Sekel’s CDP delivers the crucial insights and tools that brands require to enhance interactions across all channels."
-        sectionStyle="bg-blue-900 pt-[100px]"
+        {...sekelCDP}
+        containtWidth="max-lg:mb-6 lg:max-w-[479px]"
+        sectionStyle="bg-blue-900 pt-[50px] md:pt-[65px] lg:pt-[100px]"
         titleSty="text-[28px] font-medium leading-[39px] tracking-tight text-white mb-8"
         descriptionSty="text-yellow-900 text-base font-normal leading-[25px]"
-        // containerSty = 'container px-[100px]'
-        image={{
-          src: "/journey.png",
-          height: 448,
-          width: 692,
-          alt: "img",
-        }}
+        imageContainerSty="lg:max-h-[448px] lg:max-w-[692px] md:mx-auto ml-auto -mr-5"
       />
 
       <HyperlocalStrategyForm containerSty="container" />

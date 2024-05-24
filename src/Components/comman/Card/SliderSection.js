@@ -54,7 +54,7 @@ const SliderSection = ({
                   <div>
                     <div className="flex items-center">
                       <div
-                        className="shadow border-[1px]  border-blue-900 h-8 w-8 rounded-full relative z-[8] hover:z-[9] transition-all overflow-hidden flex items-center justify-center bg-yellow-900 min-w-8 text-white p-1 text-xs"
+                        className="shadow border-[1px] border-blue-900 h-8 w-8 rounded-full relative z-[8] hover:z-[9] transition-all overflow-hidden flex items-center justify-center bg-yellow-900 min-w-8 text-white p-1 text-xs"
                         onClick={() => {
                           if (sliderImage.length - 2 > imageIndex) {
                             setImageIndex(imageIndex + 1);

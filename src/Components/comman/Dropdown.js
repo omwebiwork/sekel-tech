@@ -39,7 +39,7 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
       </button>
 
       {isOpen && (
-        <div className={`${dropdownContainerSty} origin-top-right left-auto lg:absolute right-0 lg:mt-4 lg:rounded-xl lg:shadow-lg bg-white text-black-33 lg:pt-4 lg:p-[52px]`}>
+        <div className={`${dropdownContainerSty} origin-top-right left-auto lg:absolute right-0 lg:mt-4 lg:rounded-xl lg:shadow-lg bg-white text-black-33 lg:p-[52px]`}>
           <div className="lg:flex">
             <div className="lg:w-[calc(100%_-_201px)]">
               <ul
@@ -49,7 +49,6 @@ const Dropdown = ({ text, list, image , dropdownContainerSty = '' }) => {
                 className="lg:flex flex-wrap flex-col lg:max-h-[160px] lg:pr-[80px] lg:gap-x-[80px]"
               >
                 {list?.map((item, index) => {
-                  console.log("chekc ", "000", item.path);
                   return (
                     <li className="block" key={index}>
                       <Link

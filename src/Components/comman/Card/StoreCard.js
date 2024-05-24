@@ -7,11 +7,14 @@ const StoreCard = ({ bgImage, logoImage, btnLabel, description, slug }) => {
   const router = useRouter();
   return (
     <div className="">
-      <div className="relative max-w-[376px] max-h-[380px] w-full h-full mb-[28px] border-[1px] border-blue-200 rounded-2xl overflow-hidden">
+      <div className="relative max-h-[380px] w-full h-full flex items-center justify-center mb-[28px] border-[1px] border-blue-200 rounded-2xl overflow-hidden">
         <Image {...bgImage} />
         {logoImage && (
-          <div className="absolute flex items-center justify-center top-[121px] left-[127px] w-[123px] h-[139px] bg-white">
-            <Image {...logoImage} className="w-auto h-auto" />
+          <div className="absolute flex items-center justify-center m-auto w-[120px] h-[120px] bg-white">
+            <Image
+              {...logoImage}
+              className="w-auto h-auto max-w-full max-h-full"
+            />
           </div>
         )}
       </div>
@@ -22,7 +25,7 @@ const StoreCard = ({ bgImage, logoImage, btnLabel, description, slug }) => {
         {description}
       </p>
       <button
-        class="flex gap-1 items-center text-base text-blue-900 font-medium"
+        className="flex gap-1 items-center text-base text-blue-900 font-medium"
         onClick={() => router.push(`/company/case-studies/${slug}`)}
       >
         Read more

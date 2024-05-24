@@ -16,10 +16,11 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Dashboard() {
   const router = useRouter();
+  const [activeTab, setActiveTab] = useState("hyperLocations");
 
   return (
     <div>
@@ -27,6 +28,7 @@ export default function Dashboard() {
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
+        sectionSty="pt-[50px] md:pt-[60px] lg:pt-[88px]"
         imgContainerSty="max-w-[1080px] mx-auto"
         imgGridSty="max-xl:px-6"
         headinWidth="max-w-[936px] mx-auto text-center mb-12"
@@ -56,29 +58,34 @@ export default function Dashboard() {
       />
       <CardSection
         {...keyProductSectionData}
-        headingSty="flex items-end mx-4 gap-[60px] mb-[52px] max-w-[600px]"
+        headingSty="flex items-end gap-[60px] mb-[52px] max-w-[600px]"
         descriptionSty="text-base font-normal leading-[22px] text-black-33 "
         renderElement={() => (
           <InfoCard
-            {...manageInfoCard?.sectionData}
+            {...manageInfoCard?.sectionData[activeTab]}
             renderFilterElement={
-              <div className="flex justify-between gap-2  mb-7 -mx-6 overflow-x-auto">
+              <div className="flex justify-between gap-2 mb-7 xl:-mx-6 overflow-x-auto">
                 {manageInfoCard?.renderFilterData?.map((item, index) => (
                   <div className="mb-2">
                     <Button
                       key={index}
                       data={item?.label}
-                      filled={item?.active ? true : false}
+                      filled={item?.value === activeTab ? true : false}
+                      action={() => {
+                        setActiveTab(item.value);
+                      }}
                       clsStyle={`py-2 px-5 text-sm whitespace-nowrap ${
-                        item?.active ? "" : "bg-[#FCFBB3] text-black-33"
+                        item?.value === activeTab
+                          ? ""
+                          : "bg-[#FCFBB3] text-black-33"
                       }`}
                     />
                   </div>
                 ))}
               </div>
             }
-            subheadTitleSty="mx-auto mr-6 text-base font-normal leading-[25px] mb-8"
-            descriptionSty="mx-auto mr-6 text-base font-normal leading-[25px] "
+            subheadTitleSty="mx-auto lg:mr-6 text-base font-normal leading-[25px] mb-8"
+            descriptionSty="mx-auto lg:mr-6 text-base font-normal leading-[25px] "
             sectionStyle="p-4 md:p-8 lg:py-[52px] lg:px-[42px] rounded-[24px] bg-gray-100"
             containerSty="p-0"
             containtWidth="max-w-[490px] h-full flex flex-col justify-center"
@@ -148,10 +155,15 @@ export default function Dashboard() {
         imageContainerSty=" w-full max-w-[497px] ml-0 mx-auto"
         textContainerSty="col-span-11 lg:col-span-6 max-lg:mb-10"
         imageContentSty="col-span-11 lg:col-span-5 flex items-center"
-        dashImageSty="col-span-11 lg:hidden pt-10"
+        dashImageSty="col-span-11 lg:hidden pt-10 col-span-11 lg:hidden pt-10"
         renderElement={
           <>
-            <Button filled data="Request Demo" clsStyle="py-3 px-8"   action={() => router.push("/company/contact-us")}/>
+            <Button
+              filled
+              data="Request Demo"
+              clsStyle="py-3 px-8"
+              action={() => router.push("/company/contact-us")}
+            />
             <div className="max-lg:hidden">
               <div className="ml-auto w-full max-w-[369px] max-lg:-mr-[30px] rounded-2xl overflow-hidden">
                 <Image

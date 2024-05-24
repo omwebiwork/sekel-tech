@@ -17,14 +17,15 @@ export default function HowItWorks() {
   const router = useRouter();
 
   return (
-    <div>
+    <>
       <Banner
         {...bannerHowItworks}
-        containerStyle="container justify-between relative"
+        sectionSty="max-lg:py-10 max-sm:py-8"
+        containerStyle="max-lg:flex-wrap container justify-between relative"
         renderElement={
           <>
             <GetStartForm buttonTitle="Get started" />
-            <div className="absolute bottom-0 ">
+            <div className="absolute bottom-0 max-lg:hidden">
               <Image
                 className="w-full object-cover object-center"
                 src={"/how-it-work-banner.png"}
@@ -35,10 +36,12 @@ export default function HowItWorks() {
             </div>
           </>
         }
-        headinWidth="max-w-[491px] mb-[400px]"
-        descriptionSty="text-base font-normal leading-[25px] mb-8 text-white"
-        imgContainerSty="max-w-[564px] h-[631px] w-full rounded-[20px] overflow-hidden mt-[161px]"
-        titleSty="text-[36px] leading-[50px] md:text-[42px] font-medium md:leading-[60px] mb-4 tracking-tight"
+        imgGridSty="max-lg:max-w-[450px] max-lg:mx-auto max-lg:w-full max-lg:order-1 max-lg:mb-10"
+        headinWidth="max-lg:order-2 w-full lg:max-w-[491px] mb-8 lg:mb-[400px]"
+        descriptionSty="text-base font-normal leading-[140%] mb-8 text-white"
+        imgContainerSty="lg:max-w-[564px] lg:h-[631px] w-full lg:rounded-[20px] overflow-hidden lg:mt-[161px] max-lg:hidden"
+        imgMobileContainerSty = 'lg:max-w-[564px] lg:h-[631px] w-full lg:rounded-[20px] overflow-hidden lg:mt-[161px] lg:hidden' 
+        titleSty="text-[36px] leading-[140%] md:text-[42px] font-medium md:leading-[140%] mb-4 tracking-tight"
       />
       <Breadcrumb
         breadcrumbList={[
@@ -52,11 +55,11 @@ export default function HowItWorks() {
             <InfoCard
               key={index}
               {...item}
-              sectionStyle="py-8 px-5 rounded-[16px] bg-gray-100 my-8"
+              sectionStyle="p-6 md:py-8 md:px-5 rounded-[16px] bg-gray-100 my-8"
               containtWidth="max-w-[536px] mx-auto"
               containerSty=""
-              titleSty="text-[42px] font-medium leading-[52px] tracking-tighter text-black-33 mb-[26px]"
-              descriptionSty="mb-4 text-base font-normal leading-[25px]"
+              titleSty="text-[36px] md:text-[42px] font-medium leading-[140%] tracking-tighter text-black-33 mb-[26px]"
+              descriptionSty="mb-4 text-base font-normal leading-[140%]"
               gridContainerSty="grid grid-cols-12 gap-6"
               renderElement={
                 <>
@@ -65,7 +68,7 @@ export default function HowItWorks() {
                       return (
                         <li
                           key={index}
-                          className="text-base font-normal text-black-33 leading-[25px]"
+                          className="text-base font-normal text-black-33 leading-[140%]"
                         >
                           {item.title}
                         </li>
@@ -90,14 +93,14 @@ export default function HowItWorks() {
       </div>
       <InfoCard
         {...seamlessIntegrationHowItworks}
-        sectionStyle="py-[100px] bg-blue-900"
+        sectionStyle="max-sm:px-2.5 py-[50px] md:py-[75px] lg:py-[100px] bg-blue-900"
         containerSty="container "
-        containtWidth=""
-        titleSty="text-white text-[54px] font-normal mb-8 leading-[70px] tracking-tighter"
-        descriptionSty="text-white max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
-        imageContainerSty=" w-full max-w-[497px] mx-auto"
-        textContainerSty=" col-span-6 flex items-center"
-        imageContentSty=" col-span-5 flex items-center"
+        containtWidth="max-md:mb-10"
+        titleSty="text-white text-[34px] md:text-[40px] lg:text-[50px] xl:text-[54px] font-medium mb-4 lg:mb-8 leading-[140%] tracking-tighter"
+        descriptionSty="text-white lg:max-w-[542px] mb-8 mr-auto text-base font-normal leading-[140%]"
+        imageContainerSty="w-full max-w-[497px] mx-auto"
+        textContainerSty="col-span-11 md:col-span-5 lg:col-span-6 flex items-center"
+        imageContentSty="col-span-11 md:col-span-6 lg:col-span-5 flex items-center"
         renderElement={
           <>
             <Button
@@ -110,6 +113,6 @@ export default function HowItWorks() {
         }
       />
       <HyperlocalStrategyForm containerSty="container" />
-    </div>
+    </>
   );
 }

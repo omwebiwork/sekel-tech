@@ -121,9 +121,10 @@ export const demandGeneration = {
 
       buttonText: "Read More",
       buttonAction: "/discovery",
-      imageContentSty: "order-1 col-span-6 h-full flex items-center",
-      textContainerSty: "order-2 col-span-6 h-full flex items-center",
-      imageContainerSty: "max-h-[480px] w-full max-w-[624px] mx-auto",
+      imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center",
+      textContainerSty:
+        "order-2 col-span-12 lg:col-span-6 h-full flex items-center",
+      imageContainerSty: "lg:max-h-[480px] w-full lg:max-w-[624px] mx-auto",
       image: {
         src: "/digital-discovery.png",
         height: 536,
@@ -139,9 +140,9 @@ export const demandGeneration = {
 
       buttonText: " Read More",
       buttonAction: "/data",
-      imageContentSty: "col-span-6 h-full flex items-center",
-      textContainerSty: "col-span-6 h-full  flex items-center ",
-      imageContainerSty: "max-h-[414px] w-full max-w-[540px] mx-auto",
+      imageContentSty: "col-span-12 lg:col-span-6 h-full flex items-center",
+      textContainerSty: "col-span-12 lg:col-span-6 h-full  flex items-center ",
+      imageContainerSty: "lg:max-h-[414px] w-full lg:max-w-[540px] mx-auto",
       image: {
         src: "/unified-data.png",
         height: 536,
@@ -155,9 +156,9 @@ export const demandGeneration = {
         "Revolutionize your local Demand Generation strategy with Sekel Tech's Hyperlocal Dynamic Engagement Commerce Platform, boosting customer engagement and ROAS.",
       buttonText: " Read More",
       buttonAction: "/demand",
-      imageContentSty: "order-1 col-span-6 h-full flex items-center",
-      textContainerSty: "order-2 col-span-6 h-full flex items-center",
-      imageContainerSty: "max-h-[361px] w-full max-w-[638px] mx-auto",
+      imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center",
+      textContainerSty: "order-2 col-span-12 lg:col-span-6 h-full flex items-center",
+      imageContainerSty: "lg:max-h-[361px] w-full lg:max-w-[638px] mx-auto",
       image: {
         src: "/generation-hyperlocal.png",
         height: 536,
