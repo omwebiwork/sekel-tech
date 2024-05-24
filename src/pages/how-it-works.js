@@ -83,7 +83,7 @@ export default function HowItWorks() {
                         router.push(item.buttonAction);
                       }
                     }}
-                    clsStyle="py-3 px-8"
+                    clsStyle="py-3 px-8 border-yellow-900"
                   />
                 </>
               }
@@ -106,7 +106,7 @@ export default function HowItWorks() {
             <Button
               filled
               data="View all integrations"
-              clsStyle="py-3 px-8"
+              clsStyle="py-3 px-8 border-yellow-900"
               action={() => router.push("/product/integrations")}
             />
           </>

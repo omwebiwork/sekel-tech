@@ -42,7 +42,6 @@ const Careers = () => {
   const handleClickOutside = (event) => {
     if (inputRef.current && !inputRef.current.contains(event.target)) {
       setShowDropDown(false);
-      console.log(inputRef.current.contains(event?.target), event.target);
     }
   };
 
@@ -344,9 +343,9 @@ const Careers = () => {
                     <Button
                       data="Apply"
                       filled
-                      clsStyle="px-8 py-2"
+                      clsStyle="px-8 py-2 border-yellow-900"
                       action={() =>
-                        router.push(`/careers/${item.attributes?.slug}`)
+                        router.push(`/company/careers/${item.attributes?.slug}`)
                       }
                     />
                   }

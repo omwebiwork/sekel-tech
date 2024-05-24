@@ -2,8 +2,11 @@ import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import SidebarSection from "@/Components/comman/SidebarSection";
-import { integrationsFilterData, intigrationsCardData } from "@/static/json/integrations";
-const Integrations = () => {  
+import {
+  integrationsFilterData,
+  intigrationsCardData,
+} from "@/static/json/integrations";
+const Integrations = () => {
   return (
     <>
       <Breadcrumb
@@ -13,13 +16,14 @@ const Integrations = () => {
           { link: "/product/integrations", label: "Integrations" },
         ]}
       />
-     
-      <SidebarSection sidebarTitle='Intigrations' sidebarFilterData={...integrationsFilterData} cardContainerSty='grid grid-cols-12 gap-8 mr-[120px]' cardList={intigrationsCardData}
-        renderElement={(item, index) =>
-          <div
-            key={index}
-            className="col-span-6 max-md:col-span-6 "
-          >
+
+      <SidebarSection
+        sidebarTitle="Intigrations"
+        sidebarFilterData={integrationsFilterData}
+        cardContainerSty="grid grid-cols-12 gap-8"
+        cardList={intigrationsCardData}
+        renderElement={(item, index) => (
+          <div key={index} className="col-span-6 max-md:col-span-6 ">
             <Card
               {...item}
               headingSty="text-[24px] font-medium leading-[140%] text-black-900 mb-4"
@@ -30,8 +34,7 @@ const Integrations = () => {
               descriptionSty="mb-0 line-clamp-2 text-base font-normal text-black-33"
             />
           </div>
-          }
-     
+        )}
       />
       <HyperlocalStrategyForm containerSty="container" />
     </>

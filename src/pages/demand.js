@@ -122,7 +122,7 @@ const Demand = () => {
               <p className="text-white text-base font-normal mb-5">
                 {...masterLocalAdvertising?.renderElementContent?.contentText}
               </p>
-              <Button filled data="Get Started" clsStyle="py-3 px-8" />
+              <Button filled data="Get Started" clsStyle="py-3 px-8 border-yellow-900" />
             </div>
           </>
         }

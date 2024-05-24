@@ -21,8 +21,8 @@ const LetsConnectForm = ({ buttonLabel = "Get a Free Quote" }) => {
   const router = useRouter();
   return (
     <div>
-      <div className="text-center mb-[52px]">
-        <h4 className="text-[42px] text-white font-medium leading-[52px] mb-1.5">
+      <div className="text-center mb-8 lg:mb-[52px]">
+        <h4 className="text-[32px] lg:text-[42px] text-white font-medium leading-[140%] mb-1.5">
           Let's Connect
         </h4>
         <p className="text-base font-semibold text-white">

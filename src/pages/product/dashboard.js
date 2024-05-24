@@ -3,7 +3,6 @@ import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
-import GetStartForm from "@/Components/comman/Form/StartForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import {
   bannerData,
@@ -23,14 +22,14 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("hyperLocations");
 
   return (
-    <div>
+    <>
       <Banner
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"
         descriptionSty
         sectionSty="pt-[50px] md:pt-[60px] lg:pt-[88px]"
         imgContainerSty="max-w-[1080px] mx-auto"
-        imgGridSty="max-xl:px-6"
+        imgGridSty="max-xl:px-6 w-full"
         headinWidth="max-w-[936px] mx-auto text-center mb-12"
         renderElement={
           <div>
@@ -42,7 +41,7 @@ export default function Dashboard() {
               />
               <Button
                 data="Know More"
-                clsStyle="py-2 px-8 text-white"
+                clsStyle="py-2 px-8 text-white border-yellow-900"
                 action={() => router.push("/company/contact-us")}
               />
             </div>
@@ -74,10 +73,10 @@ export default function Dashboard() {
                       action={() => {
                         setActiveTab(item.value);
                       }}
-                      clsStyle={`py-2 px-5 text-sm whitespace-nowrap ${
+                      clsStyle={`py-2 px-5 text-sm whitespace-nowrap border-yellow-900 ${
                         item?.value === activeTab
                           ? ""
-                          : "bg-[#FCFBB3] text-black-33"
+                          : "bg-[#FCFBB3] text-black-33 "
                       }`}
                     />
                   </div>
@@ -136,7 +135,7 @@ export default function Dashboard() {
         renderElement={
           <Button
             data="View all integrations"
-            clsStyle="py-3 px-8"
+            clsStyle="py-3 px-8 border-yellow-900"
             filled
             action={() => {
               router.push("/product/integration");
@@ -161,7 +160,7 @@ export default function Dashboard() {
             <Button
               filled
               data="Request Demo"
-              clsStyle="py-3 px-8"
+              clsStyle="py-3 px-8 border-yellow-900"
               action={() => router.push("/company/contact-us")}
             />
             <div className="max-lg:hidden">
@@ -179,6 +178,6 @@ export default function Dashboard() {
         }
       />
       <HyperlocalStrategyForm containerSty="container" />
-    </div>
+    </>
   );
 }

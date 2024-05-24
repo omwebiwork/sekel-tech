@@ -43,7 +43,7 @@ const ContactUs = () => {
                 {...bannerDiscoverPower?.renderImage}
               />
             </div>
-            <div className="lg:hidden -mb-[100px]">
+            <div className="lg:hidden -mb-[60px]">
               <Image
                 className="w-full max-w-[90%]"
                 {...bannerDiscoverPower?.renderMobileImage}
@@ -52,11 +52,11 @@ const ContactUs = () => {
           </>
         }
         renderFormElement={
-          <div className="w-full h-[566px] border-[1px] border-white rounded-[20px] p-8 bg-blue-900">
+          <div className="w-full lg:h-[566px] border-[1px] border-white rounded-[20px] p-6 lg:p-8 bg-blue-900">
             <LetsConnectForm />
           </div>
         }
-        headinWidth="lg:w-1/2 mb-12"
+        headinWidth="lg:w-1/2 lg:mb-12"
       />
       <Breadcrumb
         breadcrumbList={[
@@ -95,12 +95,12 @@ const ContactUs = () => {
         descriptionSty="mb-8 text-base font-normal leading-[25px]"
         imageContainerSty="lg:max-h-[504px] w-full lg:max-w-[624px] rounded-[20px] overflow-hidden mx-auto"
         imageContentSty="col-span-11 lg:col-span-6"
-        titleSty="text-[42px] max-lg:text-center font-medium leading-[140%] tracking-tighter text-black-33 mb-8"
+        titleSty="text-[32px] lg:text-[42px] max-lg:text-center font-medium leading-[140%] tracking-tighter text-black-33 mb-4 lg:mb-8"
         leadTextSty="mb-8"
         renderElement={
           <Button
             data="Get Direction"
-            clsStyle="py-2 px-8"
+            clsStyle="py-2 px-8 border-yellow-900"
             filled
             action={() => {
               window?.open(
@@ -118,7 +118,7 @@ const ContactUs = () => {
         sectionStyle="py-[50px] md:py-[65px] lg:py-[100px] bg-blue-900"
         containerSty="container "
         containtWidth=""
-        titleSty="text-white text-[42px] max-lg:text-center font-medium mb-8 leading-[140%] tracking-tighter"
+        titleSty="text-white text-[32px] lg:text-[42px] max-lg:text-center font-medium mb-4 lg:mb-8 leading-[140%] tracking-tighter"
         descriptionSty="text-white lg:max-w-[542px] mb-8 mr-auto text-base font-normal leading-[25px]"
         imageContainerSty="w-full lg:max-w-[497px] mx-auto"
         textContainerSty="max-lg:mt-5 col-span-11 lg:col-span-6 order-2 lg:flex items-center"
