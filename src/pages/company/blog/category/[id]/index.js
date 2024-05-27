@@ -11,14 +11,13 @@ import {
 import { blogCardData, blogsFilterData } from "@/static/json/blog";
 import axios from "axios";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const baseURLBlog = `${process.env.STRAPI_PATH}/blogs?populate[0]=blog_category&populate[1]=FeaturedImage&sort=publishedAt:desc&pagination[limit]=${PER_PAGE_FIRST}`;
 
 const baseURLCategory = `${process.env.STRAPI_PATH}/blog-categories?fields[0]=name&fields[1]=slug`;
-const Blog = () => {
+const BlogCategory = () => {
   const router = useRouter();
   const [blogList, setBlogList] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
@@ -32,10 +31,12 @@ const Blog = () => {
     window.scrollTo(0, 500);
   };
 
-
   const getBlogBySlug = (slug) => {
-    setLoader(true);
-    router.push(`/company/blog/category/${slug}`);
+    if (slug === "all") {
+      router.push(`/company/blog`);
+    } else {
+      router.push(`/company/blog/category/${slug}`);
+    }
   };
 
   // get blog category
@@ -58,14 +59,23 @@ const Blog = () => {
 
   // get blog list
   useEffect(() => {
+    let slug = router.query.id;
     setLoader(true);
+    setStart(0);
     if (window.location.protocol.indexOf("https") == 0) {
       var el = document.createElement("meta");
       el.setAttribute("http-equiv", "Content-Security-Policy");
       el.setAttribute("content", "upgrade-insecure-requests");
       document.head.append(el);
     }
-    const baseURLUpdated = baseURLBlog + "&pagination[start]=" + start;
+    const baseURLUpdated =
+      slug !== "all"
+        ? baseURLBlog +
+          "&filters[blog_category][slug][$eq]=" +
+          slug +
+          "&pagination[start]=" +
+          start
+        : baseURLBlog + "&pagination[start]=" + start;
     axios
       .get(baseURLUpdated)
       .then((response) => {
@@ -79,7 +89,7 @@ const Blog = () => {
         console.log(error);
         setLoader(false);
       });
-  }, [start]);
+  }, [start, router.query.id]);
 
   return (
     <>
@@ -87,7 +97,6 @@ const Blog = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
           { link: "/company/blog", label: "Blog" },
         ]}
       />
@@ -123,56 +132,9 @@ const Blog = () => {
           }
         />
       </section>
-      <section className="py-[30px]">
-        <div className="container">
-          <nav
-            aria-label="Page navigation example"
-            className="justify-end flex"
-          >
-            <div class="flex items-center text-base h-10">
-              <button class="flex items-center p-1.5 justify-center w-[32px] h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white mr-5">
-                <Image
-                  src={"/arrow.svg"}
-                  width={35}
-                  height={35}
-                  alt=""
-                  className="rotate-180"
-                />
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                1
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                2
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[45px] h-[45px] mx-1.5 text-[16px] font-semibold rounded-full text-white border border-blue-900 bg-blue-900">
-                3
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                4
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold text-black-33/60 bg-white">
-                ...
-              </button>
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                12
-              </button>
-
-              <button class="flex items-center p-1.5 justify-center w-[32px] h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white ml-5">
-                <Image src={"/arrow.svg"} width={35} height={35} alt="" />
-              </button>
-            </div>
-          </nav>
-        </div>
-      </section>
       <LovedThisContent />
     </>
   );
 };
 
-export default Blog;
+export default BlogCategory;

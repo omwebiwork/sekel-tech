@@ -174,7 +174,7 @@ const AboutUs = () => {
           return <ImageCard {...item} key={index} />;
         })}
       />
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm />
     </>
   );
 };

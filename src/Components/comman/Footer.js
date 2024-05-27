@@ -73,7 +73,7 @@ const Footer = () => {
                 <div className={`${open["product"] ? "" : "max-md:hidden"} `}>
                   {product?.map((item, index) =>
                     renderNavigationLinks(item?.redirectPath, item?.name, index)
-                  )}                 
+                  )}
                 </div>
               </div>
             </div>
@@ -112,6 +112,11 @@ const Footer = () => {
                 </div>
                 <div className="hidden md:flex items-center gap-3">
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
+                    {/* <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://twitter.com/SekelTech"
+                  > */}
                     <Image
                       className="h-full w-full"
                       src={"/x-icon.png"}
@@ -119,33 +124,52 @@ const Footer = () => {
                       width={32}
                       alt="footer-logo"
                     />
+                    {/* </Link> */}
                   </div>
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
-                    <Image
-                      className="h-full w-full"
-                      src={"/linkedin-icon.png"}
-                      height={32}
-                      width={32}
-                      alt="footer-logo"
-                    />
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.linkedin.com/company/nifty-window/"
+                    >
+                      <Image
+                        className="h-full w-full"
+                        src={"/linkedin-icon.png"}
+                        height={32}
+                        width={32}
+                        alt="footer-logo"
+                      />
+                    </Link>
                   </div>
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
-                    <Image
-                      className="h-full w-full"
-                      src={"/facebook-icon.png"}
-                      height={32}
-                      width={32}
-                      alt="footer-logo"
-                    />
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.facebook.com/SekelTech/"
+                    >
+                      <Image
+                        className="h-full w-full"
+                        src={"/facebook-icon.png"}
+                        height={32}
+                        width={32}
+                        alt="footer-logo"
+                      />
+                    </Link>
                   </div>
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
-                    <Image
-                      className="h-full w-full"
-                      src={"/instagram-icon.png"}
-                      height={32}
-                      width={32}
-                      alt="footer-logo"
-                    />
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.instagram.com/sekeltech/"
+                    >
+                      <Image
+                        className="h-full w-full"
+                        src={"/instagram-icon.png"}
+                        height={32}
+                        width={32}
+                        alt="footer-logo"
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

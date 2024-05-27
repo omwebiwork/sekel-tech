@@ -27,7 +27,7 @@ export const information = [
       <>
         <Link href={"mailto:info@sekel.tech"}>info@sekel.tech</Link>
         <br />
-        <Link href={"mailto:careers@sekel.tech"}>careers@sekel.tech</Link>
+        careers@sekel.tech
       </>
     ),
     titleIcon: {

@@ -177,7 +177,7 @@ export default function Dashboard() {
           </>
         }
       />
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm />
     </>
   );
 }

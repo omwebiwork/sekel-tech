@@ -36,7 +36,7 @@ const Integrations = () => {
           </div>
         )}
       />
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm />
     </>
   );
 };

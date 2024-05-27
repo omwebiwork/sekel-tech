@@ -1,3 +1,4 @@
+import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import Card from "@/Components/comman/Card";
@@ -21,18 +22,16 @@ const PartnerProgramme = () => {
   const router = useRouter();
   return (
     <div>
-      <InfoCard
+      <Banner
         {...expendYourReach}
-        sectionStyle="py-[50px] md:py-[75px] lg:pt-[80px] lg:pb-[100px] bg-blue-900"
-        containerSty="container"
-        containtWidth=""
-        subheadTitleSty="text-[28px] font-medium text-white mb-5 lg:mb-8"
-        titleSty="text-white text-[36px] lg:text-[54px] font-normal mb-3  leading-[140%] tracking-tighter"
-        descriptionSty="text-white lg:max-w-[512px] mb-5 lg:mb-8 mr-auto text-base font-normal leading-[25px]"
-        gridContainerSty="gap-0 lg:gap-6 grid grid-cols-11"
-        imageContainerSty="w-full lg:max-w-[562px] ml-0 mx-auto"
-        textContainerSty="col-span-11 lg:col-span-6 max-lg:mb-10 flex items-center"
-        imageContentSty="col-span-11 lg:col-span-5 flex items-center"
+        sectionSty="py-[50px] md:py-[60px] lg:pt-20 lg:pb-[100px]"
+        containerStyle="container flex-wrap grid grid-cols-2 gap-8"
+        subTitleSty="text-[28px] font-medium text-white mb-5 lg:mb-8"
+        descriptionSty="mb-0"
+        imgContainerSty="md:max-h-[468px] overflow-hidden rounded-3xl w-full"
+        headinWidth="col-span-2 md:col-span-1"
+        imgGridSty="col-span-2 md:col-span-1"
+        aboutHead="md:max-w-[506px]"
       />
       <Breadcrumb
         breadcrumbList={[
@@ -231,7 +230,7 @@ const PartnerProgramme = () => {
           ))}
         </div>
       </section>
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm />
     </div>
   );
 };

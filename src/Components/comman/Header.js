@@ -36,9 +36,9 @@ const Header = () => {
     <header className="bg-blue-900">
       <div className="container w-full">
         <div className="flex items-center justify-between py-5 lg:py-8">
-          <div className="lg:w-[190px] md:w-[200px] lg:w-[221px]">
+          <Link href={'/'} className="lg:w-[190px] md:w-[200px] lg:w-[221px]">
             <Image src={"/logo.svg"} width={221} height={34} alt="logo" />
-          </div>
+          </Link>
           <div
             className={` ${
               toggle ? "max-lg:-right-[360px]" : "max-lg:right-0"
@@ -88,7 +88,7 @@ const Header = () => {
                 </div>
               </li>
               <li>
-                <Link href={"/"} className="max-lg:absolute bottom-5 left-5 flex lg:ml-3">
+                <Link href={"https://app.sekel.tech/login"} target="_blank" rel="noopener noreferrer" className="max-lg:absolute bottom-5 left-5 flex lg:ml-3">
                   <Button filled data="Log In" />
                 </Link>
               </li>

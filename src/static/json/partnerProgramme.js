@@ -1,6 +1,6 @@
 export const expendYourReach = {
   title: "Expand your Reach",
-  subheadTitle: "Partner with the hyperlocal Marketing pioneers!",
+  subTitle: "Partner with the hyperlocal Marketing pioneers!",
   description:
     "Elevate your agency’s success by reselling our pioneering Hyperlocal Marketing services. Join our Partner Program for smart hyperlocal and new revenue streams.",
   image: {

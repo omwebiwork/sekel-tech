@@ -260,7 +260,7 @@ const Careers = () => {
             <GetStartForm
               formMainDiv="justify-between flex-wrap"
               buttonTitle="Search"
-              clsStyle="py-3 px-8 max-sm:w-full"
+              clsStyle="py-3 px-8 max-sm:w-full border-yellow-900"
               placeholder="All Posts"
               value={currentCategory?.label}
               onChangeHandler={(e) => {
@@ -375,10 +375,8 @@ const Careers = () => {
             <div className="col-span-12 lg:col-span-8">
               <h4 className="text-black-33 text-[16px] lg:text-[28px] font-medium">
                 Send an email with “Job Title” in the subject along with your
-                resume attached to{" "}
-                <Link href={""} className="text-blue-600">
-                  careers@sekel.tech
-                </Link>
+                resume attached to
+                <span className="text-blue-600 pl-2">careers@sekel.tech</span>
               </h4>
             </div>
           </div>

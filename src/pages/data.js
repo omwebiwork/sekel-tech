@@ -235,7 +235,7 @@ const Data = () => {
         imageContainerSty="lg:max-h-[448px] lg:max-w-[692px] md:mx-auto ml-auto -mr-5"
       />
 
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm/>
     </div>
   );
 };

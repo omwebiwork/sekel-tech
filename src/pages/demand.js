@@ -162,7 +162,7 @@ const Demand = () => {
       <HyperlocalStrategyForm
         showForm={false}
         title="All of the above flows into generating a suggestive media"
-        containerSty="container justify-center"
+        containerSty="container justify-center lg:flex lg:gap-8 items-center"
       />
       <CardSection
         {...mediaPlanning?.sectionData}
@@ -198,7 +198,7 @@ const Demand = () => {
         )}
       />
 
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm />
     </>
   );
 };

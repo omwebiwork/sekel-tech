@@ -205,7 +205,7 @@ const Discovery = () => {
           </div>
         </div>
       </section>
-      <HyperlocalStrategyForm containerSty="container" />
+      <HyperlocalStrategyForm />
     </div>
   );
 };
