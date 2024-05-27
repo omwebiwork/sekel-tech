@@ -39,12 +39,12 @@ function VideoCard({ videoData = {} }) {
           </ControlBar>
         </Player>
       </div>
-      <div className="py-8 max-md:px-4 w-full">
+      <div className="pt-8 max-md:px-4 w-full">
         <p className="text-sm md:text-base border border-yellow-900 font-medium tracking-tight leading-[140%] text-black-33 py-2 px-4 lg:px-8 bg-yellow-100 rounded-full inline-block mb-7">
           {videInfo?.video_category?.data?.attributes?.category_title ?? "All"}
         </p>
 
-        <p className="text-base leading-5 text-black-33 font-normal mb-4 line-clamp-3 h-[62px]">
+        <p className="text-base leading-5 text-black-33 font-normaldisabled line-clamp-3 h-[62px]">
           {videInfo?.title}
         </p>
       </div>

@@ -10,7 +10,7 @@ const CaseStudy = () => {
           sidebarTitle="Case Study"
           sidebarFilterData={caseFilterData}
           cardList={caseStudyCardData}
-          cardContainerSty="grid grid-cols-12 gap-4 lg:gap-8"
+          cardContainerSty="grid grid-cols-12 gap-x-4 lg:gap-x-8"
           sliderColSty="col-span-12 pb-[25px] xl:pb-[50px] pt-[50px] xl:pt-[100px] lg:flex items-center justify-between"
           galleryColSty="col-span-12 lg:pt-[10px] xl:pt-[100px]"
           galleryBoxSty=""

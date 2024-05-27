@@ -159,7 +159,7 @@ const Video = () => {
                 return (
                   <div
                     key={index}
-                    className="col-span-6 max-md:col-span-6 mb-5"
+                    className="col-span-6 max-md:col-span-6 mb-10"
                   >
                     <VideoCard videoData={item} />
                   </div>

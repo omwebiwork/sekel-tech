@@ -19,11 +19,12 @@ const Integrations = () => {
 
       <SidebarSection
         sidebarTitle="Intigrations"
+        sliderMainRow="grid grid-cols-12 gap-6 mb-10"
         sidebarFilterData={integrationsFilterData}
         cardContainerSty="grid grid-cols-12 gap-8"
         cardList={intigrationsCardData}
         renderElement={(item, index) => (
-          <div key={index} className="col-span-6 max-md:col-span-6 ">
+          <div key={index} className="col-span-6 max-md:col-span-6">
             <Card
               {...item}
               headingSty="text-[24px] font-medium leading-[140%] text-black-900 mb-4"

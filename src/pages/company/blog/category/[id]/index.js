@@ -111,7 +111,7 @@ const BlogCategory = () => {
             blogList &&
             blogList?.map((item, index) => {
               return (
-                <div key={index} className="col-span-6 max-md:col-span-6 mb-5">
+                <div key={index} className="col-span-6 max-md:col-span-6 mb-8">
                   <StoreCard
                     btnLabel={
                       item?.attributes?.blog_category?.data?.attributes?.name

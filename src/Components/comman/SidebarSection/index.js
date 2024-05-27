@@ -10,7 +10,7 @@ const SidebarSection = ({
   cardList,
   onHandleFilter,
   renderHeaderElement,
-  cardContainerSty = "grid grid-cols-12 gap-4 lg:gap-8",
+  cardContainerSty = "grid grid-cols-12 gap-x-4 lg:gap-x-8",
   sliderColSty = "col-span-12 lg:col-span-4 pt-[50px] lg:pt-[100px]",
   galleryColSty = "col-span-12 lg:col-span-8 pt-[50px] lg:pt-[100px]",
   galleryBoxSty = "",

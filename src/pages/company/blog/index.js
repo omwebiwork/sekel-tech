@@ -2,6 +2,7 @@ import Breadcrumb from "@/Components/comman/Breadcrumb";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import Loader from "@/Components/comman/Loader";
+import Pagination from "@/Components/comman/Pagination";
 import SidebarSection from "@/Components/comman/SidebarSection";
 import {
   PER_PAGE_FIRST,
@@ -102,7 +103,7 @@ const Blog = () => {
             blogList &&
             blogList?.map((item, index) => {
               return (
-                <div key={index} className="col-span-6 max-md:col-span-6 mb-5">
+                <div key={index} className="col-span-6 max-md:col-span-6 mb-12">
                   <StoreCard
                     btnLabel={
                       item?.attributes?.blog_category?.data?.attributes?.name
@@ -123,53 +124,7 @@ const Blog = () => {
           }
         />
       </section>
-      <section className="py-[30px]">
-        <div className="container">
-          <nav
-            aria-label="Page navigation example"
-            className="justify-end flex"
-          >
-            <div class="flex items-center text-base h-10">
-              <button class="flex items-center p-1.5 justify-center w-[32px] h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white mr-5">
-                <Image
-                  src={"/arrow.svg"}
-                  width={35}
-                  height={35}
-                  alt=""
-                  className="rotate-180"
-                />
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                1
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                2
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[45px] h-[45px] mx-1.5 text-[16px] font-semibold rounded-full text-white border border-blue-900 bg-blue-900">
-                3
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                4
-              </button>
-
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold text-black-33/60 bg-white">
-                ...
-              </button>
-              <button class="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold rounded-full text-black-33/60 border border-black-33/30 bg-white">
-                12
-              </button>
-
-              <button class="flex items-center p-1.5 justify-center w-[32px] h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white ml-5">
-                <Image src={"/arrow.svg"} width={35} height={35} alt="" />
-              </button>
-            </div>
-          </nav>
-        </div>
-      </section>
+      <Pagination pagesCount={pagesCount} handleUpdatePage={updateParent} />
       <LovedThisContent />
     </>
   );

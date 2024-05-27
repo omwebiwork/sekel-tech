@@ -94,13 +94,13 @@ function Photo() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-12 gap-4 lg:gap-8">
+          <div className="grid grid-cols-12 gap-x-4 lg:gap-x-8">
             {photoList?.length > 0 &&
               photoList.map((item, index) => {
                 return (
                   <div
                     key={index}
-                    className="col-span-6 md:col-span-4 lg:col-span-3 mb-5"
+                    className="col-span-6 md:col-span-4 lg:col-span-3 mb-10"
                   >
                     <div className="rounded-[20px] overflow-hidden h-[158px] md:h-[175px] lg:h-[200px] xl:h-[260px]">
                       <Image
