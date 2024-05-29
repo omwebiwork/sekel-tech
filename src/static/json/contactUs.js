@@ -22,12 +22,11 @@ export const bannerDiscoverPower = {
 export const information = [
   {
     title: "Email",
-    subtitle: "info@sekel.tech",
     description: (
       <>
         <Link href={"mailto:info@sekel.tech"}>info@sekel.tech</Link>
         <br />
-        careers@sekel.tech
+        <Link href={"mailto:careers@sekel.tech"}>careers@sekel.tech</Link>
       </>
     ),
     titleIcon: {
@@ -42,7 +41,7 @@ export const information = [
     description:
       "91 Springboard, Creaticity Mall, Yerawada, Pune, Maharashtra-411006",
     titleIcon: {
-      src: "/Location marker.png",
+      src: "/Location-marker.png",
       height: 53,
       width: 53,
       alt: "img",
