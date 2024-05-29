@@ -8,13 +8,12 @@ import {
 } from "@/constants/pagination";
 import SidebarSection from "@/Components/comman/SidebarSection";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
-import StoreCard from "@/Components/comman/Card/StoreCard";
-import { blogsFilterData } from "@/static/json/blog";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import VideoCard from "@/Components/comman/Card/VideoCard";
 import Loader from "@/Components/comman/Loader";
 import { useRouter } from "next/router";
 import Button from "@/Components/comman/Button";
+import Pagination from "@/Components/comman/Pagination";
 
 const baseURLVideo = `${process.env.STRAPI_PATH}/videos?populate[0]=video_category&populate[1]=thumbnail_url&sort=publishedAt%3Adesc&pagination[limit]=${PER_PAGE_FIRST}`;
 
@@ -27,8 +26,10 @@ const Video = () => {
   const [loaderStat, setLoader] = useState(false);
   const [start, setStart] = useState(0);
   const [pagesCount, setPagesCount] = useState(0);
+  const [currentPageNo, setcurrentPageNo] = useState(1);
 
   const updateParent = (value) => {
+    setcurrentPageNo(value);
     const postPerPage = getPageOffset(value) + PER_PAGE_FIRST;
     setStart(postPerPage - PER_PAGE_FIRST);
     window.scrollTo(0, 500);
@@ -127,7 +128,13 @@ const Video = () => {
       <section className="pb-[50px]">
         <SidebarSection
           sidebarTitle="Gallery"
-          sidebarFilterData={[blogsFilterData[0], ...categoryUpdateList]}
+          sidebarFilterData={[
+            {
+              label: "All Topics",
+              value: "all",
+            },
+            ...categoryUpdateList,
+          ]}
           renderHeaderElement={
             <>
               <Button
@@ -152,6 +159,8 @@ const Video = () => {
           }
           onHandleFilter={(e) => {
             setActiveState(e);
+            setcurrentPageNo(1);
+            setStart(0);
           }}
           renderElement={() =>
             videoList.length > 0 ? (
@@ -171,6 +180,11 @@ const Video = () => {
           }
         />
       </section>
+      <Pagination
+        pagesCount={pagesCount}
+        handleUpdatePage={updateParent}
+        currentPageNo={currentPageNo}
+      />
       <LovedThisContent />
     </>
   );

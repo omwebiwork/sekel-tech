@@ -9,16 +9,14 @@ import {
   getPageOffset,
   totalPagesCount,
 } from "@/constants/pagination";
-import { blogCardData, blogsFilterData } from "@/static/json/blog";
 import axios from "axios";
-import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const baseURLBlog = `${process.env.STRAPI_PATH}/blogs?populate[0]=blog_category&populate[1]=FeaturedImage&sort=publishedAt:desc&pagination[limit]=${PER_PAGE_FIRST}`;
 
 const baseURLCategory = `${process.env.STRAPI_PATH}/blog-categories?fields[0]=name&fields[1]=slug`;
+
 const Blog = () => {
   const router = useRouter();
   const [blogList, setBlogList] = useState([]);
@@ -26,16 +24,18 @@ const Blog = () => {
   const [loaderStat, setLoader] = useState(false);
   const [start, setStart] = useState(0);
   const [pagesCount, setPagesCount] = useState(0);
+  const [currentPageNo, setcurrentPageNo] = useState(1);
 
   const updateParent = (value) => {
+    setcurrentPageNo(value);
     const postPerPage = getPageOffset(value) + PER_PAGE_FIRST;
     setStart(postPerPage - PER_PAGE_FIRST);
     window.scrollTo(0, 500);
   };
 
-
   const getBlogBySlug = (slug) => {
     setLoader(true);
+    setcurrentPageNo(1);
     router.push(`/company/blog/category/${slug}`);
   };
 
@@ -50,7 +50,13 @@ const Blog = () => {
     axios
       .get(baseURLCategory)
       .then((response) => {
-        setCategoryList(response.data.data);
+        setCategoryList([
+          {
+            label: "All Topics",
+            value: "all",
+          },
+          ...response.data.data,
+        ]);
       })
       .catch((error) => {
         console.log(error);
@@ -95,36 +101,46 @@ const Blog = () => {
       <section className="pb-[50px]">
         <SidebarSection
           sidebarTitle="Blogs"
-          sidebarFilterData={[blogsFilterData[0], ...categoryList]}
+          sidebarFilterData={categoryList}
           onHandleFilter={(e) => {
             getBlogBySlug(e);
           }}
           renderElement={() =>
-            blogList &&
-            blogList?.map((item, index) => {
-              return (
-                <div key={index} className="col-span-6 max-md:col-span-6 mb-12">
-                  <StoreCard
-                    btnLabel={
-                      item?.attributes?.blog_category?.data?.attributes?.name
-                    }
-                    description={item?.attributes?.title}
-                    bgImage={{
-                      src: item?.attributes?.FeaturedImage?.data?.attributes
-                        ?.url,
-                      height: 900,
-                      width: 900,
-                      alt: "img",
-                    }}
-                    slug={`/company/blog/${item?.attributes.slug}`}
-                  />
-                </div>
-              );
-            })
+            blogList?.length > 0 ? (
+              blogList?.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="col-span-6 max-md:col-span-6 mb-12"
+                  >
+                    <StoreCard
+                      btnLabel={
+                        item?.attributes?.blog_category?.data?.attributes?.name
+                      }
+                      description={item?.attributes?.title}
+                      bgImage={{
+                        src: item?.attributes?.FeaturedImage?.data?.attributes
+                          ?.url,
+                        height: 900,
+                        width: 900,
+                        alt: "img",
+                      }}
+                      slug={`/company/blog/${item?.attributes.slug}`}
+                    />
+                  </div>
+                );
+              })
+            ) : (
+              <p className="col-span-12 text-center pb-[80px]">Not Found !!!</p>
+            )
           }
         />
       </section>
-      <Pagination pagesCount={pagesCount} handleUpdatePage={updateParent} />
+      <Pagination
+        pagesCount={pagesCount}
+        handleUpdatePage={updateParent}
+        currentPageNo={currentPageNo}
+      />
       <LovedThisContent />
     </>
   );

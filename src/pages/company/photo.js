@@ -2,6 +2,7 @@ import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import Loader from "@/Components/comman/Loader";
+import Pagination from "@/Components/comman/Pagination";
 import {
   PER_PAGE_FIRST,
   getPageOffset,
@@ -20,15 +21,10 @@ function Photo() {
   const [start, setStart] = useState(0);
   const [pagesCount, setPagesCount] = useState(0);
   const [photoList, setPhotoList] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("activePage", "Company");
-    return () => {
-      localStorage.setItem("activePage", "");
-    };
-  }, []);
+  const [currentPageNo, setcurrentPageNo] = useState(1);
 
   const updateParent = (value) => {
+    setcurrentPageNo(value);
     const postPerPage = getPageOffset(value) + PER_PAGE_FIRST;
     setStart(postPerPage - PER_PAGE_FIRST);
     window.scrollTo(0, 500);
@@ -95,7 +91,7 @@ function Photo() {
             </div>
           </div>
           <div className="grid grid-cols-12 gap-x-4 lg:gap-x-8">
-            {photoList?.length > 0 &&
+            {photoList?.length > 0 ? (
               photoList.map((item, index) => {
                 return (
                   <div
@@ -113,10 +109,18 @@ function Photo() {
                     </div>
                   </div>
                 );
-              })}
+              })
+            ) : (
+              <p className="col-span-12 text-center">No Photo Found !!!</p>
+            )}
           </div>
         </div>
       </section>
+      <Pagination
+        pagesCount={pagesCount}
+        handleUpdatePage={updateParent}
+        currentPageNo={currentPageNo}
+      />
       <LovedThisContent />
     </>
   );

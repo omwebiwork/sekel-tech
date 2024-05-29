@@ -1,28 +1,24 @@
 import Image from "next/image";
 
 const { createPaginationLinks } = require("@/constants/pagination");
-const { useState } = require("react");
 
 const Pagination = ({
   pagesCount,
-  postName,
+  currentPageNo,
   handleUpdatePage,
   paginationStatus = false,
 }) => {
-  const [currentPageNo, setcurrentPageNo] = useState(1);
-  // if (!pagesCount || !postName) {
-  // 	return null;
-  // }
+  if (pagesCount === 0) {
+    return null;
+  }
   let paginationLinks = createPaginationLinks(currentPageNo, pagesCount);
   const updatePage = (value) => {
-    setcurrentPageNo(value);
     paginationLinks = createPaginationLinks(currentPageNo, pagesCount);
     handleUpdatePage && handleUpdatePage(value);
   };
   if (paginationStatus) {
     paginationLinks = createPaginationLinks(1, pagesCount);
   }
-  console.log(paginationLinks, "chekc ", pagesCount);
   return (
     <section className="py-[30px]">
       <div className="container">
