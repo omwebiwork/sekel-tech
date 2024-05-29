@@ -61,7 +61,7 @@ const CaseStudy = () => {
       });
   };
 
-  // get blog category
+  // get case study category
   useEffect(() => {
     if (window.location.protocol.indexOf("https") == 0) {
       var el = document.createElement("meta");
@@ -85,7 +85,7 @@ const CaseStudy = () => {
       });
   }, []);
 
-  // get blog list
+  // get case study list
   useEffect(() => {
     setcurrentPageNo(1);
     getCaseStudyByCategory(activeState, 0);

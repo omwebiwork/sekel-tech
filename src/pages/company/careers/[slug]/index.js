@@ -59,7 +59,6 @@ const CareersDetails = () => {
       });
   }, []);
 
-  console.log("chekc", jobDetails, jobList);
   return (
     <>
       <Breadcrumb
