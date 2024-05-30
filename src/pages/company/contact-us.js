@@ -14,6 +14,8 @@ import {
   information,
   seamlessIntegration,
 } from "@/static/json/contactUs";
+import Head from "next/head";
+import HeadSection from "@/Components/HeadSection";
 
 const ContactUs = () => {
   const [accordianState, setAccordianState] = useState({ 0: false });
@@ -25,8 +27,39 @@ const ContactUs = () => {
       setAccordianState({ [index]: true });
     }
   };
+  function addFAQJsonLd() {
+    return {
+      __html: {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: frequentlyAsked?.faqList?.map((item, index) => {
+          return {
+            "@type": "Question",
+            name: item?.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item?.answer,
+            },
+          };
+        }),
+      },
+    };
+  }
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addFAQJsonLd()}
+          key="FAQ-jsonld"
+        />
+      </Head>
+      <HeadSection
+        title="Consult Us for a Free Hyperlocal Audit | Sekel Tech"
+        description="Transform your retail journey with Sekel Tech. Contact us for a seamless online presence, efficient store orders, and an enriched online-to-offline experience."
+        canonical="https://sekel.tech/company/contact-us"
+        img="/logo.svg"
+      />
       <Banner
         {...bannerDiscoverPower}
         sectionSty="py-[50px] lg:pb-8 lg:pt-[50px]"

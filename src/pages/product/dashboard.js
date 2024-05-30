@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
@@ -12,6 +13,7 @@ import {
   oneUltimatePlatform,
   seamlessIntegration,
 } from "@/static/json/dashboard";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -20,9 +22,49 @@ import React, { useState } from "react";
 export default function Dashboard() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("hyperLocations");
+  const getItemListSchemaData = () => {
+    if (Object.keys(manageInfoCard?.sectionData).length !== 0) {
+      const cardData = Object.keys(manageInfoCard?.sectionData);
+      const itemListData = cardData.map((item, index) => {
+        return {
+          "@type": "management",
+          headline: manageInfoCard?.sectionData[item]?.title,
+          url: `https://sekel.tech/product/dashboard`,
+        };
+      });
+      const itemSchemaData = `
+        {
+            "@context": "https://schema.org",
+            "@type": "Dashboard",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://sekel.tech/product/dashboard"
+            },
+            "name": "Key product features",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500",
+            "blogPosts": ${JSON.stringify(itemListData)}
+          }
+          `;
+      return itemSchemaData;
+    }
+    return null;
+  };
 
+  function addBlogJsonLd() {
+    return {
+      __html: getItemListSchemaData(),
+    };
+  }
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addBlogJsonLd()}
+          key="blog-jsonld"
+        />
+      </Head>
+      <HeadSection title={bannerData?.title} />
       <Banner
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"

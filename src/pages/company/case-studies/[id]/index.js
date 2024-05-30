@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
@@ -5,9 +6,7 @@ import InfoCard from "@/Components/comman/Card/InfoCard";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import Loader from "@/Components/comman/Loader";
 import StoreDetailBanner from "@/Components/comman/StoreDetailBanner";
-import {
-  servicesIntegrated,
-} from "@/static/json/caseStudyDetails";
+import { servicesIntegrated } from "@/static/json/caseStudyDetails";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -42,6 +41,12 @@ const CaseStudyDetails = () => {
 
   return (
     <>
+      <HeadSection
+        title={`${caseStudyDetails?.brandName} Case Study | Sekel Tech`}
+        description={caseStudyDetails?.metaDesc}
+        canonical={`https://sekel.tech/company/case-studies/${router.query.id}`}
+        img="/logo.svg"
+      />
       {loaderStat && <Loader />}
       <StoreDetailBanner
         {...caseStudyDetails?.banner}

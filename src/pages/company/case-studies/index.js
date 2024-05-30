@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import Loader from "@/Components/comman/Loader";
@@ -92,6 +93,12 @@ const CaseStudy = () => {
   }, [activeState]);
   return (
     <>
+      <HeadSection
+        title="Case Study | Sekel Tech"
+        description="Explore how Sekel Tech's innovative solutions transformed businesses with our compelling case study. Learn how our expertise can drive your success."
+        canonical="https://sekel.tech/company/case-studies"
+        img="/logo.svg"
+      />
       {loaderStat && <Loader />}
       <section>
         <SidebarSection

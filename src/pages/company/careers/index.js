@@ -15,6 +15,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import HeadSection from "@/Components/HeadSection";
 
 const baseURLJob = `${process.env.STRAPI_PATH}/jobs?populate[0]=job_category&populate[1]=JobImage&sort=publishedAt:desc`;
 const baseURLJobCategory = `${process.env.STRAPI_PATH}/job-categories?fields[0]=name&fields[1]=slug`;
@@ -101,6 +102,12 @@ const Careers = () => {
 
   return (
     <>
+      <HeadSection
+        title="We are Hiring | Sekel Tech Careers"
+        description="Discover career opportunities at Sekel Tech, shaping the future of innovative tech. Join us for growth, collaboration, and success. Explore open positions!"
+        canonical="https://sekel.tech/company/careers"
+        img="/logo.svg"
+      />
       <Banner
         {...bannerCareers}
         sectionSty="py-[50px] md:py-[60px] lg:pt-20 lg:pb-[100px]"

@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
@@ -10,6 +11,7 @@ import {
   totalPagesCount,
 } from "@/constants/pagination";
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -88,8 +90,89 @@ const Blog = () => {
       });
   }, [start]);
 
+  const getItemListSchemaData = () => {
+    if (blogList.length !== 0) {
+      const cardData = blogList;
+      const itemListData = cardData.map((item, index) => {
+        return {
+          "@type": "BlogPosting",
+          headline: item?.attributes?.title,
+          url: `https://sekel.tech/company/blog/${item?.attributes?.slug}`,
+          datePublished: item?.attributes?.publishedAt,
+          articleBody: item?.attributes?.Content_Body,
+          keywords: item?.attributes?.meta_keywords?.split(","),
+        };
+      });
+      const itemSchemaData = `
+        {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://sekel.tech/compmany/blog"
+            },
+            "name": "Sekel Tech Blog",
+            "description": "Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm.",
+            "blogPosts": ${JSON.stringify(itemListData)}
+          }
+          `;
+      return itemSchemaData;
+    }
+    return null;
+  };
+
+  function addBlogJsonLd() {
+    return {
+      __html: getItemListSchemaData(),
+    };
+  }
+
   return (
     <>
+      <Head>
+        <title>{"Blog | Sekel Tech"}</title>
+        <link rel="icon" href="/favicon.png" />
+        <meta
+          name="description"
+          content="Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm."
+          key="desc"
+        />
+        <meta property="og:title" content="Blog | Sekel Tech" />
+        <meta
+          property="og:description"
+          content="Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm."
+        />
+        <meta
+          property="og:url"
+          content="https://sekel.tech/company/blog/"
+        ></meta>
+        <link rel="canonical" href="https://sekel.tech/company/blog/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addBlogJsonLd()}
+          key="blog-jsonld"
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-H6YV1LDG7Y"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)};
+                    gtag('js', new Date());
+                    gtag('config', 'G-H6YV1LDG7Y');`,
+          }}
+        />
+      </Head>
+      <HeadSection
+        title="Blog | Sekel Tech"
+        description="Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm."
+        canonical="https://sekel.tech/company/blog/"
+        img="/logo.svg"
+      />
+
       {loaderStat && <Loader />}
       <Breadcrumb
         breadcrumbList={[

@@ -4,8 +4,9 @@ import ContentDetailsSection from "@/Components/comman/ContentDetailsSection";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import StoreDetailBanner from "@/Components/comman/StoreDetailBanner";
 import axios from "axios";
+import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const baseURLBlog = `${process.env.STRAPI_PATH}/blogs?populate[0]=FeaturedImage&populate[1]=blog_category&sort=publishedAt:desc&pagination[limit]=4&fields[0]=title&fields[1]=publishedAt&fields[2]=featuredImage&fields[3]=slug`;
 
@@ -54,8 +55,75 @@ const BlogDetails = () => {
         console.log(error);
       });
   }, [currentBlog]);
+
+  const jsonLd = useMemo(() => {
+    if (blogDetails?.attributes?.json_ld) {
+        return blogDetails?.attributes?.json_ld
+    }
+    return [];
+}, [blogDetails]);
+
+function addBlogJsonLd() {
+    return {
+        __html: `${jsonLd}`
+    }
+}
   return (
     <>
+      <Head>
+        <title>{blogDetails?.attributes?.title}</title>
+        <link rel="icon" href="/favicon.png" />
+        <meta
+          property="og:url"
+          content={`https://sekel.tech/company/blog/${router.query.id}`}
+        ></meta>
+        <link
+          rel="canonical"
+          href={`https://sekel.tech/company/blog/${router.query.id}`}
+        />
+        <meta
+          property="og:title"
+          content={blogDetails?.attributes?.meta_title}
+        />
+        <meta
+          property="og:keyword"
+          content={blogDetails?.attributes?.meta_keywords}
+        />
+        <meta
+          property="og:description"
+          content={blogDetails?.attributes?.meta_description}
+        />
+        <meta
+          property="og:image"
+          content={
+            blogDetails?.attributes?.featuredImage?.data?.attributes?.url
+          }
+        />
+        <meta name="keyword" content={blogDetails?.attributes?.meta_keywords} />
+        <meta
+          name="description"
+          content={blogDetails?.attributes?.meta_description}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-H6YV1LDG7Y"
+        ></script>
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)};
+                    gtag('js', new Date());
+                    gtag('config', 'G-H6YV1LDG7Y');`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addBlogJsonLd()}
+          key="blog-jsonld"
+        />
+      </Head>
       <StoreDetailBanner
         label={blogDetails?.attributes?.blog_category?.data?.attributes?.name}
         title={blogDetails?.attributes?.title}

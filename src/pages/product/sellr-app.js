@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
@@ -58,6 +59,7 @@ const SellrApp = () => {
 
   return (
     <div>
+      <HeadSection {...bannerOneApp}/>
       <Banner
         {...bannerOneApp}
         containerStyle="container justify-between max-md:flex-wrap"

@@ -14,10 +14,63 @@ import {
   ourStory,
   slider,
 } from "@/static/json/aboutUs";
+import Head from "next/head";
+import HeadSection from "@/Components/HeadSection";
 
 const AboutUs = () => {
+  function addAboutUsJsonLd() {
+    return {
+      __html: `{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Sekel Tech",
+        "url": "https://sekel.tech/company/about-us",
+        "description": "Leading Retail brands use Sekel Tech's Dashboard for Hyperlocal SEO Automation, increased Organic D2C commerce, 1st party cookies and Remarketing at zero cost.",
+        "about": "Designed to help retail businesses, the Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sekel Tech",
+          "logo": "https://sekel.tech/logo.svg",
+          "telephone": "07942569371",
+          "email": "info@sekel.tech",
+          "sameAs": [
+          "https://facebook.com/SekelTechOfficial",
+          "https://twitter.com/SekelTech",
+          "https://instagram.com/Sekeltech",
+          "https://www.youtube.com/@Niftywindow",
+          "https://in.linkedin.com/company/nifty-window",
+          "https://sekel.tech"],
+          "url": "https://sekel.tech/",
+          "image": "https://sekel.tech/logo.svg",
+          "description": "Leading Retail brands use Sekel Tech's Dashboard for Hyperlocal SEO Automation, increased Organic D2C commerce, 1st party cookies and Remarketing at zero cost.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "CREATICITY MALL, 91Springboard",
+            "addressLocality": "Yerawada,Pune",
+            "addressRegion": "MH",
+            "postalCode": "411006"
+          }
+        }
+      }
+      `,
+    };
+  }
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addAboutUsJsonLd()}
+          key="FAQ-jsonld"
+        />
+      </Head>
+      <HeadSection
+        title="Grow Retail Revenue with Hyperlocal | About Sekel Tech"
+        description="Designed to help retail businesses, the Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey."
+        canonical="https://sekel.tech/company/about-us"
+        img="/logo.svg"
+      />
+
       <Banner
         {...bannerAboutUs}
         sectionSty="pt-5 lg:pt-20"

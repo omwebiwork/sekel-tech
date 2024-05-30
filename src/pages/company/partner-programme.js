@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
@@ -6,6 +7,7 @@ import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import DownArrow from "@/assets/DownArrow";
+import { getItemListSchemaData } from "@/constants/getItemListSchema";
 import { oneUltimatePlatform } from "@/static/json/dashboard";
 import {
   accelerateAgency,
@@ -20,8 +22,28 @@ import React from "react";
 
 const PartnerProgramme = () => {
   const router = useRouter();
+  // const getJsonLd = () => {
+  //   const schema = getItemListSchemaData({
+  //     cardData: retailSuccess?.cardDataList,
+  //     ...retailSuccess?.sectionData,
+  //   });
+  //   const featureSchema = getItemListSchemaData({
+  //     cardData: accelerateAgency?.growthCardList,
+  //     ...accelerateAgency.sectionData,
+  //   });
+
+  //   return [schema, featureSchema];
+  // };
   return (
     <div>
+      <HeadSection
+        title={`Partner Program | Expand Your Network With Sekel Tech`}
+        description="Become a Sekel Tech Partner Today. Increase your revenue, enhance your portfolio, and help your clients with our innovative solutions."
+        canonical={`https://sekel.tech/company/partner-programme`}
+        img="/logo.svg"
+        // addItemListScript={true}
+        // itemListJsonLd={getJsonLd()}
+      />
       <Banner
         {...expendYourReach}
         sectionSty="py-[50px] md:py-[60px] lg:pt-20 lg:pb-[100px]"
@@ -89,6 +111,7 @@ const PartnerProgramme = () => {
                 {accelerateAgency?.growthCardList?.map((item, index) => {
                   return (
                     <Card
+                      key={index}
                       {...item}
                       headingSty="text-[24px] lg:text-[28px] font-medium leading-[30px] mb-4  "
                       cardSty="mb-8 w-full md:w-[calc(50%_-_10px)] "

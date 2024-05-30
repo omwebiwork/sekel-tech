@@ -1,7 +1,9 @@
+import HeadSection from "@/Components/HeadSection";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import ContentDetailsSection from "@/Components/comman/ContentDetailsSection";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
+import Loader from "@/Components/comman/Loader";
 import StoreDetailBanner from "@/Components/comman/StoreDetailBanner";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -13,16 +15,11 @@ const CareersDetails = () => {
   const router = useRouter();
   const [jobList, setJobList] = useState([]);
   const [jobDetails, setJobDetails] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("activePage", "Company");
-    return () => {
-      localStorage.setItem("activePage", "");
-    };
-  }, []);
+  const [loaderStat, setLoader] = useState(false);
 
   useEffect(() => {
     if (router.query.slug) {
+      setLoader(true);
       const baseURL = `${process.env.STRAPI_PATH}/jobs?filters[slug][$eq]=${router.query.slug}&populate[0]=job_category&populate[1]=JobImage`;
       if (window.location.protocol.indexOf("https") == 0) {
         var el = document.createElement("meta");
@@ -33,9 +30,11 @@ const CareersDetails = () => {
       axios
         .get(baseURL)
         .then((response) => {
+          setLoader(false);
           setJobDetails(response.data.data[0] || []);
         })
         .catch((error) => {
+          setLoader(false);
           console.log(error);
         });
     }
@@ -61,6 +60,13 @@ const CareersDetails = () => {
 
   return (
     <>
+      <HeadSection
+        title={jobDetails?.attributes?.meta_title}
+        description={jobDetails?.attributes?.meta_description}
+        canonical={jobDetails?.attributes?.meta_canonical}
+        img={jobDetails?.attributes?.meta_image}
+      />
+      {loaderStat && <Loader />}
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
