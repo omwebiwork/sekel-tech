@@ -13,13 +13,12 @@ import {
   sekelsWayToMaster,
 } from "@/static/json/demand";
 import Image from "next/image";
-
-const { default: Card } = require("@/Components/comman/Card");
-const {
-  default: CardSection,
-} = require("@/Components/comman/Card/CardSection");
+import Card from "@/Components/comman/Card";
+import CardSection from "@/Components/comman/Card/CardSection";
+import { useRouter } from "next/router";
 
 const Demand = () => {
+  const router = useRouter();
   let renderDemandGenerationCard = () => {
     return (
       <div>
@@ -122,7 +121,12 @@ const Demand = () => {
               <p className="text-white text-base font-normal mb-5">
                 {...masterLocalAdvertising?.renderElementContent?.contentText}
               </p>
-              <Button filled data="Get Started" clsStyle="py-3 px-8 border-yellow-900" />
+              <Button
+                filled
+                data="Get Started"
+                action={() => router.push("/company/contact-us")}
+                clsStyle="py-3 px-8 border-yellow-900"
+              />
             </div>
           </>
         }

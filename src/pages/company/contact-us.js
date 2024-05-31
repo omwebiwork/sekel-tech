@@ -61,8 +61,8 @@ const ContactUs = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
-          { link: "/contact-us", label: "Contact" },
+          { link: "/", label: "Company" },
+          { link: "/company/contact-us", label: "Contact" },
         ]}
       />
       <section className="py-[50px]">

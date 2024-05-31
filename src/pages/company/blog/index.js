@@ -94,7 +94,7 @@ const Blog = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
+          { link: "/", label: "Company" },
           { link: "/company/blog", label: "Blog" },
         ]}
       />

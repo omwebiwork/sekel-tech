@@ -41,7 +41,7 @@ const HyperlocalStrategyForm = ({
               onSubmit={async (values, { resetForm }) => {
                 try {
                   setIsLoading(true);
-                  const result = await getQuote({ email });
+                  const result = await getQuote({ ...values.email });
                   setIsLoading(false);
                   if (result.status === 200 || result.data.success === true) {
                     enqueueSnackbar("Mail sent successfully.", {
@@ -81,7 +81,7 @@ const HyperlocalStrategyForm = ({
                   <ErrorMessage
                     name="email"
                     component="span"
-                    className="font-sans pt-4 text-red-600 text-center not-italic text-md"
+                    className="pt-4 text-red-600 text-center not-italic text-md"
                   />
                 </Form>
               )}
