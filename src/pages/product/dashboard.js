@@ -93,7 +93,7 @@ export default function Dashboard() {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/product", label: "Product" },
+          { link: "/", label: "Product" },
           { link: "/product/dashboard", label: "Dashboard" },
         ]}
       />
@@ -180,7 +180,7 @@ export default function Dashboard() {
             clsStyle="py-3 px-8 border-yellow-900"
             filled
             action={() => {
-              router.push("/product/integration");
+              router.push("/product/integrations");
             }}
           />
         }

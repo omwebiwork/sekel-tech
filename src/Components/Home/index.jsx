@@ -26,7 +26,6 @@ import { useRouter } from "next/router";
 const HomeComponent = () => {
   const [learnMore, setLearnMore] = useState(false);
   let [offset, setOffset] = useState(4);
-  let [cardData, setCardData] = useState(discoveryCardData);
   const router = useRouter();
 
   const handleLearnMore = useCallback((index) => {
@@ -41,7 +40,7 @@ const HomeComponent = () => {
     return (
       <div>
         <div className="grid grid-cols-3 gap-y-6 md:gap-x-2 lg:gap-x-8">
-          {cardData?.map((item, index) => {
+          {discoveryCardData?.map((item, index) => {
             return (
               <div className="col-span-3 md:col-span-1">
                 <Card
@@ -50,8 +49,7 @@ const HomeComponent = () => {
                   headingSty="mb-4 leading-[30px] text-[24px] md:text-[22px] lg:text-[28px] font-medium text-black-33 tracking-tight"
                   cardSty="p-5 md:p-4 lg:p-6 xl:p-10 rounded-2xl h-full bg-gray-100"
                   actionType="Learn more"
-                  action={() => handleLearnMore(index)}
-                  learnMore={learnMore[index]}
+                  action={() => router.push(item?.slug)}
                   buttonIcon={<DownArrow />}
                 />
               </div>
@@ -265,12 +263,12 @@ const HomeComponent = () => {
           <div className="flex gap-8 pt-6">
             <button
               className="max-h-[57px] max-w-[188px] rounded-lg overflow-hidden"
-              // onClick={() =>
-              //   window.open(
-              //     "",
-              //     "_blank"
-              //   )
-              // }
+              onClick={() =>
+                window.open(
+                  "https://play.google.com/store/apps/details?id=com.sekeltech.sellrapp",
+                  "_blank"
+                )
+              }
             >
               <Image
                 src={"/google-store.png"}
@@ -281,12 +279,12 @@ const HomeComponent = () => {
             </button>
             <button
               className="max-h-[57px] max-w-[188px] rounded-lg overflow-hidden"
-              //  onClick={() =>
-              //   window.open(
-              //     "",
-              //     "_blank"
-              //   )
-              // }
+               onClick={() =>
+                window.open(
+                  "https://apps.apple.com/in/app/sellrapp/id6447759345",
+                  "_blank"
+                )
+              }
             >
               <Image src={"/app-store.png"} height={57} width={188} alt="btn" />
             </button>

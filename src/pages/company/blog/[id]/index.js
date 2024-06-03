@@ -2,6 +2,7 @@ import Breadcrumb from "@/Components/comman/Breadcrumb";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import ContentDetailsSection from "@/Components/comman/ContentDetailsSection";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
+import Loader from "@/Components/comman/Loader";
 import StoreDetailBanner from "@/Components/comman/StoreDetailBanner";
 import axios from "axios";
 import Head from "next/head";
@@ -14,9 +15,10 @@ const BlogDetails = () => {
   const router = useRouter();
   const [blogDetails, setBlogDetails] = useState([]);
   const [blogList, setBlogList] = useState([]);
-
+  const [loaderStat, setLoader] = useState(false);
   useEffect(() => {
     if (router.query.id) {
+      setLoader(true);
       const baseURL = `${process.env.STRAPI_PATH}/blogs?filters[slug][$eq]=${router.query.id}&populate[0]=blog_category&populate[1]=FeaturedImage`;
       if (window.location.protocol.indexOf("https") == 0) {
         var el = document.createElement("meta");
@@ -27,6 +29,7 @@ const BlogDetails = () => {
       axios
         .get(baseURL)
         .then((response) => {
+          setLoader(false);
           setBlogDetails(response.data.data[0] || []);
         })
         .catch((error) => {
@@ -124,6 +127,7 @@ function addBlogJsonLd() {
           key="blog-jsonld"
         />
       </Head>
+      {loaderStat && <Loader />}
       <StoreDetailBanner
         label={blogDetails?.attributes?.blog_category?.data?.attributes?.name}
         title={blogDetails?.attributes?.title}
@@ -145,10 +149,10 @@ function addBlogJsonLd() {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
+          { link: "/", label: "Company" },
           { link: "/company/blog", label: "Blogs" },
           {
-            link: `/company/blog/${blogDetails?.attributes?.title}`,
+            link: router.asPath,
             label: blogDetails?.attributes?.title,
           },
         ]}

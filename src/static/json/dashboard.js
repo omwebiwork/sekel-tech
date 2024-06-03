@@ -129,15 +129,15 @@ export const importantFeatures = {
   },
   list: [
     {
-      link: "",
+      link: "/data",
       label: "Role Based Access",
     },
     {
-      link: "",
+      link: "/discovery",
       label: "Store Locator",
     },
     {
-      link: "",
+      link: "/demand",
       label: "Store2Door Omni Commerce",
     },
   ],

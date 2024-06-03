@@ -22,6 +22,7 @@ export const discoveryCardData = [
     image: {
       src: "/discoverd-img.gif",
     },
+    slug: "/discovery",
   },
   {
     title: "Plug & Play Data",
@@ -30,6 +31,7 @@ export const discoveryCardData = [
     image: {
       src: "/play-data.gif",
     },
+    slug: "/data",
   },
   {
     title: "Generate Demand",
@@ -38,6 +40,7 @@ export const discoveryCardData = [
     image: {
       src: "/generate-demand-img.gif",
     },
+    slug: "/deamnd",
   },
 ];
 

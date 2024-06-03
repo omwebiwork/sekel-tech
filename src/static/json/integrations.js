@@ -11,7 +11,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0 line-clamp-2 text-base font-normal text-black-33",
-    category: "paid-ads",
+    slug: ["paid-ads"],
   },
   {
     title: "Facebook Ads",
@@ -24,7 +24,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
-    category: "paid-ads",
+    slug: ["paid-ads"],
   },
   {
     title: "Instagram Ads",
@@ -36,7 +36,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
-    category: "paid-ads",
+    slug: ["paid-ads"],
   },
   {
     title: "Airtel",
@@ -48,6 +48,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["partners"],
   },
   {
     title: "Mailchimp",
@@ -59,6 +60,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["retargeting", "partners"],
   },
   {
     title: "WhatsApp",
@@ -70,6 +72,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["retargeting"],
   },
   {
     title: "Google Business Profile",
@@ -81,6 +84,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["listing-management"],
   },
   {
     title: "Bing Places",
@@ -92,6 +96,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["listing-management"],
   },
   {
     title: "Apple Business Connect",
@@ -103,6 +108,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["listing-management"],
   },
   {
     title: "Facebook Store Pages",
@@ -114,6 +120,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["listing-management"],
   },
   {
     title: "Gupshup",
@@ -125,6 +132,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["retargeting", "partners"],
   },
   {
     title: "Zoko",
@@ -136,6 +144,7 @@ export const intigrationsCardData = [
       alt: "img",
     },
     descriptionSty: "mb-0",
+    slug: ["retargeting", "partners"],
   },
 ];
 export const integrationsFilterData = [

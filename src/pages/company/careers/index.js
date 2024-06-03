@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import HeadSection from "@/Components/HeadSection";
+import Loader from "@/Components/comman/Loader";
 
 const baseURLJob = `${process.env.STRAPI_PATH}/jobs?populate[0]=job_category&populate[1]=JobImage&sort=publishedAt:desc`;
 const baseURLJobCategory = `${process.env.STRAPI_PATH}/job-categories?fields[0]=name&fields[1]=slug`;
@@ -108,6 +109,7 @@ const Careers = () => {
         canonical="https://sekel.tech/company/careers"
         img="/logo.svg"
       />
+      {loaderStat && <Loader />}
       <Banner
         {...bannerCareers}
         sectionSty="py-[50px] md:py-[60px] lg:pt-20 lg:pb-[100px]"
@@ -120,7 +122,11 @@ const Careers = () => {
         subTitleSty="tracking-tighter mb-6"
         renderElement={
           <div className="pt-5">
-            <Button data="Join Us" filled></Button>
+            <Button
+              data="Join Us"
+              filled
+              action={() => router.push("/company/contact-us")}
+            ></Button>
           </div>
         }
       />
@@ -128,8 +134,8 @@ const Careers = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
-          { link: "/company/about-us", label: "About Us" },
+          { link: "/", label: "Company" },
+          { link: "/company/careers", label: "Careers" },
         ]}
       />
 
@@ -269,6 +275,8 @@ const Careers = () => {
               buttonTitle="Search"
               clsStyle="py-3 px-8 max-sm:w-full border-yellow-900"
               placeholder="All Posts"
+              name="search"
+              buttonActionType="button"
               value={currentCategory?.label}
               onChangeHandler={(e) => {
                 if (e.target.value.length === 0) {
@@ -362,7 +370,7 @@ const Careers = () => {
           } else {
             return (
               <div className="flex pt-10 flex-wrap items-center justify-center">
-                <p className="font-sans text-xl font-bold">
+                <p className="text-xl font-bold">
                   No Open Positions!
                 </p>
               </div>

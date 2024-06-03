@@ -1,4 +1,5 @@
 import HeadSection from "@/Components/HeadSection";
+import Breadcrumb from "@/Components/comman/Breadcrumb";
 import StoreCard from "@/Components/comman/Card/StoreCard";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
 import Loader from "@/Components/comman/Loader";
@@ -101,6 +102,13 @@ const CaseStudy = () => {
       />
       {loaderStat && <Loader />}
       <section>
+        <Breadcrumb
+          breadcrumbList={[
+            { link: "/", label: "Home" },
+            { link: "/", label: "Company" },
+            { link: "/company/case-studies", label: "Case Study" },
+          ]}
+        />
         <SidebarSection
           sidebarTitle="Case Study"
           sidebarFilterData={categoryList}

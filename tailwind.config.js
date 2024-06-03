@@ -17,6 +17,9 @@ module.exports = {
     colors: {
       transparent: "rgba(0,0,0,0)",
       white: "#ffffff",
+      primary: "#fdbc4d",
+      secondary: "#231f20",
+      secondPrimary :"#bd5acb",
       blue: {
         900: "#2C74F7",
         600: "#2670FB",
@@ -36,9 +39,9 @@ module.exports = {
         400: "#EAEAEA",
         100: "#F9FAFD",
       },
-      red:{
-        600:'#ff0000'
-      }
+      red: {
+        600: "#ff0000",
+      },
     },
   },
   plugins: [],

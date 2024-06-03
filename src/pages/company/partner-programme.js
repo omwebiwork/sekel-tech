@@ -58,8 +58,8 @@ const PartnerProgramme = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
-          { link: "/partner-programme", label: "Partnership Programme" },
+          { link: "/", label: "Company" },
+          { link: "/company/partner-programme", label: "Partnership Programme" },
         ]}
       />
       <CardSection

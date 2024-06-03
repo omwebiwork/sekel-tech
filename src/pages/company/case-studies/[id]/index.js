@@ -74,9 +74,9 @@ const CaseStudyDetails = () => {
         sectionSty="py-2"
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
+          { link: "/", label: "Company" },
           { link: "/company/case-studies", label: "Case Studies" },
-          { link: `/${router.query.id}`, label: caseStudyDetails?.brandName },
+          { link: `/${router.asPath}`, label: caseStudyDetails?.brandName },
         ]}
       />
 

@@ -59,8 +59,8 @@ function Photo() {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/company", label: "Company" },
-          { link: "/company/gallery", label: "Gallery" },
+          { link: "/", label: "Company" },
+          { link: "/company/photo", label: "Photos" },
         ]}
       />
       <section className="py-[50px] lg:py-[100px]">
@@ -80,7 +80,7 @@ function Photo() {
                 action={() => router.push("/company/gallery")}
               />
               <Button
-                data="Gallery"
+                data="Photos"
                 clsStyle={`max-lg:w-full max-lg:text-left py-2 border-transparent px-4 lg:px-4 text-sm whitespace-nowrap tracking-tight leading-[140%] text-black-3 block ${
                   router.asPath.includes("photo")
                     ? "bg-yellow-100 max-lg:bg-white max-lg:border-gray-400 max-lg:w-full max-lg:text-start border-yellow-900"
