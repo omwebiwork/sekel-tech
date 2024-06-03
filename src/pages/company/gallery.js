@@ -143,7 +143,7 @@ const Video = () => {
         title="Explore Dynamic Video Content | Sekel Tech"
         description="Engage with the seamless blend of innovation, culture, and technology in our dynamic video content—a captivating showcase designed for search and discovery."
         canonical="https://sekel.tech/company/gallery/"
-        img="/logo.jpg"
+        img="/logo.svg"
         renderSchemaContent={() => (
           <script
             key={`video-list`}

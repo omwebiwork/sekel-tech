@@ -118,11 +118,11 @@ const Footer = () => {
                 </div>
                 <div className="hidden md:flex items-center gap-3">
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
-                    {/* <Link
+                    <Link
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://twitter.com/SekelTech"
-                  > */}
+                  >
                     <Image
                       className="h-full w-full"
                       src={"/x-icon.png"}
@@ -130,7 +130,7 @@ const Footer = () => {
                       width={32}
                       alt="footer-logo"
                     />
-                    {/* </Link> */}
+                    </Link>
                   </div>
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
                     <Link

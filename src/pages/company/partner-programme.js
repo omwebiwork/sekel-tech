@@ -7,8 +7,6 @@ import CardSection from "@/Components/comman/Card/CardSection";
 import InfoCard from "@/Components/comman/Card/InfoCard";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import DownArrow from "@/assets/DownArrow";
-import { getItemListSchemaData } from "@/constants/getItemListSchema";
-import { oneUltimatePlatform } from "@/static/json/dashboard";
 import {
   accelerateAgency,
   demandGeneration,

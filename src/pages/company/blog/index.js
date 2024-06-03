@@ -107,7 +107,7 @@ const Blog = () => {
           "@type": "ItemList",
           "url": "https://sekel.tech/blog",
           "itemListOrder": "http://schema.org/ItemListOrderAscending",
-          "numberOfItems": "9",
+          "numberOfItems":${blogList.length},
           "name": "Blog - Sekel Tech",
           "itemListElement": ${JSON.stringify(itemListData)}
           }
