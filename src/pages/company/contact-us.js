@@ -14,7 +14,6 @@ import {
   information,
   seamlessIntegration,
 } from "@/static/json/contactUs";
-import Head from "next/head";
 import HeadSection from "@/Components/HeadSection";
 
 const ContactUs = () => {

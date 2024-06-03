@@ -121,7 +121,7 @@ const BlogCategory = () => {
             "@type": "Blog",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://sekel.tech$/company/blog/category${router.asPath}"
+              "@id": "https://sekel.tech$/${router.asPath}"
             },
             "name": "Sekel Tech Blog",
             "description": "Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm.",

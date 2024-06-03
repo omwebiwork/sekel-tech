@@ -81,7 +81,7 @@ function Photo() {
         title="A Visual Illustration of Innovation | Sekel Tech"
         description="Dive into Sekel Tech's dynamic world and explore the intersections of innovation, culture, and technology in a visual showcase tailored for discovery."
         canonical="https://sekel.tech/company/photo/"
-        img="/logo.jpg"
+        img="/logo.svg"
         renderSchemaContent={() => (
           <script
             key={`photos-list`}

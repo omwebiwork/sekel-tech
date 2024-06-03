@@ -14,7 +14,6 @@ import {
   ourStory,
   slider,
 } from "@/static/json/aboutUs";
-import Head from "next/head";
 import HeadSection from "@/Components/HeadSection";
 
 const AboutUs = () => {
