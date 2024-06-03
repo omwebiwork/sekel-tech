@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Button from "@/Components/comman/Button";
 import LovedThisContent from "@/Components/comman/Form/LovedThisContent";
@@ -11,7 +12,7 @@ import {
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const baseURLPhoto = `${process.env.STRAPI_PATH}/photos?populate[0]=photo_category&populate[1]=photo&sort=publishedAt%3Adesc&pagination[limit]=${PER_PAGE_FIRST}`;
 
@@ -53,8 +54,43 @@ function Photo() {
         setLoader(false);
       });
   }, [start]);
+
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/home/company/photo",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: photoList?.length,
+      name: "Sekel Tech - Photos",
+      description:
+        "Dive into Sekel Tech's dynamic world and Explore the intersections of innovation, culture, and technology in a visual showcase tailored for discovery.",
+      itemListElement: photoList?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          url: item?.attributes?.photo?.data?.attributes?.url,
+        };
+      }),
+    };
+  }, [photoList]);
+
   return (
     <>
+      <HeadSection
+        title="A Visual Illustration of Innovation | Sekel Tech"
+        description="Dive into Sekel Tech's dynamic world and explore the intersections of innovation, culture, and technology in a visual showcase tailored for discovery."
+        canonical="https://sekel.tech/company/photo/"
+        img="/logo.jpg"
+        renderSchemaContent={() => (
+          <script
+            key={`photos-list`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+          />
+        )}
+      />
+
       {loaderStat && <Loader />}
       <Breadcrumb
         breadcrumbList={[

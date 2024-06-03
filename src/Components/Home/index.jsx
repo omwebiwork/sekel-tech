@@ -60,7 +60,7 @@ const HomeComponent = () => {
     );
   };
 
-  let chanllengesCard = ({ title, description, gridColSize, list }) => {
+  let chanllengesCard = ({ question, answer, gridColSize, list }) => {
     return (
       <div className={`${gridColSize}`}>
         <div className="h-full p-6 lg:p-8 xl:py-8 xl:px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
@@ -70,13 +70,13 @@ const HomeComponent = () => {
             </div>
             <div className="w-[calc(100%_-_50px)] ">
               <p className=" text-base font-semibold text-black-33  tracking-tight">
-                {title}
+                {question}
               </p>
             </div>
           </div>
           <div>
             <p className="text-base font-normal leading-[25px] text-black-33 mb-4">
-              {description}
+              {answer}
             </p>
             <ul className="list-['-_'] pl-4 text-base font-normal text-black-33 mb-4">
               {list?.map((listItem, listIndex) => {

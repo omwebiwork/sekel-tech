@@ -95,25 +95,21 @@ const Blog = () => {
       const cardData = blogList;
       const itemListData = cardData.map((item, index) => {
         return {
-          "@type": "BlogPosting",
-          headline: item?.attributes?.title,
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.attributes?.title,
           url: `https://sekel.tech/company/blog/${item?.attributes?.slug}`,
-          datePublished: item?.attributes?.publishedAt,
-          articleBody: item?.attributes?.Content_Body,
-          keywords: item?.attributes?.meta_keywords?.split(","),
         };
       });
       const itemSchemaData = `
         {
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://sekel.tech/compmany/blog"
-            },
-            "name": "Sekel Tech Blog",
-            "description": "Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm.",
-            "blogPosts": ${JSON.stringify(itemListData)}
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "url": "https://sekel.tech/blog",
+          "itemListOrder": "http://schema.org/ItemListOrderAscending",
+          "numberOfItems": "9",
+          "name": "Blog - Sekel Tech",
+          "itemListElement": ${JSON.stringify(itemListData)}
           }
           `;
       return itemSchemaData;
@@ -129,48 +125,18 @@ const Blog = () => {
 
   return (
     <>
-      <Head>
-        <title>{"Blog | Sekel Tech"}</title>
-        <link rel="icon" href="/favicon.png" />
-        <meta
-          name="description"
-          content="Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm."
-          key="desc"
-        />
-        <meta property="og:title" content="Blog | Sekel Tech" />
-        <meta
-          property="og:description"
-          content="Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm."
-        />
-        <meta
-          property="og:url"
-          content="https://sekel.tech/company/blog/"
-        ></meta>
-        <link rel="canonical" href="https://sekel.tech/company/blog/" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={addBlogJsonLd()}
-          key="blog-jsonld"
-        />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-H6YV1LDG7Y"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments)};
-                    gtag('js', new Date());
-                    gtag('config', 'G-H6YV1LDG7Y');`,
-          }}
-        />
-      </Head>
       <HeadSection
         title="Blog | Sekel Tech"
         description="Navigate the complexities of growing your business online with Sekel Tech. Dive into our informative blogs for valuable insights into the digital realm."
         canonical="https://sekel.tech/company/blog/"
         img="/logo.svg"
+        renderSchemaContent={() => (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={addBlogJsonLd()}
+            key="blog-jsonld"
+          />
+        )}
       />
 
       {loaderStat && <Loader />}

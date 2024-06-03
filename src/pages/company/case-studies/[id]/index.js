@@ -9,7 +9,7 @@ import StoreDetailBanner from "@/Components/comman/StoreDetailBanner";
 import { servicesIntegrated } from "@/static/json/caseStudyDetails";
 import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const CaseStudyDetails = () => {
   const router = useRouter();
@@ -39,13 +39,45 @@ const CaseStudyDetails = () => {
     }
   }, [router.query.id]);
 
+  // const itemListSchema = useMemo(() => {
+  //   return {
+  //     "@context": "https://schema.org",
+  //     "@type": "ItemList",
+  //     url: "https://sekel.tech/company/case-studies/kalyan-jewellers",
+  //     itemListOrder: "http://schema.org/ItemListOrderAscending",
+  //     numberOfItems: "6",
+  //     name: "Kalyan Jewellers Case Study - Sekel Tech",
+  //     description:
+  //       "Explore Kalyan Jewelers' success story with Sekel Tech! Witness a remarkable 31x boost in ROI/ROAS, 9x lead growth, and a 4.5x increase in footfall. ",
+  //     itemListElement: caseStudyList?.map((item, index) => {
+  //       return {
+  //         "@type": "ListItem",
+  //         position: 1,
+  //         name: "Campaign Management",
+  //         description:
+  //           "Strategically coordinating and executing marketing initiatives to achieve specific objectives.",
+  //       };
+  //     }),
+  //   };
+  // }, []);
   return (
     <>
       <HeadSection
         title={`${caseStudyDetails?.brandName} Case Study | Sekel Tech`}
-        description={caseStudyDetails?.metaDesc}
+        description={caseStudyDetails?.meta_description}
         canonical={`https://sekel.tech/company/case-studies/${router.query.id}`}
         img="/logo.svg"
+        renderSchemaContent={() => (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(itemListSchema),
+              }}
+              key="list-item"
+            />
+          </>
+        )}
       />
       {loaderStat && <Loader />}
       <StoreDetailBanner

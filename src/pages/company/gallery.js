@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   PER_PAGE_FIRST,
@@ -14,6 +14,7 @@ import Loader from "@/Components/comman/Loader";
 import { useRouter } from "next/router";
 import Button from "@/Components/comman/Button";
 import Pagination from "@/Components/comman/Pagination";
+import HeadSection from "@/Components/HeadSection";
 
 const baseURLVideo = `${process.env.STRAPI_PATH}/videos?populate[0]=video_category&populate[1]=thumbnail_url&sort=publishedAt%3Adesc&pagination[limit]=${PER_PAGE_FIRST}`;
 
@@ -115,8 +116,42 @@ const Video = () => {
     };
   });
 
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/company/gallery",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: videoList?.length,
+      name: "Sekel Tech - Videos",
+      description:
+        "Engage with the seamless blend of innovation, culture, and technology in our dynamic video content—a captivating showcase designed for search and discovery.",
+      itemListElement: videoList?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.attributes?.title,
+          url: item?.attributes?.video_url,
+        };
+      }),
+    };
+  }, [videoList]);
+
   return (
     <>
+      <HeadSection
+        title="Explore Dynamic Video Content | Sekel Tech"
+        description="Engage with the seamless blend of innovation, culture, and technology in our dynamic video content—a captivating showcase designed for search and discovery."
+        canonical="https://sekel.tech/company/gallery/"
+        img="/logo.jpg"
+        renderSchemaContent={() => (
+          <script
+            key={`video-list`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+          />
+        )}
+      />
       {loaderStat && <Loader />}
       <Breadcrumb
         breadcrumbList={[

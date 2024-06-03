@@ -8,12 +8,12 @@ import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyF
 import {
   bannerData,
   importantFeatures,
+  keyFeatureSchema,
   keyProductSectionData,
   manageInfoCard,
   oneUltimatePlatform,
   seamlessIntegration,
 } from "@/static/json/dashboard";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -23,26 +23,24 @@ export default function Dashboard() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("hyperLocations");
   const getItemListSchemaData = () => {
-    if (Object.keys(manageInfoCard?.sectionData).length !== 0) {
-      const cardData = Object.keys(manageInfoCard?.sectionData);
-      const itemListData = cardData.map((item, index) => {
+    if (keyFeatureSchema.length !== 0) {
+      const itemListData = keyFeatureSchema.map((item, index) => {
         return {
-          "@type": "management",
-          headline: manageInfoCard?.sectionData[item]?.title,
-          url: `https://sekel.tech/product/dashboard`,
+          "@type": "ListItem",
+          name: item?.name,
+          description: item?.description,
         };
       });
       const itemSchemaData = `
         {
-            "@context": "https://schema.org",
-            "@type": "Dashboard",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://sekel.tech/product/dashboard"
-            },
-            "name": "Key product features",
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500",
-            "blogPosts": ${JSON.stringify(itemListData)}
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "url": "https://sekel.tech/product/dashboard",
+          "itemListOrder": "http://schema.org/ItemListOrderAscending",
+          "numberOfItems": ${keyFeatureSchema.length},
+          "name": "Key product features",
+          "description": "Explore limitless possibilities with our unified dashboard – Discovery, Data & Demand. In 360 (Degree Sign) approach.",
+          "itemListElement": ${JSON.stringify(itemListData)}
           }
           `;
       return itemSchemaData;
@@ -50,21 +48,27 @@ export default function Dashboard() {
     return null;
   };
 
-  function addBlogJsonLd() {
+  function addKeyFeatureSchema() {
     return {
       __html: getItemListSchemaData(),
     };
   }
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={addBlogJsonLd()}
-          key="blog-jsonld"
-        />
-      </Head>
-      <HeadSection title={bannerData?.title} />
+      <HeadSection
+        title={bannerData?.title}
+        renderSchemaContent={() => {
+          return (
+            <>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={addKeyFeatureSchema()}
+                key="key-feature"
+              />
+            </>
+          );
+        }}
+      />
       <Banner
         {...bannerData}
         containerStyle="container flex-col mx:w-full items-center text-center pt-[56px]"

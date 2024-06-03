@@ -16,6 +16,8 @@ import Image from "next/image";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import { useRouter } from "next/router";
+import HeadSection from "@/Components/HeadSection";
+import { useMemo } from "react";
 
 const Demand = () => {
   const router = useRouter();
@@ -49,8 +51,45 @@ const Demand = () => {
     );
   };
 
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/demand",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: demandGenerationFeature?.cardData?.length,
+      name: "Demand Generation - Empowering Demand in a Hyperlocal World",
+      description:
+        "Unlock demand like never before with Sekel Tech's Hyperlocal Dynamic Engagement Commerce platform. Unleash the potential of privacy sandbox retargeting, transforming unknown leads into valuable connections. Join us in revolutionising the way you engage with your audience!",
+      itemListElement: demandGenerationFeature?.cardData?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.title,
+          description: item?.description,
+        };
+      }),
+    };
+  }, []);
+
   return (
     <>
+      <HeadSection
+        {...bannerDemand}
+        renderSchemaContent={() => {
+          return (
+            <>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(itemListSchema),
+                }}
+                key="list-item"
+              />
+            </>
+          );
+        }}
+      />
       <Banner
         {...bannerDemand}
         sectionSty="py-[50px] lg:py-[65px] xl:pb-[100px] lg:pt-[52px]"

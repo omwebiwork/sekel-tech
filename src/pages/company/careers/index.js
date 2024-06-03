@@ -12,7 +12,7 @@ import {
   ourCulture,
   weCommunicate,
 } from "@/static/json/careers";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import HeadSection from "@/Components/HeadSection";
@@ -101,6 +101,26 @@ const Careers = () => {
       currentCategory.filter
   );
 
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/careers",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: jobList?.length,
+      name: "We are Hiring | Sekel Tech Careers",
+      description:
+        "Discover career opportunities at Sekel Tech, shaping the future of innovative tech. Join us for growth, collaboration, and success. Explore open positions!",
+      itemListElement: jobList?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.attributes?.position,
+          url: `https://sekel.tech/careers/${item.attributes?.slug}`,
+        };
+      }),
+    };
+  }, [jobList]);
   return (
     <>
       <HeadSection
@@ -108,6 +128,15 @@ const Careers = () => {
         description="Discover career opportunities at Sekel Tech, shaping the future of innovative tech. Join us for growth, collaboration, and success. Explore open positions!"
         canonical="https://sekel.tech/company/careers"
         img="/logo.svg"
+        renderSchemaContent={() => (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(itemListSchema),
+            }}
+            key="list-item"
+          />
+        )}
       />
       {loaderStat && <Loader />}
       <Banner
@@ -370,9 +399,7 @@ const Careers = () => {
           } else {
             return (
               <div className="flex pt-10 flex-wrap items-center justify-center">
-                <p className="text-xl font-bold">
-                  No Open Positions!
-                </p>
+                <p className="text-xl font-bold">No Open Positions!</p>
               </div>
             );
           }

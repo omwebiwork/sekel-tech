@@ -18,22 +18,47 @@ import {
 } from "@/static/json/partnerProgramme";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useMemo } from "react";
 
 const PartnerProgramme = () => {
   const router = useRouter();
-  // const getJsonLd = () => {
-  //   const schema = getItemListSchemaData({
-  //     cardData: retailSuccess?.cardDataList,
-  //     ...retailSuccess?.sectionData,
-  //   });
-  //   const featureSchema = getItemListSchemaData({
-  //     cardData: accelerateAgency?.growthCardList,
-  //     ...accelerateAgency.sectionData,
-  //   });
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/home/company/partner-programme",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: "6",
+      name: "Expand your Reach",
+      description:
+        "Elevate your agency’s success by reselling our pioneering Hyperlocal Marketing services. Join our Partner Program for smart hyperlocal and new revenue streams.",
+      itemListElement: accelerateAgency?.growthCardList?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: accelerateAgency?.growthCardList?.title,
+          description: accelerateAgency?.growthCardList?.description,
+        };
+      }),
+    };
+  }, []);
 
-  //   return [schema, featureSchema];
-  // };
+  const faqListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: questionAnswers?.list?.map((item, index) => {
+        return {
+          "@type": "Question",
+          name: item?.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item?.answer,
+          },
+        };
+      }),
+    };
+  }, []);
   return (
     <div>
       <HeadSection
@@ -41,8 +66,24 @@ const PartnerProgramme = () => {
         description="Become a Sekel Tech Partner Today. Increase your revenue, enhance your portfolio, and help your clients with our innovative solutions."
         canonical={`https://sekel.tech/company/partner-programme`}
         img="/logo.svg"
-        // addItemListScript={true}
-        // itemListJsonLd={getJsonLd()}
+        renderSchemaContent={() => (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(itemListSchema),
+              }}
+              key="list-item"
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(faqListSchema),
+              }}
+              key="faq-list"
+            />
+          </>
+        )}
       />
       <Banner
         {...expendYourReach}
@@ -59,7 +100,10 @@ const PartnerProgramme = () => {
         breadcrumbList={[
           { link: "/", label: "Home" },
           { link: "/", label: "Company" },
-          { link: "/company/partner-programme", label: "Partnership Programme" },
+          {
+            link: "/company/partner-programme",
+            label: "Partnership Programme",
+          },
         ]}
       />
       <CardSection

@@ -18,10 +18,30 @@ import {
 } from "@/static/json/sellrApp";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useMemo } from "react";
 
 const SellrApp = () => {
   const router = useRouter();
+
+  const sellrAppSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/product/sellrapp",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: dominateMarket?.cardDataList?.length,
+      name: dominateMarket?.sectionData?.title,
+      description: dominateMarket?.sectionData?.description,
+      itemListElement: dominateMarket?.cardDataList?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.title,
+          description: item?.description,
+        };
+      }),
+    };
+  }, []);
 
   const renderCard = () => {
     return (
@@ -59,7 +79,22 @@ const SellrApp = () => {
 
   return (
     <div>
-      <HeadSection {...bannerOneApp}/>
+      <HeadSection
+        {...bannerOneApp}
+        renderSchemaContent={() => {
+          return (
+            <>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(sellrAppSchema),
+                }}
+                key="list-item"
+              />
+            </>
+          );
+        }}
+      />
       <Banner
         {...bannerOneApp}
         containerStyle="container justify-between max-md:flex-wrap"

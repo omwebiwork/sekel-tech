@@ -3,39 +3,36 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 function HeadSection({
-  title='',
-  description='',
+  title = "",
+  description = "",
   canonical = "https://sekel.tech/",
   img = "/logo.svg",
-  addItemListScript = false,
-  itemListJsonLd = [],
+  renderSchemaContent,
 }) {
   const router = useRouter();
 
   const getBreadcrumbList = () => {
     const path = router.asPath;
-    const pathList = path.split("/");
+    const pathList = path?.split("/");
     const itemList = pathList.map((item, index) => {
       return {
         "@type": "ListItem",
         position: index + 1,
         item: {
           "@id":
-            item.trim().length === 0
-              ? "https://sekel.tech/"
-              : index === 1
-              ? `https://sekel.tech/${item.trim()}`
-              : index === 2
-              ? `https://sekel.tech/${pathList[1]}/${item.trim()}`
+            item.trim() !== "product" &&
+            item.trim() !== "company" &&
+            item?.trim()?.length > 0
+              ? `https://sekel.tech${path?.split(`/${item}`)[0]}/${item.trim()}`
               : "https://sekel.tech/",
           name:
-            item.trim().length === 0
-              ? "Home"
-              : item
+            item?.trim()?.length > 0
+              ? item
                   .toLowerCase()
                   .split("-")
                   .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" "),
+                  .join(" ")
+              : "Home",
         },
       };
     });
@@ -45,33 +42,32 @@ function HeadSection({
   function addOrganizationJsonLd() {
     return {
       __html: `{
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Sekel Tech",
-                "url": "https://sekel.tech",
-                "logo": "https://sekel.tech/img/sekel-logo.svg",
-                "contactPoint": [{
-                  "@type": "ContactPoint",
-                  "telephone": "794-256-9371",
-                  "contactType": "customer service",
-                  "areaServed": "IN",
-                  "availableLanguage": ["en","Hindi"]
-                },{
-                  "@type": "ContactPoint",
-                  "telephone": "794-256-9371",
-                  "contactType": "sales",
-                  "areaServed": "IN",
-                  "availableLanguage": ["en-US","Hindi"]
-                }],
-                "sameAs": [
-                  "https://facebook.com/SekelTechOfficial",
-                  "https://twitter.com/SekelTech",
-                  "https://instagram.com/Sekeltech",
-                  "https://www.youtube.com/@Niftywindow",
-                  "https://in.linkedin.com/company/nifty-window",
-                  "https://sekel.tech"
-                ]
-              }
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Sekel Tech",
+        "url": "https://sekel.tech",
+        "logo": "https://sekel.tech/img/sekel-logo.svg",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+917942569371",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en","Hindi"]
+        },{
+          "@type": "ContactPoint",
+          "telephone": "+917942569371",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["en-US","Hindi"]
+        }],
+        "sameAs": [
+          "https://facebook.com/SekelTechOfficial",
+          "https://twitter.com/SekelTech",
+          "https://instagram.com/Sekeltech",
+          "https://www.youtube.com/@Niftywindow",
+          "https://in.linkedin.com/company/nifty-window"
+        ]
+      }      
             `,
     };
   }
@@ -156,15 +152,7 @@ function HeadSection({
         dangerouslySetInnerHTML={addBreadcrumbJsonLd()}
         key="breadcrumb-jsonld"
       />
-      {/* {
-                addItemListScript ? itemListJsonLd.map((item, index) => (
-                    <script
-                        key={`-item-list-jsonld-${index}`}
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: item }}
-                    />
-                )) : null
-            } */}
+      {renderSchemaContent && renderSchemaContent()}
     </Head>
   );
 }

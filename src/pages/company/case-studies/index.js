@@ -11,7 +11,7 @@ import {
   totalPagesCount,
 } from "@/constants/pagination";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const baseURLCaseStudy = `${process.env.STRAPI_PATH}/case-studies?populate[0]=case_study_category&populate[1]=featureImage&populate[2]=storeLogo&sort=publishedAt:desc&pagination[limit]=${PER_PAGE_FIRST}`;
 
@@ -92,6 +92,27 @@ const CaseStudy = () => {
     setcurrentPageNo(1);
     getCaseStudyByCategory(activeState, 0);
   }, [activeState]);
+
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/company/case-studies",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: pagesCount,
+      name: "Sekel Tech - Case Study",
+      description:
+        "Explore how Sekel Tech's innovative solutions transformed businesses with our compelling case study. Learn how our expertise can drive your success.",
+      itemListElement: caseStudyList?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: `${item?.attributes?.brandName} Case Study`,
+          url: `https://sekel.tech/company/case-studies/${item?.attributes?.slug}`,
+        };
+      }),
+    };
+  }, [caseStudyList]);
   return (
     <>
       <HeadSection
@@ -99,6 +120,17 @@ const CaseStudy = () => {
         description="Explore how Sekel Tech's innovative solutions transformed businesses with our compelling case study. Learn how our expertise can drive your success."
         canonical="https://sekel.tech/company/case-studies"
         img="/logo.svg"
+        renderSchemaContent={() => (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(itemListSchema),
+              }}
+              key="list-item"
+            />
+          </>
+        )}
       />
       {loaderStat && <Loader />}
       <section>
