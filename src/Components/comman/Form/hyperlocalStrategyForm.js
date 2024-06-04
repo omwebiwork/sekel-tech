@@ -24,7 +24,7 @@ const HyperlocalStrategyForm = ({
       <div className={`${containerSty}`}>
         {title && (
           <p
-            className={`${newsTitle} max-lg:mb-5 max-lg:text-center text-[28px] font-medium`}
+            className={`${newsTitle} max-lg:mb-5 max-lg:text-start text-[28px] font-medium`}
           >
             {title}
           </p>

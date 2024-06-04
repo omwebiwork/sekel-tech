@@ -160,9 +160,10 @@ const Video = () => {
           { link: "/company/gallery", label: "Gallery" },
         ]}
       />
-      <section className="pb-[50px]">
+      <section className="pb-[50px] max-lg:min-h-[600px]">
         <SidebarSection
           sidebarTitle="Gallery"
+          sliderBtnSty="max-lg:flex max-lg:flex-col"
           sidebarFilterData={[
             {
               label: "All Topics",

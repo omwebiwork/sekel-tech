@@ -92,13 +92,14 @@ const ContentDetailsSection = ({
                   <h4 className="text-[28px] font-medium text-black-33 max-md:mb-10 mb-3">
                     {heading}
                   </h4>
-                  <div className="grid grid-cols-12 gap-4 md:gap-8 lg:gap-2">
+                  <div className="max-lg:flex  max-lg:overflow-auto lg:grid lg:grid-cols-12 gap-4 md:gap-8 lg:gap-2
+                  ">
                     {similarContentList &&
                       similarContentList.map((item, index) => {
                         return (
                           <div
                             key={index}
-                            className="col-span-6 lg:col-span-12 mb-[52px]"
+                            className="max-lg:min-w-[200px] max-lg:max-w-[200px]  md:col-span-6 lg:col-span-12 mb-[52px]"
                           >
                             {renderElement && renderElement(item, index)}
                           </div>

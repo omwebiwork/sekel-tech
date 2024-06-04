@@ -27,7 +27,7 @@ const Pagination = ({
             <button
               onClick={() => updatePage(currentPageNo - 1)}
               disabled={currentPageNo === 1}
-              class="flex items-center p-1.5 justify-center w-[32px] h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white mr-5 disabled:opacity-40 disabled:cursor-not-allowed"
+              class="flex items-center p-1.5 justify-center w-[28px] h-[28px] lg:w-[32px] lg:h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white mr-1 lg:mr-5 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               <Image
                 src={"/arrow.svg"}
@@ -41,16 +41,16 @@ const Pagination = ({
               typeof item === "number" ? (
                 <button
                   onClick={() => updatePage(item)}
-                  className={`flex items-center justify-center p-2 mx-1.5 text-[16px] font-semibold rounded-full ${
+                  className={`flex items-center justify-center p-2 mx-1 lg:mx-1.5 text-sm lg:text-[16px] font-semibold rounded-full ${
                     currentPageNo === item
-                      ? "w-[45px] h-[45px] text-white border border-blue-900 bg-blue-900"
-                      : "w-[36px] h-[36px] text-black-33/60 border border-black-33/30 bg-white"
+                      ? "w-[36px] lg:w-[45px] h-[36px] lg:h-[45px] text-white border border-blue-900 bg-blue-900"
+                      : "w-[30px] lg:w-[36px] h-[30px] lg:h-[36px] text-black-33/60 border border-black-33/30 bg-white"
                   }`}
                 >
                   {item}
                 </button>
               ) : (
-                <button className="flex items-center justify-center p-2 w-[36px] h-[36px] mx-1.5 text-[16px] font-semibold text-black-33/60 bg-white">
+                <button className="flex items-center justify-center p-2 w-[28px] lg:w-[36px]  h-[28px] lg:h-[36px] mx-1.5 text-[16px] font-semibold text-black-33/60 bg-white">
                   ...
                 </button>
               )
@@ -59,7 +59,7 @@ const Pagination = ({
             <button
               onClick={() => updatePage(currentPageNo + 1)}
               disabled={currentPageNo === pagesCount}
-              class="flex items-center p-1.5 justify-center w-[32px] h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white ml-5 disabled:opacity-40 disabled:cursor-not-allowed"
+              class="flex items-center p-1.5 justify-center w-[28px] h-[28px] lg:w-[32px] lg:h-[32px] rounded-full text-black-33/60 border border-black-33/30 bg-white ml-1 lg:ml-5 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               <Image src={"/arrow.svg"} width={35} height={35} alt="" />
             </button>

@@ -141,6 +141,8 @@ const CaseStudy = () => {
             { link: "/company/case-studies", label: "Case Study" },
           ]}
         />
+        <div className="max-lg:min-h-[500px]">
+
         <SidebarSection
           sidebarTitle="Case Study"
           sidebarFilterData={categoryList}
@@ -148,7 +150,7 @@ const CaseStudy = () => {
             setActiveState(e);
           }}
           cardContainerSty="grid grid-cols-12 gap-x-4 lg:gap-x-8"
-          sliderColSty="col-span-12 pb-[25px] xl:pb-[50px] pt-[50px] xl:pt-[100px] lg:flex items-center justify-between"
+          sliderColSty="col-span-12 pb-[25px] xl:pb-[50px] pt-[50px] xl:pt-[100px] lg:flex items-center justify-between max-lg:relative"
           galleryColSty="col-span-12 lg:pt-[10px] xl:pt-[100px]"
           galleryBoxSty=""
           sliderTabSty="my-2 lg:mt-0 lg:mb-0 max-lg:w-full text-left"
@@ -196,13 +198,14 @@ const CaseStudy = () => {
             )
           }
         />
+        </div>
       </section>
       <Pagination
         pagesCount={pagesCount}
         handleUpdatePage={updateParent}
         currentPageNo={currentPageNo}
       />
-      <LovedThisContent loveDesSty="text-black-33 max-lg:mb-5 text-base lg:max-w-[570px] font-medium" />
+      <LovedThisContent loveDesSty="max-lg:text-start text-black-33 max-lg:mb-5 text-base lg:max-w-[570px] font-medium" />
     </>
   );
 };
