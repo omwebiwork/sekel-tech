@@ -13,14 +13,16 @@ const SidebarSection = ({
   sliderColSty = "col-span-12 lg:col-span-4 pt-[50px] lg:pt-[100px] max-lg:relative",
   galleryColSty = "col-span-12 lg:col-span-8 pt-[50px] lg:pt-[100px]",
   galleryBoxSty = "",
+  defaultActive = "all",
   sliderBtnSty = "",
   sliderMainRow = "grid grid-cols-12 gap-6",
   sliderTabSty = "mb-3 lg:mb-6",
   sideTitleSty = "text-[42px] font-medium tracking-tighter mb-[52px]",
   sliderActTabSty = "mb-3 lg:mb-6",
+  buttonActiveSty = "py-2 px-4 lg:px-4",
 }) => {
   const router = useRouter();
-  const [currentFilter, setCurrentFilter] = useState("all");
+  const [currentFilter, setCurrentFilter] = useState(defaultActive);
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const handleFilter = useCallback(
@@ -35,6 +37,7 @@ const SidebarSection = ({
       setCurrentFilter(router.query.id);
     }
   }, [router?.query?.id]);
+
   return (
     <div className="container">
       <div className={sliderMainRow}>
@@ -48,9 +51,15 @@ const SidebarSection = ({
             )}
           </div>
           {sidebarFilterData?.length > 0 && (
-            <div className={`
-            ${openDropdown ? "max-lg:bg-white shadow rounded-lg max-lg:absolute max-lg:left-0 max-lg:right-0 max-lg:z-50 max-lg:max-h-[400px] max-lg:overflow-y-auto":""}
-             ${sliderBtnSty}`}>
+            <div
+              className={`
+            ${
+              openDropdown
+                ? "max-lg:bg-white shadow rounded-lg max-lg:absolute max-lg:left-0 max-lg:right-0 max-lg:z-50 max-lg:max-h-[400px] max-lg:overflow-y-auto"
+                : ""
+            }
+             ${sliderBtnSty}`}
+            >
               {sidebarFilterData?.map((item, index) => (
                 <div
                   className={`${
@@ -92,11 +101,11 @@ const SidebarSection = ({
                         )}
                       </p>
                     }
-                    clsStyle={`max-lg:w-full max-lg:text-left py-2 border-transparent px-4 lg:px-4 text-sm whitespace-nowrap tracking-tight leading-[140%] text-black-3 block ${
+                    clsStyle={`max-lg:w-full max-lg:text-left text-sm border-transparent whitespace-nowrap tracking-tight leading-[140%] text-black-3 block ${
                       item?.value === currentFilter ||
                       item?.attributes?.slug === currentFilter
-                        ? "bg-yellow-100 max-lg:bg-white max-lg:border-gray-400 max-lg:w-full max-lg:text-start border-yellow-900"
-                        : "text-black-33 border border-transparent"
+                        ? `bg-yellow-100 max-lg:bg-white max-lg:border-gray-400 max-lg:w-full max-lg:text-start border-yellow-900 ${buttonActiveSty}`
+                        : "text-black-33 border border-transparent py-2 px-4 lg:px-4"
                     }`}
                   />
                 </div>

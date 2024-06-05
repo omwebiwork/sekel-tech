@@ -15,13 +15,9 @@ import {
   seamlessIntegration,
 } from "@/static/json/contactUs";
 import HeadSection from "@/Components/HeadSection";
-import UserDetailPopUp from "@/Components/comman/UserDetailPopUp";
-import Modal from "@/Components/comman/Modal";
-import LetConnectPopUp from "@/Components/comman/LetConnectPopUp";
 
 const ContactUs = () => {
   const [accordianState, setAccordianState] = useState({ 0: false });
-
   let handleAccordian = (index) => {
     if (accordianState?.[index]) {
       setAccordianState({ [index]: false });
@@ -47,18 +43,6 @@ const ContactUs = () => {
   }
   return (
     <>
-      <Modal
-        open={true}
-        // onClose={handleClose}
-        className="share-modal"
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sectionSty="fixed bg-black-900/40 left-0 top-0 right-0 bottom-0 h-[100vh] w-full z-[99999] flex items-center justify-center p-10"
-        boxStyle="max-w-[800px] p-[70px] rounded-[25px] max-h-[calc(100vh_-_80px)] bg-white w-full relative"
-        arrowBtnSty=""
-      >        
-        <UserDetailPopUp />
-      </Modal>
       <HeadSection
         title="Consult Us for a Free Hyperlocal Audit | Sekel Tech"
         description="Transform your retail journey with Sekel Tech. Contact us for a seamless online presence, efficient store orders, and an enriched online-to-offline experience."
