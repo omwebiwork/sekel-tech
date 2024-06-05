@@ -21,7 +21,7 @@ function VideoCard({ videoData = {} }) {
   // };
   return (
     <div>
-      <div className="h-[150px] sm:h-[180px] md:h-[200px] lg:h-[15rem] w-full relative rounded-lg border border-[#C0C0C0] overflow-hidden">
+      <div className="h-[150px] sm:h-[180px] md:h-[200px] lg:h-[15rem] w-full relative rounded-lg border border-gray-coc overflow-hidden">
         <Player
           ref={playerRef}
           // onPlay={handleOnPlay}

@@ -19,7 +19,10 @@ module.exports = {
       white: "#ffffff",
       primary: "#fdbc4d",
       secondary: "#231f20",
-      secondPrimary :"#bd5acb",
+      secondPrimary: "#bd5acb",
+      light: {
+        secondary: "#564D4F",
+      },
       blue: {
         900: "#2C74F7",
         600: "#2670FB",
@@ -37,7 +40,9 @@ module.exports = {
       },
       gray: {
         400: "#EAEAEA",
+        300: "#949494",
         100: "#F9FAFD",
+        coc: "#C0C0C0",
       },
       red: {
         600: "#ff0000",
