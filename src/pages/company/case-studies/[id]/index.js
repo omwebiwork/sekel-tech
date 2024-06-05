@@ -67,17 +67,17 @@ const CaseStudyDetails = () => {
         description={caseStudyDetails?.meta_description}
         canonical={`https://sekel.tech/company/case-studies/${router.query.id}`}
         img="/logo.svg"
-        renderSchemaContent={() => (
-          <>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(itemListSchema),
-              }}
-              key="list-item"
-            />
-          </>
-        )}
+        // renderSchemaContent={() => (
+        //   <>
+        //     <script
+        //       type="application/ld+json"
+        //       dangerouslySetInnerHTML={{
+        //         __html: JSON.stringify(itemListSchema),
+        //       }}
+        //       key="list-item"
+        //     />
+        //   </>
+        // )}
       />
       {loaderStat && <Loader />}
       <StoreDetailBanner
@@ -311,7 +311,7 @@ const CaseStudyDetails = () => {
           </div>
         </div>
       </section>
-      <LovedThisContent loveDesSty="text-black-33 text-base lg:max-w-[570px] font-medium" />
+      <LovedThisContent loveDesSty="max-lg:text-start text-black-33 text-base lg:max-w-[570px] font-medium" />
     </>
   );
 };

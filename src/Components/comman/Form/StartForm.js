@@ -60,7 +60,7 @@ const GetStartForm = ({
           setIsLoading(true);
           const pageList = router.asPath.split("/");
           const pageName = pageList.pop();
-          const result = await getQuote({...values});
+          const result = await getQuote({...values.email});
           setIsLoading(false);
           if (result.status === 200 || result.data.success === true) {
             enqueueSnackbar("Mail sent successfully.", {

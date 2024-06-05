@@ -10,7 +10,7 @@ const SidebarSection = ({
   onHandleFilter,
   renderHeaderElement,
   cardContainerSty = "grid grid-cols-12 gap-x-4 lg:gap-x-8",
-  sliderColSty = "col-span-12 lg:col-span-4 pt-[50px] lg:pt-[100px]",
+  sliderColSty = "col-span-12 lg:col-span-4 pt-[50px] lg:pt-[100px] max-lg:relative",
   galleryColSty = "col-span-12 lg:col-span-8 pt-[50px] lg:pt-[100px]",
   galleryBoxSty = "",
   sliderBtnSty = "",
@@ -48,13 +48,15 @@ const SidebarSection = ({
             )}
           </div>
           {sidebarFilterData?.length > 0 && (
-            <div className={sliderBtnSty}>
+            <div className={`
+            ${openDropdown ? "max-lg:bg-white shadow rounded-lg max-lg:absolute max-lg:left-0 max-lg:right-0 max-lg:z-50 max-lg:max-h-[400px] max-lg:overflow-y-auto":""}
+             ${sliderBtnSty}`}>
               {sidebarFilterData?.map((item, index) => (
                 <div
                   className={`${
                     item?.value === currentFilter ||
                     item?.attributes?.slug === currentFilter
-                      ? `max-lg:order-first max-lg:w-full text-left ${sliderActTabSty}`
+                      ? `max-lg:order-first max-lg:w-full text-left max-lg:sticky max-lg:top-0  ${sliderActTabSty}`
                       : `${openDropdown ? "" : "max-lg:hidden"} ${sliderTabSty}`
                   }`}
                   onClick={() => {

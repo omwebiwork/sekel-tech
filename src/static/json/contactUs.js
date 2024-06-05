@@ -16,7 +16,6 @@ export const bannerDiscoverPower = {
     width: 300,
     alt: "img",
   },
-
 };
 
 export const information = [
