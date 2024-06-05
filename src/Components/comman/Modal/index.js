@@ -6,13 +6,13 @@ const Modal = ({
   onClose,
   children,
   sectionSty = "",
-  boxStyle = "m-3",
+  boxStyle = "",
   showArrowButton = false,
   showCloseButton = false,
 }) => {
   return (
     <section className={`${sectionSty} ${open ? "mb-[24px]" : "hidden"}`}>
-      <div className={`${boxStyle} overflow-y-auto`}>
+      <div className={`${boxStyle}`}>
         <button
           className={`${
             showArrowButton ? "" : "hidden"

@@ -48,9 +48,22 @@ const PrivacyPolicy = () => {
           onHandleFilter={(e) => {
             router.push(`/${e}`);
           }}
-          renderElement={() => <div>
-            
-          </div>}
+          renderElement={() => (
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-[28px] leading-[140%] font-medium mb-8">Privacy Policy</h2>
+                <p>Last Updated: 27 September 2018</p>
+              </div>
+              <p>
+                This Privacy Policy describes the policies and procedures of
+                Sekel Tech (India) Private Limited (“we”, “our” or “us”) on the
+                collection, use and disclosure of your personal information on
+                https://sekel.tech (the “Site”) and the services, features,
+                content or applications we offer (collectively with the Site,
+                the “Services”).
+              </p>
+            </div>
+          )}
         />
       </section>
       <HyperlocalStrategyForm />

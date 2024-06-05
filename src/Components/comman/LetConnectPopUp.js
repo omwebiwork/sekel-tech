@@ -18,7 +18,7 @@ function LetConnectPopUp({ handleEnquiryOpen }) {
   const router = useRouter();
 
   return (
-    <div className="w-[28rem] max-sm:w-[24rem] bg-white shadow-[2px_2px_13px_-1px_rgba(0,0,0,0.25)] rounded-[20px]">
+    <div className="w-[28rem] max-sm:w-[24rem] bg-white shadow-[2px_2px_13px_-1px_rgba(0,0,0,0.25)] rounded-[20px] m-3">
       <div className="flex px-6 py-8 flex-col text-left w-full">
         <h1 className="font-bold text-secondary text-[24px] mb-21">
           {`Let's `}Connect
