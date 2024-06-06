@@ -17,7 +17,15 @@ import Image from "next/image";
 import React, { useState, useCallback, useMemo } from "react";
 
 const Data = () => {
-  const [itemShow, setItemShow] = useState(4);
+  const [knowMore, setKnowMore] = useState(false);
+
+  const handleKnowMore = useCallback((index) => {
+    if (knowMore[index]) {
+      setKnowMore({ [index]: false });
+    } else {
+      setKnowMore({ [index]: true });
+    }
+  });
 
   const renderDiscoveryFeature = () => {
     return (
@@ -230,37 +238,21 @@ const Data = () => {
         headingSty=""
         titleSty="text-[20px] md:text-[28px] font-medium mb-8 lg:mb-20 leading-[140%] tracking-tighter text-black-33 max-w-[900px]"
         renderElement={() => (
-          <>
-            <div className="grid grid-cols-2 gap-4 lg:gap-0 md:grid-cols-3 lg:grid-cols-4">
-              {systematicGathering?.cardData?.map((item, index) => {
-                return (
-                  <div
-                    className={`col-span-1 max-md:[&:nth-child(1n+${
-                      itemShow + 1
-                    })]:hidden`}
-                    key={index}
-                  >
-                    <Card
-                      {...item}
-                      titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-4"
-                      headingSty="text-[18px] lg:text-[28px] font-medium leading-[140%] mb-4 text-black-900"
-                      cardSty="bg-blue-200 p-4 lg:p-6 rounded-2xl border border-white h-full"
-                      descriptionSty="text-base font-normal leading-[22px] text-black-33"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-            <button
-              onClick={() => {
-                systematicGathering?.cardData?.length > itemShow &&
-                  setItemShow(itemShow + 4);
-              }}
-              className="md:hidden mx-auto pt-8 block leading-6 text-base"
-            >
-              See More...
-            </button>
-          </>
+          <div className="grid grid-cols-2 gap-4 lg:gap-0 md:grid-cols-3 lg:grid-cols-4">
+            {systematicGathering?.cardData?.map((item, index) => {
+              return (
+                <div className="col-span-1" key={index}>
+                  <Card
+                    {...item}
+                    titleIconSty="h-[60px] w-[60px] rounded-full bg-yellow-100 flex items-center justify-center mb-4"
+                    headingSty="text-[18px] lg:text-[28px] font-medium leading-[140%] mb-4 text-black-900"
+                    cardSty="bg-blue-200 p-4 lg:p-6 rounded-2xl border border-white h-full"
+                    descriptionSty="text-base font-normal leading-[22px] text-black-33"
+                  />
+                </div>
+              );
+            })}
+          </div>
         )}
       />
 

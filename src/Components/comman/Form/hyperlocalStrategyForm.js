@@ -14,7 +14,7 @@ const HyperlocalStrategyForm = ({
   placeholder = "Enter your email",
   buttonTitle = "Get a  FREE Audit",
   containerSty = "container lg:flex lg:gap-8 items-center",
-  sectionSty = 'py-6 md:py-8 bg-yellow-100 lg:py-[18px] rounded-[14px]',
+  sectionSty = "py-6 md:py-8 bg-yellow-100 lg:py-[18px] rounded-[14px]",
   showForm = true,
   newsTitle = "text-blue-600",
 }) => {
@@ -26,7 +26,7 @@ const HyperlocalStrategyForm = ({
       <div className={`${containerSty}`}>
         {title && (
           <p
-            className={`${newsTitle} max-lg:mb-5 max-lg:text-start text-[28px] font-medium`}
+            className={`${newsTitle} max-lg:mb-5 max-lg:text-center text-[28px] font-medium`}
           >
             {title}
           </p>

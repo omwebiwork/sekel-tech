@@ -18,6 +18,7 @@ import HeadSection from "@/Components/HeadSection";
 
 const ContactUs = () => {
   const [accordianState, setAccordianState] = useState({ 0: false });
+
   let handleAccordian = (index) => {
     if (accordianState?.[index]) {
       setAccordianState({ [index]: false });

@@ -302,9 +302,7 @@ const Careers = () => {
             <GetStartForm
               formMainDiv="justify-between flex-wrap"
               buttonTitle="Search"
-              filled={false}
-              clsStyle="py-3 px-8 max-sm:w-full border-yellow-900 border-yellow-900 
-              bg-[#FCFBB3] text-black-33"
+              clsStyle="py-3 px-8 max-sm:w-full border-yellow-900"
               placeholder="All Posts"
               name="search"
               buttonActionType="button"

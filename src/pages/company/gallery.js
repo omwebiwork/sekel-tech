@@ -160,10 +160,9 @@ const Video = () => {
           { link: "/company/gallery", label: "Gallery" },
         ]}
       />
-      <section className="pb-[50px] max-lg:min-h-[600px]">
+      <section className="pb-[50px]">
         <SidebarSection
           sidebarTitle="Gallery"
-          sliderBtnSty="max-lg:flex max-lg:flex-col"
           sidebarFilterData={[
             {
               label: "All Topics",
@@ -177,7 +176,7 @@ const Video = () => {
                 data="Video"
                 clsStyle={`max-lg:w-full max-lg:text-left py-2 border-transparent px-4 lg:px-4 text-sm whitespace-nowrap tracking-tight leading-[140%] text-black-3 block ${
                   router.asPath.includes("gallery")
-                    ? "bg-yellow-100 max-lg:w-full max-lg:text-start border-yellow-900"
+                    ? "bg-yellow-100 max-lg:bg-white max-lg:border-gray-400 max-lg:w-full max-lg:text-start border-yellow-900"
                     : "text-black-33 border border-transparent"
                 }`}
                 action={() => router.push("/company/gallery")}
@@ -186,7 +185,7 @@ const Video = () => {
                 data="Photos"
                 clsStyle={`max-lg:w-full max-lg:text-left py-2 border-transparent px-4 lg:px-4 text-sm whitespace-nowrap tracking-tight leading-[140%] text-black-3 block ${
                   router.asPath.includes("photo")
-                    ? "bg-yellow-100 max-lg:w-full max-lg:text-start border-yellow-900"
+                    ? "bg-yellow-100 max-lg:bg-white max-lg:border-gray-400 max-lg:w-full max-lg:text-start border-yellow-900"
                     : "text-black-33 border border-transparent"
                 }`}
                 action={() => router.push("/company/photo")}

@@ -36,11 +36,9 @@ const Blog = () => {
   };
 
   const getBlogBySlug = (slug) => {
-    if (slug !== "all") {
-      setLoader(true);
-      setcurrentPageNo(1);
-      router.push(`/company/blog/category/${slug}`);
-    }
+    setLoader(true);
+    setcurrentPageNo(1);
+    router.push(`/company/blog/category/${slug}`);
   };
 
   // get blog category
@@ -149,10 +147,9 @@ const Blog = () => {
           { link: "/company/blog", label: "Blog" },
         ]}
       />
-      <section className="pb-[50px] max-lg:min-h-[600px]">
+      <section className="pb-[50px]">
         <SidebarSection
           sidebarTitle="Blogs"
-          sliderBtnSty="max-lg:flex max-lg:flex-col"
           sidebarFilterData={categoryList}
           onHandleFilter={(e) => {
             getBlogBySlug(e);

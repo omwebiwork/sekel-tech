@@ -311,7 +311,7 @@ const CaseStudyDetails = () => {
           </div>
         </div>
       </section>
-      <LovedThisContent loveDesSty="max-lg:text-start text-black-33 text-base lg:max-w-[570px] font-medium" />
+      <LovedThisContent loveDesSty="text-black-33 text-base lg:max-w-[570px] font-medium" />
     </>
   );
 };

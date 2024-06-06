@@ -39,10 +39,9 @@ const Integrations = () => {
       <SidebarSection
         sidebarTitle="Intigrations"
         sliderMainRow="grid grid-cols-12 gap-6 mb-10"
-        cardContainerSty="grid grid-cols-12 gap-8"
-        sliderBtnSty="max-lg:flex max-lg:flex-col"
         sidebarFilterData={integrationsFilterData}
         onHandleFilter={(e) => getIntergationByCategory(e)}
+        cardContainerSty="grid grid-cols-12 gap-8"
         renderElement={() =>
           integrationList?.length > 0 ? (
             integrationList?.map((item, index) => (
