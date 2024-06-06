@@ -166,7 +166,7 @@ export const importantFeatures = {
       label: "Role Based Access",
     },
     {
-      link: "/discovery",
+      link: "/discovery-platform/store-locator",
       label: "Store Locator",
     },
     {

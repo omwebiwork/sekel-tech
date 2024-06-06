@@ -75,7 +75,7 @@ const DataTransfer = () => {
         breadcrumbList={[
           { link: "/", label: "Home" },
           { link: "/about-us", label: "About Us" },
-          { link: "/data-erasure", label: "Data Erasure" },
+          { link: "/data-transfer", label: "Data Transfer" },
         ]}
       />
       <section className="pb-[50px] lg:pb-[100px] max-lg:min-h-[600px]">

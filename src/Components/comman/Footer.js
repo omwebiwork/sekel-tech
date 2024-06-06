@@ -255,7 +255,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href={"/company/privacy-policy"}
+                    href={"/privacy-policy"}
                     className="font-normal text-base text-black-33"
                   >
                     Privacy Policy
@@ -263,7 +263,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href={"/refund-policy"}
+                    href={"/company/refund-policy"}
                     className="font-normal text-base text-black-33"
                   >
                     Refund & Cancellation Policy

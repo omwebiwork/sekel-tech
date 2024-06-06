@@ -1,13 +1,8 @@
 import Breadcrumb from "@/Components/comman/Breadcrumb";
-import DataRequestSection from "@/Components/comman/DataRequestSection";
-import VerificationForm from "@/Components/comman/Form/VerificationForm";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
-import Modal from "@/Components/comman/Modal";
 import SidebarSection from "@/Components/comman/SidebarSection";
-import UserDetailPopUp from "@/Components/comman/UserDetailPopUp";
-import Image from "next/image";
+import { privacyPolicy } from "@/static/json/privacyPolicy";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 const PrivacyPolicy = () => {
   const router = useRouter();
@@ -18,7 +13,7 @@ const PrivacyPolicy = () => {
         breadcrumbList={[
           { link: "/", label: "Home" },
           { link: "/about-us", label: "About Us" },
-          { link: "/data-erasure", label: "Data Erasure" },
+          { link: "/privacy-policy", label: "Privacy Policy" },
         ]}
       />
       <section className="pb-[50px] lg:pb-[100px] max-lg:min-h-[600px]">
@@ -49,12 +44,14 @@ const PrivacyPolicy = () => {
             router.push(`/${e}`);
           }}
           renderElement={() => (
-            <div>
+            <div className="text-black-33">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-[28px] leading-[140%] font-medium mb-8">Privacy Policy</h2>
-                <p>Last Updated: 27 September 2018</p>
+                <h2 className="text-[28px] leading-[140%] font-medium text-black-33">
+                  Privacy Policy
+                </h2>
+                <p className="text-black-33 text-[16px]">Last Updated: 27 September 2018</p>
               </div>
-              <p>
+              <p className="text-black-33">
                 This Privacy Policy describes the policies and procedures of
                 Sekel Tech (India) Private Limited (“we”, “our” or “us”) on the
                 collection, use and disclosure of your personal information on
@@ -62,6 +59,28 @@ const PrivacyPolicy = () => {
                 content or applications we offer (collectively with the Site,
                 the “Services”).
               </p>
+
+              {privacyPolicy?.map((item, index) => (
+                <div className="py-[52px] border-b border-gray-400" key={index}>
+                  <h3 className="text-[20px] font-medium leading-[140%] text-blue-900 mb-8">
+                    {item?.title}
+                  </h3>
+                  {item?.listData?.list?.length > 0 && (
+                    <ul
+                      className={` ${item?.listData?.listSty} pl-[18px] text-black-33`}
+                    >
+                      {item?.listData?.list?.map((listItem, listIndex) => (
+                        <li className="mb-1" key={listIndex}>
+                          {listItem?.title}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item?.description && (
+                    <p className="text-black-33">{item?.description}</p>
+                  )}
+                </div>
+              ))}
             </div>
           )}
         />
