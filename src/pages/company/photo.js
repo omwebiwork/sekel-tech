@@ -79,7 +79,7 @@ function Photo() {
     <>
       <HeadSection
         title="A Visual Illustration of Innovation | Sekel Tech"
-        description="Dive into Sekel Tech's dynamic world and explore the intersections of innovation, culture, and technology in a visual showcase tailored for discovery."
+        description="Dive into Sekel Tech's dynamic world and Explore the intersections of innovation, culture, and technology in a visual showcase tailored for discovery."
         canonical="https://sekel.tech/company/photo/"
         img="/logo.svg"
         renderSchemaContent={() => (

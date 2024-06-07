@@ -1,14 +1,61 @@
+import HeadSection from "@/Components/HeadSection";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import HyperlocalSection from "@/Components/comman/Card/HyperlocalSection";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
-import { productCatalogueBanner, productCatalogueBenefits, productCatalogueHyperlocal, productCatalogueLeverage } from "@/static/json/discoveryPlatform/productCatalogue";
+import {
+  productCatalogueBanner,
+  productCatalogueBenefits,
+  productCatalogueHyperlocal,
+  productCatalogueLeverage,
+} from "@/static/json/discoveryPlatform/productCatalogue";
+import { useMemo } from "react";
 
 const ProductCatalogue = () => {
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/how-it-works/discovery-platform/product-catalogue",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: productCatalogueLeverage?.cardData?.length,
+      name: "Ways to Leverage Dynamic Hyperlocal Product Catalogues",
+      description:
+        "Sekel Tech's Dynamic Hyperlocal Product Catalogues empower brands with real-time product cataloguing, enhancing visibility and driving success in marketing.",
+      itemListElement: productCatalogueLeverage?.cardData?.map(
+        (item, index) => {
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: item?.title,
+            description: item?.description,
+          };
+        }
+      ),
+    };
+  }, []);
+
   return (
     <>
+      <HeadSection
+        title="Product Catalogue| Sekel Tech"
+        description="Sekel Tech's Dynamic Hyperlocal Product Catalogues empower brands with real-time product cataloguing, enhancing visibility and driving success in marketing."
+        canonical={`https://sekel.tech/discovery-platform/product-catalogue`}
+        img="/logo.svg"
+        renderSchemaContent={() => {
+          return (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(itemListSchema),
+              }}
+              key="list-item"
+            />
+          );
+        }}
+      />
       <Banner
         {...productCatalogueBanner}
         titleSty="text-[36px] lg:text-[54px] font-normal leading-[140%] mb-3 tracking-tighter"
@@ -26,7 +73,7 @@ const ProductCatalogue = () => {
           { link: "/", label: "Home" },
           { link: "/how-it-works", label: "How its works" },
           {
-            link: "/",
+            link: "/discovery-platform",
             label: "Discovery Platform",
           },
           {

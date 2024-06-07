@@ -73,7 +73,7 @@ const Data = () => {
     return {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      url: "https://sekel.tech/data",
+      url: "https://sekel.tech/data-platform",
       itemListOrder: "http://schema.org/ItemListOrderAscending",
       numberOfItems: dataPlatformFeatures?.cardData?.length,
       name: "Unified Data Platform - Empowering Your Insights with Data Fusion",
@@ -93,7 +93,8 @@ const Data = () => {
   return (
     <div>
       <HeadSection
-        {...bannerUnifiedData}
+        title="Unified Data Platform | Sekel Tech"
+        description="Supercharge your retail business with our Unified Data Platform. Seamlessly access, consolidate, and deploy data to elevate engagement and drive conversions."
         renderSchemaContent={() => {
           return (
             <>
@@ -108,7 +109,7 @@ const Data = () => {
           );
         }}
       />
-      <Banner
+       <Banner
         {...bannerUnifiedData}
         sectionSty="max-lg:pt-8 pb-[50px] md:pb-[60px] lg:pb-[100px] pt-20"
         containerStyle="container justify-between grid grid-cols-11 lg:gap-[30px] xl:gap-[60px]"

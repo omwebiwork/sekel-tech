@@ -72,7 +72,7 @@ const Discovery = () => {
     return {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      url: "https://sekel.tech/discovery",
+      url: "https://sekel.tech/discovery-platform",
       itemListOrder: "http://schema.org/ItemListOrderAscending",
       numberOfItems: discoveryFeature?.cardData?.length,
       name: "Discovery Platform - Building Genuine Digital Connections",
@@ -92,7 +92,8 @@ const Discovery = () => {
   return (
     <div>
       <HeadSection
-        {...bannerDiscovery}
+        title="Discovery Platform | Sekel Tech"
+        description="Sekel Tech enhances online presence, fostering genuine connections. Maximise ROAS, gain lasting benefits, and build trust in your digital space."
         renderSchemaContent={() => {
           return (
             <>
@@ -122,7 +123,7 @@ const Discovery = () => {
         breadcrumbList={[
           { link: "/", label: "Home" },
           { link: "/how-it-works", label: "how it works" },
-          { link: "/discovery", label: "Discovery Platform" },
+          { link: "/discovery-platform", label: "Discovery Platform" },
         ]}
       />
       <CardSection

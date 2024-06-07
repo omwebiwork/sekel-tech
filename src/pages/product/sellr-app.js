@@ -80,7 +80,8 @@ const SellrApp = () => {
   return (
     <div>
       <HeadSection
-        {...bannerOneApp}
+        title="SellrApp: Your All-in-One Retail Management Solution"
+        description="Transform your business with SellrApp – streamline operations, boost sales, and scale effortlessly. Sekel Tech's innovation is at your fingertips."
         renderSchemaContent={() => {
           return (
             <>

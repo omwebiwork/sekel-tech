@@ -55,7 +55,7 @@ const Demand = () => {
     return {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      url: "https://sekel.tech/demand",
+      url: "https://sekel.tech/demand-generation",
       itemListOrder: "http://schema.org/ItemListOrderAscending",
       numberOfItems: demandGenerationFeature?.cardData?.length,
       name: "Demand Generation - Empowering Demand in a Hyperlocal World",
@@ -75,7 +75,8 @@ const Demand = () => {
   return (
     <>
       <HeadSection
-        {...bannerDemand}
+        title="Demand Generation Platform | Sekel Tech"
+        description="Revolutionise audience engagement with Sekel Tech's Demand Generation Platform. Unlock hyperlocal demand, turning unknown leads into valuable connections."
         renderSchemaContent={() => {
           return (
             <>
@@ -105,7 +106,7 @@ const Demand = () => {
         breadcrumbList={[
           { link: "/", label: "Home" },
           { link: "/how-it-works", label: "How it works" },
-          { link: "/demand", label: "Demand Generation" },
+          { link: "/demand-generation", label: "Demand Generation" },
         ]}
       />
       <CardSection

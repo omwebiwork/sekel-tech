@@ -85,7 +85,7 @@ const HomeComponent = () => {
             </ul>
             <button
               className="flex gap-2 items-center text-base text-blue-900 font-medium "
-              onClick={() => router.push("/data")}
+              onClick={() => router.push("/data-platform")}
             >
               Explore our Data Platform
               <div className="h-6 w-6">

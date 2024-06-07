@@ -121,3 +121,36 @@ export const contentOptimisationUtilizing = {
     },
   ],
 };
+
+export const contentOptimisationItemSchema = [
+  {
+    name: "Research Local Trends",
+    description:
+      "Before creating content, research what’s trending in each locality. This can be based on cultural events, local news, or popular local queries.",
+  },
+  {
+    name: "Localized Content Creation",
+    description:
+      "Whether it’s a blog post about a local festival or a promotion tied to a local event, ensure relevance.",
+  },
+  {
+    name: "SEO Optimization",
+    description:
+      "Ensure that local keywords are integrated naturally into the content.",
+  },
+  {
+    name: "Stay Updated",
+    description:
+      "Local preferences & trends can change. Regularly update your content to remain current and relevant.",
+  },
+  {
+    name: "Prioritize Video Content Creation",
+    description:
+      "Dedicate resources to produce high-quality and relevant videos that highlight your business’s offerings, ensuring that the content caters to local interests and events.",
+  },
+  {
+    name: "Promote Actively on Social Media",
+    description:
+      "Use platforms popular among your target demographic to share your videos. Engage with viewers.",
+  },
+];

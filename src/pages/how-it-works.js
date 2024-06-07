@@ -46,7 +46,8 @@ export default function HowItWorks() {
   return (
     <>
       <HeadSection
-        {...bannerHowItworks}
+        title="360º Retail Journey with Sekel Tech"
+        description="Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI"
         renderSchemaContent={() => {
           return (
             <>

@@ -52,8 +52,8 @@ export default function Home() {
   return (
     <>
       <HeadSection
-        title={bannerData?.title}
-        description={bannerData?.subTitle + bannerData?.description}
+        title="Truly Intelligent Hyperlocal Platform"
+        description="Leading Retail brands to use Sekel Tech's Dashboard for Hyperlocal SEO Automation, increased Organic D2C commerce, 1st party cookies, and Remarketing at zero cost."
         renderSchemaContent={() => {
           return (
             <>

@@ -120,7 +120,7 @@ export const demandGeneration = {
         "Sekel Tech's Discovery Platform forms authentic online visibility, boosts footfall and establishes trust and authority in your category’s digital space.",
 
       buttonText: "Read More",
-      buttonAction: "/discovery",
+      buttonAction: "/discovery-platform",
       imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center",
       textContainerSty:
         "order-2 col-span-12 lg:col-span-6 h-full flex items-center",
@@ -139,7 +139,7 @@ export const demandGeneration = {
         "Seamlessly access, consolidate, and deploy data from your existing systems to supercharge discovery and engagement and get a single view of the end customer across all your digital assets.",
 
       buttonText: " Read More",
-      buttonAction: "/data",
+      buttonAction: "/data-platform",
       imageContentSty: "col-span-12 lg:col-span-6 h-full flex items-center",
       textContainerSty: "col-span-12 lg:col-span-6 h-full  flex items-center ",
       imageContainerSty: "lg:max-h-[414px] w-full lg:max-w-[540px] mx-auto",
@@ -155,7 +155,7 @@ export const demandGeneration = {
       description:
         "Revolutionize your local Demand Generation strategy with Sekel Tech's Hyperlocal Dynamic Engagement Commerce Platform, boosting customer engagement and ROAS.",
       buttonText: " Read More",
-      buttonAction: "/demand",
+      buttonAction: "/demand-generation",
       imageContentSty: "order-1 col-span-12 lg:col-span-6 h-full flex items-center",
       textContainerSty: "order-2 col-span-12 lg:col-span-6 h-full flex items-center",
       imageContainerSty: "lg:max-h-[361px] w-full lg:max-w-[638px] mx-auto",

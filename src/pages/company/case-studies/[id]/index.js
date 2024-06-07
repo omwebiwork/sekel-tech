@@ -63,7 +63,7 @@ const CaseStudyDetails = () => {
   return (
     <>
       <HeadSection
-        title={`${caseStudyDetails?.brandName} Case Study | Sekel Tech`}
+        title={`${caseStudyDetails?.meta_title}`}
         description={caseStudyDetails?.meta_description}
         canonical={`https://sekel.tech/company/case-studies/${router.query.id}`}
         img="/logo.svg"

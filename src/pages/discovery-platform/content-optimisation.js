@@ -1,13 +1,58 @@
+import HeadSection from "@/Components/HeadSection";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
-import { contentOptimisationBanner, contentOptimisationBenefits, contentOptimisationUtilizing } from "@/static/json/discoveryPlatform/contentOptimisation";
-CardSection
+import {
+  contentOptimisationBanner,
+  contentOptimisationBenefits,
+  contentOptimisationItemSchema,
+  contentOptimisationUtilizing,
+} from "@/static/json/discoveryPlatform/contentOptimisation";
+import { useMemo } from "react";
+CardSection;
 const contentOptimisation = () => {
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/how-it-works/discovery-platform/content-optimisation",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: "6",
+      name: "Tips for Utilizing Content Optimization",
+      description:
+        "Optimise your content with Sekel Tech. Attract visitors, build trust, and enhance SEO with a localised microsite experience. Boost visibility and engagement.",
+      itemListElement: contentOptimisationItemSchema?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.title,
+          description: item?.description,
+        };
+      }),
+    };
+  }, []);
+
   return (
     <>
+      <HeadSection
+        title="Customer Relation Management | Sekel Tech"
+        description="Transform retail with Sekel's AI-Powered Customer Relation Management. Effortlessly connect with your customer base at scale, boosting engagement and sales."
+        canonical={`https://sekel.tech/discovery-platform/content-optimisation`}
+        img="/logo.svg"
+        renderSchemaContent={() => {
+          return (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(itemListSchema),
+              }}
+              key="list-item"
+            />
+          );
+        }}
+      />
       <Banner
         {...contentOptimisationBanner}
         titleSty="text-[36px] lg:text-[54px] font-normal leading-[140%] mb-3 tracking-tighter"
@@ -25,12 +70,12 @@ const contentOptimisation = () => {
           { link: "/", label: "Home" },
           { link: "/how-it-works", label: "How its works" },
           {
-            link: "/",
+            link: "/discovery-platform",
             label: "Discovery Platform",
           },
           {
             link: "/discovery-platform/content-optimisation",
-            label: "Content Optimisation",
+            label: "Content Optimization",
           },
         ]}
       />

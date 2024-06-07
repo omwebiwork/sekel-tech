@@ -162,7 +162,7 @@ export const importantFeatures = {
   },
   list: [
     {
-      link: "/data",
+      link: "/data-platform",
       label: "Role Based Access",
     },
     {
@@ -170,7 +170,7 @@ export const importantFeatures = {
       label: "Store Locator",
     },
     {
-      link: "/demand",
+      link: "/demand-generation",
       label: "Store2Door Omni Commerce",
     },
   ],

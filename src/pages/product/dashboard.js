@@ -56,7 +56,8 @@ export default function Dashboard() {
   return (
     <>
       <HeadSection
-        title={bannerData?.title}
+        title="Unified Dashboard - All Your CDP, CRM Data in One Place"
+        description="Explore limitless possibilities with our unified dashboard – Discovery, Data & Demand In 360 (Degree Sign) approach."
         renderSchemaContent={() => {
           return (
             <>

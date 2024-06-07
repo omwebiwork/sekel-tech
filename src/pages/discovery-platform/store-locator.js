@@ -1,3 +1,4 @@
+import HeadSection from "@/Components/HeadSection";
 import Banner from "@/Components/comman/Banner";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import Card from "@/Components/comman/Card";
@@ -10,10 +11,48 @@ import {
   storeLocatorLeverage,
   storeLocatoreBanner,
 } from "@/static/json/discoveryPlatform/storeLocator";
+import { useMemo } from "react";
 
 const StoreLocator = () => {
+  const itemListSchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: "https://sekel.tech/how-it-works/discovery-platform/store-locator",
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: storeLocatorLeverage?.cardData?.length,
+      name: "Ways to Leverage Dynamic Hyperlocal Store Locator",
+      description:
+        "Easily find your nearest store with Sekel Tech's Dynamic Hyperlocal Store Locator. Enhance the customer experience and boost sales.",
+      itemListElement: storeLocatorLeverage?.cardData?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.title,
+          description: item?.description,
+        };
+      }),
+    };
+  }, []);
   return (
     <>
+      <HeadSection
+        title={`Store Locator| Sekel Tech`}
+        description="Easily find your nearest store with Sekel Tech's Dynamic Hyperlocal Store Locator. Enhance the customer experience and boost sales."
+        canonical={`https://sekel.tech/discovery-platform/store-locator`}
+        img="/logo.svg"
+        renderSchemaContent={() => {
+          return (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(itemListSchema),
+              }}
+              key="list-item"
+            />
+          );
+        }}
+      />
       <Banner
         {...storeLocatoreBanner}
         titleSty="text-[36px] lg:text-[54px] font-normal leading-[140%] mb-3 tracking-tighter"
@@ -31,7 +70,7 @@ const StoreLocator = () => {
           { link: "/", label: "Home" },
           { link: "/how-it-works", label: "How its works" },
           {
-            link: "/",
+            link: "/discovery-platform",
             label: "Discovery Platform",
           },
           {

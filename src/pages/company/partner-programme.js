@@ -60,8 +60,8 @@ const PartnerProgramme = () => {
   return (
     <div>
       <HeadSection
-        title={`Partner Program | Expand Your Network With Sekel Tech`}
-        description="Become a Sekel Tech Partner Today. Increase your revenue, enhance your portfolio, and help your clients with our innovative solutions."
+        title='Sekel Tech Partner Program: Unlock Growth & Deliver Value'
+        description="Join Sekel Tech's Partner Program to unlock growth opportunities for your business and deliver enhanced value to your clients. Join today!"
         canonical={`https://sekel.tech/company/partner-programme`}
         img="/logo.svg"
         renderSchemaContent={() => (
