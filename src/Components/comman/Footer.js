@@ -106,12 +106,6 @@ const Footer = () => {
                     open["company"] ? "" : "max-md:hidden"
                   } lg:mb-[52px]`}
                 >
-                  <p className="font-normal text-base leading-[140%] mb-3 text-black-33">
-                    Partner Programme Page
-                  </p>
-                  <p className="font-normal text-base leading-[140%] mb-3 text-black-33">
-                    Competitio n Comparison Page
-                  </p>
                   {company?.map((item, index) =>
                     renderNavigationLinks(item?.redirectPath, item?.name, index)
                   )}
@@ -119,17 +113,17 @@ const Footer = () => {
                 <div className="hidden md:flex items-center gap-3">
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">
                     <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://twitter.com/SekelTech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://twitter.com/SekelTech"
                     >
-                    <Image
-                      className="h-full w-full"
-                      src={"/x-icon.png"}
-                      height={32}
-                      width={32}
-                      alt="footer-logo"
-                    />
+                      <Image
+                        className="h-full w-full"
+                        src={"/x-icon.png"}
+                        height={32}
+                        width={32}
+                        alt="footer-logo"
+                      />
                     </Link>
                   </div>
                   <div className="rounded-full overflow-hidden h-8 w-8 min-w-8">

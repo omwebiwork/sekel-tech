@@ -199,7 +199,7 @@ export const chooseSellrApp = {
   list: {
     leftContent: [
       {
-        label: "Marketing",
+        label: "Discovery",
         src: "/marketing-li.svg",
       },
       {
