@@ -6,9 +6,9 @@ export default function NotFoundPopUp() {
     <div>
       <div className="text-center">
         <Image
-          src={"/not-found.png"}
-          height={150}
-          width={150}
+          src={"/not-found.svg"}
+          height={250}
+          width={250}
           alt=""
           className="mx-auto"
         />

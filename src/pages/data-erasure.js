@@ -1,3 +1,6 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useSnackbar } from "notistack";
 import Breadcrumb from "@/Components/comman/Breadcrumb";
 import DataRequestSection from "@/Components/comman/DataRequestSection";
 import VerificationForm from "@/Components/comman/Form/VerificationForm";
@@ -5,13 +8,33 @@ import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyF
 import Modal from "@/Components/comman/Modal";
 import SidebarSection from "@/Components/comman/SidebarSection";
 import UserDetailPopUp from "@/Components/comman/UserDetailPopUp";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { eraseData } from "@/services/get-quote";
 
 const DataErasure = () => {
   const router = useRouter();
+  const { enqueueSnackbar } = useSnackbar();
   const [message, setMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
+
+  function checkUser(isEmail, otp, userEmailOrMobileNo, resetForm) {
+    try {
+      const otpStr = otp.join("");
+      if (isEmail) {
+        eraseData({ otp: otpStr, email: userEmailOrMobileNo }).catch(() => {
+          enqueueSnackbar("Something Went Wrong.", { variant: "error" });
+        });
+      } else {
+        eraseData({ otp: otpStr, mobileNo: userEmailOrMobileNo }).catch(() => {
+          enqueueSnackbar("Something Went Wrong.", { variant: "error" });
+        });
+      }
+      setShowModal(true);
+      setMessage("Data Erasure Initiated");
+      resetForm();
+    } catch (error) {
+      enqueueSnackbar("Something Went Wrong.", { variant: "error" });
+    }
+  }
   let dataErasure = {
     title: "Data Erasure Request",
     description: (
@@ -54,15 +77,12 @@ const DataErasure = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         sectionSty="fixed bg-black-900/40 left-0 top-0 right-0 bottom-0 h-[100vh] w-full z-[99999] flex items-center justify-center p-10"
-        boxStyle="max-w-[800px] p-[70px] rounded-[25px] max-h-[calc(100vh_-_80px)] bg-white w-full relative"
+        boxStyle="max-w-[800px] py-[70px] px-[30px] rounded-[25px] max-h-[calc(100vh_-_80px)] bg-white w-full relative"
         showArrowButton={message.length === 0}
         showCloseButton={message.length > 0}
         buttonSty="flex"
       >
-        <UserDetailPopUp
-          actionMessage={message}
-          handleOnClick={() => setMessage("Data Erasure Initiated")}
-        />
+        <UserDetailPopUp actionMessage={message} />
       </Modal>
       <Breadcrumb
         breadcrumbList={[
@@ -103,7 +123,7 @@ const DataErasure = () => {
               {...dataErasure}
               renderFormElement={
                 <>
-                  <VerificationForm />
+                  <VerificationForm onHandleSubmit={checkUser} />
                 </>
               }
             />

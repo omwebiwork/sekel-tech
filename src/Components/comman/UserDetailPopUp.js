@@ -12,9 +12,9 @@ export default function UserDetailPopUp({
   const handleClick = useCallback(() => {
     handleOnClick && handleOnClick();
   }, []);
-  
+
   return (
-    <div>
+    <div className="max-h-[calc(100vh_-_220px)] overflow-y-auto px-10">
       <div className="text-center">
         <Image
           src={"/graph-arrow.svg"}
@@ -31,7 +31,7 @@ export default function UserDetailPopUp({
           <p>{actionMessage}</p>
         </div>
       )}
-      <div className="pt-8 text-center">
+      {/* <div className="pt-8 text-center">
         <p className="pb-8 text-secondary text-[16px]">User Details</p>
         <h2 className="text-[16px] font-semibold mb-2 text-secondary">
           Name : User Namesurname
@@ -42,8 +42,8 @@ export default function UserDetailPopUp({
         <h2 className="text-[16px] font-semibold mb-2 text-secondary">
           Phone no. : 875 482 9973
         </h2>
-      </div>
-      {actionMessage.length === 0 && (
+      </div> */}
+      {/* {actionMessage.length === 0 && (
         <div className="pt-8 flex justify-center">
           <Button
             type="button"
@@ -52,7 +52,7 @@ export default function UserDetailPopUp({
             clsStyle={`font-semibold h-[45px] lg:h-[56px] text-white bg-blue-900 min-w-[10rem] rounded-[40px] text-center py-4 px-12 border border-yellow-900 ${buttonSty}`}
           />
         </div>
-      )}
+      )} */}
 
       <div className="pt-8">
         <p className="text-center">

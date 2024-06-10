@@ -55,9 +55,9 @@ const Data = () => {
                     ...item.image,
                     className: "h-full w-full object-cover object-center",
                   }}
-                  cardSty={item.cardSty + " h-full bg-gray-100"}
+                  cardSty={item.cardSty + " h-full bg-blue-200"}
                   headingSty={
-                    "max-md:font-medium mb-3 lg:mb-8 tracking-tighter leading-[120%] text-[18px] md:text-[28px]"
+                    "max-md:font-medium mb-3 lg:mb-5 tracking-tighter leading-[120%] text-[18px] md:text-[28px] h-[65px]"
                   }
                   cardCountNo={index < 9 ? "0" + (index + 1) : index + 1}
                 />

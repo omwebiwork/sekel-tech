@@ -13,7 +13,7 @@ function RefundPolicy() {
           { link: "/refund-policy", label: "refund-&-cancellation-policy" },
         ]}
       />
-      <section className="col-span-12 lg:col-span-8 py-[50px] lg:py-[100px]">
+      <section className="py-[50px] lg:py-[100px]">
         <div className="container">
           <div className="grid grid-cols-12 gap-6">
             <div className="text-black-33 col-span-12 lg:col-span-8 lg:pr-[90px]">

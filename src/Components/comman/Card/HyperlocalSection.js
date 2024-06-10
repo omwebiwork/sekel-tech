@@ -9,7 +9,7 @@ const HyperlocalSection = ({ title, description, tagList }) => {
             {title}
           </h3>
           {description && (
-            <p className="text-base mt-4 font-normal leading-[140%] max-w-[722px] text-yellow-900">
+            <p className="text-base mt-4 font-normal leading-[140%] max-w-[740px] text-yellow-900">
               {description}
             </p>
           )}

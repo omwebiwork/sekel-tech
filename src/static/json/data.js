@@ -195,9 +195,9 @@ export const investmentFocus = {
         height: "500",
         width: "500",
       },
-      cardImgSty: "lg:max-w-[408px] lg:max-h-[240px] w-full mx-auto",
+      cardImgSty: "mt-[98px] lg:max-w-[408px] lg:max-h-[240px] w-full mx-auto",
 
-      cardSty: "md:flex gap-4 rounded-xl p-5 lg:pt-[52px] relative",
+      cardSty: "md:flex gap-4 rounded-xl p-5 lg:pt-[52px] pb-0 relative",
       cardDataSty: "md:w-1/2",
     },
     {
@@ -205,8 +205,12 @@ export const investmentFocus = {
       description:
         "Data is cleaned and prepared to ensure that it is consistent and accurate. Our Algorithm updates all the data of repeat customers by engaging across touchpoints in real time. ",
       cardImgSty: "lg:max-w-[300px] lg:max-h-[131px] w-full mx-auto",
-
-      cardSty: "rounded-xl p-5 lg:pt-[52px] bg-yellow-100 relative",
+      image: {
+        src: "/cleaning-process-list.png",
+        height: "500",
+        width: "500",
+      },
+      cardSty: "rounded-xl p-5 bg-yellow-100 relative",
       cardDataSty: "w-full",
     },
     {
@@ -220,7 +224,7 @@ export const investmentFocus = {
       },
       cardImgSty: "lg:max-w-[291px] lg:max-h-[178px] w-full mx-auto",
 
-      cardSty: "rounded-xl p-5 lg:pt-[52px] bg-yellow-100 relative",
+      cardSty: "rounded-xl p-5 bg-yellow-100 relative",
       cardDataSty: "w-full",
     },
     {
@@ -233,8 +237,8 @@ export const investmentFocus = {
         width: "500",
       },
 
-      cardImgSty: "sm:max-w-[396px] sm:max-h-[241px] w-full mx-auto mt-14",
-      cardSty: " md:flex gap-2 rounded-xl p-5 lg:pt-[52px] relative",
+      cardImgSty: "sm:max-w-[396px] sm:max-h-[241px] w-full mx-auto mt-[90px]",
+      cardSty: " md:flex gap-2 rounded-xl p-5 lg:pt-[52px] pb-0 relative",
       cardDataSty: "md:w-1/2",
     },
   ],

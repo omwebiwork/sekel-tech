@@ -29,7 +29,7 @@ const Card = ({
     <div className={`${cardSty}`}>
       {cardCountNo && (
         <p
-          className={`text-white text-[54px] font-normal leading-[140%] absolute right-4 top-10 ${cardCountNoSty}`}
+          className={`text-white text-[54px] font-normal leading-[140%] absolute right-4 top-[20px] ${cardCountNoSty}`}
         >
           {cardCountNo}
         </p>

@@ -166,7 +166,7 @@ const ContactUs = () => {
                       className={`${
                         accordianState?.[index] === true
                           ? ""
-                          : "border-0 border-b-[1px] border-white"
+                          : "border-b-[1px] border-white"
                       } text-white font-medium cursor-pointer`}
                     >
                       <div

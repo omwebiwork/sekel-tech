@@ -5,41 +5,43 @@ import Card from "@/Components/comman/Card";
 import CardSection from "@/Components/comman/Card/CardSection";
 import HyperlocalStrategyForm from "@/Components/comman/Form/hyperlocalStrategyForm";
 import {
-  contentOptimisationBanner,
-  contentOptimisationBenefits,
-  contentOptimisationItemSchema,
-  contentOptimisationUtilizing,
-} from "@/static/json/discoveryPlatform/contentOptimisation";
+  reviewManagementBanner,
+  reviewManagementBenefits,
+  reviewManagementLeverage,
+} from "@/static/json/discoveryPlatform/reviewManagement";
+
 import { useMemo } from "react";
 CardSection;
-const ContentOptimisation = () => {
+const ReviewManagement = () => {
   const itemListSchema = useMemo(() => {
     return {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      url: "https://sekel.tech/how-it-works/discovery-platform/content-optimisation",
+      url: "https://sekel.tech/how-it-works/discovery-platform/review-management",
       itemListOrder: "http://schema.org/ItemListOrderAscending",
-      numberOfItems: contentOptimisationItemSchema?.length,
-      name: "Tips for Utilizing Content Optimization",
+      numberOfItems: reviewManagementLeverage?.cardData?.length,
+      name: "Ways to Leverage Dynamic Hyperlocal Review Management",
       description:
-        "Optimise your content with Sekel Tech. Attract visitors, build trust, and enhance SEO with a localised microsite experience. Boost visibility and engagement.",
-      itemListElement: contentOptimisationItemSchema?.map((item, index) => {
-        return {
-          "@type": "ListItem",
-          position: index + 1,
-          name: item?.title,
-          description: item?.description,
-        };
-      }),
+        "Elevate your reputation with Sekel Tech's Review Management Tools. Transform your approach, boost online presence, and build trust with streamlined feedback.",
+      itemListElement: reviewManagementLeverage?.cardData?.map(
+        (item, index) => {
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: item?.title,
+            description: item?.description,
+          };
+        }
+      ),
     };
   }, []);
 
   return (
     <>
       <HeadSection
-        title="Content Optimization| Sekel Tech"
-        description="Optimise your content with Sekel Tech. Attract visitors, build trust, and enhance SEO with a localised microsite experience. Boost visibility and engagement."
-        canonical={`https://sekel.tech/discovery-platform/content-optimisation`}
+        title="Review Management| Sekel Tech"
+        description="Elevate your reputation with Sekel Tech's Review Management Tools. Transform your approach, boost online presence, and build trust with streamlined feedback."
+        canonical="https://sekel.tech/discovery-platform/review-management"
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -54,7 +56,7 @@ const ContentOptimisation = () => {
         }}
       />
       <Banner
-        {...contentOptimisationBanner}
+        {...reviewManagementBanner}
         titleSty="text-[36px] lg:text-[54px] font-normal leading-[140%] mb-3 tracking-tighter"
         sectionSty="py-[50px] md:py-[60px] lg:pt-20 lg:pb-[100px]"
         containerStyle="container flex-wrap grid grid-cols-11 gap-8"
@@ -74,19 +76,19 @@ const ContentOptimisation = () => {
             label: "Discovery Platform",
           },
           {
-            link: "/discovery-platform/content-optimisation",
-            label: "Content Optimization",
+            link: "/discovery-platform/review-management",
+            label: "Review Management",
           },
         ]}
       />
       <CardSection
-        {...contentOptimisationBenefits?.sectionData}
+        {...reviewManagementBenefits?.sectionData}
         headingSty="flex items-end justify-center mx-4 gap-[60px] text-center"
         sectionStyle="py-[50px] md:py-[60px] lg:py-[100px] bg-white"
         titleSty="text-[32px] lg:text-[42px] font-medium mb-[14px] leading-[140%] tracking-tighter text-black-33 mb-[52px]"
         renderElement={() => (
           <div className="grid grid-cols-3 gap-8">
-            {contentOptimisationBenefits?.cardDataList?.map((item, index) => {
+            {reviewManagementBenefits?.cardDataList?.map((item, index) => {
               return (
                 <div className="col-span-3 md:col-span-1" key={index}>
                   <Card
@@ -105,13 +107,13 @@ const ContentOptimisation = () => {
         )}
       />
       <CardSection
-        {...contentOptimisationUtilizing?.sectionData}
+        {...reviewManagementLeverage?.sectionData}
         sectionStyle="py-[50px] md:py-[75px] lg:py-[100px] bg-blue-900"
         headingSty="max-w-[803px] mx-auto md:text-center mb-[32px] lg:mb-[52px]"
         titleSty="text-[32px] lg:text-[42px] font-medium mb-3 leading-[140%] tracking-tighter text-white"
         renderElement={() => (
           <div className="grid gap-4 lg:gap-3 grid-cols-2 lg:grid-cols-3">
-            {contentOptimisationUtilizing?.cardData?.map((item, index) => {
+            {reviewManagementLeverage?.cardData?.map((item, index) => {
               return (
                 <div className="col-span-1" key={index}>
                   <Card
@@ -131,4 +133,4 @@ const ContentOptimisation = () => {
   );
 };
 
-export default ContentOptimisation;
+export default ReviewManagement;
