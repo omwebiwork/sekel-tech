@@ -50,7 +50,7 @@ const Card = ({
         <div className={`${dataDivSty}`}>
           <h2 className={`${headingSty}`}>{title}</h2>
           <div>
-            <p className={`${descriptionSty}`}>{description}</p>
+            <div className={`${descriptionSty}`}>{description}</div>
           </div>
         </div>
         {actionType && (

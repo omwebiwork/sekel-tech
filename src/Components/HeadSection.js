@@ -21,23 +21,36 @@ function HeadSection({
         item: {
           "@id":
             item.trim() !== "product" &&
-            item.trim() !== "company" &&
-            item?.trim()?.length > 0
+              item.trim() !== "company" &&
+              item?.trim()?.length > 0
               ? `https://sekel.tech${path?.split(`/${item}`)[0]}/${item.trim()}`
               : "https://sekel.tech/",
           name:
             item?.trim()?.length > 0
               ? item
-                  .toLowerCase()
-                  .split("-")
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" ")
+                .toLowerCase()
+                .split("-")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ")
               : "Home",
         },
       };
     });
     return JSON.stringify(itemList);
   };
+
+  function addWebPageJsonLd() {
+    return {
+      __html:
+        `{         
+            "@context": "https://schema.org/",         
+            "@type": "WebPage",         
+            "@id": "#WebPage",         
+            "url": "https://sekel.tech/",          
+            "name": "Sekel Tech"
+          }`
+    }
+  }
 
   function addOrganizationJsonLd() {
     return {
@@ -146,6 +159,11 @@ function HeadSection({
         type="application/ld+json"
         dangerouslySetInnerHTML={addOrganizationJsonLd()}
         key="Organisation-jsonld"
+      />
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={addWebPageJsonLd()}
+        key="webpage-jsonld"
       />
       <script
         type="application/ld+json"

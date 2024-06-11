@@ -8,7 +8,7 @@ const SliderSection = ({
   renderElement,
   profileButton = false,
   textContentSty = "col-span-10 lg:col-span-4",
-  cardContentSty = "col-span-10 lg:col-span-6",
+  cardContentSty = "col-span-10 lg:col-span-6 w-[106%]",
   discriptionSty = "max-w-[240px]",
   clickImageAction = () => {},
 }) => {
