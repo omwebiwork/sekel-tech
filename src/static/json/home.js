@@ -22,7 +22,7 @@ export const discoveryCardData = [
     image: {
       src: "/discoverd-img.gif",
     },
-    slug: "/discovery-platform",
+    slug: "/how-it-works/discovery-platform",
   },
   {
     title: "Plug & Play Data",
@@ -31,7 +31,7 @@ export const discoveryCardData = [
     image: {
       src: "/play-data.gif",
     },
-    slug: "/data-platform",
+    slug: "/how-it-works/data-platform",
   },
   {
     title: "Generate Demand",
@@ -40,7 +40,7 @@ export const discoveryCardData = [
     image: {
       src: "/generate-demand-img.gif",
     },
-    slug: "/demand-generation",
+    slug: "/how-it-works/demand-generation",
   },
 ];
 
@@ -69,6 +69,8 @@ export const chanllengesSection = {
 
 export const chanllenges = [
   {
+    slug:'/how-it-works/data-platform',
+    linkText:'Explore our Data Platform',
     question:
       "We generate plenty of leads monthly, but lack visibility on their outcomes. How do we gain insights and optimise our efforts?",
     answer: `To gain insights and optimize your efforts with generated leads, you need a solution that offers robust analytics and tracking capabilities. This will allow you to monitor the outcomes of your leads and adjust your strategies accordingly.`,
@@ -85,16 +87,22 @@ export const chanllenges = [
     ],
   },
   {
+    slug:'/how-it-works/discovery-platform',
+    linkText:'Explore our Discovery Platform',
     question:
       "Our traditional method of demand generation through leads is not working out due to high TAT and Junk Data",
       answer: `To address the challenges with high turnaround time (TAT) and junk data in your traditional demand generation methods, you need a solution that can streamline lead generation and data quality.`,
   },
   {
+    slug:'/how-it-works/demand-generation',
+    linkText:'Explore our Demand Generation Platform',
     question:
       "While the volume targets are getting achieved, we are facing issues with lead quality & CPl",
       answer: `To address the issues with lead quality and Cost Per Lead (CPL) while achieving volume targets, you need a solution that can improve lead targeting and qualification processes. By refining your targeting criteria and qualifying leads more effectively, you can improve lead quality and reduce CPL, ultimately enhancing the overall performance of your demand generation efforts.`,
   },
   {
+    slug:'/how-it-works/data-platform',
+    linkText:'Explore our Data Platform',
     question:
       "The challenge is acquiring and maintaining accurate location data for effective marketing and lead generation. Seamless integration with marketing systems is crucial for targeted success.",
       answer: `To address the challenge of obtaining and maintaining accurate location data, consider implementing a robust location data management system. This system should streamline the integration of marketing systems with location data, ensuring that each store's information is accurate and up-to-date. Additionally, regular audits and updates to the location data can help maintain its accuracy over time.`,
@@ -168,57 +176,60 @@ export const sliderImage = [
 
 export const sliderData = [
   {
-    image: {
-      src: "/case-studies-1.png",
-      height: 304,
-      width: 348,
-      alt: "img",
-    },
-
-    footer: {
-      image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-      title: "Increase ROI by",
-      size: "31x",
-    },
+      image: {
+          src: "/kalyan-img.svg",
+          height: 304,
+          width: 348,
+          alt: "img",
+      },
+      link : '/company/case-studies/kalyan-jewellers',
+      footer: {
+          image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
+          title: "Increase ROI by",
+          size: "31x",
+      },
   },
   {
-    image: {
-      src: "/case-studies.png",
-      height: 500,
-      width: 348,
-      alt: "img",
-    },
-
-    footer: {
-      image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
-      size: "10x",
-    },
+      image: {
+          src: "/bridgestone-img.svg",
+          height: 500,
+          width: 348,
+          alt: "img",
+      },
+      link:'/company/case-studies/bridgestone',
+      footer: {
+          image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
+          title: "Increased GBP views by",
+          size: "10x",
+      },
   },
   {
-    image: {
-      src: "/case-studies-1.png",
-      height: 304,
-      width: 348,
-      alt: "img",
-    },
-
-    footer: {
-      image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-      title: "Increase ROI by",
-      size: "31x",
-    },
+      image: {
+          src: "/schneider-img.svg",
+          height: 304,
+          width: 348,
+          alt: "img",
+      },
+      link:'/company/case-studies/schneider-electric',
+      footer: {
+          image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+          title: "Increased Monthly Orders by",
+          size: "30%",
+      },
   },
   {
-    image: {
-      src: "/case-studies.png",
-      height: 500,
-      width: 348,
-      alt: "img",
-    },
-
-    footer: {
-      image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
-      size: "10x",
-    },
+      image: {
+          src: "/vlcc-img.svg",
+          height: 500,
+          width: 348,
+          alt: "img",
+      },
+      link : '/company/case-studies/vlcc',
+      footer: {
+          image: {
+              src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
+          },
+          size: "3x Returns",
+      },
   },
 ];

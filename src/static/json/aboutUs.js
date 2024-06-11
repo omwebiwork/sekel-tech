@@ -4,7 +4,7 @@ export const bannerAboutUs = {
     "Designed to help retail businesses, Sekel Tech platform helps manage brands’ online presence, store orders, and consumers’ online to offline journey.",
   subTitle: `Revolutionising Retail Tech with Sekel Tech`,
   image: {
-    src: "/about-banner.png",
+    src: "/amplify.svg",
     alt: "img",
     height: 800,
     width: 1200,
@@ -57,7 +57,7 @@ export const ourMission = {
   description:
     "To enable retail stores by providing multi-location retail brands to effortlessly construct integrated online-to-offline consumer journeys across platforms. To influence millions of consumers in buying mode from the convenience of a single platform, businesses now have the control and ability to influence consumers with rich, dynamic content that they deem most appropriate for each location and content",
   image: {
-    src: "/amplify.png",
+    src: "/about-banner.svg",
     height: 448,
     width: 692,
     alt: "img",
@@ -112,58 +112,61 @@ export const slider = {
   },
   sliderCardData: [
     {
-      image: {
-        src: "/case-studies-1.png",
-        height: 304,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-        title: "Increase ROI by",
-        size: "31x",
-      },
+        image: {
+            src: "/kalyan-img.svg",
+            height: 304,
+            width: 348,
+            alt: "img",
+        },
+        link : '/company/case-studies/kalyan-jewellers',
+        footer: {
+            image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
+            title: "Increase ROI by",
+            size: "31x",
+        },
     },
     {
-      image: {
-        src: "/case-studies.png",
-        height: 500,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
-        size: "10x",
-      },
+        image: {
+            src: "/bridgestone-img.svg",
+            height: 500,
+            width: 348,
+            alt: "img",
+        },
+        link:'/company/case-studies/bridgestone',
+        footer: {
+            image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
+            title: "Increased GBP views by",
+            size: "10x",
+        },
     },
     {
-      image: {
-        src: "/case-studies-1.png",
-        height: 304,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-        title: "Increase ROI by",
-        size: "31x",
-      },
+        image: {
+            src: "/schneider-img.svg",
+            height: 304,
+            width: 348,
+            alt: "img",
+        },
+        link:'/company/case-studies/schneider-electric',
+        footer: {
+            image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+            title: "Increased Monthly Orders by",
+            size: "30%",
+        },
     },
     {
-      image: {
-        src: "/case-studies.png",
-        height: 500,
-        width: 348,
-        alt: "img",
-      },
-
-      footer: {
-        image: { src: "/schneider.svg", height: 448, width: 692, alt: "img" },
-        size: "10x",
-      },
+        image: {
+            src: "/vlcc-img.svg",
+            height: 500,
+            width: 348,
+            alt: "img",
+        },
+        link : '/company/case-studies/vlcc',
+        footer: {
+            image: {
+                src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
+            },
+            size: "3x Returns",
+        },
     },
-  ],
+],
 };

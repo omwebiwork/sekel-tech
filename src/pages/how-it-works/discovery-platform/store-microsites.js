@@ -40,7 +40,7 @@ const StoreMicrosites = () => {
       <HeadSection
         title="Store Microsites| Sekel Tech"
         description="Elevate your hyperlocal marketing with Sekel Tech's Dynamic Hyperlocal Store Microsites. Boost sales and create organic discovery for hyperlocal success."
-        canonical={`https://sekel.tech/discovery-platform/store-microsites`}
+        canonical={`https://sekel.tech//how-it-works/discovery-platform/store-microsites`}
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -69,13 +69,10 @@ const StoreMicrosites = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How its works" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/discovery-platform", label: "Discovery Platform" },
           {
-            link: "/discovery-platform",
-            label: "Discovery Platform",
-          },
-          {
-            link: "/discovery-platform/store-microsites",
+            link: "/how-it-works/discovery-platform/store-microsites",
             label: "Store Microsites",
           },
         ]}

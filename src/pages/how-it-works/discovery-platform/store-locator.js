@@ -39,7 +39,7 @@ const StoreLocator = () => {
       <HeadSection
         title={`Store Locator| Sekel Tech`}
         description="Easily find your nearest store with Sekel Tech's Dynamic Hyperlocal Store Locator. Enhance the customer experience and boost sales."
-        canonical={`https://sekel.tech/discovery-platform/store-locator`}
+        canonical={`https://sekel.tech/how-it-works/discovery-platform/store-locator`}
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -68,13 +68,10 @@ const StoreLocator = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How its works" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/discovery-platform", label: "Discovery Platform" },
           {
-            link: "/discovery-platform",
-            label: "Discovery Platform",
-          },
-          {
-            link: "/discovery-platform/store-locator",
+            link: "/how-it-works/discovery-platform/store-locator",
             label: "Store Locator",
           },
         ]}

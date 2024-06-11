@@ -66,7 +66,7 @@ export const weCommunicate = {
     description:
       "We believe in fostering growth, development and upskilling,so we encourage our employees to attend courses, training, workshops and more.",
     image: {
-      src: "/perks.png",
+      src: "/perks.svg",
       height: 448,
       width: 692,
       alt: "img",

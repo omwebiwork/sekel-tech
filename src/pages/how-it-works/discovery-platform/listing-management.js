@@ -41,7 +41,7 @@ const ListingManagement = () => {
       <HeadSection
         title="Listing Management| Sekel Tech"
         description="Listing Management by Sekel Tech ensures your local business info is consistent online. Automatically distribute across multiple publishers for unified listings."
-        canonical={`https://sekel.tech/discovery-platform/listing-management`}
+        canonical={`https://sekel.tech/how-it-works/discovery-platform/listing-management`}
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -70,13 +70,10 @@ const ListingManagement = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How its works" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/discovery-platform", label: "Discovery Platform" },
           {
-            link: "/discovery-platform",
-            label: "Discovery Platform",
-          },
-          {
-            link: "/discovery-platform/listing-management",
+            link: "/how-it-works/discovery-platform/listing-management",
             label: "Listing Management",
           },
         ]}

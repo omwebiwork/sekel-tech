@@ -39,7 +39,7 @@ const ContentOptimisation = () => {
       <HeadSection
         title="Content Optimization| Sekel Tech"
         description="Optimise your content with Sekel Tech. Attract visitors, build trust, and enhance SEO with a localised microsite experience. Boost visibility and engagement."
-        canonical={`https://sekel.tech/discovery-platform/content-optimisation`}
+        canonical={`https://sekel.tech/how-it-works/discovery-platform/content-optimisation`}
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -68,13 +68,10 @@ const ContentOptimisation = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How its works" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/discovery-platform", label: "Discovery Platform" },
           {
-            link: "/discovery-platform",
-            label: "Discovery Platform",
-          },
-          {
-            link: "/discovery-platform/content-optimisation",
+            link: "/how-it-works/discovery-platform/content-optimisation",
             label: "Content Optimization",
           },
         ]}

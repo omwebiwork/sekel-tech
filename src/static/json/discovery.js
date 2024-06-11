@@ -18,6 +18,7 @@ export const discoveryFeature = {
       title: "Listing Management",
       description:
         "Ensure accurate and consistent business information across online platforms.",
+      linkSlug :'/how-it-works/discovery-platform/listing-management',
       image: {
         src: "/listing-management.png",
         height: "500",
@@ -28,6 +29,7 @@ export const discoveryFeature = {
     {
       title: "Store Locator",
       description: "Help customers find all your physical locations online.",
+      linkSlug :'/how-it-works/discovery-platform/store-locator',
       image: {
         src: "/store-locator.png",
         height: "500",
@@ -37,6 +39,7 @@ export const discoveryFeature = {
     },
     {
       title: "Store Microsites",
+      linkSlug :'/how-it-works/discovery-platform/store-microsites',
       description:
         "Have mini website Automated Local SEO for all your stores/dealers/outlets in minutes",
       image: {
@@ -48,6 +51,7 @@ export const discoveryFeature = {
     },
     {
       title: "Product Catalogue",
+      linkSlug :'/how-it-works/discovery-platform/product-catalogue',
       description:
         "Showcase your brand's products and their details. Bulk Manage with Drag & Drop experience.",
       image: {
@@ -60,6 +64,7 @@ export const discoveryFeature = {
     },
     {
       title: "Review Management",
+      linkSlug :'/how-it-works/discovery-platform/review-management',
       description:
         "Consolidate reviews from Google, Meta platforms. Automate reviews management for all your physical locations.",
       image: {
@@ -71,6 +76,7 @@ export const discoveryFeature = {
     },
     {
       title: "Content Optimisation",
+      linkSlug :'/how-it-works/discovery-platform/content-optimisation',
       description:
         "Create, Publish & Optimize content at scale across all your locations.",
       image: {

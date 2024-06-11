@@ -107,10 +107,6 @@ const DataErasure = () => {
               value: "privacy-policy",
             },
             {
-              label: "Data Transfer",
-              value: "data-transfer",
-            },
-            {
               label: "Data Erasure",
               value: "data-erasure",
             },

@@ -41,7 +41,7 @@ const ReviewManagement = () => {
       <HeadSection
         title="Review Management| Sekel Tech"
         description="Elevate your reputation with Sekel Tech's Review Management Tools. Transform your approach, boost online presence, and build trust with streamlined feedback."
-        canonical="https://sekel.tech/discovery-platform/review-management"
+        canonical="https://sekel.tech/how-it-works/discovery-platform/review-management"
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -70,13 +70,10 @@ const ReviewManagement = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How its works" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/discovery-platform", label: "Discovery Platform" },
           {
-            link: "/discovery-platform",
-            label: "Discovery Platform",
-          },
-          {
-            link: "/discovery-platform/review-management",
+            link: "/how-it-works/discovery-platform/review-management",
             label: "Review Management",
           },
         ]}

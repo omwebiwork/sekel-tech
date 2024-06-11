@@ -16,48 +16,50 @@ import React, { useMemo } from "react";
 const Industry = () => {
   const router = useRouter();
 
-  // const sellrAppSchema = useMemo(() => {
-  //   return {
-  //     "@context": "https://schema.org",
-  //     "@type": "ItemList",
-  //     url: "https://sekel.tech/product/sellrapp",
-  //     itemListOrder: "http://schema.org/ItemListOrderAscending",
-  //     numberOfItems: dominateMarket?.cardDataList?.length,
-  //     name: dominateMarket?.sectionData?.title,
-  //     description: dominateMarket?.sectionData?.description,
-  //     itemListElement: dominateMarket?.cardDataList?.map((item, index) => {
-  //       return {
-  //         "@type": "ListItem",
-  //         position: index + 1,
-  //         name: item?.title,
-  //         description: item?.description,
-  //       };
-  //     }),
-  //   };
-  // }, []);
-
   const data = industriesData.filter((item) => {
     return item.slug === router.query.slug
   })
 
+  const industrySchema = useMemo(() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      url: `https://sekel.tech/industries/${router.query.slug}`,
+      itemListOrder: "http://schema.org/ItemListOrderAscending",
+      numberOfItems: data[0]?.cardData?.cardDataList?.length,
+      name: data[0]?.cardData?.sectionData?.title,
+      description: data[0]?.cardData?.sectionData?.description,
+      itemListElement: data[0]?.cardData?.itemListData?.map((item, index) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: item?.title,
+          description: item?.description,
+        };
+      }),
+    };
+  }, [router.query.slug]);
+
   return (
     <div>
-      {/* <HeadSection
-        {...bannerOneApp}
+      <HeadSection
+          title={data[0]?.metaTitle}
+          description={data[0]?.metaDescription}
+          canonical={`https://sekel.tech/industries/${data[0]?.slug}`}
         renderSchemaContent={() => {
           return (
             <>
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                  __html: JSON.stringify(sellrAppSchema),
+                  __html: JSON.stringify(industrySchema),
                 }}
                 key="list-item"
               />
             </>
           );
         }}
-      /> */}
+      />
       <Banner
         {...data[0]?.bannerData}
         containerStyle="container lg:pt-10 max-w-screen-xl justify-between max-md:flex-wrap"

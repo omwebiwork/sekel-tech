@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
-import { company, product } from "@/static/json/header";
+import { company, product, industries } from "@/static/json/header";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -30,7 +30,7 @@ const Footer = () => {
     <>
       <footer className="max-md:bg-gray-100 max-sm:px-[10px] max-lg:px-[15px] py-[24px] md:py-[60px] lg:py-[100px]">
         <div className="container">
-          <div className="grid grid-cols-4 gap-6 lg:gap-12">
+          <div className="grid grid-cols-5 gap-6 lg:gap-8">
             <div className="col-span-4 md:col-span-1 lg:pr-8">
               <div>
                 <div className="mb-4 lg:mb-[52px] h-[95px] w-[99px]">
@@ -87,6 +87,31 @@ const Footer = () => {
               <div className="max-md:border-b max-md:border-[#A3ACB1]/60">
                 <div
                   className="max-md:py-6 md:mb-[35px] lg:mb-[52px] flex items-center justify-between"
+                  onClick={() => handleDropDown("industries")}
+                >
+                  <h5 className="text-base md:text-xl text-black-33 font-medium">
+                    Industries
+                  </h5>
+                  <span className="md:hidden">
+                    <Image
+                      src={"/chevron-down.svg"}
+                      height={25}
+                      width={25}
+                      alt=""
+                    />
+                  </span>
+                </div>
+                <div className={`${open["industries"] ? "" : "max-md:hidden"} `}>
+                  {industries?.map((item, index) =>
+                    renderNavigationLinks(item?.redirectPath, item?.name, index)
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="col-span-4 md:col-span-1 lg:pl-4">
+              <div className="max-md:border-b max-md:border-[#A3ACB1]/60">
+                <div
+                  className="max-md:py-6 md:mb-[35px] lg:mb-[52px] flex items-center justify-between"
                   onClick={() => handleDropDown("company")}
                 >
                   <h5 className="text-base md:text-xl text-black-33 font-medium">
@@ -102,9 +127,8 @@ const Footer = () => {
                   </span>
                 </div>
                 <div
-                  className={`${
-                    open["company"] ? "" : "max-md:hidden"
-                  } lg:mb-[52px]`}
+                  className={`${open["company"] ? "" : "max-md:hidden"
+                    } lg:mb-[52px]`}
                 >
                   {company?.map((item, index) =>
                     renderNavigationLinks(item?.redirectPath, item?.name, index)

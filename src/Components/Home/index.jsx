@@ -60,7 +60,7 @@ const HomeComponent = () => {
     );
   };
 
-  let chanllengesCard = ({ question, answer, gridColSize, list }) => {
+  let chanllengesCard = ({ question, answer, gridColSize, list,slug,linkText }) => {
     return (
       <div className={`${gridColSize}`}>
         <div className="h-full p-6 lg:p-8 xl:py-8 xl:px-[52px] rounded-xl bg-gray-100 border-[1px] border-gray-400">
@@ -85,9 +85,9 @@ const HomeComponent = () => {
             </ul>
             <button
               className="flex gap-2 items-center text-base text-blue-900 font-medium "
-              onClick={() => router.push("/data-platform")}
+              onClick={() => router.push(slug)}
             >
-              Explore our Data Platform
+              {linkText}
               <div className="h-6 w-6">
                 <Image
                   src={"/blue-arrow.svg"}
@@ -341,7 +341,7 @@ const HomeComponent = () => {
               <div className="max-lg:mx-auto lg:ml-auto lg:max-h-[476px] lg:max-w-[600px] rounded-[20px] overflow-hidden">
                 <Image
                   className="w-full h-full object-cover object-center"
-                  src={"/about.png"}
+                  src={"/about.svg"}
                   height={476}
                   width={600}
                   alt="img"

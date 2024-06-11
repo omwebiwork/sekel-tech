@@ -19,6 +19,7 @@ export const demandGenerationFeature = {
   cardData: [
     {
       title: "Digital Campaigns",
+      linkSlug :'/how-it-works/demand-generation/digital-campaigns',
       description:
         "Elevate your digital presence with Sekel's cutting-edge Digital Campaigns. Our expertise drives results.",
       image: {
@@ -36,6 +37,7 @@ export const demandGenerationFeature = {
     },
     {
       title: "Customer Relation Management",
+      linkSlug :'/how-it-works/demand-generation/customer-relation-management',
       description:
         "Our customer lifetime value solutions optimize your business strategy, ensuring success and increased revenue.",
       image: {
@@ -51,6 +53,7 @@ export const demandGenerationFeature = {
     },
     {
       title: "SellrApp",
+      linkSlug :'/how-it-works/demand-generation/sellr-app',
       description:
         "Helping the business solve demand and supply challenges on a single App.",
       image: {
@@ -67,6 +70,7 @@ export const demandGenerationFeature = {
     },
     {
       title: "Conversion Analytics",
+      linkSlug :'/how-it-works/demand-generation/conversion-analytics',
       description:
         "At Sekel, we're laser-focused on one thing: SALES CONVERSIONS.",
       image: {
@@ -85,6 +89,7 @@ export const demandGenerationFeature = {
     },
     {
       title: "Planogram",
+      linkSlug :'/how-it-works/demand-generation/planogram',
       description:
         "Optimizing your merchandizing for better discovery hence to sales.",
       image: {
@@ -102,6 +107,7 @@ export const demandGenerationFeature = {
     },
     {
       title: "Intelligent Response System",
+      linkSlug :'/how-it-works/demand-generation/intelligent-response-system',
       description:
         "Generative response to help merchants handle queries at scale to improve engagement.",
       image: {
@@ -118,6 +124,7 @@ export const demandGenerationFeature = {
     },
     {
       title: "Store2Door Omni Commerce",
+      linkSlug :'/how-it-works/demand-generation/store2Door-omni-commerce',
       description: "Enable seamless shopping with store-to-home delivery.",
       image: {
         src: "/DemandGTFeatureImgs/sore2Door-omni.png",

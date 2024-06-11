@@ -37,6 +37,8 @@ const Demand = () => {
                 <Card
                   key={index}
                   {...item}
+                  linkSty="font-semibold text-base text-[#2C74F7]" 
+                  linkText='Know more >'
                   image={{
                     ...item.image,
                     className: "h-full w-full object-cover object-center",
@@ -55,7 +57,7 @@ const Demand = () => {
     return {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      url: "https://sekel.tech/demand-generation",
+      url: "https://sekel.tech/how-it-works/demand-generation",
       itemListOrder: "http://schema.org/ItemListOrderAscending",
       numberOfItems: demandGenerationFeature?.cardData?.length,
       name: "Demand Generation - Empowering Demand in a Hyperlocal World",
@@ -77,6 +79,7 @@ const Demand = () => {
       <HeadSection
         title="Demand Generation Platform | Sekel Tech"
         description="Revolutionise audience engagement with Sekel Tech's Demand Generation Platform. Unlock hyperlocal demand, turning unknown leads into valuable connections."
+        canonical="https://sekel.tech/how-it-works/demand-generation"
         renderSchemaContent={() => {
           return (
             <>
@@ -105,8 +108,8 @@ const Demand = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How it works" },
-          { link: "/demand-generation", label: "Demand Generation" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/demand-generation", label: "Demand Generation" },
         ]}
       />
       <CardSection

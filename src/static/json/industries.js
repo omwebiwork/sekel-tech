@@ -2,6 +2,8 @@ export const industriesData = [
     {
         slug: 'retail',
         slugLabel: 'Retail',
+        metaTitle:'Retail | Sekel Tech',
+        metaDescription:'Empower your retail business with Sekel Tech’s innovative solutions. Enhance customer experiences, streamline operations, and drive growth today!',
         bannerData: {
             title: "Sekel Tech for Retail",
             subTitle: "Convert online searches to in-store sales ",
@@ -145,6 +147,34 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData : [
+                {
+                    title: "The Reliable Neighborhood Market",
+                    description: "Become the top choice for local shoppers by offering a complete journey, whether they shop in-store for fresh goods or order online for home delivery. With Sekel Tech, ensure accurate listings, earn great reviews, and customize offers to match local tastes.Grocery retailers,Supermarkets,Provision store,Food-mart"
+                },
+                {
+                    title: "Neighborhood Necessities",
+                    description: "Customers rely on convenience stores for urgent needs, expecting fast service. With Sekel Tech, ensure your store is easily found by nearby customers, even if it's located within another establishment.Booth, Neighbourhood store,Mega-mart,Shop in Shop,Convenience store"
+                  
+                },
+                {
+                    title: "Fashion at the Forefront",
+                    description: "Establish a seamless connection between your online and offline brand presence, enticing customers directly into your store for a personalized experience. Sekel Tech enhances your brand visibility and empowers you to showcase exceptional customer service with flair: Apparel Stores; Fashion Retailers; Clothing Boutiques; Multi-brand stores; Brands Own Store; Shop in Shop."
+                },
+                {
+                    title: "An Enhanced Experience",
+                    description: "Big stores have lots of stuff in your area and they're easy to visit in person. Make it even better by linking your website to your store smoothly. Show off what you've got and make it easy for customers to find out about your deals, items, and services. With Sekel Tech, you can keep customers informed about everything you offer, like sales, deals, what's in stock, and how they can reach your store:  Hypermarkets; Mega supermarket; Mega-retailers"
+                },
+                {
+                    title: "Highlight Your Exciting Retail Selection",
+                    description: "With Sekel Tech, showcase your shopping center's offerings and events, turning online interest into in-store visits. Create a memorable shopping experience by highlighting availability, promotions, and events, enticing customers to explore your establishment: Brands Own Store; Shop in Shop.",
+                },
+                {
+                    title: "Capture Wireless Micro Moments",
+                    description:
+                        "With Sekel Tech, grab the attention of wireless shoppers and lead them to your nearest retail outlet. Stand out online, especially during contract renewals, device repairs, or when customers are switching carriers, building trust and becoming their preferred choice.",
+                },
+            ]
         },
         infoData: {
             infoCardData: {
@@ -183,6 +213,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -219,7 +250,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -233,7 +264,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -242,31 +273,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -275,6 +306,8 @@ export const industriesData = [
     {
         slug: 'finance-&-insurance',
         slugLabel: 'Finance & Insurance',
+        metaTitle:'Finance & Insurance | Sekel Tech',
+        metaDescription:'Boost your finance and insurance services with Sekel Tech’s cutting-edge solutions. Improve efficiency, security, and customer satisfaction effortlessly!',
         bannerData: {
             title: "Sekel Tech for Finance & Insurance",
             subTitle: "Establish Trust During Financial Decisions",
@@ -370,6 +403,24 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData : [
+                {
+                    title: "Financial Institution & Cooperative Bank",
+                    description: "For consumers seeking financial advice during life-changing events, being visible and trustworthy online is crucial. With Sekel Tech, offer valuable information on listings and local web pages, manage your online reputation proactively, and simplify the process for customers to take the next step with clear calls to action (CTAs):Retail Banks;Cooperative Banks;ATM Systems.",
+                },
+                {
+                    title: "Simplify Your Mortgage Decision",
+                    description: "Make your mortgage loan officers the top choice for customers searching for mortgage broker near me by ensuring visibility and trust. With Sekel Tech, loan officers establish a strong online presence with active social proof, expertly crafted local webpages, and the reliability of your financial institution:Consumer Banking Lenders;Mortgage Advisors.",
+                },
+                {
+                    title: "Stay at the Forefront of Insurance Buyers' Minds",
+                    description: "In a recent PWC insurance survey, it was found that 71% of today's insurance buyers commence their search online, emphasizing the importance of digital channels for research before purchase.With Sekel Tech, ensure your online local presence is optimized to inspire consumer trust through accurate information, proactive online reputation management, and clear calls to action (CTAs).",
+                },
+                {
+                    title: "Simplify Your Accountant Selection Process",
+                    description: "Be the Go-To Choice During Tax Season with Sekel Tech. In the midst of tax season chaos, Sekel Tech helps your local accounting offices stand out by maintaining an active online reputation with prompt review responses, providing accurate local information, and offering clear calls to action, making your firm the obvious choice."
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -402,6 +453,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -438,7 +490,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -452,7 +504,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -461,31 +513,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -494,6 +546,8 @@ export const industriesData = [
     {
         slug: 'food-&-beverages',
         slugLabel: 'Food & Beverages',
+        metaTitle:'Food & Beverages | Sekel Tech',
+        metaDescription:'Revolutionise your food and beverage business with Sekel Tech’s advanced solutions. Enhance operations, customer engagement, and growth seamlessly!',
         bannerData: {
             title: "Sekel Tech for Food & Beverages",
             subTitle: "Transform Hunger into Location Revenue",
@@ -607,6 +661,24 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData : [
+                {
+                    title: "Fulfill Your Hunger Quickly",
+                    description: "Lead customers seamlessly from your online listing to your pick-up counter by providing detailed information and excellent reviews. Simplify the process for diners to view your offerings, utilize coupons, and place orders online through profiles that transition them from browsers to patrons:Grab-and-go eateries;Quick-Service Casual;Fast Food Outlets;Pizza Joints;Street Food Vendors",
+                },
+                {
+                    title: "Increase Reservations. Maximize Table Utilization",
+                    description: "Ignite local appetites with enticing listings, reviews, and menus online. Differentiate yourself by showcasing daily specials, then streamline the process for diners to locate you, contact you, and reserve a table:Brand Restaurants;Bistro Dining;High-End Dining;Traditional Dining;Modern Relaxed Dining;Short-term Dining Venues",
+                },
+                {
+                    title: "Attract More Customers from Happy Hour until Closing Time",
+                    description: "Do you have an impressive beer or cocktail menu? Exceptional sports screens or captivating ambiance? Generate excitement among potential customers through your reviews and business profiles, and simplify the process for them to locate you and make your establishment their new favourite local spot:Wine Bistros;Beer Gardens;Mix Bars;Clubhouses;Sports Pubs;Concept Bars"
+                },
+                {
+                    title: "Double Your Daily Traffic",
+                    description: "Stand out as the go-to local coffee shop by consistently earning top-notch reviews when customers are in need of a caffeine fix. Optimize your listings for search and voice, provide easy directions, showcase your menu online, and engage with local social content to attract nearby consumers seeking coffee or treats:Coffee bars;Bistros;Cafés;Tea salons;Bakehouses;Mobile coffee bars"
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -639,6 +711,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -675,7 +748,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -689,7 +762,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -698,31 +771,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -731,6 +804,8 @@ export const industriesData = [
     {
         slug: 'automotive',
         slugLabel: 'Automotive',
+        metaTitle:'Automotive | Sekel Tech',
+        metaDescription:'Drive innovation in your automotive business with Sekel Tech’s solutions. Streamline operations, boost efficiency, and enhance customer satisfaction!',
         bannerData: {
             title: "Sekel Tech for Automotive",
             subTitle: "Earn and Maintain Customer Confidence",
@@ -825,6 +900,20 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData: [
+                {
+                    title: "Transform Online Listings into On-site Visits",
+                    description: "With 95% of car buyers relying on digital sources for information, Uberall CoreX guarantees your dealership's online presence, boosting visibility and trust with accurate inventory details and reputation management: Producers; Auto dealers; Pre-owned car dealerships.",
+                },
+                {
+                    title: "Display Your Exceptional Service",
+                    description:"When motorists search online for automotive services, they seek assurance in your trusted reputation. Uberall CoreX empowers local managers to enhance response rates, elevate star ratings, and become the preferred option for local drivers seeking automotive services: Auto body shops; Vehicle cleaning stations; Auto glass repair shops; Lubrication services; Tire service centers."
+                },
+                {
+                    title: "Showcase Your Premier Fleet",
+                    description: "Deliver a seamless and positive customer journey from the initial online interaction with your car rental agency or leasing company to the local key return and glowing review: Rent-a-car services; Vehicle leasing companies; Logistics companies."
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -853,6 +942,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -889,7 +979,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -903,7 +993,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -912,31 +1002,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -945,6 +1035,8 @@ export const industriesData = [
     {
         slug: 'ev-charging-&-fuel-stations',
         slugLabel: 'Ev Charging & Fuel Stations',
+        metaTitle:'EV Charging & Fuel Stations | Sekel Tech',
+        metaDescription:'Optimise your EV charging and fuel stations with Sekel Tech’s smart solutions. Enhance efficiency, customer experience, and operational excellence!',
         bannerData: {
             title: "Sekel Tech for EV Charging & Fuel Stations",
             subTitle: "Boost Your Stations' Growth",
@@ -984,6 +1076,16 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData : [
+                {
+                    title: "Reduce Electric Vehicle Range Anxiety",
+                    description: "Ensure drivers can easily locate and navigate to your charging stations with Uberall CoreX. Manage and verify essential business information, such as opening hours and payment options, alongside advanced EV data like charger types and availability. This provides EV drivers with the confidence to choose your charging points on search, maps, and navigation platforms.",
+                },
+                {
+                    title: "Become the Preferred Rest Stop",
+                    description: "Ensure your gas stations are the top choice for both locals seeking a regular stop and travellers in need of refuelling. Promote the amenities available at your stations, such as car washes, convenience stores, cafes, or additional services, to attract more customers.",
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -1016,6 +1118,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -1052,7 +1155,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -1066,7 +1169,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -1075,31 +1178,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -1108,6 +1211,8 @@ export const industriesData = [
     {
         slug: 'apparel-fashion-lifestyle',
         slugLabel: 'Apparel / Fashion Lifestyle',
+        metaTitle:'Apparel or Fashion Lifestyle | Sekel Tech',
+        metaDescription:'Transform your fashion business with Sekel Tech’s innovative solutions. Enhance customer engagement, streamline operations, and drive growth effortlessly!',
         bannerData: {
             title: "Sekel Tech for Apparel / Fashion Lifestyle",
             subTitle: "Elevate Your Fashion Brand",
@@ -1215,6 +1320,24 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData: [
+                {
+                    title: "Keep Your Brand in Vogue",
+                    description: "Lead customers seamlessly from browsing your online listings to making a purchase. Simplify the process for shoppers to explore your latest trends, redeem offers, and complete transactions online, ensuring your brand stays at the forefront of fashion: Trendy Boutiques."
+                },
+                {
+                    title: "Maximize Your Fashion Statement",
+                    description: "Stand out in the crowded fashion market by showcasing your unique style and offerings. Engage customers with compelling content and promotions that drive them to choose your brand over others: Clothing Stores; Fashion Outlets; Apparel Chains; Boutique Shops; Designer Stores."
+                },
+                {
+                    title: "Adorn Your Style",
+                    description: "Adorn Your Style with Sekel Tech's help in showcasing your latest collections and promotions. Make a statement with your accessories and attract fashion-forward customers seeking the perfect complement to their outfit: Jewelry Stores; Handbag Boutiques; Shoe Retailers; Accessories Shops; Watch Retailers."
+                },
+                {
+                    title: "Fashion at Your Fingertips",
+                    description: "Elevate your brand's online presence with Sekel Tech's assistance for Fashion at your Fingertips. Showcase your products with high-quality images, detailed descriptions, and seamless online purchasing options to attract and retain customers, ensuring your fashion brand stands out in the digital marketplace: Online Boutiques; Fashion E-commerce Sites; Digital Fashion Platforms; Virtual Styling Services; Fashion Subscription Services; Captivating Online Listings for Fashion Enthusiasts."
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -1235,6 +1358,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -1271,7 +1395,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -1285,7 +1409,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -1294,31 +1418,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -1327,6 +1451,8 @@ export const industriesData = [
     {
         slug: 'electrics-&-electronics',
         slugLabel: 'Electrics & Electronics',
+        metaTitle:'Electrics & Electronics | Sekel Tech',
+        metaDescription:'Enhance your electrics & electronics business with Sekel Tech’s advanced solutions. Boost efficiency, streamline operations, and improve customer satisfaction!',
         bannerData: {
             title: "Sekel Tech for Electrics & Electronics",
             subTitle: "Empower Your Electronic Presence",
@@ -1437,6 +1563,24 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData: [
+                {
+                    title: "Stay Ahead in Tech Trends",
+                    description: "Guide customers seamlessly from your online listings to your checkout counter by providing detailed information and excellent reviews. Simplify the process for shoppers to view your offerings, utilize discounts, and place orders online through profiles that transition them from browsers to buyers: Tech Gadgets Stores; Appliance Retailers; Electronics Superstores; Home Electronics Shops; Mobile Phone Stores."
+                },
+                {
+                    title: "Boost Sales. Maximize Customer Satisfaction",
+                    description: "Elevate your electronic and electrical retail business by maximizing sales and ensuring customer satisfaction. With Sekel Tech, you can optimize your online presence, manage reviews, and streamline customer interactions to attract more customers and keep them coming back: Electronics Chains; Consumer Electronics Stores; Home Entertainment Retailers; Computer Hardware Stores; Appliance Dealers."
+                },
+                {
+                    title: "Attract More Enthusiasts from Audiophiles to Movie Buffs",
+                    description: "Do you offer an impressive range of audio or visual equipment? Exceptional display setups or immersive audio experiences? Generate excitement among potential customers through your reviews and business profiles, and simplify the process for them to locate you and make your store their new favorite local spot: Home Theater Stores; Music Equipment Shops; TV & Video Stores; Speaker Outlets; Visual Display Providers."
+                },
+                {
+                    title: "Double Your Daily Traffic",
+                    description: "Stand out as the go-to store for smart home devices by consistently earning top-notch reviews when customers are in need of innovative tech solutions. Optimize your listings for search and voice, provide easy directions, showcase your products online, and engage with local social content to attract nearby consumers seeking smart home solutions: Smart Home Hubs; Smart Device Retailers; Home Automation Stores; Connected Device Outlets; Home Security Retailers."
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -1469,6 +1613,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -1505,7 +1650,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -1519,7 +1664,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -1528,39 +1673,41 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
         }
     },
     {
-        slug: 'Home & Garden',
-        slugLabel: 'home-&-garden',
+        slug: 'home-&-garden',
+        slugLabel: 'Home & Garden',
+        metaTitle:'Home & Garden | Sekel Tech',
+        metaDescription:'Elevate your home and garden business with Sekel Tech’s smart solutions. Improve operations, enhance customer experiences, and drive growth effortlessly!',
         bannerData: {
             title: "Sekel Tech for Home & Garden",
             subTitle: "Establish Trust During Home & Garden Decisions",
@@ -1663,6 +1810,24 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData: [
+                {
+                    title: "Home Improvement Services",
+                    description: "For homeowners seeking renovation advice or services, establishing a trustworthy online presence is essential. With Sekel Tech, offer valuable insights on listings and local web pages, manage your online reputation proactively, and simplify the process for customers to take the next step with clear calls to action (CTAs): Home Improvement Contractors; Interior Designers; Redesign services."
+                },
+                {
+                    title: "Transform Your Outdoor Spaces",
+                    description: "Ensure your landscaping services stand out to customers looking for landscapers near me. With Sekel Tech, establish a strong online presence through social proof, local web pages, and reliable services: Landscaping Companies; Garden Designers; Lawn Care Services."
+                },
+                {
+                    title: "Home Decor & Furnishing",
+                    description: "In today's digital world, it's important to have a strong online presence. Sekel Tech can help you optimize your local online presence to build consumer trust with accurate information, proactive reputation management, and clear calls to action: Home Decor Stores; Furniture Retailers; Interior Decorators"
+                },
+                {
+                    title: "Elevate Your Bathroom Experience",
+                    description: "For people upgrading their bathrooms, trust is key. Sekel Tech helps bathroom fitting brands boost their credibility with professional local web pages, social proof, and clear calls to action: Bathroom Fixture Manufacturers; Bathroom Designers; Bathroom makeover services."
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -1699,6 +1864,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -1735,7 +1901,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -1749,7 +1915,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -1758,31 +1924,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],
@@ -1791,6 +1957,8 @@ export const industriesData = [
     {
         slug: 'healthcare',
         slugLabel: 'Healthcare',
+        metaTitle:'Healthcare | Sekel Tech',
+        metaDescription:'Transform your healthcare services with Sekel Tech’s innovative solutions. Enhance patient care, streamline operations, and improve efficiency seamlessly!',
         bannerData: {
             title: "Sekel Tech for Healthcare",
             subTitle: "Empower Your Healthcare Presence",
@@ -1898,6 +2066,24 @@ export const industriesData = [
                     },
                 },
             ],
+            itemListData: [
+                {
+                    title: "Stay Ahead in Patient Care",
+                    description: "Guide patients seamlessly from online listings to appointments by providing detailed information, excellent reviews, and clear booking options. Simplify the process for patients to find you, learn about your services, and schedule appointments online: General Practitioners; Family Medicine Physicians; Specialists (e.g., Cardiology, Dermatology, Pediatrics); Urgent Care Centers."
+                },
+                {
+                    title: "Enhance Patient Satisfaction & Attract Referrals",
+                    description: "Enhance your hospital or medical center by maximizing patient satisfaction and attracting new referrals. Sekel Tech assists in managing your digital footprint, showcasing your facilities and services, and improving patient engagement, leading to more trust and loyalty: Hospitals; Medical Centers; Children's Hospitals; Specialty Hospitals."
+                },
+                {
+                    title: "Attract New Patients & Smiles",
+                    description:"Stand out as the go-to choice for dental care by consistently earning top-notch reviews when patients seek dental professionals. Optimize your listings for search, showcase your practice and expertise, and engage with local social media to attract new patients seeking healthy smiles: General Dentists; Cosmetic Dentists; Orthodontists; Pediatric Dentists."
+                },
+                {
+                    title: "Connect with Patients Seeking Support",
+                    description: "In today's world, mental health support is crucial. Attract patients seeking therapy or counselling by creating a welcoming online presence with high ratings and informative content. Sekel Tech helps you showcase your services, connect with patients, and build trust through positive reviews; Therapists; Counsellors; Psychiatrists; Psychologists; Wellness & Nutrition Centers."
+                },
+            ],
         },
         infoData: {
             infoCardData: {
@@ -1930,6 +2116,7 @@ export const industriesData = [
         caseStudySlider: {
             sectionData: {
                 title: "Explore more",
+                link:'/company/case-studies',
                 description: "How Sekel Tech helped Retail Brands in increasing their visibility & sales",
                 sliderImage: [
                     {
@@ -1966,7 +2153,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link : '/company/case-studies/kalyan-jewellers',
                     footer: {
                         image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
                         title: "Increase ROI by",
@@ -1980,7 +2167,7 @@ export const industriesData = [
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/bridgestone',
                     footer: {
                         image: { src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img", },
                         title: "Increased GBP views by",
@@ -1989,31 +2176,31 @@ export const industriesData = [
                 },
                 {
                     image: {
-                        src: "/kalyan-img.svg",
+                        src: "/schneider-img.svg",
                         height: 304,
                         width: 348,
                         alt: "img",
                     },
-
+                    link:'/company/case-studies/schneider-electric',
                     footer: {
-                        image: { src: "/kalyan-logo.svg", height: 448, width: 692, alt: "img" },
-                        title: "Increase ROI by",
-                        size: "31x",
+                        image: { src: "/schneider-logo.svg", height: 448, width: 692, alt: "img" },
+                        title: "Increased Monthly Orders by",
+                        size: "30%",
                     },
                 },
                 {
                     image: {
-                        src: "/bridgestone-img.svg",
+                        src: "/vlcc-img.svg",
                         height: 500,
                         width: 348,
                         alt: "img",
                     },
+                    link : '/company/case-studies/vlcc',
                     footer: {
                         image: {
-                            src: "/bridgestone-logo.svg", height: 448, width: 692, alt: "img",
+                            src: "/vlcc-logo.svg", height: 448, width: 692, alt: "img",
                         },
-                        title: "Increased GBP views by",
-                        size: "10x",
+                        size: "3x Returns",
                     },
                 },
             ],

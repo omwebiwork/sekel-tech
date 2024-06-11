@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback } from "react";
 
 const Card = ({
@@ -11,6 +12,9 @@ const Card = ({
   actionType,
   action,
   buttonIcon,
+  linkText,
+  linkSty,
+  linkSlug,
   learnMore,
   dataDivSty,
   cardDataSty = "mb-6",
@@ -58,6 +62,11 @@ const Card = ({
             {actionType}
             {buttonIcon && <div>{buttonIcon}</div>}
           </button>
+        )}
+        {linkText && (
+          <Link href={linkSlug} className={`${linkSty}`}>
+              {linkText}
+          </Link>
         )}
       </div>
       {image?.src && (

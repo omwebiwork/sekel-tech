@@ -42,7 +42,7 @@ const ProductCatalogue = () => {
       <HeadSection
         title="Product Catalogue| Sekel Tech"
         description="Sekel Tech's Dynamic Hyperlocal Product Catalogues empower brands with real-time product cataloguing, enhancing visibility and driving success in marketing."
-        canonical={`https://sekel.tech/discovery-platform/product-catalogue`}
+        canonical={`https://sekel.tech/how-it-works/discovery-platform/product-catalogue`}
         img="/logo.svg"
         renderSchemaContent={() => {
           return (
@@ -71,13 +71,10 @@ const ProductCatalogue = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "How its works" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/discovery-platform", label: "Discovery Platform" },
           {
-            link: "/discovery-platform",
-            label: "Discovery Platform",
-          },
-          {
-            link: "/discovery-platform/product-catalogue",
+            link: "/how-it-works/discovery-platform/product-catalogue",
             label: "Product Catalogue",
           },
         ]}

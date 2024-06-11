@@ -16,6 +16,85 @@ let product = [
   },
 ];
 
+let industries = [
+  {
+    id: "1",
+    name: "Retail",
+    redirectPath: "/industries/retail",
+  },
+  {
+    id: "2",
+    name: "Finance & Insurance",
+    redirectPath: "/industries/finance-&-insurance",
+  },
+  {
+    id: "3",
+    name: "Food & Beverages",
+    redirectPath: "/industries/food-&-beverages",
+  },
+  {
+    id: "4",
+    name: "Automotive",
+    redirectPath: "/industries/automotive",
+  },
+  {
+    id: "5",
+    name: "Ev Charging & Fuel Stations",
+    redirectPath: "/industries/ev-charging-&-fuel-stations",
+  },
+  {
+    id: "6",
+    name: "Electrics & Electronics",
+    redirectPath: "/industries/electrics-&-electronics",
+  }, 
+  {
+    id: "7",
+    name: "Apparel / Fashion Lifestyle",
+    redirectPath: "/industries/apparel-fashion-lifestyle",
+  }, 
+  {
+    id: "8",
+    name: "Home & Garden",
+    redirectPath: "/industries/home-&-garden",
+  }, 
+  {
+    id: "9",
+    name: "Healthcare",
+    redirectPath: "/industries/healthcare",
+  },
+  {
+    id: "10",
+    name: "Brands Own Store",
+    redirectPath: "/industries/brands-own-store",
+  },
+  {
+    id: "11",
+    name: "Exclusive Outlets/ Francise",
+    redirectPath: "/industries/exclusive-outlets-francise",
+  },
+  {
+    id: "12",
+    name: "Multi-Brands Outlets",
+    redirectPath: "/industries/multi-brands-outlets",
+  },
+  {
+    id: "13",
+    name: "Online + Offline",
+    redirectPath: "/industries/online-offline",
+  },
+  {
+    id: "14",
+    name: "Neighbourhood Shops",
+    redirectPath: "/industries/neighbourhood-shops",
+  },
+  {
+    id: "15",
+    name: "Shop-in-Shop",
+    redirectPath: "/industries/shop-in-shop",
+  },
+  
+];
+
 let company = [
   {
     id: "1",
@@ -54,4 +133,4 @@ let company = [
   },
 ];
 
-export { product, company };
+export { product, company, industries };

@@ -48,6 +48,7 @@ export default function HowItWorks() {
       <HeadSection
         title="360º Retail Journey with Sekel Tech"
         description="Explore Sekel Tech's transformative journey, from forming connections to supercharging data and unleashing demand. Discover the power of Retail AI"
+        canonical="https://sekel.tech/how-it-works"
         renderSchemaContent={() => {
           return (
             <>
@@ -90,7 +91,7 @@ export default function HowItWorks() {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "how it works" },
+          { link: "/how-it-works", label: "How It Works" },
         ]}
       />
       <div className="container">

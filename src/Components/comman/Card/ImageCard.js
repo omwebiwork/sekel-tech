@@ -1,14 +1,22 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ImageCard = ({
+  link,
   image,
   footer,
   containerSty = "p-5 min-w-[350px] max-w-[350px]",
   imgContainerSty = "mb-5 h-[280px]",
 }) => {
+
+  const router = useRouter();
+
   return (
     <div id="scrollImage" 
-      className={`${containerSty} bg-blue-100 bg-opacity-10 rounded-xl`}
+      className={`${containerSty} ${link ? 'cursor-pointer' : 'cursor-default'} bg-blue-100 bg-opacity-10 rounded-xl`}
+      onClick={ () =>{
+        link ? router.push(link) : ''
+      } }
     >
       <div className={` ${imgContainerSty} w-full rounded-xl overflow-hidden`}>
         <Image

@@ -16,6 +16,7 @@ export const dataPlatformFeatures = {
   cardData: [
     {
       title: "Data Integration",
+      linkSlug :'/how-it-works/data-platform/data-integration',
       description:
         "Sekel Tech seamlessly integrates with various data systems, fostering a streamlined, collaborative environment",
       image: {
@@ -27,6 +28,7 @@ export const dataPlatformFeatures = {
     },
     {
       title: "Automation",
+      linkSlug :'/how-it-works/data-platform/automation',
       description:
         "Using technology to automatically process or manage data without manual intervention.",
       image: {
@@ -38,6 +40,7 @@ export const dataPlatformFeatures = {
     },
     {
       title: "Data Activation",
+      linkSlug :'/how-it-works/data-platform/data-activation',
       description:
         "Using collected data to drive actions or decisions, in marketing or business operations.",
       image: {
@@ -49,6 +52,7 @@ export const dataPlatformFeatures = {
     },
     {
       title: "Role Based Access",
+      linkSlug :'/how-it-works/data-platform/role-based-access',
       description:
         "Granting permissions to data and systems based on an individual's job role or responsibilities.",
       image: {
@@ -60,6 +64,7 @@ export const dataPlatformFeatures = {
     },
     {
       title: "Cloud-Based Infrastructure",
+      linkSlug :'/how-it-works/data-platform/cloud-based-infrastructure',
       description:
         "Using online servers and systems for data storage and operations, instead of on-site physical hardware.",
       image: {
@@ -71,6 +76,7 @@ export const dataPlatformFeatures = {
     },
     {
       title: "Security & Compliance",
+      linkSlug :'/how-it-works/data-platform/security-&-compliance',
       description:
         "Refers to measures and protocols in place to protect data and ensure adherence to relevant laws and regulations.",
       image: {

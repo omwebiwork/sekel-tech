@@ -89,7 +89,7 @@ export const frequentlyAsked = {
   sectionData: {
     title: "Frequently Asked Questions",
     image: {
-      src: "/faq.png",
+      src: "/faq.svg",
       height: 500,
       width: 500,
       alt: "img",

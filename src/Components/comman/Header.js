@@ -63,7 +63,7 @@ const Header = () => {
                   <Dropdown
                     text="Products"
                     list={product}
-                    image={{ src: "/Product.png", height: 176, width: 200 }}
+                    image={{ src: "/Product.svg", height: 176, width: 200 }}
                   />
                 </div>
               </li>

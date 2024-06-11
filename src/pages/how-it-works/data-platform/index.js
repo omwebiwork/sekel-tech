@@ -26,7 +26,7 @@ const Data = () => {
           {dataPlatformFeatures?.cardData?.map((item, index) => {
             return (
               <div className={`col-span-1`}>
-                <Card key={index} {...item} />
+                <Card key={index} {...item} linkSty="font-semibold text-base text-[#2C74F7]" linkText='Know more >' />
               </div>
             );
           })}
@@ -73,7 +73,7 @@ const Data = () => {
     return {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      url: "https://sekel.tech/data-platform",
+      url: "https://sekel.tech/how-it-works/data-platform",
       itemListOrder: "http://schema.org/ItemListOrderAscending",
       numberOfItems: dataPlatformFeatures?.cardData?.length,
       name: "Unified Data Platform - Empowering Your Insights with Data Fusion",
@@ -95,6 +95,7 @@ const Data = () => {
       <HeadSection
         title="Unified Data Platform | Sekel Tech"
         description="Supercharge your retail business with our Unified Data Platform. Seamlessly access, consolidate, and deploy data to elevate engagement and drive conversions."
+        canonical="https://sekel.tech/how-it-works/data-platform"
         renderSchemaContent={() => {
           return (
             <>
@@ -122,8 +123,8 @@ const Data = () => {
       <Breadcrumb
         breadcrumbList={[
           { link: "/", label: "Home" },
-          { link: "/how-it-works", label: "how it works" },
-          { link: "/data", label: "Unified Data Platform" },
+          { link: "/how-it-works", label: "How It Works" },
+          { link: "/how-it-works/data-platform", label: "Unified Data Platform" },
         ]}
       />
       <CardSection

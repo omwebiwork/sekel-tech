@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const SliderSection = ({
   title,
   description,
+  link,
   sliderImage = [],
   renderElement,
   profileButton = false,
@@ -14,6 +16,7 @@ const SliderSection = ({
 }) => {
   let [imageIndex, setImageIndex] = useState(0);
   let [prevIndex, setPrevIndex] = useState(0);
+  const router = useRouter();
   function scrollImage(direction, iconClcik = false) {
     const image = document.getElementById("scrollImage");
     const imageContainer = document.querySelector(".image-container");
@@ -48,7 +51,9 @@ const SliderSection = ({
               </p>
               {profileButton && (
                 <div className="flex gap-10 items-center">
-                  <p className="text-base font-semibold leading-[22px]">
+                  <p className={`text-base font-semibold leading-[22px] ${link ? 'cursor-pointer': 'cursor-default'}`} onClick={() => {
+                    link ? router.push(link) : ''
+                  }}>
                     See all Case studies
                   </p>
                   <div>
