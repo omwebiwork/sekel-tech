@@ -1,15 +1,21 @@
 import Image from "next/image";
 
-const HyperlocalSection = ({ title, description, tagList }) => {
+const HyperlocalSection = ({
+  title,
+  description,
+  tagList,
+  descSty="text-base mt-4 font-normal leading-[140%] max-w-[740px] text-yellow-900",
+  titleSty = "text-[32px] lg:text-[42px] font-medium leading-[140%] tracking-tighter text-white max-w-[712px]",
+}) => {
   return (
     <section className="bg-blue-900 py-[45px] md:py-[60px] lg:py-[80px]">
       <div className="container">
         <div className="mb-[52px]">
-          <h3 className="text-[32px] lg:text-[42px] font-medium leading-[140%] tracking-tighter text-white max-w-[712px]">
+          <h3 className={`${titleSty}`}>
             {title}
           </h3>
           {description && (
-            <p className="text-base mt-4 font-normal leading-[140%] max-w-[740px] text-yellow-900">
+            <p className={`${descSty}`}>
               {description}
             </p>
           )}

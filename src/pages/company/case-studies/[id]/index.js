@@ -185,7 +185,7 @@ const CaseStudyDetails = () => {
                       headingSty="text-[24px] lg:text-[28px] font-medium leading-[140%] mb-4 lg:mb-8 text-black-900"
                       descriptionSty="text-base font-normal leading-[140%] text-black-33"
                       cardSty="bg-gray-100 border border-gray-400 py-6 px-3 lg:px-10 lg:py-8 rounded-2xl h-full"
-                      iconSty="min-w-[55px]"
+                      iconSty="max-w-[55px] w-full"
                       cardDataSty="mb-0"
                       titleIconSty="h-[95px] w-[95px] rounded-full bg-yellow-100 flex items-center justify-center mb-4 lg:mb-8"
                     />
@@ -236,7 +236,7 @@ const CaseStudyDetails = () => {
                     headingSty="text-[24px] lg:text-[28px] font-medium leading-[140%] mb-3 lg:mb-8 text-black-900"
                     descriptionSty="text-base font-normal leading-[150%] text-black-33"
                     cardSty="bg-gray-100 p-4 md:p-6 lg:px-10 lg:py-8 rounded-2xl border-[1px] border-gray-400 h-full"
-                    iconSty="w-full max-lg:max-w-[40px] lg:min-w-[55px]"
+                    iconSty="w-full max-lg:max-w-[40px] lg:w-full"
                     cardDataSty="mb-0"
                     titleIconSty="p-3 lg:p-6 h-[70px] lg:h-[95px] w-[70px] lg:w-[95px] rounded-full bg-yellow-100 flex items-center justify-center mb-4 lg:mb-8 "
                   />

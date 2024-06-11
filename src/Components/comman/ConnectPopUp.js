@@ -119,8 +119,8 @@ function ConnectPopUp({ handleBack }) {
     }
   };
   return (
-    <div className="w-[28rem] max-sm:w-[24rem] bg-white shadow-[2px_2px_13px_-1px_rgba(0,0,0,0.25)] rounded-[20px] m-3">
-      <div className="flex py-8 px-6 flex-col text-left w-full max-h-[calc(100vh_-_200px)] overflow-y-auto">
+    <div className="ml-auto w-full max-w-[28rem] max-sm:max-w-[24rem]">
+      <div className="bg-white shadow-[2px_2px_13px_-1px_rgba(0,0,0,0.25)] rounded-[20px] flex py-8 px-6 flex-col text-left w-full max-h-[calc(100vh_-_200px)] overflow-y-auto">
         <button onClick={handleBack} className="flex items-center gap-x-4 mb-8">
           <span>
             <Image

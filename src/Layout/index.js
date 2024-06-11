@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       {children}
-      <div className="z-[9999] fixed right-10 bottom-10">
+      <div className="z-[9999] fixed right-10 bottom-10 left-auto md:w-[36rem]">
         {renderLetConnectPopUp()}
         {renderConnectPopUp()}
         <div className="flex items-center justify-end">

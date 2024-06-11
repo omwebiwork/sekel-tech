@@ -94,9 +94,9 @@ const ProductCatalogue = () => {
                     headingSty="text-[24px] lg:text-[28px] font-medium leading-[140%] mb-4 xl:mb-8 text-black-900"
                     descriptionSty="text-base font-normal leading-[150%] text-black-33"
                     cardSty="bg-gray-100 p-6 xl:px-10 xl:py-8 rounded-2xl border-[1px] border-gray-400 h-full"
-                    iconSty="min-w-[55px]"
+                    iconSty="max-w-[55px] w-full"
                     cardDataSty="mb-0"
-                    titleIconSty="h-[95px] w-[95px] rounded-full bg-yellow-100 flex items-center justify-center mb-4 xl:mb-8 "
+                    titleIconSty="h-[95px] w-[95px] rounded-full bg-yellow-100 flex items-center justify-center mb-4 xl:mb-8 p-3 "
                   />
                 </div>
               );
